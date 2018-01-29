@@ -1,0 +1,22 @@
+.wrapper {
+    width: 95%;
+    margin: 3em auto;
+}
+
+.masonry {
+    column-count: 6;
+    column-gap: 1.5em;
+    width: 100%;
+}
+
+.item-container {
+  width: 100%;
+  display: block;
+  background: url('http://hoott.com/images/ajax_loader.gif') 50% 50% no-repeat #ECECEC;
+}
+
+.item {
+  display: inline-block;
+  margin: 0 0 1.2em;
+  width: 100%;
+}

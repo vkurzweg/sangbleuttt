@@ -36,6 +36,8 @@ import '!file-loader?name=[name].[ext]!./images/icon-512x512.png';
 import '!file-loader?name=[name].[ext]!./manifest.json';
 import 'file-loader?name=[name].[ext]!./.htaccess';
 import '!!style-loader!css-loader!../node_modules/bootstrap/dist/css/bootstrap.css';
+import '!!style-loader!css-loader!../app/components/Insta/styles.css';
+
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import configureStore from './configureStore';

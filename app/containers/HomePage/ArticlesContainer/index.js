@@ -51,16 +51,16 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <div className="col-sm-8">
               <h3 style={{ textAlign: 'center' }}>{article1.title.value[0].text}</h3>
               <img src={article1.image.value.main.url} style={{ width: '100%' }} />
-              {article1.snippet_summary.value}
+              <div style={{ marginTop: '2%' }}>{article1.snippet_summary.value}</div>
             </div>
             <div className="col-sm-4">
               <div>
                 <h3 style={{ textAlign: 'center' }}>{article2.title.value[0].text}</h3>
-                <img src={article2.image.value.main.url} style={{ width: '75%', display: 'block', margin: '0 auto' }}/>
+                <img src={article2.image.value.main.url} style={{ width: '80%', display: 'block', margin: '0 auto' }}/>
               </div>
               <div>
                 <h3 style={{ textAlign: 'center' }}>{article3.title.value[0].text}</h3>
-                <img src={article3.image.value.main.url} style={{ width: '75%', display: 'block', margin: '0 auto' }} />
+                <img src={article3.image.value.main.url} style={{ width: '80%', display: 'block', margin: '0 auto' }} />
               </div>
             </div>
           </div>

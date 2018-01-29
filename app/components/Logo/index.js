@@ -11,8 +11,8 @@ import { Image } from 'cloudinary-react';
 
 function Logo() {
   return (
-    <div>
-      <Image style={{ display: 'block', margin: '0 auto', paddingTop: '10%' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" width="250" quality="auto" crop="scale" responsive />
+    <div style={{ width: '100%', margin: '0 auto', marginTop: '200%' }}>
+      <Image style={{  }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" width="150" quality="auto" crop="scale" responsive />
     </div>
   );
 }

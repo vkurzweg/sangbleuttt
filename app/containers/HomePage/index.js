@@ -13,6 +13,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Logo from 'components/Logo';
 import ArticlesContainer from './ArticlesContainer';
+import Insta from 'components/Insta';
 // import { fetchArticles, setArticles } from './actions';
 // import createStructuredSelector from 'reselect';
 // import { bindActionCreators, compose } from 'redux';
@@ -28,8 +29,15 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div>
-        <Logo />
+      <div className="container" style={{ width: '100%' }}>
+        <div className="row">
+          <div className="col-sm-2">
+            <Logo />
+          </div>
+          <div className="col-sm-10">
+            <Insta />
+          </div>
+        </div>
         <ArticlesContainer />
       </div>
     );
