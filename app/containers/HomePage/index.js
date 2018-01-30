@@ -29,12 +29,12 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div className="container" style={{ width: '100%' }}>
-        <div className="row">
-          <div className="col-sm-2">
+      <div className="container-fluid" style={{ width: '100%' }}>
+        <div className="row" style={{ width: '100%' }}>
+          <div className="col-sm-3">
             <Logo />
           </div>
-          <div className="col-sm-10">
+          <div className="col-sm-9">
             <Insta />
           </div>
         </div>

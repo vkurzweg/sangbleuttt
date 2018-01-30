@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import Instafeed from 'react-instafeed';
 
 const artists = [
@@ -51,52 +51,61 @@ const artists = [
   }
 ]
 
+// const StyledInstafeed = styled(Instafeed)`
+//   width: 100%;
+//   &:hover {
+//     opacity: 0;
+//     cursor: pointer;
+//   }
+// `;
+
+const ArtistName = styled.div`
+  position: absolute;
+  margin: 0 auto;
+  opacity: 0;
+  background-color: #FAFAFA;
+  &:hover {
+    opacity: .8;
+    cursor: pointer;
+  }
+`;
+
 
 class Insta extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
   render() {
     const instafeedTarget = 'instafeed';
     return (
       <div style={{width: '100%', marginTop: '2%', marginBottom: '10%' }}>
         <div style={{width: '100%', margin: '2em auto' }}>
+          <div className='masonry'>
           { artists.map((artist, idx, artists) => {
               return (
-                  <div className='masonry'id={instafeedTarget} key={idx}>
+                  <div
+                    className='item-container'
+                    id={'instafeed-' + idx}
+                    key={idx}
+                    >
+                    <p className='artist-name' id={'artist-' + idx}>{artist.name}</p>
                     <Instafeed
-                      limit='2'
+                      limit='4'
                       ref='instafeed'
                       resolution='standard_resolution'
                       sortBy='most-recent'
-                      target={instafeedTarget}
+                      target={'instafeed-' + idx}
                       key={idx+1}
                       template="<a href='{{link}}' target='_blank'>
-                                  <div style='width: 100%;display: block;margin:0 auto;'>
-                                    <img style='display: inline-block;margin: 0 0 1.2em;width: 150px;height:150px;' src='{{image}}' />
+                                  <div>
+                                    <img class='item' src='{{image}}' />
                                   </div>
                                 </a>"
                       userId={artist.userId}
                       clientId='da06fb6699f1497bb0d5d4234a50da75'
-                      accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f'
-                    />
+                      accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
                   </div>
                 )
           })}
-          <div className='masonry'id={instafeedTarget}>
-              <Instafeed
-                limit='4'
-                ref='instafeed'
-                resolution='standard_resolution'
-                sortBy='most-recent'
-                target={instafeedTarget}
-                template="<a href='{{link}}' target='_blank'>
-                            <div style='width: 100%;display: block;margin:0 auto;'>
-                              <img style='display: inline-block;margin: 0 0 1.2em;width: 150px;height:150px;' src='{{image}}' />
-                            </div>
-                          </a>"
-                userId='22173386'
-                clientId='da06fb6699f1497bb0d5d4234a50da75'
-                accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f'
-              />
-            </div>
+                </div>
           </div>
         </div>
     );
