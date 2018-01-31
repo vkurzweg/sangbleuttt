@@ -1,31 +1,25 @@
 import { createSelector } from 'reselect';
-import { fromJS } from 'immutable';
 
 /**
- * Direct selector to the homePage state domain
+ * Direct selector to the landingPage state domain
+ */
+const selectHomePageDomain = (state) => state.get('homePage');
+
+/**
+ * Other specific selectors
  */
 
- // export const selectHomePageDomain = () => (state) => state.get('HomePage');
 
+/**
+ * Default selector used by LandingPage
+ */
 
-export const selectArticlesDomain = (state) => state.get('articles');
-
-// const selectHomePage = () => createSelector(
-//     selectArticlesDomain(),
-//   (substate) => substate.toJS()
-// );
-
-export const selectArticles = () =>(
-  selectArticlesDomain(),
-  (articlesState) => {
-    console.log(articlesState)
-    const articles = articlesState.get('articles')
-    const isFetchingArticles = articlesState.get('isFetchingArticles')
-    return {
-      articles,
-      isFetchingArticles
-    }
-  }
+const makeSelectHomePage = () => createSelector(
+  selectHomePageDomain,
+  (substate) => substate.toJS()
 );
 
-export default selectArticles;
+export default makeSelectHomePage;
+export {
+  selectHomePageDomain,
+};

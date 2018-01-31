@@ -13,7 +13,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Logo from 'components/Logo';
 import ArticlesContainer from './ArticlesContainer';
-import Insta from 'components/Insta';
+import ArtistsContainer from './ArtistsContainer';
 import HeaderLondon from 'components/HeaderLondon';
 
 
@@ -28,7 +28,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Logo />
           </div>
           <div className="col-sm-8">
-            <Insta />
+            <ArtistsContainer />
           </div>
         </div>
         <ArticlesContainer />

@@ -7,7 +7,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Instafeed from 'react-instafeed';
-import { Switch } from 'antd';
 
 
 const artists = [
@@ -74,29 +73,9 @@ const ArtistName = styled.div`
 
 
 class Insta extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
-    super(props);
-    this.state = {
-      showArtists: true
-    }
-    this.toggleArtists = this.toggleArtists.bind(this);
-  }
-
-  toggleArtists(){
-    this.setState({ showArtists: !this.state.showArtists})
-    console.log(this.state)
-  }
-
-  shouldComponentUpdate(){
-    return false;
-  }
 
   render() {
     const instafeedTarget = 'instafeed';
-    let togglePhotos = '';
-    this.state.showArtists ? togglePhotos = 'hidden': togglePhotos;
-    let toggleNames = 'artist-name';
-    this.state.showArtists ?  toggleNames : toggleNames = 'show-artists'
     return (
       <div style={{width: '100%' }}>
         <div style={{width: '100%', margin: '1em auto' }}>
@@ -108,29 +87,26 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                     id={'instafeed-' + idx}
                     key={idx}
                     >
-                    <p className='artist-name' id={'artist-' + idx}>{artist.name}</p>
-                    <Instafeed
-                      limit='3'
-                      ref='instafeed'
-                      resolution='standard_resolution'
-                      sortBy='most-recent'
-                      target={'instafeed-' + idx}
-                      key={idx+1}
-                      template="<a href='{{link}}' target='_blank'>
-                                  <div>
-                                    <img class='item' src='{{image}}' />
-                                  </div>
-                                </a>"
-                      userId={artist.userId}
-                      clientId='da06fb6699f1497bb0d5d4234a50da75'
-                      accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
+                      <p className='artist-name' id={'artist-' + idx}>{artist.name}</p>
+                      <Instafeed
+                        limit='3'
+                        ref='instafeed'
+                        resolution='standard_resolution'
+                        sortBy='most-recent'
+                        target={'instafeed-' + idx}
+                        key={idx+1}
+                        template="<a href='{{link}}' target='_blank'>
+                                    <div>
+                                      <img class='item' src='{{image}}' />
+                                    </div>
+                                  </a>"
+                        userId={artist.userId}
+                        clientId='da06fb6699f1497bb0d5d4234a50da75'
+                        accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
                   </div>
                 )
           })}
                 </div>
-              <Switch
-                onChange={this.toggleArtists}
-              />
           </div>
         </div>
     );

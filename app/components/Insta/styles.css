@@ -11,6 +11,29 @@
     margin-top: 2%;
 }
 
+.masonry-names {
+    column-count: 4;
+    column-gap: .5em;
+    width: 95%;
+    max-height: 800px;
+    margin-top: 8%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.masonry-names2 {
+    column-count: 4;
+    column-gap: .5em;
+    width: 95%;
+    max-height: 800px;
+    margin-top: 8%;
+    margin-left: 5%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: visible;
+}
+
 .item-container {
   width: 100%;
   display: block;
@@ -24,6 +47,26 @@
   display: inline;
   margin: 0 0 1.2em;
   width: 100%;
+  color: black;
+}
+
+.item:hover {
+  color: #3D8EE2;
+  cursor: pointer;
+}
+
+.item-container-artist {
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: black;
+}
+
+.item-container-artist:hover {
+  color: #3D8EE2;
+  cursor: pointer;
 }
 
 .item-artist {
@@ -217,37 +260,43 @@
   opacity: 0;
 }
 
-.zurich {
-  width: 20px;
-  float: right;
-  margin-top: 1%;
-  margin-right: 1%;
-  cursor: pointer;
-  opacity: 1;
+.menu-logo {
   position: relative;
+  height: 35px;
+  padding-top: 1%;
+  padding-bottom: 2%;
 }
 
-.zurich-logo:hover .zurich {
+.menu {
+  width: 35px;
+  cursor: pointer;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  position: absolute;
+}
+
+.menu-logo:hover .menu {
   opacity: 0;
   cursor: pointer;
+  position: absolute;
 }
 
-.zurich-blue {
+.menu-blue {
   position: absolute;
-  width: 20px;
-  margin-top: 1%;
-  margin-right: 1%;
+  width: 35px;
+  left: 0;
+  right: 0;
   cursor: pointer;
-  margin-left: 96%;
   opacity: 0;
+  z-index: -1;
 }
 
-.zurich-logo:hover .zurich-blue {
+.menu-logo:hover .menu-blue {
   position: absolute;
-  width: 20px;
-  margin-top: 1%;
-  margin-right: 1%;
-  margin-left: 95%;
+  width: 35px;
+  left: 0;
+  right: 0;
   opacity: 1;
   cursor: pointer;
   z-index: 1;
@@ -255,5 +304,6 @@
 
 .ant-switch {
   display: block !important;
+  margin: 0 auto;
   width: 44px;
 }
