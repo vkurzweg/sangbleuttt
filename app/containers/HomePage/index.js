@@ -14,15 +14,7 @@ import { connect } from 'react-redux';
 import Logo from 'components/Logo';
 import ArticlesContainer from './ArticlesContainer';
 import Insta from 'components/Insta';
-// import { fetchArticles, setArticles } from './actions';
-// import createStructuredSelector from 'reselect';
-// import { bindActionCreators, compose } from 'redux';
-// import injectSaga from 'utils/injectSaga';
-// import injectReducer from 'utils/injectReducer';
-// import saga from './sagas';
-// import articlesReducer from '.../../reducers';
-// import selectArticles from './selectors';
-
+import HeaderLondon from 'components/HeaderLondon';
 
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -30,11 +22,12 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   render() {
     return (
       <div className="container-fluid" style={{ width: '100%' }}>
+        <HeaderLondon />
         <div className="row" style={{ width: '100%' }}>
-          <div className="col-sm-3">
+          <div className="col-sm-4">
             <Logo />
           </div>
-          <div className="col-sm-9">
+          <div className="col-sm-8">
             <Insta />
           </div>
         </div>

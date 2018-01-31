@@ -4,11 +4,11 @@
 }
 
 .masonry {
-    column-count: 9;
+    column-count: 8;
     column-gap: 1em;
     width: 100%;
-    max-height: 900px;
-    margin-top: 10%;
+    max-height: 800px;
+    margin-top: 2%;
 }
 
 .item-container {
@@ -35,15 +35,6 @@
   background-color: #FAFAFA;
 }
 
-/*.item-artist:hover {
-  opacity: .8;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0 0 1.2em;
-  width: 100%;
-  position: absolute;
-  background-color: #FAFAFA;
-}
 */
 .insta:hover {
   opacity: 0;
@@ -55,16 +46,22 @@
   cursor: pointer;
 }
 
-/*.artist-1, .artist-2, .artist-3, .artist-4, .artist-5, .artist-6, .artist-7, .artist-8, .artist-9, .artist-10, .artist-11, .artist-12, .artist-13 {
-  opacity: 0;
-}*/
-
 .artist-name {
   opacity: 0;
-  font-size: 24px;
+  font-size: 22px;
   overflow: visible;
   position: absolute;
   margin-top: -7%;
+  letter-spacing: .5px;
+}
+
+.show-artists {
+  opacity: 1;
+  font-size: 22px;
+  overflow: visible;
+  position: absolute;
+  margin-top: -7%;
+  letter-spacing: .5px;
 }
 
 /*.masonry:hover > p:hover {
@@ -216,29 +213,47 @@
   overflow: visible;
 }
 
-hide: {
-  fixed: true
-}
-
-/*.artist-name {
+.hidden {
   opacity: 0;
-  cursor: pointer;
-  margin: auto auto;
-  background-color: #FAFAFA;
 }
 
-.artist-name:hover {
-  opacity: 1;
+.zurich {
+  width: 20px;
+  float: right;
+  margin-top: 1%;
+  margin-right: 1%;
   cursor: pointer;
-}*/
-
-/*.insta {
   opacity: 1;
-  cursor: pointer;
+  position: relative;
 }
 
-.insta:hover {
+.zurich-logo:hover .zurich {
   opacity: 0;
   cursor: pointer;
 }
-*/
+
+.zurich-blue {
+  position: absolute;
+  width: 20px;
+  margin-top: 1%;
+  margin-right: 1%;
+  cursor: pointer;
+  margin-left: 96%;
+  opacity: 0;
+}
+
+.zurich-logo:hover .zurich-blue {
+  position: absolute;
+  width: 20px;
+  margin-top: 1%;
+  margin-right: 1%;
+  margin-left: 95%;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.ant-switch {
+  display: block !important;
+  width: 44px;
+}

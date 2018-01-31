@@ -7,6 +7,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Instafeed from 'react-instafeed';
+import { Switch } from 'antd';
+
 
 const artists = [
   {
@@ -72,12 +74,32 @@ const ArtistName = styled.div`
 
 
 class Insta extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props){
+    super(props);
+    this.state = {
+      showArtists: true
+    }
+    this.toggleArtists = this.toggleArtists.bind(this);
+  }
+
+  toggleArtists(){
+    this.setState({ showArtists: !this.state.showArtists})
+    console.log(this.state)
+  }
+
+  shouldComponentUpdate(){
+    return false;
+  }
 
   render() {
     const instafeedTarget = 'instafeed';
+    let togglePhotos = '';
+    this.state.showArtists ? togglePhotos = 'hidden': togglePhotos;
+    let toggleNames = 'artist-name';
+    this.state.showArtists ?  toggleNames : toggleNames = 'show-artists'
     return (
-      <div style={{width: '100%', marginTop: '2%', marginBottom: '10%' }}>
-        <div style={{width: '100%', margin: '2em auto' }}>
+      <div style={{width: '100%' }}>
+        <div style={{width: '100%', margin: '1em auto' }}>
           <div className='masonry'>
           { artists.map((artist, idx, artists) => {
               return (
@@ -88,7 +110,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                     >
                     <p className='artist-name' id={'artist-' + idx}>{artist.name}</p>
                     <Instafeed
-                      limit='4'
+                      limit='3'
                       ref='instafeed'
                       resolution='standard_resolution'
                       sortBy='most-recent'
@@ -106,6 +128,9 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                 )
           })}
                 </div>
+              <Switch
+                onChange={this.toggleArtists}
+              />
           </div>
         </div>
     );
