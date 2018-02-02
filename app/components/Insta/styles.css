@@ -7,29 +7,18 @@
     column-count: 8;
     column-gap: 1em;
     width: 100%;
-    max-height: 800px;
+    max-height: 90vh;
     margin-top: 2%;
+    padding-right: 5%;
 }
 
 .masonry-names {
-    column-count: 4;
-    column-gap: .5em;
-    width: 95%;
+    column-count: 3;
+    column-gap: 2em;
+    width: 100%;
     max-height: 800px;
-    margin-top: 8%;
+    margin-top: 3%;
     text-align: right;
-    white-space: nowrap;
-    overflow: visible;
-}
-
-.masonry-names2 {
-    column-count: 4;
-    column-gap: .5em;
-    width: 95%;
-    max-height: 800px;
-    margin-top: 8%;
-    margin-left: 5%;
-    text-align: left;
     white-space: nowrap;
     overflow: visible;
 }
@@ -37,11 +26,8 @@
 .item-container {
   width: 100%;
   display: block;
+  color: black;
 }
-
-/*.item-container:hover {
-  opacity: .3;
-}*/
 
 .item {
   display: inline;
@@ -58,10 +44,11 @@
 .item-container-artist {
   width: 100%;
   display: block;
-  font-size: 16px;
+  font-size: 20px;
   letter-spacing: 1px;
   text-decoration: none;
   color: black;
+  overflow: visible;
 }
 
 .item-container-artist:hover {
@@ -78,12 +65,6 @@
   background-color: #FAFAFA;
 }
 
-*/
-.insta:hover {
-  opacity: 0;
-  cursor: pointer;
-}
-
 .masonry:hover > .item-container {
   opacity: 0;
   cursor: pointer;
@@ -93,6 +74,7 @@
   opacity: 0;
   font-size: 22px;
   overflow: visible;
+  white-space: wrap;
   position: absolute;
   margin-top: -7%;
   letter-spacing: .5px;
@@ -107,15 +89,13 @@
   letter-spacing: .5px;
 }
 
-/*.masonry:hover > p:hover {
-  opacity: 1;
-}*/
-
-/*#instafeed-0, #instafeed-1, #instafeed-2, #instafeed-3, #instafeed-4, #instafeed-5,
-#instafeed-6, #instafeed-7, #instafeed-8, #instafeed-9, #instafeed-10, #instafeed-11,
-#instafeed-12, #instafeed-13 {
-  opacity: 1;
-}*/
+.likes {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  margin-top: -5px;
+}
 
 .masonry:hover > #instafeed-0:hover {
   opacity: 1;
@@ -256,6 +236,25 @@
   overflow: visible;
 }
 
+@keyframes fadeMe {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.insta-transition {
+  height: 80vh;
+  animation: fadeMe 2s;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
 .hidden {
   opacity: 0;
 }
@@ -300,6 +299,10 @@
   opacity: 1;
   cursor: pointer;
   z-index: 1;
+}
+
+.menu-logo {
+  width: 10vw;
 }
 
 .ant-switch {

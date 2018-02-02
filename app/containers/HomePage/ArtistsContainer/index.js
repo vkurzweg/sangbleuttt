@@ -11,7 +11,8 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import Insta from 'components/Insta';
 import Insta2 from 'components/Insta2';
-import { Switch, Icon } from 'antd';
+import Switch from 'antd/lib/switch';
+import Icon from 'antd/lib/icon';
 
 export class ArtistsContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
@@ -33,23 +34,25 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
     let artistsState = this.state.showArtists;
     artistsState ? artists = <Insta2 /> : artists = <Insta />
     return (
-      <div>
-        <Helmet>
-          <title>ArtistsContainer</title>
-          <meta name="description" content="Description of ArtistsContainer" />
-        </Helmet>
-        <div style={{ height: '85vh' }}>
-          {artists}
-        </div>
-        <div style={{ display: 'flex', width: '2em', marginLeft: '85%' }}>
-          <Icon
-            type="camera"
-            style={{ fontSize: '22px', marginRight: '33%' }}
-          />
-          <Switch
-            onChange={this.toggleArtists}
-          />
-          <p style={{ fontSize: '14px', letterSpacing: '1px', marginLeft: '33%' }}>artists</p>
+      <div className="container-fluid">
+        <div className="row">
+          <Helmet>
+            <title>ArtistsContainer</title>
+            <meta name="description" content="Description of ArtistsContainer" />
+          </Helmet>
+          <div>
+            {artists}
+          </div>
+          <div style={{ display: 'flex', width: '2em', marginLeft: '50%' }}>
+            <Icon
+              type="camera"
+              style={{ fontSize: '22px', marginRight: '33%' }}
+            />
+            <Switch
+              onChange={this.toggleArtists}
+            />
+            <p style={{ fontSize: '14px', letterSpacing: '1px', marginLeft: '33%' }}>artists</p>
+          </div>
         </div>
       </div>
     );

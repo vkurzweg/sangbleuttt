@@ -17,7 +17,7 @@ function Logo() {
       <div style={{ height: '250px', left: '50%'}}>
         <Image style={{ width: 'auto', height: '100%', display: 'block', margin: '0 auto', marginTop: '15%' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
       </div>
-      <div style={{ marginLeft: '5vh', fontSize: '15px', letterSpacing: '.4', marginTop: '13%' }}>
+      <div style={{ marginLeft: '7vh', fontSize: '15px', letterSpacing: '.4', color: 'black', marginTop: '13%' }}>
         <h3 style={{ fontSize: '15px', letterSpacing: '.4', fontWeight: 'normal' }}>Sang Bleu London,<br /> 29B Dalston Ln,<br />London E8 3DF</h3>
         <p style={{ marginTop: '4vh' }}>+44 20 8616 0840</p>
         <p style={{ marginTop: '4vh' }}>Open 11am — 7pm<br />7 days a week</p>

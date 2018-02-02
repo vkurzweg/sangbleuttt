@@ -29,14 +29,14 @@ const artists = [
     name: 'Eszter David',
     userId: '273712202'
   }, {
-    name: 'Tattoosforyourenemies',
-    userId: '1079415228'
-  }, {
     name: 'Javier Rodriguez',
     userId: '14376307'
   }, {
     name: 'Malwina',
     userId: '975175955'
+  }, {
+    name: 'Tattoosforyourenemies',
+    userId: '1079415228'
   }, {
     name: 'Wolfgang',
     userId: '1461855489'
@@ -77,8 +77,8 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     const instafeedTarget = 'instafeed';
     return (
-      <div style={{width: '100%' }}>
-        <div style={{width: '100%', margin: '1em auto' }}>
+      <div className='insta-transition'>
+        <div style={{maxWidth: '100%', margin: '1em auto' }}>
           <div className='masonry'>
           { artists.map((artist, idx, artists) => {
               return (
@@ -97,7 +97,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                         key={idx+1}
                         template="<a href='{{link}}' target='_blank'>
                                     <div>
-                                      <img class='item' src='{{image}}' />
+                                      <img class='item img' src='{{image}}' />
                                     </div>
                                   </a>"
                         userId={artist.userId}
@@ -140,3 +140,6 @@ export default Insta;
 //       </div>
 //     </div>
 //   </div>
+
+// <p class='likes'><img src='http://res.cloudinary.com/kurzweg/image/upload/v1517464456/heart.png' alt='black heart' style='width:15px;padding-right:3%;padding-bottom:2%' />{{likes}}</p>
+

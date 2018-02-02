@@ -102,8 +102,8 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     const instafeedTarget = 'instafeed';
     return (
-      <div style={{width: '100%' }}>
-        <div style={{width: '95%', margin: '1em auto', paddingTop: '8vh' }}>
+      <div className='insta-transition'>
+        <div style={{width: '100%', margin: '0 auto', paddingTop: '20vh' }}>
           <div className='masonry-names'>
           { artists1.map((artist, idx, artists) => {
               return (
@@ -119,7 +119,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
           })}
                 </div>
 
-          <div className='masonry-names2' style={{ textAlign: 'center !important' }}>
+          <div className='masonry-names' style={{ textAlign: 'center !important' }}>
           { artists2.map((artist, idx, artists) => {
               return (
                   <div
@@ -149,7 +149,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
           })}
                 </div>
 
-          <div className='masonry-names2'>
+          <div className='masonry-names'>
           { artists4.map((artist, idx, artists) => {
               return (
                   <div
