@@ -11,11 +11,11 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import Logo from 'components/Logo';
+import Logo from 'components/london/Logo';
 import ArticlesContainer from './ArticlesContainer';
 import ArtistsContainer from './ArtistsContainer';
-import HeaderLondon from 'components/HeaderLondon';
-import IntroCopy from 'components/IntroCopy';
+import HeaderLondon from 'components/london/HeaderLondon';
+import IntroCopy from 'components/london/IntroCopy';
 
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -23,7 +23,8 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   render() {
     return (
       <div className="container-fluid" style={{ width: '100%' }}>
-        <div className="row" style={{ paddingTop: '3%' }}>
+        <HeaderLondon />
+        <div className="row" style={{ paddingTop: '2%' }}>
           <div className="col-sm-4">
             <Logo />
           </div>

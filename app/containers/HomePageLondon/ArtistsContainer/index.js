@@ -9,8 +9,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
-import Insta from 'components/Insta';
-import Insta2 from 'components/Insta2';
+import Insta from 'components/london/Insta';
+import Insta2 from 'components/london/Insta2';
 import Switch from 'antd/lib/switch';
 import Icon from 'antd/lib/icon';
 
@@ -43,15 +43,15 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
           <div>
             {artists}
           </div>
-          <div style={{ display: 'flex', width: '2em', marginLeft: '50%' }}>
+          <div style={{ display: 'flex', width: '2.5em', marginLeft: '50%' }}>
             <Icon
               type="camera"
-              style={{ fontSize: '22px', marginRight: '33%' }}
+              style={{ fontSize: '24px', marginRight: '33%' }}
             />
             <Switch
               onChange={this.toggleArtists}
             />
-            <p style={{ fontSize: '14px', letterSpacing: '1px', marginLeft: '33%' }}>artists</p>
+            <p style={{ fontSize: '16px', letterSpacing: '1px', marginLeft: '33%', textTransform: 'uppercase', fontWeight: 'bold' }}>artists</p>
           </div>
         </div>
       </div>
