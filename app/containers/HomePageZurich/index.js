@@ -35,7 +35,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </div>
           </div>
           <IntroCopy />
-          <ArticlesContainer />
         </div>
 
       </div>

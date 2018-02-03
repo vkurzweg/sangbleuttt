@@ -43,16 +43,6 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
           <div>
             {artists}
           </div>
-          <div style={{ display: 'flex', width: '2.5em', marginLeft: '50%', paddingTop: '2%' }}>
-            <Icon
-              type="camera"
-              style={{ fontSize: '24px', marginRight: '33%' }}
-            />
-            <Switch
-              onChange={this.toggleArtists}
-            />
-            <p style={{ fontSize: '16px', letterSpacing: '1px', marginLeft: '33%', textTransform: 'uppercase', fontWeight: 'bold' }}>artists</p>
-          </div>
         </div>
       </div>
     );

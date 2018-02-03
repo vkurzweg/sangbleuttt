@@ -8,23 +8,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import LondonLanding from 'components/landing/LondonLanding';
+import ZurichLanding from 'components/landing/ZurichLanding';
 
-import injectSaga from 'utils/injectSaga';
-import injectReducer from 'utils/injectReducer';
-import makeSelectLandingPage from './selectors';
-import reducer from './reducer';
-import saga from './saga';
 
 export class LandingPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
+      <div className="container-fluid" style={{ backgroundColor: '#FFFFFF', paddingLeft: '0' }}>
         <Helmet>
           <title>LandingPage</title>
           <meta name="description" content="Description of LandingPage" />
         </Helmet>
+
+        <div className="row" style={{ }}>
+          <div className="col-sm-6" style={{ paddingRight: '0', paddingBottom: '0' }}>
+            <ZurichLanding />
+          </div>
+          <h1 style={{ position: 'absolute', overflow: 'visible', whiteSpace: 'nowrap', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '44px', letterSpacing: '.7', marginTop: '40vh', marginLeft: '41.8vw' }}>Sang Bleu</h1>
+          <div className="col-sm-6" style={{ paddingLeft: '0' }}>
+            <LondonLanding />
+          </div>
+        </div>
       </div>
     );
   }
@@ -34,9 +40,6 @@ LandingPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = createStructuredSelector({
-  landingpage: makeSelectLandingPage(),
-});
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -44,13 +47,8 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const withConnect = connect(mapStateToProps, mapDispatchToProps);
-
-const withReducer = injectReducer({ key: 'landingPage', reducer });
-const withSaga = injectSaga({ key: 'landingPage', saga });
+const withConnect = connect(null, mapDispatchToProps);
 
 export default compose(
-  withReducer,
-  withSaga,
   withConnect,
 )(LandingPage);
