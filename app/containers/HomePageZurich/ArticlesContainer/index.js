@@ -46,7 +46,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-        <div className="container-fluid" style={{ margin: '1em auto', marginTop: '15%' }}>
+        <div className="container-fluid" style={{ margin: '1em auto', marginTop: '5%' }}>
           <div className="row" style={{ margin: '1em auto', maxHeight: '600px' }}>
             <div className="col-sm-9">
               <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'bold', color: '#FAFAFA', fontSize: '56px', textTransform: 'uppercase', position: 'absolute', bottom: '0', paddingBottom: '15%', paddingLeft: '5%' }}>{article1.title.value[0].text}</h3>

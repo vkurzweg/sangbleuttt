@@ -33,6 +33,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           </div>
         </div>
         <IntroCopy />
+        <ArticlesContainer />
       </div>
     );
   }
