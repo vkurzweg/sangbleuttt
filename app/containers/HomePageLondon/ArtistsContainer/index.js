@@ -32,7 +32,7 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
   render() {
     let artists = <p style={{ textAlign: 'center', margin: 'auto auto'}}>Loading...</p>
     let artistsState = this.state.showArtists;
-    artistsState ? artists = <Insta2 /> : artists = <InstaGrid />
+    artistsState ? artists = <Insta2 /> : artists = <Insta />
     return (
       <div style={{ maxWidth: '100%', marginRight: '2%', marginLeft: '2%' }}>
         <Helmet>

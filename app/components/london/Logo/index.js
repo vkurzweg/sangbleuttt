@@ -36,7 +36,7 @@ function Logo() {
       <div className="row" style={{ marginTop: '3%' }}>
         <div className="col-sm-2">
           <div style={{ height: '100px', left: '50%'}}>
-            <Image style={{ position: 'absolute', width: 'auto', height: '100%', display: 'block', margin: '0 auto', marginTop: '-10%', marginLeft: '15%' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+            <Image style={{ position: 'absolute', width: 'auto', height: '100%', display: 'block', margin: '0 auto', marginTop: '-10%', marginLeft: '15%', zIndex: '3' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
           </div>
         </div>
         <div className="col-sm-2">

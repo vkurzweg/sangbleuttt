@@ -11,17 +11,8 @@ import { Image } from 'cloudinary-react';
 
 function HeaderLondon() {
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-sm-2"></div>
-        <div className="col-sm-2">
-          <h1 style={{ position: 'absolute', overflow: 'visible', whiteSpace: 'nowrap', marginTop: '10%', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '32px', letterSpacing: '.3', paddingTop: '2%' }}>Sang Bleu London</h1>
-        </div>
-        <div className="col-sm-2"></div>
-        <div className="col-sm-2"></div>
-        <div className="col-sm-2"></div>
-        <div className="col-sm-2"></div>
-      </div>
+    <div style={{ position: 'fixed', top: '0', display: 'block', backgroundColor: '#FFFFFF', zIndex: '3', width: '100%' }}>
+      <h1 style={{ overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '32px', letterSpacing: '.3', paddingTop: '1%', paddingBottom: '1%', marginBottom: '0', marginLeft: '17.5vw' }}>Sang Bleu London</h1>
     </div>
   );
 }

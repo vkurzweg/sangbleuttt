@@ -1,3 +1,15 @@
+.hover-item {
+  display: inline;
+  max-width: 70%;
+  max-height: 70%;
+  margin-bottom: 5%;
+}
+
+.hover-name {
+  display: inline;
+  position: absolute;
+}
+
 .wrapper {
     width: 98%;
     margin: 1em auto;
@@ -262,7 +274,6 @@ img {
   height: auto;
   object-fit: contain;
 }
-
 .hidden {
   opacity: 0;
 }

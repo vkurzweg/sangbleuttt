@@ -22,7 +22,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <HeaderLondon />
         <Logo />
         <ArtistsContainer />

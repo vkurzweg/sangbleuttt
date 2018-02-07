@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import Insta from 'components/zurich/Insta';
 import Insta2 from 'components/zurich/Insta2';
+import InstaHover from 'components/zurich/InstaHover';
 import Switch from 'antd/lib/switch';
 import Icon from 'antd/lib/icon';
 
@@ -32,7 +33,7 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
   render() {
     let artists = <p style={{ textAlign: 'center', margin: 'auto auto'}}>Loading...</p>
     let artistsState = this.state.showArtists;
-    artistsState ? artists = <Insta2 /> : artists = <Insta />
+    artistsState ? artists = <Insta2 /> : artists = <InstaHover />
     return (
       <div className="container-fluid">
         <div className="row">
