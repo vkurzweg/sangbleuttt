@@ -97,7 +97,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                         key={idx+1}
                         template="<a href='{{link}}' target='_blank'>
                                     <div>
-                                      <img class='item img' src='{{image}}' />
+                                      <img class='item' src='{{image}}' />
                                     </div>
                                   </a>"
                         userId={artist.userId}

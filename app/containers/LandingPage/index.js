@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import LondonLanding from 'components/landing/LondonLanding';
 import ZurichLanding from 'components/landing/ZurichLanding';
+import ThreeTest from 'components/landing/ThreeTest';
 
 
 export class LandingPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -31,6 +32,7 @@ export class LandingPage extends React.Component { // eslint-disable-line react/
             <LondonLanding />
           </div>
         </div>
+
       </div>
     );
   }

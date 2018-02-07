@@ -22,16 +22,10 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   render() {
     return (
-      <div className="container-fluid" style={{ width: '100%' }}>
+      <div style={{ width: '100%' }}>
         <HeaderLondon />
-        <div className="row" style={{ paddingTop: '2%' }}>
-          <div className="col-sm-4">
-            <Logo />
-          </div>
-          <div className="col-sm-8">
-            <ArtistsContainer />
-          </div>
-        </div>
+        <Logo />
+        <ArtistsContainer />
         <IntroCopy />
         <ArticlesContainer />
       </div>

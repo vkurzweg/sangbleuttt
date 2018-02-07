@@ -48,19 +48,19 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Helmet>
         <div className="container-fluid" style={{ margin: '1em auto', marginTop: '5%', marginBottom: '5%' }}>
           <div className="row" style={{ margin: '2em auto', maxHeight: '60vh', overflow: 'hidden' }}>
-            <div className="col-sm-9" style={{ height: '60vh' }}>
+            <div className="col-sm-9" style={{ height: '60vh', paddingRight: '0px' }}>
               <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'bold', color: '#FAFAFA', fontSize: '56px', textTransform: 'uppercase', position: 'absolute', bottom: '0', marginBottom: '8%', paddingLeft: '5%' }}>{article1.title.value[0].text}</h3>
               <div style={{ position: 'absolute', bottom: '0', paddingBottom: '3%', color: '#FAFAFA', fontSize: '30px', paddingLeft: '5%' }}>{article1.snippet_summary.value}</div>
-              <img src={article1.image.value.main.url} style={{ width: '100%', bottom: '0' }} />
+              <img src={article1.image.value.main.url} style={{ width: '100%', bottom: '0', marginRight: '0px' }} />
             </div>
-            <div className="col-sm-3" style={{ height: '60vh' }}>
+            <div className="col-sm-3" style={{ height: '60vh', paddingLeft: '0px' }}>
               <div style={{ maxHeight: '50%' }}>
                 <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', paddingTop: '5%' }}>{article2.title.value[0].text}</h3>
-                <img src={article2.image.value.main.url} style={{ width: '98%', display: 'block', margin: '0 auto' }}/>
+                <img src={article2.image.value.main.url} style={{ marginLeft: '0px', width: '98%', display: 'block', margin: '0 auto' }}/>
               </div>
               <div style={{ maxHeight: '50%' }}>
                 <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', bottom: '0', paddingBottom: '2%', width: '100%' }}>{article3.title.value[0].text}</h3>
-                <img src={article3.image.value.main.url} style={{ width: '98%', display: 'block', margin: '0 auto' }} />
+                <img src={article3.image.value.main.url} style={{ marginLeft: '0px', width: '98%', display: 'block', margin: '0 auto' }} />
               </div>
             </div>
           </div>

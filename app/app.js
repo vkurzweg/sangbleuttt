@@ -37,7 +37,10 @@ import '!file-loader?name=[name].[ext]!./manifest.json';
 import 'file-loader?name=[name].[ext]!./.htaccess';
 import '!!style-loader!css-loader!../node_modules/bootstrap/dist/css/bootstrap.css';
 import '!!style-loader!css-loader!../node_modules/antd/dist/antd.css';
+// import '!!style-loader!css-loader!../node_modules/react-grid-layout/css/styles.css';
+import '!!style-loader!css-loader!../node_modules/react-resizable/css/styles.css';
 import '!!style-loader!css-loader!../app/components/london/Insta/styles.css';
+import '!!style-loader!css-loader!../app/components/london/InstaGrid/styles.css';
 
 /* eslint-enable import/no-unresolved, import/extensions */
 

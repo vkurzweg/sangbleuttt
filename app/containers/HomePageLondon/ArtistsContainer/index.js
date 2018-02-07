@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import Insta from 'components/london/Insta';
-import Insta2 from 'components/london/Insta2';
+import InstaGrid from 'components/london/InstaGrid';
 import Switch from 'antd/lib/switch';
 import Icon from 'antd/lib/icon';
 
@@ -32,17 +32,15 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
   render() {
     let artists = <p style={{ textAlign: 'center', margin: 'auto auto'}}>Loading...</p>
     let artistsState = this.state.showArtists;
-    artistsState ? artists = <Insta2 /> : artists = <Insta />
+    artistsState ? artists = <Insta2 /> : artists = <InstaGrid />
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <Helmet>
-            <title>ArtistsContainer</title>
-            <meta name="description" content="Description of ArtistsContainer" />
-          </Helmet>
-          <div>
-            {artists}
-          </div>
+      <div style={{ maxWidth: '100%', marginRight: '2%', marginLeft: '2%' }}>
+        <Helmet>
+          <title>ArtistsContainer</title>
+          <meta name="description" content="Description of ArtistsContainer" />
+        </Helmet>
+        <div>
+          {artists}
         </div>
       </div>
     );
