@@ -11,7 +11,7 @@ import { Image } from 'cloudinary-react';
 
 function HeaderLondon() {
   return (
-    <div style={{ position: 'fixed', top: '0', display: 'block', backgroundColor: '#FFFFFF', zIndex: '3', width: '100%' }}>
+    <div style={{ position: 'fixed', top: '0', display: 'block', zIndex: '3', width: '100%' }}>
       <h1 style={{ overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '32px', letterSpacing: '.3', paddingTop: '1%', paddingBottom: '1%', marginBottom: '0', marginLeft: '17.5vw' }}>Sang Bleu London</h1>
     </div>
   );

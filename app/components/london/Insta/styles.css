@@ -758,6 +758,18 @@ display:none;
   margin: 0 auto;
 }
 
+.article-link:after .article-image {
+  display: none;
+}
+
+.article-link:after {
+  display: none;
+}
+
+.article-title:after .article-link {
+  display: none;
+}
+
 .article-link:hover .article-title {
   position: relative;
   opacity: .8;
