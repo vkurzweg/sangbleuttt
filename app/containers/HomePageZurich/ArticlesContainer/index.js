@@ -46,24 +46,23 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-        <div className="container-fluid" style={{ margin: '1em auto', marginTop: '5%' }}>
-          <div className="row" style={{ margin: '1em auto', maxHeight: '600px' }}>
-            <div className="col-sm-9">
-              <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'bold', color: '#FAFAFA', fontSize: '56px', textTransform: 'uppercase', position: 'absolute', bottom: '0', paddingBottom: '15%', paddingLeft: '5%' }}>{article1.title.value[0].text}</h3>
-              <div style={{ position: 'absolute', bottom: '0', paddingBottom: '7%', color: '#FAFAFA', fontSize: '30px', paddingLeft: '5%' }}>{article1.snippet_summary.value}</div>
-              <img src={article1.image.value.main.url} style={{ width: '100%' }} />
+
+          <div style={{ margin: '1em auto', marginTop: '5%' }}>
+            <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'bold', color: '#FAFAFA', fontSize: '56px', textTransform: 'uppercase', position: 'absolute', bottom: '0', paddingBottom: '15%', paddingLeft: '5%' }}>
+              {article1.title.value[0].text}
+            </h3>
+            <div style={{ position: 'absolute', bottom: '0', paddingBottom: '7%', color: '#FAFAFA', fontSize: '30px', paddingLeft: '5%' }}>
+              {article1.snippet_summary.value}
             </div>
-            <div className="col-sm-3">
-              <div>
-                <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', paddingTop: '5%' }}>{article2.title.value[0].text}</h3>
-                <img src={article2.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }}/>
-              </div>
-              <div>
-                <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', paddingTop: '70%' }}>{article3.title.value[0].text}</h3>
-                <img src={article3.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }} />
-              </div>
-            </div>
-          </div>
+            <img src={article1.image.value.main.url} style={{ width: '100%' }} />
+            <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', paddingTop: '5%' }}>
+              {article2.title.value[0].text}
+            </h3>
+            <img src={article2.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }}/>
+            <h3 style={{ textAlign: 'center', fontFamily: 'Helvetica', fontWeight: 'normal', textTransform: 'uppercase', position: 'absolute', fontWeight: 'bold', color: '#FAFAFA', fontSize: '38px', paddingTop: '70%' }}>
+              {article3.title.value[0].text}
+            </h3>
+            <img src={article3.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }} />
         </div>
       </div>
     )} else {

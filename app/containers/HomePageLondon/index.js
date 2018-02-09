@@ -16,9 +16,33 @@ import ArticlesContainer from './ArticlesContainer';
 import ArtistsContainer from './ArtistsContainer';
 import HeaderLondon from 'components/london/HeaderLondon';
 import IntroCopy from 'components/london/IntroCopy';
-
+import Calendar from 'components/london/CalendarLondon';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props){
+    super(props);
+    this.state = {
+      transform: null
+    }
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount() {
+      window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event){
+      let scrollTop = event.srcElement.body.scrollTop,
+          itemTranslate = Math.min(0, scrollTop/3 - 60);
+
+      this.setState({
+        transform: itemTranslate
+      })
+  }
 
   render() {
     return (

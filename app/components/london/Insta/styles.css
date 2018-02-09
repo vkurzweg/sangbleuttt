@@ -748,3 +748,35 @@ display:none;
  animation-play-state: paused;
 }
 
+.article-image {
+  display: none;
+}
+
+.article-link {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.article-link:hover .article-title {
+  position: relative;
+  opacity: .8;
+  z-index: 3;
+  color: white;
+}
+
+.article-link:hover {
+  position: relative;
+}
+
+.article-link:hover .article-image {
+  position: absolute;
+  display: inline-block;
+  height: 100vh;
+  width: auto;
+  z-index: 2;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+

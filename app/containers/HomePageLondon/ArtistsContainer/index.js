@@ -30,9 +30,6 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
   }
 
   render() {
-    let artists = <p style={{ textAlign: 'center', margin: 'auto auto'}}>Loading...</p>
-    let artistsState = this.state.showArtists;
-    artistsState ? artists = <Insta2 /> : artists = <Insta />
     return (
       <div style={{ maxWidth: '100%', marginRight: '2%', marginLeft: '2%' }}>
         <Helmet>
@@ -40,7 +37,7 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
           <meta name="description" content="Description of ArtistsContainer" />
         </Helmet>
         <div>
-          {artists}
+          <Insta />
         </div>
       </div>
     );
@@ -64,13 +61,7 @@ export default compose(
   withConnect,
 )(ArtistsContainer);
 
-// <div style={{ display: 'flex', width: '2.5em', marginLeft: '50%' }}>
-//   <Icon
-//     type="camera"
-//     style={{ fontSize: '24px', marginRight: '33%' }}
-//   />
-//   <Switch
-//     onChange={this.toggleArtists}
-//   />
-//   <p style={{ fontSize: '16px', letterSpacing: '1px', marginLeft: '33%', textTransform: 'uppercase', fontWeight: 'bold' }}>artists</p>
-// </div>
+// let artists = <p style={{ textAlign: 'center', margin: 'auto auto'}}>Loading...</p>
+// let artistsState = this.state.showArtists;
+// artistsState ? artists = <Insta2 /> : artists = <Insta />
+

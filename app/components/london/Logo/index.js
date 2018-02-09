@@ -17,7 +17,7 @@ const Button = styled.button`
   padding: .75em;
   display: block;
   margin: 0 auto;
-  margin-top: 13%;
+  margin-top: 15%;
   white-space: no-wrap;
   margin-left: 20%;
  &:hover, &:active, &:focus {
