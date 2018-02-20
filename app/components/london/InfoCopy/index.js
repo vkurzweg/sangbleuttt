@@ -33,7 +33,7 @@ const Button = styled.button`
 function Logo() {
   return (
     <div className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black' }}>
-      <div className="row" style={{ fontSize: '1.3vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '6vh', marginLeft: '15vw' }}>
+      <div className="row" style={{ fontSize: '1.2vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '6vh', marginLeft: '15vw' }}>
         <div className="col-md-2">
           <div style={{ color: 'black', marginTop: '13%' }}>
             <p style={{ fontFamily: 'SangBleu', letterSpacing: '.4', fontWeight: 'normal', color: 'black' }}>29B Dalston Ln,<br />London E8 3DF</p>
@@ -46,7 +46,6 @@ function Logo() {
           <p style={{fontFamily: 'SangBleu',  marginTop: '13%' }}>Open 11am — 7pm<br />7 days a week</p>
         </div>
         <div className="col-md-2">
-          <Button className="btn btn-default">Book an Appointment</Button>
         </div>
       </div>
     </div>
@@ -58,3 +57,6 @@ Logo.propTypes = {
 };
 
 export default Logo;
+
+// <Button className="btn btn-default">Book an Appointment</Button>
+

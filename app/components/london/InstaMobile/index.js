@@ -63,7 +63,7 @@ class InstaMobile extends React.Component { // eslint-disable-line react/prefer-
     const instafeedTarget = 'instafeed';
     return (
         <div className='wrapper-mobile'>
-          <hr />
+          <hr style={{ backgroundColor: '#3D8EE2' }} />
           <div className='masonry-mobile'>
           { artists.map((artist, idx, artists) => {
               return (
@@ -90,7 +90,7 @@ class InstaMobile extends React.Component { // eslint-disable-line react/prefer-
                         accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
                   </div>
                   <p className='artist-name-mobile' id={'artist-' + idx}>{artist.name}</p>
-                  <hr style={{  }} />
+                  <hr style={{ backgroundColor: '#3D8EE2' }} />
                 </div>
                 )
           })}

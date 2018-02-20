@@ -15,9 +15,10 @@ import MediaQuery from 'react-responsive';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import ArticlesContainer from './ArticlesContainer';
-import HeaderLondon from 'components/london/HeaderLondon';
+import Nav from 'components/london/Nav';
 import HeaderMobile from 'components/london/HeaderMobile';
-import IntroCopy from 'components/london/IntroCopy';
+import About from 'components/london/About';
+import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import InstaMobile from 'components/london/InstaMobile';
 import Delay from 'react-delay';
@@ -53,11 +54,11 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <MediaQuery minWidth={768}>
           <div>
-            <HeaderLondon />
+            <Nav/>
             <InfoCopy />
             <Insta />
             <Delay wait={400}>
-              <IntroCopy />
+              <About />
             </Delay>
           </div>
         </MediaQuery>
@@ -66,6 +67,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <HeaderMobile />
             <InfoCopyMobile />
             <InstaMobile />
+            <Delay wait={400}>
+              <AboutMobile />
+            </Delay>
           </div>
         </MediaQuery>
       </div>

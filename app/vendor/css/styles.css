@@ -243,7 +243,6 @@
     animation: fadeMe 2s;
     width: 95%;
     margin: 1em auto;
-    padding-bottom: 5vh;
 }
 
 .masonry {
@@ -348,12 +347,34 @@ hr {
   display: flex;
   align-items: center;
   break-inside: avoid-column;
+  height: auto;
+  padding: 1%;
+}
+
+.logo-london-blue {
+  display: none;
 }
 
 .logo-london:hover {
   color: #3D8EE2;
   cursor: pointer;
 }
+
+/*.masonry:hover .logo-london {
+  display: none;
+}
+
+.masonry:hover .logo-london-blue {
+  display: inline-block;
+  margin: 0 0 1.2em;
+  width: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  break-inside: avoid-column;
+  height: auto;
+  padding: 1%;
+}*/
 
 .masonry:hover > .item-container {
   opacity: 0;
@@ -367,7 +388,10 @@ hr {
 .artist-name {
   opacity: 0;
   font-size: 1.3vw;
-  font-family: SuisseRegular;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
   overflow: visible;
   white-space: wrap;
   position: relative;
@@ -382,7 +406,7 @@ hr {
 .artist-name-mobile {
   width: 100%;
   text-align: center;
-  font-size: 3vw;
+  font-size: 3.2vw;
   font-family: Helvetica;
   overflow: visible;
   font-weight: bold;

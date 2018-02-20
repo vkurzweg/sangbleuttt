@@ -36,7 +36,7 @@ const artists = [
     name: 'Malwina',
     userId: '975175955'
   }, {
-    name: 'Tattoosforyourenemies',
+    name: 'Tattoos For Your Enemies',
     userId: '1079415228'
   }, {
     name: 'Wolfgang',
@@ -66,7 +66,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
         <div className='wrapper'>
           <div className='masonry'>
           <div className='item-container-logo'>
-            <Image className='logo-london' style={{ padding: '1em', width: '100%', height: 'auto', display: 'block', margin: '0 auto' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+            <Image className='logo-london' cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
           </div>
           { artists.map((artist, idx, artists) => {
               return (
