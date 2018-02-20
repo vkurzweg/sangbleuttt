@@ -16,6 +16,7 @@ import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import ArticlesContainer from './ArticlesContainer';
 import Nav from 'components/london/Nav';
+import NavMobile from 'components/london/NavMobile';
 import HeaderMobile from 'components/london/HeaderMobile';
 import About from 'components/london/About';
 import AboutMobile from 'components/london/AboutMobile';
@@ -64,7 +65,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
         </MediaQuery>
         <MediaQuery maxWidth={767}>
           <div>
-            <HeaderMobile />
+            <NavMobile />
             <InfoCopyMobile />
             <InstaMobile />
             <Delay wait={400}>

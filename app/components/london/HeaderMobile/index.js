@@ -11,7 +11,7 @@ import { Image } from 'cloudinary-react';
 
 function HeaderMobile() {
   return (
-    <div style={{ backgroundColor: 'black', position: 'fixed', top: '0', display: 'block', zIndex: '3', width: '100%' }}>
+    <div style={{ height: '50px !important', backgroundColor: 'black', position: 'fixed', top: '0', display: 'block', zIndex: '3', width: '100%' }}>
       <h1 style={{ color: '#FFFFFF', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '4.5vw', letterSpacing: '1px', paddingTop: '2vh', marginBottom: '2vh' }}>Sang Bleu London</h1>
     </div>
   );

@@ -116,14 +116,14 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     (this.state.showMenu) ? display = 'block' : display = 'none';
     const brand =
       <div>
-          <h1 style={{ marginLeft: '11.5vw', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2.3vw', letterSpacing: '1px', padding: '1%', marginBottom: '0' }}>Sang Bleu London</h1>
-          <h1 style={{ marginLeft: '11.5vw', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2.3vw', letterSpacing: '1px', padding: '1%', marginBottom: '0' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}>Sang Bleu London</h1>
+          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
       </div>
     return (
       <div style={{ position: 'fixed', width: '100%', zIndex: '1', top: '0' }}>
         <AppBar
             title={brand}
-            style={{ width: '100%', backgroundColor: 'white' }}
+            style={{ position: 'fixed', width: '100%', backgroundColor: 'white' }}
             iconElementLeft={<IconButton><NavigationMenu color={'black'} /></IconButton>}
             onLeftIconButtonTouchTap={this.handleToggle}
             zDepth={0}

@@ -391,7 +391,6 @@ hr {
   font-family: Helvetica;
   text-transform: uppercase;
   color: black;
-  font-weight: bold;
   overflow: visible;
   white-space: wrap;
   position: relative;
@@ -1089,5 +1088,3 @@ display:none;
   margin: auto;
   top: 0; left: 0; bottom: 0; right: 0;
 }
-
-

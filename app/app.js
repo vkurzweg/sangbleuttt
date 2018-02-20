@@ -59,15 +59,24 @@ const history = createHistory();
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
+
+
 const render = (messages) => {
   ReactDOM.render(
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
           <App />
         </ConnectedRouter>
       </LanguageProvider>
-    </Provider>,
+    </Provider>
+    </MuiThemeProvider>,
     MOUNT_NODE
   );
 };
