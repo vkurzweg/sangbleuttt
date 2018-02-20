@@ -17,6 +17,8 @@ import ArtistsContainer from './ArtistsContainer';
 import HeaderLondon from 'components/london/HeaderLondon';
 import IntroCopy from 'components/london/IntroCopy';
 import Calendar from 'components/london/CalendarLondon';
+import Insta from 'components/london/Insta';
+import Delay from 'react-delay';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
@@ -49,9 +51,10 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <HeaderLondon />
         <Logo />
-        <ArtistsContainer />
-        <IntroCopy />
-        <ArticlesContainer />
+        <Insta />
+        <Delay wait={1000}>
+          <IntroCopy />
+        </Delay>
       </div>
     );
   }

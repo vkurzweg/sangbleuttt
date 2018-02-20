@@ -17,6 +17,14 @@ import Modal from 'react-modal';
 import Icon from 'antd/lib/icon';
 
 
+const StyledImg = styled.img`
+    padding: 1em;
+    padding-top: 3em;
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+`;
+
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
     super(props);
@@ -82,24 +90,24 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article1image2;
     let article1image3;
     let article1image4;
-    article1.image2 ? article1image2 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
-    article1.image3 ? article1image3 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
-    article1.image4 ? article1image4 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
+    article1.image2 ? article1image2 = <StyledImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
+    article1.image3 ? article1image3 = <StyledImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
+    article1.image4 ? article1image4 = <StyledImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
     let article2image2;
     let article2image3;
     let article2image4;
-    article2.image2 ? article2image2 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
-    article2.image3 ? article2image3 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
-    article2.image4 ? article2image4 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
+    article2.image2 ? article2image2 = <StyledImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
+    article2.image3 ? article2image3 = <StyledImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
+    article2.image4 ? article2image4 = <StyledImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
     let article3image2;
     let article3image3;
     let article3image4;
-    article3.image2 ? article3image2 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
-    article3.image3 ? article3image3 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
-    article3.image4 ? article3image4 = <img style={{ padding: '1em', paddingTop: '3em', width: '55%', display: 'block', margin: '0 auto'}} src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
+    article3.image2 ? article3image2 = <StyledImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
+    article3.image3 ? article3image3 = <StyledImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
+    article3.image4 ? article3image4 = <StyledImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
     let articlesNum = this.state.docs.length;
     let link;
-    articlesNum > 3 ? link = <a href="#" style={{ textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
+    articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
 
     return (
       <div>
@@ -112,10 +120,10 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase', fontSize: '20px', letterSpacing: '.3', marginLeft: '2%' }}>blog</h3>
 
           <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-            <h3 className="article-title" style={{ marginBottom: '0', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
+            <h3 className="article-title" style={{ marginBottom: '0', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '46px', letterSpacing: '3px', textTransform: 'uppercase' }}>
               {article1.title.value[0].text}
             </h3>
-            <div className="article-title" style={{ fontSize: '20px', textAlign: 'center', marginBottom: '5%', letterSpacing: '2px' }}>
+            <div className="article-title" style={{ fontFamily: 'serif', fontSize: '30px', textTransform: 'uppercase', fontWeight: 'bold', marginTop: '3%', textAlign: 'center', marginBottom: '5%', letterSpacing: '2px' }}>
               {article1.subhead.value}
             </div>
             <img className="article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />

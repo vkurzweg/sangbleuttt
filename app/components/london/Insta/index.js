@@ -7,6 +7,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Instafeed from 'react-instafeed';
+import { Image } from 'cloudinary-react';
 
 
 const artists = [
@@ -52,34 +53,21 @@ const artists = [
   }
 ]
 
-// const StyledInstafeed = styled(Instafeed)`
-//   width: 100%;
-//   &:hover {
-//     opacity: 0;
-//     cursor: pointer;
-//   }
-// `;
-
-const ArtistName = styled.div`
-  position: absolute;
-  margin: 0 auto;
-  opacity: 0;
-  background-color: #FAFAFA;
-  &:hover {
-    opacity: .8;
-    cursor: pointer;
-  }
-`;
-
 
 class Insta extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+  shouldComponentUpdate() {
+    return false;
+  }
 
   render() {
     const instafeedTarget = 'instafeed';
     return (
-      <div className='insta-transition'>
-        <div style={{maxWidth: '100%', margin: '1em auto' }}>
+        <div className='wrapper'>
           <div className='masonry'>
+          <div className='item-container-logo'>
+            <Image className='logo-london' style={{ padding: '1em', width: '100%', height: 'auto', display: 'block', margin: '0 auto' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+          </div>
           { artists.map((artist, idx, artists) => {
               return (
                   <div
@@ -89,17 +77,17 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
                     >
                       <p className='artist-name' id={'artist-' + idx}>{artist.name}</p>
                       <Instafeed
-                        limit='3'
+                        limit='2'
                         ref='instafeed'
                         resolution='standard_resolution'
                         sortBy='most-recent'
                         target={'instafeed-' + idx}
                         key={idx+1}
-                        template="<a href='{{link}}' target='_blank'>
-                                    <div>
-                                      <img class='item' src='{{image}}' />
-                                    </div>
-                                  </a>"
+                        template="
+                                    <a class='item' href='{{link}}' target='_blank'>
+                                      <img src='{{image}}' />
+                                    </a>
+                                  "
                         userId={artist.userId}
                         clientId='da06fb6699f1497bb0d5d4234a50da75'
                         accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
@@ -108,7 +96,6 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
           })}
                 </div>
           </div>
-        </div>
     );
   }
 }

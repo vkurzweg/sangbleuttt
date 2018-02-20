@@ -18,12 +18,20 @@ import Names from 'components/landing/Names';
 export class LandingPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div style={{ backgroundColor: '#FFFFFF' }}>
+      <div className="container-fluid" style={{ backgroundColor: '#FFFFFF', paddingLeft: '0' }}>
         <Helmet>
           <title>LandingPage</title>
           <meta name="description" content="Description of LandingPage" />
         </Helmet>
-
+        <div className="row" style={{ }}>
+          <div className="col-sm-6" style={{ paddingRight: '0', paddingBottom: '0' }}>
+            <ZurichLanding />
+          </div>
+          <h1 style={{ position: 'absolute', overflow: 'visible', whiteSpace: 'nowrap', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '44px', letterSpacing: '.7', marginTop: '40vh', marginLeft: '41.8vw' }}>Sang Bleu</h1>
+          <div className="col-sm-6" style={{ paddingLeft: '0' }}>
+            <LondonLanding />
+          </div>
+        </div>
         <h1 style={{ marginLeft: '5vw', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '44px', letterSpacing: '.7', marginTop: '5vh' }}>Sang Bleu</h1>
 
         <Map />
@@ -50,15 +58,7 @@ export default compose(
   withConnect,
 )(LandingPage);
 
-// className="container-fluid" style={{ backgroundColor: '#FFFFFF', paddingLeft: '0' }}
+//
 
-// <div className="row" style={{ }}>
-//   <div className="col-sm-6" style={{ paddingRight: '0', paddingBottom: '0' }}>
-//     <ZurichLanding />
-//   </div>
-//   <h1 style={{ position: 'absolute', overflow: 'visible', whiteSpace: 'nowrap', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '44px', letterSpacing: '.7', marginTop: '40vh', marginLeft: '41.8vw' }}>Sang Bleu</h1>
-//   <div className="col-sm-6" style={{ paddingLeft: '0' }}>
-//     <LondonLanding />
-//   </div>
-// </div>
+
 

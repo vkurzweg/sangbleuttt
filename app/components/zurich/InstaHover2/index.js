@@ -65,17 +65,15 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   const options = {
     followCursor:false,
   }
-  let random1= (Math.floor(Math.random()*100) + 1) + "vw"
-  let random2= (Math.floor(Math.random()*100) + 1) + "vh"
     return (
-      <div className='insta-hover' style={{ zIndex: '5', marginLeft: '50vh', marginTop: '-75vh', height: '95vh' }}>
+      <div className='insta-hover' style={{ Index: '5', width: '50%', margin: '0 auto', marginTop: '-75vh', height: '95vh' }}>
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/mxmttt/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name max' style={{ fontFamily: 'SangBleu', marginLeft: '65vh', marginTop: '-5vh' }}>
-                  Maxime Plescia-Buchi<br /><span style={{ fontSize: '20px', marginLeft: '31vh' }}>@mxmttt</span>
+                <h2 className='hover-name max' style={{ fontFamly: 'serif', fontWeight: 'bold', marginLeft: '-43vh' }}>
+                  Maxime Plescia-Buchi <span style={{ fontFamily: 'serif' }}>@mxmttt</span>
                 </h2>
               </a>
             </div>
@@ -101,8 +99,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/giorgiodeduesanti/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name giorgio' style={{ marginLeft: '-45vh', marginTop: '10vh' }} >
-                  Giorgio<br /><span style={{ fontSize: '20px', marginLeft: '9vh' }}>@giorgiodeduesanti</span>
+                <h2 className='hover-name giorgio' style={{  marginTop: '50vh', marginLeft: '30vw', textAlign: 'right' }}>
+                  Giorgio @giorgiodeduesanti
                 </h2>
               </a>
             </div>
@@ -128,8 +126,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/jordalive/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name jordan' style={{ fontFamily: 'SangBleu', marginTop: '30vh', marginLeft: '80vh' }}>
-                  Jordan Angius<br /><span style={{ fontSize: '20px', marginLeft: '19vh' }}>@jordalive</span>
+                <h2 className='hover-name jordan' style={{ fontFamly: 'serif', fontWeight: 'bold', marginTop: '20vh', marginLeft: '-43vh' }}>
+                  Jordan Angius @jordalive
                 </h2>
               </a>
             </div>
@@ -155,8 +153,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/paolo_bosson/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name paolo' style={{ fontFamily: 'SangBleu', marginTop: '50vh', marginLeft: '20vh' }}>
-                  Paolo Bosson<br /><span style={{ fontSize: '20px', marginLeft: '19vh' }}>@paolo_bosson</span>
+                <h2 className='hover-name paolo' style={{  marginTop: '40vh', marginLeft: '50vh' }}>
+                  Paolo Bosson @paolo_bosson
                 </h2>
               </a>
             </div>
@@ -182,8 +180,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/stephane_devidal_tattoo/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name stephane' style={{ fontFamily: 'SangBleu', marginTop: '30vh', marginLeft: '-25vw' }}>
-                  Stephane Devidal<br /><span style={{ fontSize: '20px', marginLeft: '19vh' }}>@stephane_devidal_tattoo</span>
+                <h2 className='hover-name stephane' style={{ fontFamly: 'serif', fontWeight: 'bold', marginTop: '30vh', marginLeft: '-43vh' }}>
+                  Stephane Devidal @stephane_devidal_tattoo
                 </h2>
               </a>
             </div>
@@ -209,8 +207,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/zilba.1/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name labaz' style={{ fontFamily: 'SangBleu', marginTop: '10vh', marginLeft: '5vw' }}>
-                  Labaz 1<br /><span style={{ fontSize: '20px', marginLeft: '9vh' }}>@zilba.1</span>
+                <h2 className='hover-name labaz' style={{  textAlign: 'right', marginLeft: '45vw', marginTop: '30vh' }}>
+                  Labaz 1 @zilba.1
                 </h2>
               </a>
             </div>
@@ -237,8 +235,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/black_arm_tattoo/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name matt' style={{ marginTop: '30vh', marginLeft: '24vh' }}>
-                  Matt Powers<br /><span style={{ fontSize: '20px', marginLeft: '19vh' }}>@black_arm_tattoo</span>
+                <h2 className='hover-name matt' style={{ fontWeight: 'bold', marginTop: '40vh', marginLeft: '-43vh' }}>
+                  Matt Powers @black_arm_tattoo
                 </h2>
               </a>
             </div>
@@ -264,8 +262,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/diagal_faust/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name diego' style={{ marginTop: '50vh', marginLeft: '-45vh' }}>
-                  Diego Thonney<br /><span style={{ fontSize: '20px', marginLeft: '25vh' }}>@diagal_faust</span>
+                <h2 className='hover-name diego' style={{  marginLeft: '50vh' }}>
+                  Diego Thonney @diagal_faust
                 </h2>
               </a>
             </div>
@@ -291,8 +289,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/golda.kracks/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name golda' style={{ marginTop: '50vh', marginLeft: '78vh' }}>
-                  Golda Kracks<br /><span style={{ fontSize: '20px', marginLeft: '19vh' }}>@golda.kracks</span>
+                <h2 className='hover-name golda' style={{ marginTop: '50vh', marginLeft: '-43vh', fontFamly: 'serif', fontWeight: 'bold' }}>
+                  Golda Kracks @golda.kracks
                 </h2>
               </a>
             </div>
@@ -318,8 +316,8 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           <ReactHover.Trigger type='trigger'>
             <div>
               <a href='https://www.instagram.com/marco_romegialli/' target='_blank' style={{ textDecoration: 'none' }}>
-                <h2 className='hover-name marco' style={{ marginLeft: '50vh', marginTop: '10vh' }}>
-                  Marco Romegialli<br /><span style={{ fontSize: '20px', marginLeft: '25vh' }}>@marco_romegialli</span>
+                <h2 className='hover-name marco' style={{  marginTop: '20vh', marginLeft: '30vh' }}>
+                  Marco Romegialli @marco_romegialli
                 </h2>
               </a>
             </div>

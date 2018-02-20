@@ -10,7 +10,7 @@ import { Image } from 'cloudinary-react';
 
 const Button = styled.button`
   border: 2px solid black;
-  width: 13vw;
+  width: 200px;
   font-family: Helvetica;
   text-transform: uppercase;
   font-size: 12px;
@@ -33,27 +33,21 @@ const Button = styled.button`
 function Logo() {
   return (
     <div className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black' }}>
-      <div className="row" style={{ marginTop: '3%' }}>
-        <div className="col-sm-2">
-          <div style={{ height: '100px', left: '50%'}}>
-            <Image style={{ position: 'absolute', width: 'auto', height: '100%', display: 'block', margin: '0 auto', marginTop: '-10%', marginLeft: '15%', zIndex: '3' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+      <div className="row" style={{ fontSize: '1.3vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '6vh', marginLeft: '15vw' }}>
+        <div className="col-md-2">
+          <div style={{ color: 'black', marginTop: '13%' }}>
+            <p style={{ fontFamily: 'SangBleu', letterSpacing: '.4', fontWeight: 'normal', color: 'black' }}>29B Dalston Ln,<br />London E8 3DF</p>
           </div>
         </div>
-        <div className="col-sm-2">
-          <div style={{ fontSize: '15px', letterSpacing: '.4', color: 'black', marginTop: '13%' }}>
-            <h3 style={{ fontSize: '15px', letterSpacing: '.4', fontWeight: 'normal' }}>Sang Bleu London,<br /> 29B Dalston Ln,<br />London E8 3DF</h3>
-          </div>
+        <div className="col-md-2">
+          <p style={{ fontFamily: 'SangBleu', marginTop: '13%' }}>+44 20 8616 0840<br />london@sangbleu.tattoo</p>
         </div>
-        <div className="col-sm-2" style={{ fontSize: '15px' }}>
-          <p style={{ marginTop: '13%' }}>+44 20 8616 0840<br />london@sangbleu.tattoo</p>
+        <div className="col-md-2">
+          <p style={{fontFamily: 'SangBleu',  marginTop: '13%' }}>Open 11am — 7pm<br />7 days a week</p>
         </div>
-        <div className="col-sm-2">
-          <p style={{ marginTop: '13%' }}>Open 11am — 7pm<br />7 days a week</p>
-        </div>
-        <div className="col-sm-2">
+        <div className="col-md-2">
           <Button className="btn btn-default">Book an Appointment</Button>
         </div>
-        <div className="col-sm-2"></div>
       </div>
     </div>
   );

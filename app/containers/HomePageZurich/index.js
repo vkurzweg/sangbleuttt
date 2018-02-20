@@ -14,26 +14,21 @@ import ArticlesContainer from './ArticlesContainer';
 import ArtistsContainer from './ArtistsContainer';
 import HeaderLondon from 'components/zurich/HeaderZurich';
 import IntroCopy from 'components/zurich/IntroCopy';
+import InstaHover from 'components/zurich/InstaHover';
+import InstaHover2 from 'components/zurich/InstaHover2';
 
 
 export class HomePageZurich extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
+      <div style={{ backgroundColor: '#EB3331' }}>
         <Helmet>
           <title>HomePageZurich</title>
           <meta name="description" content="Description of HomePageZurich" />
         </Helmet>
-        <div className="container-fluid" style={{ width: '100%' }}>
-          <HeaderLondon />
-          <div className="row" style={{ paddingTop: '2%' }}>
-            <div className="col-sm-4">
-              <Logo />
-            </div>
-            <div className="col-sm-8">
-              <ArtistsContainer />
-            </div>
-          </div>
+        <div style={{ width: '100%' }}>
+          <Logo />
+          <InstaHover />
         </div>
 
       </div>

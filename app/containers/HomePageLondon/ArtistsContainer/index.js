@@ -31,7 +31,7 @@ export class ArtistsContainer extends React.Component { // eslint-disable-line r
 
   render() {
     return (
-      <div style={{ maxWidth: '100%', marginRight: '2%', marginLeft: '2%' }}>
+      <div style={{ maxWidth: '100%', maxHeight: '70vh' }}>
         <Helmet>
           <title>ArtistsContainer</title>
           <meta name="description" content="Description of ArtistsContainer" />

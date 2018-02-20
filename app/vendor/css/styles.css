@@ -1,53 +1,273 @@
+@font-face {
+  font-family: BRRR;
+  src: url('../fonts/BRRR-Medium.otf');
+}
+
+@font-face {
+  font-family: SuisseCond;
+  src: url('../fonts/SuisseIntlCond-Regular.otf');
+}
+
+@font-face {
+  font-family: SangBleu;
+  src: url('../fonts/SangBleuRepublic-Regular.otf');
+}
+
+@font-face {
+  font-family: SuisseRegular;
+  src: url('../fonts/SuisseIntl-Regular.otf');
+}
+
+@font-face {
+  font-family: SuisseRegularItalic;
+  src: url('../fonts/SuisseIntl-RegularItalic.otf');
+}
+
+.zurich-title {
+  font-family: BRRR;
+  font-size: 78px;
+  letter-spacing: 4px;
+  padding-top: 1%;
+  text-transform: uppercase;
+}
+
+.zurich-subtitle {
+  font-family: SuisseCond;
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.hover-image {
+  position: relative;
+  left:60%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-60%);
+  max-width: 30vw;
+  opacity: .7;
+}
+
 .hover-item {
-  display: inline;
-  max-width: 70%;
-  max-height: 70%;
-  margin-bottom: 5%;
+  vertical-align: middle;
+  margin: auto;
+  margin-left: 30%;
 }
 
 .hover-name {
-  display: inline;
   position: absolute;
+  display: inline;
+  color: black;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-family: SuisseCond;
+  z-index: 5;
+  padding: .5%;
+  border-radius: 2px;
+/*  text-shadow: 1px 1px 0px #000;
+*/  margin-top: 10vh;
+  text-transform: uppercase;
+}
+
+/*.max {
+  background: linear-gradient(
+      rgba(0,0,0, 0.5),
+      rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518835183/test.png') center center no-repeat;
+}*/
+
+.max:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .max {
+  background: transparent;
+}
+
+/*.giorgio {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1517638916/patterns.png') center center no-repeat;
+}*/
+
+.giorgio:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .giorgio {
+  background: transparent;
+}
+
+/*.jordan {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1517634095/mbflower.jpg') center center no-repeat;
+}*/
+
+.jordan:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .jordan {
+  background: transparent;
+}
+
+/*.paolo {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518837090/test_3.png') center center no-repeat;
+}*/
+
+.paolo:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .paolo {
+  background: transparent;
+}
+
+/*.stephane {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1516755292/placeholder.jpg');
+}*/
+
+.stephane:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .stephane {
+  background: transparent;
+}
+
+/*.labaz {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518839129/test_5.png') center center no-repeat;
+}*/
+
+.labaz:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .labaz {
+  background: transparent;
+}
+
+/*.matt {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518839407/test_6.png') center center no-repeat;
+}*/
+
+.matt:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .matt {
+  background: transparent;
+}
+
+/*.diego {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518839860/test_7.png') center center no-repeat;
+}*/
+
+.diego:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .diego {
+  background: transparent;
+}
+
+/*.golda {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518844222/test2.png') center center no-repeat;
+}*/
+
+.golda:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .golda {
+  background: transparent;
+}
+
+/*.marco {
+  background: linear-gradient(
+    rgba(0,0,0, 0.5),
+    rgba(0,0,0, 0.5)
+    ), url('http://res.cloudinary.com/kurzweg/image/upload/v1518844223/test_9.png') center center no-repeat;
+}*/
+
+.marco:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .marco {
+  background: transparent;
+}
+
+@keyframes fadeMe {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.london-info {
+  font-family: SuisseRegular;
 }
 
 .wrapper {
-    width: 98%;
+    animation: fadeMe 2s;
+    width: 76%;
     margin: 1em auto;
+    padding-bottom: 5vh;
 }
 
 .masonry {
-    column-count: 8;
+    column-count: 9;
     column-gap: 1em;
-    max-width: 100%;
-    max-height: 75vh;
-    margin-top: 2%;
-    overflow: auto;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    align-items: stretch;
 }
 
-/*.masonry-names {
-    column-count: 5;
-    column-gap: 2em;
-    width: 100%;
-    max-height: 800px;
-    margin-top: 3%;
-    text-align: right;
-    white-space: nowrap;
-    overflow: visible;
-}*/
-
 .item-container {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  display: block;
+  color: black;
+}
+
+.item-container-logo {
+  width: 100%;
   display: block;
   color: black;
 }
 
 .item {
-  display: inline;
+  display: inline-block;
   margin: 0 0 1.2em;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   color: black;
+  display: flex;
+  align-items: center;
+  break-inside: avoid-column;
 }
 
 .item:hover {
@@ -55,28 +275,19 @@
   cursor: pointer;
 }
 
-.item-container-artist {
-  width: 100%;
-  display: block;
-  font-size: 20px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: black;
-  overflow: visible;
-}
-
-.item-container-artist:hover {
-  color: #3D8EE2;
-  cursor: pointer;
-}
-
-.item-artist {
-  opacity: 0;
+.logo-london {
   display: inline-block;
   margin: 0 0 1.2em;
   width: 100%;
-  position: absolute;
-  background-color: #FAFAFA;
+  color: black;
+  display: flex;
+  align-items: center;
+  break-inside: avoid-column;
+}
+
+.logo-london:hover {
+  color: #3D8EE2;
+  cursor: pointer;
 }
 
 .masonry:hover > .item-container {
@@ -84,31 +295,23 @@
   cursor: pointer;
 }
 
+.masonry:hover > .item-container-logo {
+  opacity: 1;
+}
+
 .artist-name {
   opacity: 0;
-  font-size: 22px;
+  font-size: 1.3vw;
+  font-family: SuisseRegular;
   overflow: visible;
   white-space: wrap;
-  position: absolute;
-  margin-top: -7%;
-  letter-spacing: .5px;
-}
+  position: relative;
+  left:60%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-60%);
+  max-width: 30vw;
 
-.show-artists {
-  opacity: 1;
-  font-size: 22px;
-  overflow: visible;
-  position: absolute;
-  margin-top: -7%;
-  letter-spacing: .5px;
-}
-
-.likes {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  font-size: 12px;
-  margin-top: -5px;
 }
 
 .masonry:hover > #instafeed-0:hover {
@@ -183,8 +386,8 @@
 #instafeed-0:hover > #artist-0 {
   opacity: 1;
   overflow: visible;
-  width: 100%;
 }
+
 #instafeed-1:hover > #artist-1 {
   opacity: 1;
   overflow: visible;
@@ -250,23 +453,9 @@
   overflow: visible;
 }
 
-@keyframes fadeMe {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.insta-transition {
-  height: 80vh;
-  animation: fadeMe 2s;
-  width: 100%;
-}
-
 img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .grid-item {
@@ -274,6 +463,7 @@ img {
   height: auto;
   object-fit: contain;
 }
+
 .hidden {
   opacity: 0;
 }
