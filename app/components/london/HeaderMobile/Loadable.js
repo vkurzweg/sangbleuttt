@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for InstaGrid
+ * Asynchronously loads the component for HeaderLondon
  *
  */
 

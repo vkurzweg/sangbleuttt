@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import Calendar from '../index';
+// import Logo from '../index';
 
-describe('<Calendar />', () => {
+describe('<Logo />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

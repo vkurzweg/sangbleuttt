@@ -22,9 +22,4 @@ injectGlobal`
     min-width: 100%;
   }
 
-  p,
-  label {
-    font-family: Helvetica, serif;
-    line-height: 1.5em;
-  }
 `;

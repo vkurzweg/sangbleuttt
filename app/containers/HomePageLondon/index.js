@@ -11,13 +11,15 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import Logo from 'components/london/Logo';
+import MediaQuery from 'react-responsive';
+import InfoCopy from 'components/london/InfoCopy';
+import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import ArticlesContainer from './ArticlesContainer';
-import ArtistsContainer from './ArtistsContainer';
 import HeaderLondon from 'components/london/HeaderLondon';
+import HeaderMobile from 'components/london/HeaderMobile';
 import IntroCopy from 'components/london/IntroCopy';
-import Calendar from 'components/london/CalendarLondon';
 import Insta from 'components/london/Insta';
+import InstaMobile from 'components/london/InstaMobile';
 import Delay from 'react-delay';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -49,12 +51,23 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   render() {
     return (
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
-        <HeaderLondon />
-        <Logo />
-        <Insta />
-        <Delay wait={1000}>
-          <IntroCopy />
-        </Delay>
+        <MediaQuery minWidth={768}>
+          <div>
+            <HeaderLondon />
+            <InfoCopy />
+            <Insta />
+            <Delay wait={400}>
+              <IntroCopy />
+            </Delay>
+          </div>
+        </MediaQuery>
+        <MediaQuery maxWidth={767}>
+          <div>
+            <HeaderMobile />
+            <InfoCopyMobile />
+            <InstaMobile />
+          </div>
+        </MediaQuery>
       </div>
     );
   }

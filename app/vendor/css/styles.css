@@ -239,6 +239,13 @@
     padding-bottom: 5vh;
 }
 
+.wrapper-mobile {
+    animation: fadeMe 2s;
+    width: 95%;
+    margin: 1em auto;
+    padding-bottom: 5vh;
+}
+
 .masonry {
     column-count: 9;
     column-gap: 1em;
@@ -248,10 +255,54 @@
     align-items: stretch;
 }
 
+.masonry-mobile {
+    column-count: 2;
+    column-gap: .5em;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    align-items: stretch;
+    break-inside: avoid-column;
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 7;
+        -webkit-column-count: 7;
+        column-count: 7;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 9;
+        -webkit-column-count: 9;
+        column-count: 9;
+    }
+}
+
 .item-container {
   width: 100%;
   display: block;
   color: black;
+}
+
+.item-container-mobile {
+  display: block;
+  color: black;
+  break-inside: avoid-column;
+}
+
+.artist-container {
+  break-inside: avoid-column;
 }
 
 .item-container-logo {
@@ -270,9 +321,23 @@
   break-inside: avoid-column;
 }
 
+.item-mobile {
+  break-inside: avoid-column;
+}
+
+.item-image-mobile {
+  width: 100%;
+  height: 10vh;
+  object-fit: cover;
+}
+
 .item:hover {
   color: #3D8EE2;
   cursor: pointer;
+}
+
+hr {
+  margin-bottom: 2vh;
 }
 
 .logo-london {
@@ -312,6 +377,26 @@
   transform: translateX(-60%);
   max-width: 30vw;
 
+}
+
+.artist-name-mobile {
+  width: 100%;
+  text-align: center;
+  font-size: 3vw;
+  font-family: Helvetica;
+  overflow: visible;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  white-space: wrap;
+  position: relative;
+  left:60%;
+  margin-bottom: 0;
+  padding: 5%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-60%);
+  break-inside: avoid-column;
 }
 
 .masonry:hover > #instafeed-0:hover {

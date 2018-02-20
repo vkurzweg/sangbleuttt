@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import InstaGrid from '../index';
+// import HeaderLondon from '../index';
 
-describe('<InstaGrid />', () => {
+describe('<HeaderLondon />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

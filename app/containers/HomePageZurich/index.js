@@ -11,11 +11,8 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import Logo from 'components/zurich/Logo';
 import ArticlesContainer from './ArticlesContainer';
-import ArtistsContainer from './ArtistsContainer';
-import HeaderLondon from 'components/zurich/HeaderZurich';
 import IntroCopy from 'components/zurich/IntroCopy';
 import InstaHover from 'components/zurich/InstaHover';
-import InstaHover2 from 'components/zurich/InstaHover2';
 
 
 export class HomePageZurich extends React.Component { // eslint-disable-line react/prefer-stateless-function
