@@ -42,12 +42,11 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   }
 
   handleScroll(event){
-      let scrollTop = event.srcElement.body.scrollTop,
-          itemTranslate = Math.min(0, scrollTop/3 - 60);
-
-      this.setState({
-        transform: itemTranslate
-      })
+      let offset = 50;
+      var scrollTop = window.pageYOffset;
+      if (scrollTop > offset){
+        document.getElementById('id').scrollIntoView();
+      }
   }
 
   render() {
@@ -61,6 +60,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Delay wait={400}>
               <About />
             </Delay>
+            <ArticlesContainer />
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={767}>

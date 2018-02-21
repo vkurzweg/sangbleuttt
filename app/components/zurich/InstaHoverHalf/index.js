@@ -66,9 +66,9 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     followCursor:false,
   }
     return (
-      <div className='container' style={{ width: 'calc(100% - 180px)', margin: '0 auto', paddingLeft: '0', paddingRight: '0', height: '50vh' }}>
+      <div className='container-fluid' style={{ width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0', height: '50vh' }}>
 
-        <div className="insta-hover row" style={{ maxWidth: 'calc(100% - 160px)', margin: '0 auto', paddingTop: '5vh' }}>
+        <div className="insta-hover row" style={{ maxWidth: 'calc(100% - 160px)', margin: '0 auto', paddingTop: '5vh', paddingLeft: '10vw', paddingRight: '5vw' }}>
           <div className="col-sm-4">
             <ReactHover
               options={options}>
@@ -155,7 +155,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           </div>
         </div>
 
-        <div className="row insta-hover" style={{ maxWidth: 'calc(100vw - 160px)', margin: '0 auto', marginTop: '10vh' }}>
+        <div className="row insta-hover" style={{ maxWidth: 'calc(100vw - 160px)', margin: '0 auto', marginTop: '10vh', paddingLeft: '5vw', paddingRight: '5vw' }}>
           <div className="col-sm-3">
             <ReactHover
               options={options}>
@@ -270,7 +270,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
           </div>
         </div>
 
-        <div className="row insta-hover" style={{ maxWidth: 'calc(100vw - 160px)', margin: '0 auto', marginTop: '10vh' }}>
+        <div className="row insta-hover" style={{ maxWidth: 'calc(100vw - 160px)', margin: '0 auto', marginTop: '10vh', paddingLeft: '10vw', paddingRight: '5vw' }}>
           <div className="col-sm-4">
             <ReactHover
               options={options}>

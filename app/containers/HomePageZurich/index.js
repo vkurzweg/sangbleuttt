@@ -6,28 +6,34 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
-import Logo from 'components/zurich/Logo';
 import ArticlesContainer from './ArticlesContainer';
 import IntroCopy from 'components/zurich/IntroCopy';
+import InfoCopy from 'components/zurich/InfoCopy';
 import InstaHover from 'components/zurich/InstaHover';
+import Center from './Center';
+
+const Background = styled.div`
+  width: calc(100vw - 80px);
+  margin: 0 auto;
+  &:hover {
+    background-color: #EB3331;
+  }
+`;
 
 
 export class HomePageZurich extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div style={{ backgroundColor: '#EB3331' }}>
+      <div style={{ backgroundColor: '#EB3331', borderLeft: '80px solid black', borderRight: '80px solid black', paddingTop: '60px', paddingBottom: '60px',  height: '100vh' }}>
         <Helmet>
           <title>HomePageZurich</title>
           <meta name="description" content="Description of HomePageZurich" />
         </Helmet>
-        <div style={{ width: '100%' }}>
-          <Logo />
-          <InstaHover />
-        </div>
-
+          <Center />
       </div>
     );
   }

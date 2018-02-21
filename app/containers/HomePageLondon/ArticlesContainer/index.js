@@ -15,6 +15,8 @@ import {Link, RichText, Date} from 'prismic-reactjs';
 import styled from 'styled-components';
 import Modal from 'react-modal';
 import Icon from 'antd/lib/icon';
+import ScrollAnimation from 'react-animate-on-scroll';
+import ReactHover from 'react-hover';
 
 
 const StyledImg = styled.img`
@@ -24,6 +26,15 @@ const StyledImg = styled.img`
     display: block;
     margin: 0 auto;
 `;
+
+const StyledReactHover = styled(ReactHover)`
+    width: 100%;
+    margin: 0 auto !important;
+`;
+
+const options = {
+  followCursor:false,
+}
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
@@ -108,7 +119,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let articlesNum = this.state.docs.length;
     let link;
     articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
-
     return (
       <div>
         <Helmet>
@@ -116,41 +126,78 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
 
-        <div style={{ margin: '1em auto', marginTop: '5%' }}>
-          <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase', fontSize: '20px', letterSpacing: '.3', marginLeft: '2%' }}>blog</h3>
+        <div style={{ margin: '1em auto', paddingTop: '5vh' }}>
+            <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2vw', letterSpacing: '2', marginLeft: '16.75vw' }}>news</h3>
 
-          <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-            <h3 className="article-title" style={{ marginBottom: '0', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '46px', letterSpacing: '3px', textTransform: 'uppercase' }}>
-              {article1.title.value[0].text}
-            </h3>
-            <div className="article-title" style={{ fontFamily: 'serif', fontSize: '30px', textTransform: 'uppercase', fontWeight: 'bold', marginTop: '3%', textAlign: 'center', marginBottom: '5%', letterSpacing: '2px' }}>
-              {article1.subhead.value}
-            </div>
-            <img className="article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
-          </a>
+            <ReactHover
+              options={options}>
+              <ReactHover.Trigger type='trigger'>
+                <div className='hover-article' style={{ marginTop: '8vh' }}>
+                  <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', color: 'black' }}>
+                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                      {article1.title.value[0].text}
+                    </h3>
+                    <div className="article-title" style={{ fontFamily: 'SuisseCond', fontSize: '2vw', textTransform: 'uppercase', marginTop: '3%', textAlign: 'center', letterSpacing: '2px' }}>
+                      {article1.subhead.value}
+                    </div>
+                  </a>
+                </div>
+              </ReactHover.Trigger>
+              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
+                <div className="hover-container">
+                  <img className="hover-article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
+                </div>
+              </ReactHover.Hover>
+            </ReactHover>
 
-          <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-            <h3 className="article-title" style={{ marginBottom: '0', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
-              {article2.title.value[0].text}
-            </h3>
-            <div className="article-title" style={{ fontSize: '20px', textAlign: 'center', marginBottom: '5%', letterSpacing: '2px' }}>
-              {article2.subhead.value}
-            </div>
-            <img className="article-image" src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
-          </a>
 
-          <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-            <h3 className="article-title" style={{ marginBottom: '0', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
-              {article3.title.value[0].text}
-            </h3>
-            <div className="article-title" style={{ fontSize: '20px', textAlign: 'center', marginBottom: '5%', letterSpacing: '2px' }}>
-              {article3.subhead.value}
-            </div>
-            <img className="article-image" src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
-          </a>
-        </div>
+            <ReactHover
+              options={options}>
+              <ReactHover.Trigger type='trigger'>
+                <div className='hover-article' style={{ marginTop: '38vh' }}>
+                  <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none', color: 'black' }}>
+                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                      {article2.title.value[0].text}
+                    </h3>
+                    <div className="article-title" style={{ textTransform: 'uppercase', fontFamily: 'SuisseCond', fontSize: '2vw', textAlign: 'center', letterSpacing: '2px', marginTop: '3%' }}>
+                      {article2.subhead.value}
+                    </div>
+                  </a>
+                </div>
+              </ReactHover.Trigger>
+              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
+                <div className="hover-container">
+                  <img className="hover-article-image2" src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
+                </div>
+              </ReactHover.Hover>
+            </ReactHover>
 
-        {link}
+            <ReactHover
+              options={options}>
+              <ReactHover.Trigger type='trigger'>
+                <div className='hover-article' style={{ marginTop: '68vh' }}>
+
+                  <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none', color: 'black' }}>
+                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                      {article3.title.value[0].text}
+                    </h3>
+                    <div className="article-title" style={{ textTransform: 'uppercase', fontFamily: 'SuisseCond', fontSize: '2vw',  textAlign: 'center', marginTop: '3%', marginBottom: '3%', letterSpacing: '2px' }}>
+                      {article3.subhead.value}
+                    </div>
+                  </a>
+                </div>
+              </ReactHover.Trigger>
+              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
+                <div className="hover-container">
+                  <img className="hover-article-image3" src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
+                </div>
+              </ReactHover.Hover>
+            </ReactHover>
+
+          </div>
+
+          {link}
+
 
         <Modal
           isOpen={this.state.modal1IsOpen}

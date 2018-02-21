@@ -63,6 +63,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     const instafeedTarget = 'instafeed';
     return (
+        <div style={{ width: '100%', borderBottom: '1px solid black'}}>
         <div className='wrapper'>
           <div className='masonry'>
           <div className='item-container-logo'>
@@ -96,6 +97,7 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
           })}
                 </div>
           </div>
+        </div>
     );
   }
 }
