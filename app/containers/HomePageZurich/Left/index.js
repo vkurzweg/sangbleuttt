@@ -1,6 +1,6 @@
 /**
  *
- * Left
+ * Right
  *
  */
 
@@ -9,22 +9,32 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
+import InfoCopyHalf from 'components/zurich/InfoCopyHalf';
+import InstaHoverHalf from 'components/zurich/InstaHoverHalf';
 
 
-export class Left extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class Right extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div>
+      <div className="container-fluid" style={{ width: 'calc(100vw - 160px)', margin: '0 auto', height: '100vh', marginTop: '-60px' }}>
         <Helmet>
-          <title>Left</title>
-          <meta name="description" content="Description of Left" />
+          <title>Right</title>
+          <meta name="description" content="Description of Right" />
         </Helmet>
+        <div className="row">
+          <div className="col-sm-6" style={{ height: '100vh' }}>
+            <InfoCopyHalf />
+            <InstaHoverHalf />
+          </div>
+          <div className="col-sm-6" style={{ backgroundColor: 'black', height: '100vh' }}>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-Left.propTypes = {
+Right.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
@@ -39,4 +49,4 @@ const withConnect = connect(null, mapDispatchToProps);
 
 export default compose(
   withConnect,
-)(Left);
+)(Right);

@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for Left
+ * Asynchronously loads the component for Right
  *
  */
 

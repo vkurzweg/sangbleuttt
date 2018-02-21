@@ -69,7 +69,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
       <div style={{ width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0', height: '50vh' }}>
 
 
-          <table style={{ height: '100%', verticalAlign: 'middle', width: '75%', margin: '0 auto', marginRight: '12vw', paddingTop: '5vh' }}>
+          <table style={{ height: '100%', verticalAlign: 'middle', width: '90%', margin: '0 auto', marginRight: '3vw', marginTop: '-2vh' }}>
             <tr>
               <td>
                 <ReactHover

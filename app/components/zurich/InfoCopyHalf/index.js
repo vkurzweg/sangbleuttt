@@ -12,7 +12,7 @@ import { Image } from 'cloudinary-react';
 function Logo() {
   return (
     <div className="container-fluid" style={{ zIndex: '20', width: 'calc(100% - 80px)', margin: '0 auto', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0' }}>
-      <div className="row" style={{ marginLeft: '1vw', marginRight: 'calc(1vw + 80px)' }} >
+      <div className="row" style={{ marginLeft: '1vw', marginRight: 'calc(1vw - 80px)' }} >
         <h1 className='zurich-title-half'>Sang Bleu Zurich</h1>
         <div className="col-sm-6">
           <h3 className='zurich-subtitle-half'>Dienerstrasse 26, 8004 Zürich, Switzerland </h3>
