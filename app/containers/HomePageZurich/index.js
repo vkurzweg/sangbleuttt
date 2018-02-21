@@ -15,6 +15,7 @@ import IntroCopy from 'components/zurich/IntroCopy';
 import InfoCopy from 'components/zurich/InfoCopy';
 import InstaHover from 'components/zurich/InstaHover';
 import Center from './Center';
+import Right from './Right';
 
 const Background = styled.div`
   width: calc(100vw - 80px);
@@ -33,7 +34,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           <title>HomePageZurich</title>
           <meta name="description" content="Description of HomePageZurich" />
         </Helmet>
-          <Center />
+        <Right />
       </div>
     );
   }

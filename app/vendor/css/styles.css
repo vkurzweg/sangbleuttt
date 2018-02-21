@@ -32,12 +32,42 @@
   z-index: 20;
 }
 
+
 .zurich-subtitle {
   font-family: SuisseCond;
   font-size: 1.8vw;
   letter-spacing: 3px;
   color: black;
   z-index: 20;
+}
+
+.zurich-title-half {
+  font-family: BRRR;
+  font-size: 4.5vw;
+  letter-spacing: 4px;
+  padding-top: 5%;
+  text-transform: uppercase;
+  z-index: 20;
+}
+
+.zurich-subtitle-half {
+  font-family: SuisseCond;
+  font-size: 1.5vw;
+  letter-spacing: 3px;
+  color: black;
+  z-index: 20;
+}
+
+.hover-name-half {
+  position: absolute;
+  display: block;
+  color: black;
+  font-size: 1.3vw;
+  letter-spacing: 2px;
+  font-family: SuisseCond;
+  z-index: 5;
+  padding: .5%;
+  text-transform: uppercase;
 }
 
 .insta-hover {
@@ -70,6 +100,61 @@
 }
 
 .hover-image .bg {
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .8;
+  overflow: hidden;
+}
+
+.hover-image-half {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height:30vh;
+  border: none;
+  border-radius:4px;
+  margin-top: -70%;
+  overflow: hidden;
+}
+
+.hover-image-half-right {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height:30vh;
+  border: none;
+  border-radius:4px;
+  margin-top: -70%;
+  margin-left: -25%;
+  overflow: hidden;
+}
+
+.hover-image-half .bg {
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .8;
+  overflow: hidden;
+}
+
+.hover-image-half-right .bg {
   position:absolute;
   width: 100%;
   display:block;
