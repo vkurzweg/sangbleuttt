@@ -23,6 +23,7 @@ import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import InstaMobile from 'components/london/InstaMobile';
 import Delay from 'react-delay';
+import Footer from 'components/london/Footer';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
@@ -43,7 +44,6 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   handleScroll(event){
       var scrollTop = window.pageYOffset;
-      console.log(scrollTop);
       if (scrollTop > 150){
         document.getElementById('id').scrollIntoView();
       }
@@ -53,7 +53,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
     return (
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <MediaQuery minWidth={768}>
-          <div>
+          <div style={{ }}>
             <Nav/>
             <InfoCopy />
             <Insta />

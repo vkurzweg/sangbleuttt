@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for FooterLondon
+ * Asynchronously loads the component for Footer
  *
  */
 

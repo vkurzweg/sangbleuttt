@@ -17,6 +17,7 @@ import Modal from 'react-modal';
 import Icon from 'antd/lib/icon';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ReactHover from 'react-hover';
+import Footer from 'components/london/Footer';
 
 const Title = styled.h3`
   font-family: SangBleu;
@@ -166,15 +167,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let link;
       articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
     return (
-      <div>
+      <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
 
-        <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh' }}>
+        <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh', paddingBottom: '100vh' }}>
           <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '1.8vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
-
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
@@ -381,7 +381,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             {article3image4}
           </div>
         </Modal>
-
+        <div style={{ position: 'relative', height: '15vh', width: '100%', bottom: '0' }}>
+        <Footer />
+        </div>
       </div>
     )} else {
       return (
