@@ -12,7 +12,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 function IntroCopy() {
   return (
-    <div id="about" style={{ paddingTop: '3%', paddingBottom: '3%', borderBottom: '1px solid black' }}>
+    <div id="about" style={{ paddingTop: '3%', paddingBottom: '3%' }}>
       <ScrollAnimation animateIn="slideInDown">
         <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2vw', letterSpacing: '2', marginLeft: '16.75vw' }}>about</h3>
         <p style={{ fontSize: '2.3vw', textAlign: 'justify', color: '#323232', width: '73%', textTransform: 'uppercase', margin: '0 auto', paddingTop: '2%', letterSpacing: '.5px', lineHeight: '2em' }}>

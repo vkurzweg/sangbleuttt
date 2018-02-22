@@ -60,7 +60,6 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Delay wait={400}>
               <About />
             </Delay>
-            <ArticlesContainer />
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={767}>

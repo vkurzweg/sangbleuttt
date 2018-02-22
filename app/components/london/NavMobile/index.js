@@ -94,7 +94,7 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
 
 
   handleScroll(event) {
-    let offset = 10;
+    let offset = 50;
     var scrollTop = window.pageYOffset;
     if (scrollTop > offset){
         this.setState({
@@ -116,7 +116,7 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     (this.state.showMenu) ? display = 'block' : display = 'none';
     const brand =
       <div>
-          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}>Sang Bleu London</h1>
+          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}></h1>
           <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
       </div>
     return (

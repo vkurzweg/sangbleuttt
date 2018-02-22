@@ -70,7 +70,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   render() {
     let content = <Center />
     this.state.aboutOpen ? content = <Right /> : content;
-    this.state.blogOpen ? content = <Left /> : content;
     return (
       <div style={{ backgroundColor: '#EB3331', borderLeft: '80px solid black', borderRight: '80px solid black',  height: '100vh' }}>
         <Helmet>
@@ -87,20 +86,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           >
             <div>
               <About />
-            </div>
-          </Drawer>
-        </div>
-        <div style={{ position: 'absolute', width: '80px', height: '100%', right: '0' }} onClick={this.handleBlogToggle}>
-          <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
-          <h4 style={{ right: '0', marginRight: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>Blog</h4>
-          <Drawer
-            open={this.state.blogOpen}
-            width='50%'
-            containerStyle={style.bg}
-            openSecondary={true}
-          >
-            <div>
-              <ArticlesContainer />
             </div>
           </Drawer>
         </div>
@@ -126,3 +111,21 @@ const withConnect = connect(null, mapDispatchToProps);
 export default compose(
   withConnect,
 )(HomePageZurich);
+
+// this.state.blogOpen ? content = <Left /> : content;
+
+// <div style={{ position: 'absolute', width: '80px', height: '100%', right: '0' }} onClick={this.handleBlogToggle}>
+//   <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+//   <h4 style={{ right: '0', marginRight: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>Blog</h4>
+//   <Drawer
+//     open={this.state.blogOpen}
+//     width='50%'
+//     containerStyle={style.bg}
+//     openSecondary={true}
+//   >
+//     <div>
+//       <ArticlesContainer />
+//     </div>
+//   </Drawer>
+// </div>
+

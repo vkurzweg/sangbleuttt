@@ -393,7 +393,6 @@
     column-gap: 1em;
     width: 100%;
     margin: 0 auto;
-    height: 100%;
     align-items: stretch;
 }
 
@@ -503,7 +502,7 @@ hr {
   cursor: pointer;
 }
 
-/*.masonry:hover .logo-london {
+.masonry:hover .logo-london {
   display: none;
 }
 
@@ -521,6 +520,7 @@ hr {
 
 .masonry:hover > .item-container {
   opacity: 0;
+  transition: opacity 0.25s ease;
   cursor: pointer;
 }
 
@@ -530,6 +530,8 @@ hr {
 
 .artist-name {
   opacity: 0;
+  transition: opacity 0.25s ease;
+  transition: opacity 0.5s ease;
   font-size: 1.3vw;
   font-family: Helvetica;
   text-transform: uppercase;
@@ -812,7 +814,7 @@ img {
   margin: 0 auto;
   width: 44px;
 }
-*/
+
 
 /*.zurich-hover:hover .zurich-bg {
   position:absolute;

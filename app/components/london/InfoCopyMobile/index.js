@@ -31,6 +31,7 @@ const Button = styled.button`
 function Logo() {
   return (
     <div className="container" style={{ width: '100%', margin: '0 auto', color: 'black', paddingTop: '10vh', paddingBottom: '1vh' }}>
+      <h1 style={{ fontFamily: 'SuisseCond', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '9vw', letterSpacing: '3px', padding: '2%', marginTop: '-2vh' }}>Sang Bleu London</h1>
       <div style={{ display: 'flex' }}>
         <div style={{ fontSize: '2.8vw', fontFamily: 'SangBleu', letterSpacing: '1', color: 'black', display: 'flex', textAlign: 'center', width: '33%', margin: '0 auto', justifyContent: 'center', flexDirection: 'column' }}>
           <p>29B Dalston Ln, London E8 3DF</p>
