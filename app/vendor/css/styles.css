@@ -1228,11 +1228,6 @@ display:none;
   padding: 3%;
   display: block;
   margin: 0 auto;
-  opacity: 0;
-}
-
-.hover-article:hover > .article-link {
-  opacity: 1;
 }
 
 .article-link:after .article-image {
@@ -1268,3 +1263,5 @@ display:none;
   margin: auto;
   top: 0; left: 0; bottom: 0; right: 0;
 }
+
+

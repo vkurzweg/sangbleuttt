@@ -42,9 +42,40 @@ const StyledImg = styled.img`
     margin: 0 auto;
 `;
 
-const StyledReactHover = styled(ReactHover)`
-    width: 100%;
-    margin: 0 auto !important;
+const Close = styled.div`
+  position: absolute;
+  margin-left: 50vw;
+  margin-top: -5vh;
+  font-size: 2vw;
+  color: black;
+`;
+
+const ModalTitle = styled.h3`
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-family: SangBleu;
+  font-size: 2.5vw;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+`;
+
+const ModalImg = styled.img`
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 1em;
+  height: 45vh;
+  object-fit: cover;
+`;
+
+const ModalText = styled.p`
+  margin-top: 5vh;
+  padding: 1%;
+  font-size: 1.2vw;
+  font-family: SuisseLight;
+  line-height: 2em;
+  width: 100%;
 `;
 
 const options = {
@@ -116,21 +147,21 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let article1image2;
       let article1image3;
       let article1image4;
-      article1.image2 ? article1image2 = <StyledImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
-      article1.image3 ? article1image3 = <StyledImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
-      article1.image4 ? article1image4 = <StyledImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
+      article1.image2 ? article1image2 = <ModalImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
+      article1.image3 ? article1image3 = <ModalImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
+      article1.image4 ? article1image4 = <ModalImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
       let article2image2;
       let article2image3;
       let article2image4;
-      article2.image2 ? article2image2 = <StyledImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
-      article2.image3 ? article2image3 = <StyledImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
-      article2.image4 ? article2image4 = <StyledImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
+      article2.image2 ? article2image2 = <ModalImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
+      article2.image3 ? article2image3 = <ModalImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
+      article2.image4 ? article2image4 = <ModalImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
       let article3image2;
       let article3image3;
       let article3image4;
-      article3.image2 ? article3image2 = <StyledImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
-      article3.image3 ? article3image3 = <StyledImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
-      article3.image4 ? article3image4 = <StyledImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
+      article3.image2 ? article3image2 = <ModalImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
+      article3.image3 ? article3image3 = <ModalImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
+      article3.image4 ? article3image4 = <ModalImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
       let articlesNum = this.state.docs.length;
       let link;
       articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
@@ -141,7 +172,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
 
-        <div style={{ margin: '1em auto', paddingTop: '5vh' }}>
+        <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh' }}>
           <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '1.8vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
 
             <ReactHover
@@ -232,7 +263,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       overflow: 'scroll',
                     },
                 content: {
-                  top: '55%',
+                  top: '65%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
@@ -245,14 +276,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               }}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <div onClick={this.closeModal1} style={{ position: 'absolute', marginLeft: '70%', marginTop: '2%' }}>
+            <Close onClick={this.closeModal1}>
               <Icon type="close" />
-            </div>
-            <h3 className="article-title" style={{ marginTop: '5%', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
+            </Close>
+            <ModalTitle>
               {article1.title.value[0].text}
-            </h3>
-            <img style={{ width: '55%', display: 'block', margin: '0 auto', padding: '1em'}} src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
-            <p style={{ padding: '2em' }}>{article1.body.value[0].text}</p>
+            </ModalTitle>
+            <ModalImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
+            <ModalText>{article1.body.value[0].text}</ModalText>
             {article1image2}
             {article1image3}
             {article1image4}
@@ -277,7 +308,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       overflow: 'scroll',
                     },
                 content: {
-                  top: '55%',
+                  top: '65%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
@@ -290,14 +321,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               }}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <div onClick={this.closeModal2} style={{ position: 'absolute', marginLeft: '70%', marginTop: '2%' }}>
+            <Close onClick={this.closeModal2}>
               <Icon type="close" />
-            </div>
-            <h3 className="article-title" style={{ marginTop: '5%', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
+            </Close>
+            <ModalTitle>
               {article2.title.value[0].text}
-            </h3>
-            <img style={{ width: '55%', display: 'block', margin: '0 auto', padding: '1em'}} src={article2.main_image.value.main.url} alt={article1.main_image.value.alt} />
-            <p style={{ padding: '2em' }}>{article2.body.value[0].text}</p>
+            </ModalTitle>
+            <ModalImg src={article2.main_image.value.main.url} alt={article1.main_image.value.alt} />
+            <ModalText>{article2.body.value[0].text}</ModalText>
             {article2image2}
             {article2image3}
             {article2image4}
@@ -323,7 +354,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       zIndex: '100'
                     },
                 content: {
-                  top: '55%',
+                  top: '65%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
@@ -337,14 +368,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               }}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <div onClick={this.closeModal3} style={{ position: 'absolute', marginLeft: '70%', marginTop: '2%' }}>
+            <Close onClick={this.closeModal3}>
               <Icon type="close" />
-            </div>
-            <h3 className="article-title" style={{ marginTop: '5%', textAlign: 'center', fontFamily: 'Helvetica', fontSize: '36px', letterSpacing: '3px', textTransform: 'uppercase' }}>
+            </Close>
+            <ModalTitle>
               {article3.title.value[0].text}
-            </h3>
-            <img style={{ width: '55%', display: 'block', margin: '0 auto', padding: '1em'}} src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
-            <p style={{ padding: '2em' }}>{article3.body.value[0].text}</p>
+            </ModalTitle>
+            <ModalImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
+            <ModalText>{article3.body.value[0].text}</ModalText>
             {article3image2}
             {article3image3}
             {article3image4}
