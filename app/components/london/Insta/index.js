@@ -63,12 +63,9 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
   render() {
     const instafeedTarget = 'instafeed';
     return (
-        <div style={{ width: '100%', borderBottom: '1px solid black'}}>
+        <div id="instagrid" style={{ width: '100%' }}>
         <div className='wrapper'>
           <div className='masonry'>
-          <div className='item-container-logo'>
-            <Image className='logo-london' cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
-          </div>
           { artists.map((artist, idx, artists) => {
               return (
                   <div

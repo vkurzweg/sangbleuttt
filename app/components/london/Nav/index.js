@@ -45,6 +45,15 @@ const StyledMenuItem = styled(MenuItem)`
   }
 `;
 
+const Brand = styled.h1`
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 2vw;
+  letter-spacing: 1px;
+  margin-left: 12vw;
+  padding-top: 1vw;
+`;
+
 const items = [
   {
     name: 'SANG BLEU ZURICH',
@@ -116,16 +125,16 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     (this.state.showMenu) ? display = 'block' : display = 'none';
     const brand =
       <div>
-          <h1 style={{ textAlign: 'center', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', marginBottom: '0' }}>Sang Bleu London</h1>
-          <h1 style={{ textAlign: 'center', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', marginBottom: '0' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <Brand style={{ display: displayBlack }}>Sang Bleu London</Brand>
+          <Brand style={{ display: displayBlue, color: '#3D8EE2' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</Brand>
       </div>
     return (
       <div style={{ position: 'fixed', width: '100%', zIndex: '1', top: '0' }}>
         <AppBar
             title={brand}
-            style={{ width: '100%', backgroundColor: 'white' }}
-            iconElementLeft={<IconButton><NavigationMenu color={'black'} /></IconButton>}
-            onLeftIconButtonTouchTap={this.handleToggle}
+            style={{ width: '100%', backgroundColor: 'transparent' }}
+            iconElementRight={<Image className='logo-london' cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
+            iconStyleLeft={{ display: 'none'}}
             zDepth={0}
           />
         <Drawer
@@ -153,3 +162,10 @@ Nav.propTypes = {
 };
 
 export default Nav;
+
+// iconElementLeft={<IconButton><NavigationMenu color={'black'} /></IconButton>}
+// onLeftIconButtonTouchTap={this.handleToggle}
+
+<div className='item-container-logo'>
+  <Image className='logo-london-blue' cloudName="kurzweg" publicId="logolondon_blue" alt="sang bleu london" quality="auto" crop="scale" responsive />
+</div>
