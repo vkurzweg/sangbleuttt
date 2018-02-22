@@ -31,7 +31,7 @@ const Button = styled.button`
 
 function Logo() {
   return (
-    <div className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black'}}>
+    <div id="info" className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black'}}>
       <div className="row" style={{ paddingLeft: '11.75vw', paddingRight: '12.25vw', letterSpacing: '1px', fontFamily: 'SuisseLight', color: 'black', fontSize: '.9vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '2vh' }}>
         <div className="col-sm-3">
           <div style={{  }}>

@@ -42,9 +42,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   }
 
   handleScroll(event){
-      let offset = 150;
       var scrollTop = window.pageYOffset;
-      if (scrollTop > offset){
+      console.log(scrollTop);
+      if (scrollTop > 150){
         document.getElementById('id').scrollIntoView();
       }
   }

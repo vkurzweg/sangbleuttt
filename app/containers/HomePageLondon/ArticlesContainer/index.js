@@ -18,6 +18,21 @@ import Icon from 'antd/lib/icon';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ReactHover from 'react-hover';
 
+const Title = styled.h3`
+  font-family: SangBleu;
+  text-align: center;
+  font-size: 3vw;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+`;
+
+const Subtitle = styled.h4`
+  font-family: SuisseLight;
+  font-size: 2.4vw;
+  margin-top: 1vh;
+  text-align: center;
+  letter-spacing: 2px;
+`;
 
 const StyledImg = styled.img`
     padding: 1em;
@@ -94,31 +109,31 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
   render() {
     if (this.state.docs.length > 0) {
-    let documents = this.state.docs
-    let article1 = documents[0].data.blog_post;
-    let article2 = documents[1].data.blog_post;
-    let article3 = documents[2].data.blog_post;
-    let article1image2;
-    let article1image3;
-    let article1image4;
-    article1.image2 ? article1image2 = <StyledImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
-    article1.image3 ? article1image3 = <StyledImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
-    article1.image4 ? article1image4 = <StyledImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
-    let article2image2;
-    let article2image3;
-    let article2image4;
-    article2.image2 ? article2image2 = <StyledImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
-    article2.image3 ? article2image3 = <StyledImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
-    article2.image4 ? article2image4 = <StyledImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
-    let article3image2;
-    let article3image3;
-    let article3image4;
-    article3.image2 ? article3image2 = <StyledImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
-    article3.image3 ? article3image3 = <StyledImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
-    article3.image4 ? article3image4 = <StyledImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
-    let articlesNum = this.state.docs.length;
-    let link;
-    articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
+      let documents = this.state.docs
+      let article1 = documents[0].data.blog_post;
+      let article2 = documents[1].data.blog_post;
+      let article3 = documents[2].data.blog_post;
+      let article1image2;
+      let article1image3;
+      let article1image4;
+      article1.image2 ? article1image2 = <StyledImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
+      article1.image3 ? article1image3 = <StyledImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
+      article1.image4 ? article1image4 = <StyledImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
+      let article2image2;
+      let article2image3;
+      let article2image4;
+      article2.image2 ? article2image2 = <StyledImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
+      article2.image3 ? article2image3 = <StyledImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
+      article2.image4 ? article2image4 = <StyledImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
+      let article3image2;
+      let article3image3;
+      let article3image4;
+      article3.image2 ? article3image2 = <StyledImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
+      article3.image3 ? article3image3 = <StyledImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
+      article3.image4 ? article3image4 = <StyledImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
+      let articlesNum = this.state.docs.length;
+      let link;
+      articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
     return (
       <div>
         <Helmet>
@@ -127,19 +142,19 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Helmet>
 
         <div style={{ margin: '1em auto', paddingTop: '5vh' }}>
-            <h3 style={{ fontWeight: 'bold', textTransform: 'uppercase', fontSize: '2vw', letterSpacing: '2', marginLeft: '16.75vw' }}>news</h3>
+          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '1.8vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
 
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div className='hover-article' style={{ marginTop: '8vh' }}>
-                  <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                <div className='hover-article article1' style={{ marginTop: '8vh' }}>
+                  <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>
+                    <Title className="article-title">
                       {article1.title.value[0].text}
-                    </h3>
-                    <div className="article-title" style={{ fontFamily: 'SuisseCond', fontSize: '2vw', textTransform: 'uppercase', marginTop: '3%', textAlign: 'center', letterSpacing: '2px' }}>
+                    </Title>
+                    <Subtitle className="article-title">
                       {article1.subhead.value}
-                    </div>
+                    </Subtitle>
                   </a>
                 </div>
               </ReactHover.Trigger>
@@ -154,20 +169,20 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div className='hover-article' style={{ marginTop: '38vh' }}>
-                  <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                <div className='hover-article article2' style={{ marginTop: '38vh' }}>
+                  <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
+                    <Title className="article-title">
                       {article2.title.value[0].text}
-                    </h3>
-                    <div className="article-title" style={{ textTransform: 'uppercase', fontFamily: 'SuisseCond', fontSize: '2vw', textAlign: 'center', letterSpacing: '2px', marginTop: '3%' }}>
+                    </Title>
+                    <Subtitle className="article-title">
                       {article2.subhead.value}
-                    </div>
+                    </Subtitle>
                   </a>
                 </div>
               </ReactHover.Trigger>
               <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
                 <div className="hover-container">
-                  <img className="hover-article-image2" src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
+                  <img className="hover-article-image" src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
                 </div>
               </ReactHover.Hover>
             </ReactHover>
@@ -175,21 +190,21 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div className='hover-article' style={{ marginTop: '68vh' }}>
+                <div className='hover-article article3' style={{ marginTop: '68vh' }}>
 
-                  <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none', color: 'black' }}>
-                    <h3 className="article-title" style={{ fontFamily: 'Helvetica', fontWeight: 'bold', marginBottom: '0', textAlign: 'center', fontSize: '2.4vw', letterSpacing: '3px', textTransform: 'uppercase' }}>
+                  <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
+                    <Title className="article-title">
                       {article3.title.value[0].text}
-                    </h3>
-                    <div className="article-title" style={{ textTransform: 'uppercase', fontFamily: 'SuisseCond', fontSize: '2vw',  textAlign: 'center', marginTop: '3%', marginBottom: '3%', letterSpacing: '2px' }}>
+                    </Title>
+                    <Subtitle className="article-title">
                       {article3.subhead.value}
-                    </div>
+                    </Subtitle>
                   </a>
                 </div>
               </ReactHover.Trigger>
               <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
                 <div className="hover-container">
-                  <img className="hover-article-image3" src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
+                  <img className="hover-article-image" src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
                 </div>
               </ReactHover.Hover>
             </ReactHover>

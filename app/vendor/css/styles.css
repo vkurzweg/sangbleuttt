@@ -1200,7 +1200,7 @@ display:none;
 }
 
 .hover-container {
-  opacity: .6;
+  opacity: .8;
   width: 100%;
 }
 
@@ -1208,34 +1208,8 @@ display:none;
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 5vh;
-  margin-left: 10vw;
-  width: 55%;
-  height: 30vh;
-}
-
-.hover-article-image2 {
-  object-fit: cover;
-  display: block;
-  margin-left: 50vw;
-  margin-top: 45vh;
-  width: 55%;
-  height: 30vh;
-}
-
-.hover-article-image3 {
-  object-fit: cover;
-  display: block;
-  margin-top: 70vh;
-  width: 55%;
-  height: 30vh;
-  margin-left: 10vw;
-}
-
-.custom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .hover-article {
@@ -1245,15 +1219,20 @@ display:none;
   z-index: 5;
   padding: .5%;
   margin-top: 10vh;
-  text-transform: uppercase;
   width: 100%;
   margin: 0 auto;
+  line-height: 1em;
 }
 
 .article-link {
   padding: 3%;
   display: block;
   margin: 0 auto;
+  opacity: 0;
+}
+
+.hover-article:hover > .article-link {
+  opacity: 1;
 }
 
 .article-link:after .article-image {
@@ -1270,9 +1249,9 @@ display:none;
 
 .article-link:hover .article-title {
   position: relative;
-  opacity: .8;
+  opacity: .6;
   z-index: 5;
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
