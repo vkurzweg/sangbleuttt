@@ -16,15 +16,15 @@ import InstaHoverHalf from 'components/zurich/InstaHoverHalf';
 export class Right extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div className="container-fluid" style={{ width: 'calc(100vw - 160px)', margin: '0 auto', height: '100vh', marginTop: '-60px' }}>
+      <div className="container-fluid" style={{ width: 'calc(100vw - 160px)', margin: '0 auto', height: '100vh', marginBottom: '0', paddingBottom: '0' }}>
         <Helmet>
           <title>Right</title>
           <meta name="description" content="Description of Right" />
         </Helmet>
-        <div className="row">
-          <div className="col-sm-6" style={{ backgroundColor: 'black', height: '100vh' }}>
+        <div className="row" style={{ marginBottom: '0', paddingBottom: '0', height: '100vh' }}>
+          <div className="col-sm-6" style={{ marginBottom: '0', paddingBottom: '0', backgroundColor: 'black', height: '100vh' }}>
           </div>
-          <div className="col-sm-6">
+          <div className="col-sm-6" style={{ marginBottom: '0', paddingBottom: '0', height: '100vh' }}>
             <InfoCopyHalf />
             <InstaHoverHalf />
           </div>

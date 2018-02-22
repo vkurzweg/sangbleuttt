@@ -66,10 +66,10 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     followCursor:false,
   }
     return (
-      <div style={{ width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0', height: '50vh' }}>
+      <div style={{ width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0', height: '60vh', marginBottom: '0', paddingBottom: '0' }}>
 
 
-          <table style={{ height: '100%', verticalAlign: 'middle', width: '90%', margin: '0 auto', marginRight: '3vw', marginTop: '-2vh' }}>
+          <table style={{ height: '100%', verticalAlign: 'middle', width: '90%', margin: '0 auto', marginRight: '3vw', marginTop: '-5vh' }}>
             <tr>
               <td>
                 <ReactHover
@@ -283,7 +283,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
                     <div>
                       <a href='https://www.instagram.com/diagal_faust/' target='_blank' style={{ textDecoration: 'none' }}>
                         <h2 className='hover-name-half diego'>
-                          Diego Thonney<br /><span style={{ fontSize: '1vw', marginLeft: '15vh' }}>@diagal_faust</span>
+                          Diego Thonney<br /><span style={{ fontSize: '1vw', marginLeft: '10vh' }}>@diagal_faust</span>
                         </h2>
                       </a>
                     </div>

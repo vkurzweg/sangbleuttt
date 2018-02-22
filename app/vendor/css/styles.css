@@ -42,7 +42,7 @@
 
 .zurich-title-half {
   font-family: BRRR;
-  font-size: 4.5vw;
+  font-size: 4vw;
   letter-spacing: 4px;
   padding-top: 5%;
   text-transform: uppercase;
@@ -51,7 +51,7 @@
 
 .zurich-subtitle-half {
   font-family: SuisseCond;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   letter-spacing: 3px;
   color: black;
   z-index: 20;
@@ -177,7 +177,7 @@
   position: absolute;
   display: inline;
   color: black;
-  font-size: 1.4vw;
+  font-size: 1.7vw;
   letter-spacing: 2px;
   font-family: SuisseCond;
   z-index: 5;
@@ -344,16 +344,22 @@
 }
 
 .zurich-about-copy {
-  z-index: 150;
   opacity: .8;
   color: white;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   text-align: justify;
   width: 80%;
   margin: 0 auto;
-  padding-top: 2%;
+  padding-top: 5%;
   letter-spacing: .5px;
   line-height: 2em;
+}
+
+.zurich-logo {
+  top: 0;
+  opacity: .3;
+  width: 7vw;
+  margin-left: -25vw;
 }
 
 @keyframes fadeMe {

@@ -33,6 +33,8 @@ const style = {
   bg: {
     backgroundColor: '#000000',
     color: '#F5F5F5',
+    height: '100vh',
+    overflow: 'visible'
   }
 };
 
@@ -68,15 +70,16 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   render() {
     let content = <Center />
     this.state.aboutOpen ? content = <Right /> : content;
+    this.state.blogOpen ? content = <Left /> : content;
     return (
-      <div style={{ backgroundColor: '#EB3331', borderLeft: '80px solid black', borderRight: '80px solid black', paddingTop: '60px', paddingBottom: '60px',  height: '100vh' }}>
+      <div style={{ backgroundColor: '#EB3331', borderLeft: '80px solid black', borderRight: '80px solid black',  height: '100vh' }}>
         <Helmet>
           <title>HomePageZurich</title>
           <meta name="description" content="Description of HomePageZurich" />
         </Helmet>
-        <div style={{ position: 'absolute', width: '80px', height: '100vh', marginLeft: '-80px' }} onClick={this.handleAboutToggle}>
-          <Icon type="caret-right" style={{ marginLeft: '1vw', position: 'absolute', width: '3vw', color: '#D9453C', paddingTop: '40vh', fontSize: '2.2vw', zIndex: '100' }} />
-          <h4 style={{ marginLeft: '5px', paddingTop: '45vh', fontSize: '.9vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>About</h4>
+        <div style={{ position: 'absolute', width: '80px', height: '100%', marginLeft: '-80px' }} onClick={this.handleAboutToggle}>
+          <Icon type="caret-right" style={{ marginLeft: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+          <h4 style={{ marginLeft: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>About</h4>
           <Drawer
             open={this.state.aboutOpen}
             width='50%'
@@ -84,6 +87,20 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           >
             <div>
               <About />
+            </div>
+          </Drawer>
+        </div>
+        <div style={{ position: 'absolute', width: '80px', height: '100%', right: '0' }} onClick={this.handleBlogToggle}>
+          <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+          <h4 style={{ right: '0', marginRight: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>Blog</h4>
+          <Drawer
+            open={this.state.blogOpen}
+            width='50%'
+            containerStyle={style.bg}
+            openSecondary={true}
+          >
+            <div>
+              <ArticlesContainer />
             </div>
           </Drawer>
         </div>
