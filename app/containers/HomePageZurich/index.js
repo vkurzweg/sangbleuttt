@@ -52,6 +52,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleAboutClose = this.handleAboutClose.bind(this);
     this.handleBlogClose = this.handleBlogClose.bind(this);
     this.handleFirstBlogClick = this.handleFirstBlogClick.bind(this);
+    this.handleBlogDismiss = this.handleBlogDismiss.bind(this);
    }
 
    handleAboutToggle(){
@@ -74,10 +75,15 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     return this.setState({initial: false, blogOpen: true})
   }
 
+  handleBlogDismiss() {
+    return this.setState({initial: false});
+  }
+
   render() {
     let content = <Center />
-    this.state.aboutOpen ? content = <Right /> : content;
-    this.state.blogOpen ? content = <Left /> : content;
+    let contentWidth;
+    this.state.aboutOpen ? contentWidth = 'half' : contentWidth;
+    this.state.blogOpen ? contentWidth = 'half' : contentWidth;
     if (this.state.initial) {
       return (
         <div className='initial-container'>
@@ -85,8 +91,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             <title>HomePageZurich</title>
             <meta name="description" content="Description of HomePageZurich" />
           </Helmet>
-          <div style={{ position: 'absolute', width: '80px', height: '100%', marginLeft: '-80px' }} onClick={this.handleAboutToggle}>
-            <h4 style={{ marginLeft: '50px', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+          <div className='about-tab' onClick={this.handleAboutToggle}>
+            <div className='about-label-container'>
+              <h4 className='about-label'>information</h4>
+            </div>
             <Drawer
               open={this.state.aboutOpen}
               width='50%'
@@ -98,10 +106,13 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
             </Drawer>
           </div>
-          <div className='blog-initial' onClick={this.handleFirstBlogClick}>
+          <div className='blog-initial'>
             <div style={{ position: 'relative', height: '100vh', width: '50vw' }}>
-              <h4 style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-              <ArticlesContainerInitial />
+              <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+              <Icon type="close" onClick={this.handleBlogDismiss} style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
+              <div onClick={this.handleFirstBlogClick}>
+                <ArticlesContainerInitial />
+              </div>
             </div>
             <Drawer
               open={this.state.blogOpen}
@@ -115,7 +126,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
             </Drawer>
           </div>
-          {content}
+          <div className={contentWidth} >
+            {content}
+          </div>
         </div>
         )} else {
       return (
@@ -124,8 +137,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             <title>HomePageZurich</title>
             <meta name="description" content="Description of HomePageZurich" />
           </Helmet>
-          <div style={{ position: 'absolute', width: '80px', height: '100%', marginLeft: '-80px' }} onClick={this.handleAboutToggle}>
-            <h4 style={{ marginLeft: '50px', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+          <div className='about-tab' onClick={this.handleAboutToggle}>
+            <div className='about-label-container'>
+              <h4 className='about-label'>information</h4>
+            </div>
             <Drawer
               open={this.state.aboutOpen}
               width='50%'
@@ -137,8 +152,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
             </Drawer>
           </div>
-          <div style={{ position: 'absolute', width: '80px', height: '100%', right: '0' }} onClick={this.handleBlogToggle}>
-            <h4 style={{ marginLeft: '90px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+          <div className='blog-tab' onClick={this.handleBlogToggle}>
+            <div className='blog-label-container'>
+              <h4 className='blog-label'>blog</h4>
+            </div>
             <Drawer
               open={this.state.blogOpen}
               width='50%'
@@ -151,7 +168,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
             </Drawer>
           </div>
-          {content}
+          <div className={contentWidth}>
+            {content}
+          </div>
         </div>
       )}
   }

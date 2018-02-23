@@ -68,7 +68,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     return (
       <div className='container' style={{ width: 'calc(100% - 180px)', margin: '0 auto', paddingLeft: '0', paddingRight: '0', height: '50vh' }}>
 
-        <div className="insta-hover row" style={{ maxWidth: 'calc(100% - 160px)', margin: '0 auto', paddingTop: '10vh' }}>
+        <div className="insta-hover row" style={{ maxWidth: 'calc(100% - 160px)', margin: '0 auto', paddingTop: '5vh' }}>
           <div className="col-sm-4">
             <ReactHover
               options={options}>

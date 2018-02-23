@@ -96,7 +96,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
           <div style={{ paddingTop: '18vh' }}>
             <div>
               <Article>
