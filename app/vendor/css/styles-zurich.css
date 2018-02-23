@@ -1,3 +1,29 @@
+/*ZURICH LANDING WITH BLOG PREVIEW TAB
+*/
+
+.initial-container {
+  position: relative;
+  height: 100vh;
+  background-color: #EB3331;
+  border-left: 40px solid black;
+  border-right: 25vw solid black;
+  transition: border-right 0.5s ease;
+  height: 100vh;
+}
+
+.blog-initial {
+  position: absolute;
+  width: 50vw;
+  height: 100vw;
+  right: 0;
+  margin-right: -50vw;
+  transition: width 0.5s ease;
+}
+
+.blog-initial:hover {
+  width: 53vw;
+}
+
 /*ZURICH LANDING: FULL SCREEN
 */
 .zurich-title {
@@ -159,13 +185,12 @@
 .hover-name-half {
   position: absolute;
   display: block;
-  color: black;
+  color: #FFFFFF;
   font-size: 1.1vw;
   letter-spacing: 2px;
   font-family: SuisseCond;
   z-index: 5;
   padding: .5%;
-  text-transform: uppercase;
 }
 
 .hover-image-half {

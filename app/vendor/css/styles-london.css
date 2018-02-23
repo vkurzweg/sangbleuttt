@@ -103,7 +103,6 @@
 
 .artist-name {
   opacity: 0;
-  transition: opacity 0.25s ease;
   transition: opacity 0.5s ease;
   font-size: 1vw;
   font-family: SuisseIntlSemiBold;

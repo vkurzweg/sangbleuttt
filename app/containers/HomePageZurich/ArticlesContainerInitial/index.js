@@ -21,9 +21,6 @@ import { Image } from 'cloudinary-react';
 const Article = styled.div`
   width: 100%;
   opacity: .8;
-  &:hover{
-    opacity: 1;
-  }
 `;
 
 const Title = styled.h3`
@@ -94,72 +91,45 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article2 = documents[1].data.blog_post;
     let article3 = documents[2].data.blog_post;
     return (
-      <div>
+      <div style={{ backgroundColor: 'black', height: '100vh' }}>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-14.75%', opacity: '.7', paddingLeft: '5%' }} />
-          <div style={{ margin: '1em auto', marginTop: '18vh' }}>
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <Article>
-                  <Title>
-                    {article1.title.value[0].text}
-                  </Title>
-                  <Subtitle>
-                    {article1.subtitle.value}
-                  </Subtitle>
-                </Article>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover'>
-                <ImageContainer>
-                  <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                  <StyledImage style={{ background: `url(${article1.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
-                </ImageContainer>
-              </ReactHover.Hover>
-            </ReactHover>
+          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
+          <div style={{ paddingTop: '18vh' }}>
+            <div>
+              <Article>
+                <Title>
+                  {article1.title.value[0].text}
+                </Title>
+                <Subtitle>
+                  {article1.subtitle.value}
+                </Subtitle>
+              </Article>
+            </div>
 
-            <ReactHover
-                options={options}>
-                <ReactHover.Trigger type='trigger'>
-                  <Article>
-                    <Title>
-                      {article2.title.value[0].text}
-                    </Title>
-                    <Subtitle>
-                      {article2.subtitle.value}
-                    </Subtitle>
-                  </Article>
-                </ReactHover.Trigger>
-                <ReactHover.Hover type='hover'>
-                  <ImageContainer>
-                    <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                    <StyledImage style={{ background: `url(${article2.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
-                  </ImageContainer>
-                </ReactHover.Hover>
-              </ReactHover>
+            <div>
+              <Article>
+                <Title>
+                  {article2.title.value[0].text}
+                </Title>
+                <Subtitle>
+                  {article2.subtitle.value}
+                </Subtitle>
+              </Article>
+            </div>
 
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <Article>
-                  <Title>
-                    {article3.title.value[0].text}
-                  </Title>
-                  <Subtitle>
-                    {article3.subtitle.value}
-                  </Subtitle>
-                </Article>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover'>
-                <ImageContainer>
-                  <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                  <StyledImage style={{ background: `url(${article3.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
-                </ImageContainer>
-              </ReactHover.Hover>
-            </ReactHover>
+            <div>
+              <Article>
+                <Title>
+                  {article3.title.value[0].text}
+                </Title>
+                <Subtitle>
+                  {article3.subtitle.value}
+                </Subtitle>
+              </Article>
+            </div>
         </div>
       </div>
     )} else {
