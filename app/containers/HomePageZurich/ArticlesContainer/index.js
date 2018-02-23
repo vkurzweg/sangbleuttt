@@ -46,18 +46,13 @@ const Subtitle = styled.h4`
 `;
 
 const StyledImage = styled.div`
+  position: absolute;
   display: inline-block;
-  vertical-align: top;
-  width: 100%;
   height: 100vh;
-  margin-left: -30vw;
-  margin-top: -80%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center;
-  z-index: 100;
+  width: 50vw;
+  top: 0; left: 0;
+  margin-left: -50vw;
+  margin-top: -50vh;
 `;
 
 const ImageContainer = styled.div`
@@ -66,6 +61,7 @@ const ImageContainer = styled.div`
   width: 50vw;
   height: 100vh;
   opacity: .9;
+  position: relative;
 `
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function

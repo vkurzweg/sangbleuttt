@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import ArticlesContainer from './ArticlesContainer';
-import IntroCopy from 'components/zurich/IntroCopy';
 import InfoCopy from 'components/zurich/InfoCopy';
 import InstaHover from 'components/zurich/InstaHover';
 import Center from './Center';
@@ -72,27 +71,26 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.state.aboutOpen ? content = <Right /> : content;
     this.state.blogOpen ? content = <Left /> : content;
     return (
-      <div style={{ backgroundColor: '#EB3331', borderLeft: '80px solid black', borderRight: '80px solid black',  height: '100vh' }}>
+      <div style={{ backgroundColor: '#EB3331', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
         <Helmet>
           <title>HomePageZurich</title>
           <meta name="description" content="Description of HomePageZurich" />
         </Helmet>
         <div style={{ position: 'absolute', width: '80px', height: '100%', marginLeft: '-80px' }} onClick={this.handleAboutToggle}>
-          <Icon type="caret-right" style={{ marginLeft: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
-          <h4 style={{ marginLeft: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>About</h4>
+          <h4 style={{ marginLeft: '4vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
           <Drawer
             open={this.state.aboutOpen}
             width='50%'
             containerStyle={style.bg}
           >
             <div>
+              <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
               <About />
             </div>
           </Drawer>
         </div>
         <div style={{ position: 'absolute', width: '80px', height: '100%', right: '0' }} onClick={this.handleBlogToggle}>
-          <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
-          <h4 style={{ right: '0', marginRight: '10px', paddingTop: '50vh', fontSize: '.7vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#D9453C', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'BRRR' }}>Blog</h4>
+        <h4 style={{ marginLeft: '4vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
           <Drawer
             open={this.state.blogOpen}
             width='50%'
@@ -100,6 +98,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             openSecondary={true}
           >
             <div>
+              <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
               <ArticlesContainer />
             </div>
           </Drawer>
@@ -126,3 +125,7 @@ const withConnect = connect(null, mapDispatchToProps);
 export default compose(
   withConnect,
 )(HomePageZurich);
+
+// <Icon type="caret-right" style={{ marginLeft: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+// <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+

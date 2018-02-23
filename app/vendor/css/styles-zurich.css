@@ -64,54 +64,73 @@
 .hover-name {
   position: absolute;
   display: inline;
-  color: black;
+  color: #FFFFFF;
   font-size: 1.7vw;
   letter-spacing: 2px;
   font-family: SuisseCond;
   z-index: 5;
   padding: .5%;
   border-radius: 2px;
-  text-transform: uppercase;
 }
 
 .max:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .giorgio:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .jordan:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .paolo:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .stephane:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .labaz:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .matt:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .diego:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .golda:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .marco:hover {
   color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .insta-hover:hover .marco {
