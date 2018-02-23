@@ -15,6 +15,7 @@ import MediaQuery from 'react-responsive';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import ArticlesContainer from './ArticlesContainer';
+import ArticlesContainerMobile from './ArticlesContainerMobile';
 import Nav from 'components/london/Nav';
 import NavMobile from 'components/london/NavMobile';
 import HeaderMobile from 'components/london/HeaderMobile';
@@ -71,6 +72,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Delay wait={400}>
               <AboutMobile />
             </Delay>
+            <ArticlesContainerMobile />
           </div>
         </MediaQuery>
       </div>

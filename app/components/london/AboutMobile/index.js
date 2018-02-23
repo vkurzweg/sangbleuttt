@@ -7,15 +7,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Image } from 'cloudinary-react';
 
+const StyledImage = styled(Image)`
+  height: 40vh;
+  width: 100%;
+  object-fit: cover;
+  padding-top: 1vh;
+`;
 
 
 function IntroCopy() {
   return (
-    <div style={{ paddingBottom: '5%' }}>
+    <div style={{ paddingBottom: '3vh' }}>
       <ScrollAnimation animateIn="slideInDown">
-        <p style={{ fontSize: '3.3vw', textAlign: 'justify', color: '#323232', width: '90%', textTransform: 'uppercase', margin: '0 auto', paddingTop: '2%', paddingBottom: '3%', letterSpacing: '.5px', lineHeight: '2em' }}>
-          Lorem ipsum dolor sit amet, <span style={{ fontFamily: 'serif', fontWeight: 'bold' }}>consectetur adipiscing elit,</span> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br /> <span style={{ fontFamily: 'serif', fontWeight: 'bold' }}>Ut enim ad minim veniam,</span> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <span style={{ fontFamily: 'serif', fontWeight: 'bold' }}>Duis aute irure dolor in reprehenderit</span> in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5vw', letterSpacing: '1px', marginLeft: '4vw' }}>about</h3>
+        <StyledImage cloudName="kurzweg" publicId="sblondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+        <p style={{ fontSize: '3.5vw', color: '#323232', width: '85%', margin: '0 auto', paddingTop: '4vh', letterSpacing: '1px', lineHeight: '2em' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
       </ScrollAnimation>
     </div>

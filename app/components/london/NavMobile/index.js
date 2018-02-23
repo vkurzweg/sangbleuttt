@@ -116,16 +116,15 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     (this.state.showMenu) ? display = 'block' : display = 'none';
     const brand =
       <div>
-          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlack, overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}></h1>
-          <h1 style={{ position: 'fixed', marginLeft: '11.5vw', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '3.3vw', letterSpacing: '1px', padding: '2%', marginTop: '18px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <h1 style={{ marginLeft: '32vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <h1 style={{ marginLeft: '32vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlack, color: 'black', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
       </div>
     return (
-      <div style={{ position: 'fixed', width: '100%', zIndex: '1', top: '0' }}>
+      <div style={{ position: 'fixed', width: '100%', zIndex: '100', top: '0' }}>
         <AppBar
             title={brand}
-            style={{ position: 'fixed', width: '100%', backgroundColor: 'white' }}
-            iconElementLeft={<IconButton><NavigationMenu color={'black'} /></IconButton>}
-            onLeftIconButtonTouchTap={this.handleToggle}
+            style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent' }}
+            iconElementLeft={<div style={{ position: 'absolute' }}></div>}
             zDepth={0}
           />
         <Drawer
@@ -153,3 +152,7 @@ Nav.propTypes = {
 };
 
 export default Nav;
+
+// iconElementLeft={<Image className='logo-london' style={{ width: '6vw', height: 'auto', display: 'block', margin: '0 auto', marginLeft: '2vw' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
+// onLeftIconButtonTouchTap={this.handleToggle}
+
