@@ -39,7 +39,6 @@ const Subtitle = styled.h4`
 `;
 
 const StyledImg = styled.img`
-  padding-top: 1em;
   width: 100vw;
   height: 60vh;
   object-fit: cover;
@@ -183,7 +182,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Helmet>
 
         <div style={{ margin: '1em auto' }}>
-        <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
+        <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
 
         <div style={{ height: '90vh' }}>
           <a onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>

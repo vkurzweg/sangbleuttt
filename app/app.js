@@ -40,7 +40,9 @@ import '!!style-loader!css-loader!../node_modules/antd/dist/antd.css';
 import '!!style-loader!css-loader!../node_modules/grommet/grommet.min.css';
 // import '!!style-loader!css-loader!../node_modules/react-grid-layout/css/styles.css';
 import '!!style-loader!css-loader!../node_modules/react-resizable/css/styles.css';
-import '!!style-loader!css-loader!../app/vendor/css/styles.css';
+import '!!style-loader!css-loader!../app/vendor/css/styles-landing.css';
+import '!!style-loader!css-loader!../app/vendor/css/styles-london.css';
+import '!!style-loader!css-loader!../app/vendor/css/styles-zurich.css';
 import '!!style-loader!css-loader!../node_modules/animate.css/animate.min.css';
 
 /* eslint-enable import/no-unresolved, import/extensions */

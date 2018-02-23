@@ -174,7 +174,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Helmet>
 
         <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh', paddingBottom: '100vh' }}>
-          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '1.8vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
+          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '2.2vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>

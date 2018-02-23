@@ -1,0 +1,235 @@
+/*ZURICH LANDING: FULL SCREEN
+*/
+.zurich-title {
+  font-family: BRRR;
+  font-size: 4.75vw;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  z-index: 20;
+}
+
+
+.zurich-subtitle {
+  font-family: SuisseCond;
+  font-size: 1.8vw;
+  letter-spacing: 3px;
+  color: black;
+  z-index: 20;
+}
+
+
+.insta-hover {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+
+.hover-image {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height:50vh;
+  border: none;
+  border-radius:4px;
+  margin-top: -70%;
+  margin-left: -25%;
+  overflow: hidden;
+}
+
+.hover-image .bg {
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .8;
+  overflow: hidden;
+}
+
+
+.hover-item {
+  overflow: hidden;
+
+}
+
+.hover-name {
+  position: absolute;
+  display: inline;
+  color: black;
+  font-size: 1.7vw;
+  letter-spacing: 2px;
+  font-family: SuisseCond;
+  z-index: 5;
+  padding: .5%;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.max:hover {
+  color: #FFFFFF;
+}
+
+.giorgio:hover {
+  color: #FFFFFF;
+}
+
+.jordan:hover {
+  color: #FFFFFF;
+}
+
+.paolo:hover {
+  color: #FFFFFF;
+}
+
+.stephane:hover {
+  color: #FFFFFF;
+}
+
+.labaz:hover {
+  color: #FFFFFF;
+}
+
+.matt:hover {
+  color: #FFFFFF;
+}
+
+.diego:hover {
+  color: #FFFFFF;
+}
+
+.golda:hover {
+  color: #FFFFFF;
+}
+
+.marco:hover {
+  color: #FFFFFF;
+}
+
+.insta-hover:hover .marco {
+  background: transparent;
+}
+
+/*ZURICH LANDING - HALF SCREEN
+*/
+.zurich-title-half {
+  font-family: BRRR;
+  font-size: 4vw;
+  letter-spacing: 4px;
+  padding-top: 5%;
+  text-transform: uppercase;
+  z-index: 20;
+}
+
+.zurich-subtitle-half {
+  font-family: SuisseCond;
+  font-size: 1.3vw;
+  letter-spacing: 3px;
+  color: black;
+  z-index: 20;
+}
+
+.hover-name-half {
+  position: absolute;
+  display: block;
+  color: black;
+  font-size: 1.1vw;
+  letter-spacing: 2px;
+  font-family: SuisseCond;
+  z-index: 5;
+  padding: .5%;
+  text-transform: uppercase;
+}
+
+.hover-image-half {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height:30vh;
+  border: none;
+  border-radius:4px;
+  margin-top: -70%;
+  overflow: hidden;
+}
+
+.hover-image-half-right {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 30vw;
+  height:30vh;
+  border: none;
+  border-radius:4px;
+  margin-top: -70%;
+  margin-left: -25%;
+  overflow: hidden;
+}
+
+.hover-image-half .bg {
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .8;
+  overflow: hidden;
+}
+
+.hover-image-half-right .bg {
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .8;
+  overflow: hidden;
+}
+
+/*ABOUT SECTION
+*/
+
+.zurich-about-image {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  padding-top: 10vh;
+}
+
+.zurich-about-copy {
+  opacity: .8;
+  color: white;
+  font-size: 1.3vw;
+  text-align: justify;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5%;
+  letter-spacing: .5px;
+  line-height: 2em;
+}
+
+.zurich-logo {
+  top: 0;
+  opacity: .3;
+  width: 7vw;
+  margin-left: -25vw;
+}
+

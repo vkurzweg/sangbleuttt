@@ -48,7 +48,7 @@ const StyledMenuItem = styled(MenuItem)`
 const Brand = styled.h1`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
-  font-size: 2vw;
+  font-size: 2.25vw;
   letter-spacing: 1px;
   margin-left: 12vw;
   padding-top: 1vw;
@@ -133,7 +133,7 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
         <AppBar
             title={brand}
             style={{ width: '100%', backgroundColor: 'transparent' }}
-            iconElementRight={<Image className='logo-london' cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
+            iconElementRight={<Image className="logo-london" cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
             iconStyleLeft={{ display: 'none'}}
             zDepth={0}
           />
