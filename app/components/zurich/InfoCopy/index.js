@@ -9,19 +9,36 @@ import React from 'react';
 import { Image } from 'cloudinary-react';
 
 
-function Logo() {
+function Logo(props) {
+  let blogState = props.blogOpen;
+  let aboutState = props.aboutOpen;
+  let initialState = props.initial;
+  let titleSize = 'title-initial'
+  let subtitleMargin;
+  if(!initialState && !blogState && !aboutState){
+    titleSize = 'title-full'
+    subtitleMargin = '2vw'
+  }
+  let subtitle =
+      <div>
+        <h3 className='zurich-subtitle' style={{ marginLeft: subtitleMargin }}>Dienerstrasse 26, 8004 Zürich, Switzerland </h3>
+        <h3 className="zurich-subtitle" style={{ marginLeft: subtitleMargin }}>+41 43 545 88 38</h3>
+      </div>
+  if(blogState || aboutState){
+    titleSize = 'title-half';
+    subtitle =
+      <div>
+        <h3 className='zurich-subtitle'>Dienerstrasse 26, 8004 <br /> Zürich, Switzerland </h3>
+        <h3 className="zurich-subtitle">+41 43 545 88 38</h3>
+      </div>
+  }
+  let leftMargin = '1vw'
+  aboutState ? leftMargin = '3vw' : leftMargin;
   return (
-    <div className="container-fluid" style={{ zIndex: '20', width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0' }}>
-      <div className="row" style={{ marginLeft: '5vw', marginRight: '5vw', paddingTop: '5vh' }} >
-        <h1 className='zurich-title'>Sang Bleu Zurich</h1>
-        <div className="col-sm-6">
-          <h3 className='zurich-subtitle'>Dienerstrasse 26, 8004 Zürich, Switzerland </h3>
-          <h2 className='zurich-subtitle'>zurich@sangbleu.tattoo</h2>
-        </div>
-        <div className="col-sm-6">
-          <h3 className='zurich-subtitle' style={{ textAlign: 'right' }}>Open 11am - 7pm Tuesday to Saturday</h3>
-          <h3 className="zurich-subtitle" style={{ textAlign: 'right' }}>+41 43 545 88 38</h3>
-        </div>
+    <div style={{ zIndex: '20', width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0' }}>
+      <div style={{ marginLeft: leftMargin, marginRight: '1vw', paddingTop: '2vh' }} >
+        <h1 className={titleSize}>Sang Bleu Zurich</h1>
+        {subtitle}
       </div>
     </div>
   );

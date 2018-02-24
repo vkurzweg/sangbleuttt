@@ -72,9 +72,9 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   blogState ? fontShrink = 'font-shrink' : fontShrink;
   aboutState ? fontShrink = 'font-shrink' : fontShrink;
   let widthValue;
-  initialState ? widthValue = '65vw' : widthValue;
-  blogState ? widthValue = '50vw' : widthValue
-  aboutState ? widthValue = '40vw' : widthValue
+  initialState ? widthValue = '70vw' : widthValue;
+  blogState ? widthValue = '45vw' : widthValue
+  aboutState ? widthValue = '45vw' : widthValue
   let fullMarginLeft;
   let fullMarginTop;
   let fontGrow;

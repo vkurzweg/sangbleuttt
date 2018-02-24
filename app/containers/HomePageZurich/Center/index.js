@@ -21,7 +21,11 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
           <title>Center</title>
           <meta name="description" content="Description of Center" />
         </Helmet>
-        <InfoCopy />
+        <InfoCopy
+          blogOpen={this.props.blogOpen}
+          aboutOpen={this.props.aboutOpen}
+          initial={this.props.initial}
+        />
         <InstaHover
           blogOpen={this.props.blogOpen}
           aboutOpen={this.props.aboutOpen}

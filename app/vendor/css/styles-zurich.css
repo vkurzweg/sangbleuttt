@@ -158,18 +158,54 @@
   font-family: SuisseCond;
 }
 
-.zurich-title {
+.title-initial {
   font-family: BRRR;
-  font-size: 4.75vw;
-  letter-spacing: 4px;
+  font-size: 4.5vw;
+  letter-spacing: 3px;
   text-transform: uppercase;
   z-index: 20;
 }
 
+@keyframes growTitle {
+  from {
+    letter-spacing: 0px;
+  }
+  to {
+    letter-spacing: 13px;
+  }
+}
+
+@keyframes shrinkTitle {
+  from {
+    letter-spacing: 13px;
+  }
+  to {
+    letter-spacing: 0px;
+  }
+}
+
+.title-full {
+  animation: growTitle .75s;
+  animation-fill-mode: forwards;
+  font-family: BRRR;
+  font-size: 5vw;
+  text-transform: uppercase;
+  z-index: 20;
+  text-align: center;
+}
+
+.title-half {
+  animation: shrinkTitle .75s;
+  animation-fill-mode: forwards;
+  font-family: BRRR;
+  font-size: 3vw;
+  text-transform: uppercase;
+  z-index: 20;
+}
 
 .zurich-subtitle {
   font-family: SuisseCond;
-  font-size: 1.8vw;
+  font-size: 2.5vw;
   letter-spacing: 3px;
   color: black;
   z-index: 20;

@@ -80,9 +80,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   }
 
   render() {
-    console.log(this.state.blogOpen, 'blog')
-    console.log(this.state.aboutOpen, 'about')
-    console.log(this.state.initial, 'initial')
     let contentWidth;
     this.state.aboutOpen ? contentWidth = 'left-half' : contentWidth;
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
