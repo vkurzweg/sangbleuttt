@@ -116,8 +116,8 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     (this.state.showMenu) ? display = 'block' : display = 'none';
     const brand =
       <div>
-          <h1 style={{ marginLeft: '31vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
-          <h1 style={{ marginLeft: '31vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlack, color: 'black', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <h1 style={{ marginLeft: '31vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlue, color: '#3D8EE2', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '4.5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
+          <h1 style={{ marginLeft: '31vw', fontFamily: 'SuisseIntlSemiBold', textAlign: 'right', position: 'fixed', display: displayBlack, color: 'black', overflow: 'visible', whiteSpace: 'nowrap', textTransform: 'uppercase', fontSize: '4.5vw', letterSpacing: '1px', padding: '2%', marginTop: '10px' }}><span style={{ color: 'black' }}>Sang Bleu</span> London</h1>
       </div>
     return (
       <div style={{ position: 'fixed', width: '100%', zIndex: '100', top: '0' }}>

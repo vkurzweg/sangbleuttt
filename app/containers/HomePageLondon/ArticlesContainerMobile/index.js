@@ -244,7 +244,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       overflow: 'scroll',
                     },
                 content: {
-                  top: '65%',
+                  top: '75%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
@@ -290,7 +290,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       overflow: 'scroll',
                     },
                 content: {
-                  top: '65%',
+                  top: '75%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
@@ -337,7 +337,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       zIndex: '100'
                     },
                 content: {
-                  top: '65%',
+                  top: '75%',
                   left: '50%',
                   right: 'auto',
                   bottom: 'auto',
