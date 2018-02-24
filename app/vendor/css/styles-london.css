@@ -290,6 +290,7 @@ img {
 
 .item-container-mobile {
   display: block;
+  float: left;
   color: black;
   break-inside: avoid-column;
 }
