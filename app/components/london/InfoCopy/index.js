@@ -32,7 +32,7 @@ const Button = styled.button`
 function Logo() {
   return (
     <div id="info" className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black'}}>
-      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '12.25vw', letterSpacing: '1px', fontFamily: 'SuisseLight', color: 'black', fontSize: '1.1vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '2vh' }}>
+      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '12.25vw', letterSpacing: '1px', fontFamily: 'SuisseLight', color: 'black', fontSize: '.9vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '2vh' }}>
         <div className="col-sm-3">
           <p>Sang Bleu London <br />29B Dalston Ln,<br />London E8 3DF</p>
         </div>

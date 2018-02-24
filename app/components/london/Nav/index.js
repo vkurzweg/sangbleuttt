@@ -48,7 +48,7 @@ const StyledMenuItem = styled(MenuItem)`
 const Brand = styled.h1`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
-  font-size: 2.25vw;
+  font-size: 1.75vw;
   letter-spacing: 1px;
   margin-left: 12vw;
   padding-top: 1vw;
