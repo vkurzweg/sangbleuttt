@@ -65,10 +65,62 @@
   width: 120px;
 }
 
-.half {
-  width: 50vw;
-  -webkit-transition: width 2s; /* Safari */
-  transition: width 2s;
+
+@keyframes shrink {
+  from {
+    width: 100vw;
+  }
+  to {
+    width: 50vw;
+  }
+}
+
+@keyframes grow {
+  from {
+    width: 50vw;
+  }
+  to {
+    width: 100vw;
+  }
+}
+
+@keyframes shrinkFont {
+  from {
+    font-size: 1.7vw;
+  }
+  to {
+    font-size: 1vw;
+  }
+}
+
+@keyframes growFont {
+  from {
+    font-size: 1vw;
+  }
+  to {
+    font-size: 2.7vw;
+  }
+}
+
+.right-half {
+  animation: shrink .5s;
+  animation-fill-mode: forwards;
+}
+
+.left-half {
+  margin-left: 45vw;
+  animation: shrink .5s;
+  animation-fill-mode: forwards;
+}
+
+.font-shrink {
+  animation: shrinkFont .5s;
+  animation-fill-mode: forwards;
+}
+
+.font-grow {
+  animation: growFont .5s;
+  animation-fill-mode: forwards;
 }
 
 /*ZURICH LANDING: FULL SCREEN

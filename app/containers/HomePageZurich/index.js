@@ -56,19 +56,19 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
    }
 
    handleAboutToggle(){
-    return this.setState({aboutOpen: !this.state.aboutOpen})
+    return this.setState({aboutOpen: !this.state.aboutOpen, initial: false})
   }
 
    handleBlogToggle() {
-    return this.setState({blogOpen: !this.state.blogOpen})
+    return this.setState({blogOpen: !this.state.blogOpen, initial: false})
   }
 
    handleAboutClose() {
-    return this.setState({aboutOpen: false})
+    return this.setState({aboutOpen: false, initial: false})
   }
 
    handleBlogClose() {
-    return this.setState({blogOpen: false})
+    return this.setState({blogOpen: false, initial: false})
   }
 
   handleFirstBlogClick() {
@@ -80,10 +80,12 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   }
 
   render() {
-    let content = <Center />
+    console.log(this.state.blogOpen, 'blog')
+    console.log(this.state.aboutOpen, 'about')
+    console.log(this.state.initial, 'initial')
     let contentWidth;
-    this.state.aboutOpen ? contentWidth = 'half' : contentWidth;
-    this.state.blogOpen ? contentWidth = 'half' : contentWidth;
+    this.state.aboutOpen ? contentWidth = 'left-half' : contentWidth;
+    this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
     if (this.state.initial) {
       return (
         <div className='initial-container'>
@@ -127,7 +129,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </Drawer>
           </div>
           <div className={contentWidth} >
-            {content}
+            <Center
+              blogOpen={this.state.blogOpen}
+              aboutOpen={this.state.aboutOpen}
+              initial={this.state.initial}
+            />
           </div>
         </div>
         )} else {
@@ -169,7 +175,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </Drawer>
           </div>
           <div className={contentWidth}>
-            {content}
+            <Center
+              blogOpen={this.state.blogOpen}
+              aboutOpen={this.state.aboutOpen}
+              initial={this.state.initial}
+            />
           </div>
         </div>
       )}
