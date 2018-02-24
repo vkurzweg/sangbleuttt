@@ -20,14 +20,15 @@ import { Image } from 'cloudinary-react';
 
 const Article = styled.div`
   width: 100%;
-  opacity: .8;
+  opacity: .9;
 `;
 
 const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 2vw;
+  font-size: 2.3vw;
+  letter-spacing: 2px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
@@ -96,7 +97,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <div style={{ paddingTop: '18vh' }}>
+          <div style={{ paddingTop: '10vh' }}>
             <div>
               <Article>
                 <Title>

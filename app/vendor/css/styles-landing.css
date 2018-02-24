@@ -33,6 +33,11 @@
   src: url('../fonts/SuisseIntl-Light.otf');
 }
 
+@font-face {
+  font-family: SuisseLightItalic;
+  src: url('../fonts/SuisseIntl-LightItalic.otf');
+}
+
 /*BLACK & WHITE HOVER EFFECT
 */
 

@@ -3,7 +3,7 @@
 
 .initial-container {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 40px);
   background-color: #EB3331;
   border-left: 40px solid black;
   border-right: 25vw solid black;
@@ -14,7 +14,7 @@
 .blog-initial {
   position: absolute;
   width: 50vw;
-  height: 100vw;
+  height: 100%;
   right: 0;
   margin-right: -50vw;
   transition: width 0.5s ease;
@@ -65,6 +65,8 @@
   width: 120px;
 }
 
+/*content resizing animation
+*/
 
 @keyframes shrink {
   from {
@@ -445,3 +447,91 @@
   margin-left: -25vw;
 }
 
+/*SCROLLING MARQUEE
+*/
+
+.marquee {
+  position: relative;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  background: black;
+  width: 100vw;
+  height: 40px;
+  color: white;
+  font-family: SuisseLightItalic;
+  text-transform: uppercase;
+  z-index: 2000;
+}
+
+.marquee-text {
+  position: absolute;
+  height: 40px;
+  width: 100vw;
+  bottom: 0;
+}
+
+.marquee .marquee-text {
+  display: inline-block;
+  padding-left: 100vw;
+  animation: marquee 15s linear infinite;
+  padding: 1%;
+}
+
+.marquee:hover .marquee-text {
+  animation: fadeMarquee 1s;
+  animation-fill-mode: forwards;
+}
+
+.marquee a {
+  color: inherit;
+}
+
+.marquee-mailto {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.marquee:hover .marquee-mailto {
+  display: block;
+  text-align: center;
+  animation: fadeMailto 1s;
+  text-decoration: none;
+  color: white;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+@keyframes fadeMarquee {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeMailto {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.swiss-flag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  z-index: 2000;
+}

@@ -19,8 +19,10 @@ import { Image } from 'cloudinary-react';
 
 
 const Article = styled.div`
-  width: 100%;
-  opacity: .8;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  opacity: .9;
   &:hover{
     opacity: 1;
   }
@@ -30,7 +32,8 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 2vw;
+  font-size: 2.3vw;
+  letter-spacing: 2px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
@@ -99,8 +102,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-14.75%', opacity: '.7', paddingLeft: '5%' }} />
-          <div style={{ margin: '1em auto', marginTop: '18vh' }}>
+          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-4.75%', opacity: '.7', paddingLeft: '5%' }} />
+          <div style={{ margin: '1em auto', marginTop: '10vh' }}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>

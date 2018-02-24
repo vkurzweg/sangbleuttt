@@ -20,7 +20,8 @@ import Left from './Left';
 import Icon from 'antd/lib/icon';
 import Drawer from 'material-ui/Drawer';
 import About from 'components/zurich/About';
-
+import Marquee from 'components/zurich/Marquee';
+import { Image } from 'cloudinary-react';
 
 const Background = styled.div`
   width: calc(100vw - 80px);
@@ -56,11 +57,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
    }
 
    handleAboutToggle(){
-    return this.setState({aboutOpen: !this.state.aboutOpen, initial: false})
+    return this.setState({aboutOpen: !this.state.aboutOpen, initial: false, blogOpen: false})
   }
 
    handleBlogToggle() {
-    return this.setState({blogOpen: !this.state.blogOpen, initial: false})
+    return this.setState({blogOpen: !this.state.blogOpen, initial: false, aboutOpen: false})
   }
 
    handleAboutClose() {
@@ -85,6 +86,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
     if (this.state.initial) {
       return (
+        <div style={{ height: '100vh' }}>
         <div className='initial-container'>
           <Helmet>
             <title>HomePageZurich</title>
@@ -133,8 +135,14 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             />
           </div>
         </div>
+        <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+          <Marquee />
+          <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+        </div>
+        </div>
         )} else {
       return (
+        <div style={{ height: '100vh' }}>
         <div style={{ position: 'relative', height: '100vh', backgroundColor: '#EB3331', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
           <Helmet>
             <title>HomePageZurich</title>
@@ -179,6 +187,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             />
           </div>
         </div>
+        <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+          <Marquee />
+          <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+        </div>
+      </div>
       )}
   }
 }
@@ -202,4 +215,9 @@ export default compose(
 
 // <Icon type="caret-right" style={{ marginLeft: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
 // <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
+
+// <div style={{ position: 'relative', height: '40px', width: '40px' }}>
+//   <Marquee />
+//   <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+// </div>
 
