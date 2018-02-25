@@ -275,6 +275,7 @@ img {
     animation: fadeMe 2s;
     width: 95%;
     margin: 1em auto;
+    height: 100vh;
 }
 
 .masonry-mobile {
