@@ -1,9 +1,9 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import Insta from '../index';
+// import NamesFull from '../index';
 
-describe('<Insta />', () => {
+describe('<NamesFull />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

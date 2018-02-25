@@ -97,13 +97,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article2 = documents[1].data.blog_post;
     let article3 = documents[2].data.blog_post;
     return (
-      <div>
+      <div style={{ marginTop: '10%' }}>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
           <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-4.75%', opacity: '.7', paddingLeft: '5%' }} />
-          <div style={{ margin: '1em auto', marginTop: '10vh' }}>
+          <div className='blog-hover-image' style={{ paddingTop: '5%' }}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
@@ -118,8 +118,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               </ReactHover.Trigger>
               <ReactHover.Hover type='hover'>
                 <ImageContainer>
-                  <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                  <StyledImage style={{ background: `url(${article1.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
+                  <StyledImage style={{ background: `url(${article1.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
+                    <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                  </StyledImage>
                 </ImageContainer>
               </ReactHover.Hover>
             </ReactHover>

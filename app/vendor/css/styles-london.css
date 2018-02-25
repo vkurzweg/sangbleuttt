@@ -273,9 +273,8 @@ img {
 
 .wrapper-mobile {
     animation: fadeMe 2s;
-    width: 95%;
+    width: 90%;
     margin: 1em auto;
-    height: 100vh;
 }
 
 .masonry-mobile {
@@ -303,12 +302,13 @@ img {
   width: 100%;
   height: 10vh;
   object-fit: cover;
+  margin-bottom: 7%;
 }
 
 .artist-name-mobile {
   width: 100%;
   text-align: center;
-  font-size: 3.2vw;
+  font-size: 2.8vw;
   font-family: Helvetica;
   overflow: visible;
   font-weight: bold;
@@ -323,6 +323,10 @@ img {
   -ms-transform: translateX(-50%);
   transform: translateX(-60%);
   break-inside: avoid-column;
+}
+
+.artist-container:nth-child(7) hr {
+  display: none;
 }
 
 /*SHOW MAIN ARTICLE IMAGE ON TITLE HOVER
@@ -372,9 +376,8 @@ img {
 
 .article-link:hover .article-title {
   position: relative;
-  opacity: .6;
-  z-index: 5;
-  color: white;
+  z-index: 1 !important;
+  mix-blend-mode: difference;
   font-weight: bold;
 }
 

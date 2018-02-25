@@ -223,6 +223,45 @@
   padding-bottom: 3vh;
 }
 
+.insta-hover .hover-container-full div:nth-child(1) div:nth-child(2) {
+  display: block;
+  margin: 0 auto !important;
+  position: fixed !important;
+  height: 50vh;
+  width: 30vw;
+  top: 25%;
+}
+
+.insta-hover .hover-container-initial div:nth-child(1) div:nth-child(2) {
+  display: block;
+  margin: 0 auto !important;
+  position: fixed !important;
+  height: 50vh;
+  width: 30vw;
+  top: 25%;
+  left: -25vw;
+}
+
+.insta-hover .hover-container-blog div:nth-child(1) div:nth-child(2) {
+  display: block;
+  margin: 0 auto !important;
+  position: fixed !important;
+  height: 50vh;
+  width: 30vw;
+  top: 25%;
+  left: -50vw;
+}
+
+.insta-hover .hover-container-about div:nth-child(1) div:nth-child(2) {
+  display: block;
+  margin: 0 auto !important;
+  position: fixed !important;
+  height: 50vh;
+  width: 30vw;
+  top: 25%;
+  left: 50vw;
+}
+
 .hover-image {
   position: relative;
   display: block;
@@ -441,10 +480,12 @@
 }
 
 .zurich-logo {
+  position: absolute;
   top: 0;
-  opacity: .3;
   width: 7vw;
   margin-left: -25vw;
+  z-index: 1000;
+  mix-blend-mode: difference;
 }
 
 /*SCROLLING MARQUEE

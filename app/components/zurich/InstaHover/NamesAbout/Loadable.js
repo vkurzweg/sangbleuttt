@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for Insta
+ * Asynchronously loads the component for NamesFull
  *
  */
 
