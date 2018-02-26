@@ -23,6 +23,7 @@ const Article = styled.div`
   display: block;
   margin: 0 auto;
   opacity: .9;
+  margin-bottom: 10vh;
   &:hover{
     opacity: 1;
   }
@@ -42,29 +43,37 @@ const Title = styled.h3`
 const Subtitle = styled.h4`
   text-align: center;
   font-family: SuisseCond;
-  padding-bottom: 10%;
   color: #FAFAFA;
   fontSize: 2vw;
   padding-left: 5%;
 `;
 
 const StyledImage = styled.div`
-  position: absolute;
-  display: inline-block;
-  height: 100vh;
-  width: 50vw;
-  top: 0; left: 0;
-  margin-left: -50vw;
-  margin-top: -50vh;
+  position:absolute;
+  width: 100%;
+  display:block;
+  margin: 0 auto;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-position: center;
+  background-size:cover;
+  opacity: .9;
+  overflow: hidden;
+
 `;
 
 const ImageContainer = styled.div`
-  display: inline-block;
-  vertical-align: top;
+  position: relative;
+  display: block;
+  margin: 0 auto;
   width: 50vw;
   height: 100vh;
-  opacity: .9;
-  position: relative;
+  border: none;
+  margin-top: -70%;
+  margin-left: -100%;
+  overflow: hidden;
 `
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -97,17 +106,17 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article2 = documents[1].data.blog_post;
     let article3 = documents[2].data.blog_post;
     return (
-      <div style={{ marginTop: '10%' }}>
+      <div className='blog-container' style={{ marginTop: '10%', height: '100vh' }}>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
           <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-4.75%', opacity: '.7', paddingLeft: '5%' }} />
-          <div className='blog-hover-image' style={{ paddingTop: '5%' }}>
+          <div className='blog-hover-image'>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <Article>
+                <Article className='titles-container'>
                   <Title>
                     {article1.title.value[0].text}
                   </Title>
@@ -124,11 +133,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </ImageContainer>
               </ReactHover.Hover>
             </ReactHover>
-
+          </div>
+          <div className='blog-hover-image'>
             <ReactHover
                 options={options}>
                 <ReactHover.Trigger type='trigger'>
-                  <Article>
+                  <Article className='titles-container'>
                     <Title>
                       {article2.title.value[0].text}
                     </Title>
@@ -139,33 +149,36 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </ReactHover.Trigger>
                 <ReactHover.Hover type='hover'>
                   <ImageContainer>
-                    <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                    <StyledImage style={{ background: `url(${article2.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
+                    <StyledImage style={{ background: `url(${article2.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
+                      <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                    </StyledImage>
                   </ImageContainer>
                 </ReactHover.Hover>
               </ReactHover>
-
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <Article>
-                  <Title>
-                    {article3.title.value[0].text}
-                  </Title>
-                  <Subtitle>
-                    {article3.subtitle.value}
-                  </Subtitle>
-                </Article>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover'>
-                <ImageContainer>
-                  <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                  <StyledImage style={{ background: `url(${article3.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt} />
-                </ImageContainer>
-              </ReactHover.Hover>
-            </ReactHover>
+            </div>
+            <div className='blog-hover-image'>
+              <ReactHover
+                options={options}>
+                <ReactHover.Trigger type='trigger'>
+                  <Article className='titles-container' style={{ marginTop: '5vh' }}>
+                    <Title>
+                      {article3.title.value[0].text}
+                    </Title>
+                    <Subtitle>
+                      {article3.subtitle.value}
+                    </Subtitle>
+                  </Article>
+                </ReactHover.Trigger>
+                <ReactHover.Hover type='hover'>
+                  <ImageContainer>
+                    <StyledImage style={{ background: `url(${article3.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
+                      <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                    </StyledImage>
+                  </ImageContainer>
+                </ReactHover.Hover>
+              </ReactHover>
+            </div>
         </div>
-      </div>
     )} else {
       return (
         <p>Loading...</p>

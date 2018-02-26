@@ -24,6 +24,8 @@
   width: 53vw;
 }
 
+/*SIDENAV TABS
+*/
 .about-tab {
   position: absolute;
   width: 80px;
@@ -147,7 +149,8 @@
 }
 
 .blog-label {
-  padding-left: 10px;
+  left: 0;
+  margin-left: 10px;
   margin-top: 44vh;
   font-size: 1.3vw;
   letter-spacing: 2px;
@@ -391,71 +394,25 @@
   z-index: 20;
 }
 
-.hover-name-half {
-  position: absolute;
-  display: block;
-  color: #FFFFFF;
-  font-size: 1.1vw;
-  letter-spacing: 2px;
-  font-family: SuisseCond;
-  z-index: 5;
-  padding: .5%;
-}
+/*BLOG HOVER EFFECT
+*/
 
-.hover-image-half {
+.blog-hover-image {
   position: relative;
+}
+
+.blog-container .blog-hover-image div:nth-child(1) div:nth-child(2) {
   display: block;
-  margin: 0 auto;
-  width: 30vw;
-  height:30vh;
-  border: none;
-  border-radius:4px;
-  margin-top: -70%;
-  overflow: hidden;
+  position: fixed !important;
+  height: 100vh !important;
+  width: 50vw !important;
+  left: 0 !important;
+  top: 50%;
+  object-fit: cover !important;
+  -webkit-transform:translate3d(0,0,0);
 }
 
-.hover-image-half-right {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 30vw;
-  height:30vh;
-  border: none;
-  border-radius:4px;
-  margin-top: -70%;
-  margin-left: -25%;
-  overflow: hidden;
-}
 
-.hover-image-half .bg {
-  position:absolute;
-  width: 100%;
-  display:block;
-  margin: 0 auto;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  background-position: center;
-  background-size:cover;
-  opacity: .8;
-  overflow: hidden;
-}
-
-.hover-image-half-right .bg {
-  position:absolute;
-  width: 100%;
-  display:block;
-  margin: 0 auto;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  background-position: center;
-  background-size:cover;
-  opacity: .8;
-  overflow: hidden;
-}
 
 /*ABOUT SECTION
 */
@@ -498,10 +455,10 @@
 }
 
 .zurich-logo {
-  position: absolute;
-  top: 0;
+  display: block;
+  margin: 0 auto;
   width: 7vw;
-  margin-left: -25vw;
+  margin-top: 40vh;
   z-index: 1000;
   mix-blend-mode: difference;
 }
