@@ -7,21 +7,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import ArticlesContainer from './ArticlesContainer';
 import ArticlesContainerInitial from './ArticlesContainerInitial';
 import InfoCopy from 'components/zurich/InfoCopy';
-import InstaHover from 'components/zurich/InstaHover';
+import InfoCopyMobile from 'components/zurich/InfoCopyMobile';
+import Names from 'components/zurich/Names';
+import NamesMobile from 'components/zurich/NamesMobile';
 import Center from './Center';
-import Right from './Right';
-import Left from './Left';
 import Icon from 'antd/lib/icon';
 import Drawer from 'material-ui/Drawer';
 import About from 'components/zurich/About';
+import AboutMobile from 'components/zurich/AboutMobile';
 import Marquee from 'components/zurich/Marquee';
+import MarqueeMobile from 'components/zurich/MarqueeMobile';
 import { Image } from 'cloudinary-react';
+
 
 const Background = styled.div`
   width: calc(100vw - 80px);
@@ -86,112 +90,185 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
     if (this.state.initial) {
       return (
-        <div style={{ height: '100vh' }}>
-        <div className='initial-container'>
-          <Helmet>
-            <title>HomePageZurich</title>
-            <meta name="description" content="Description of HomePageZurich" />
-          </Helmet>
-          <div className='about-tab' onClick={this.handleAboutToggle}>
-            <div className='about-label-container'>
-              <h4 className='about-label'>information</h4>
+        <div>
+          <MediaQuery maxWidth={767}>
+            <div style={{ backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll' }}>
+              <div style={{  minHeight: 'calc(100vh - 60px)' }}>
+                <div className='about-tab-mobile' onClick={this.handleAboutToggle}>
+                  <h4 className='about-label-mobile'>information</h4>
+                </div>
+                <Drawer
+                  open={this.state.aboutOpen}
+                  width='90%'
+                  containerStyle={style.bg}
+                  onTouchTap={this.handleAboutClose}
+                >
+                  <div>
+                    <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                    <AboutMobile />
+                  </div>
+                </Drawer>
+                <div className='blog-tab-mobile'></div>
+                <InfoCopyMobile />
+                <Image className='zurich-logo-mobile' cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                <NamesMobile
+                  blogOpen={this.props.blogOpen}
+                  aboutOpen={this.props.aboutOpen}
+                  initial={this.props.initial}
+                />
+              </div>
+              <MarqueeMobile />
             </div>
-            <Drawer
-              open={this.state.aboutOpen}
-              width='50%'
-              containerStyle={style.bg}
-            >
-              <div>
-                <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
-                <About />
+          </MediaQuery>
+          <MediaQuery minWidth={768}>
+            <div style={{ height: '100vh' }}>
+              <div className='initial-container'>
+                <Helmet>
+                  <title>HomePageZurich</title>
+                  <meta name="description" content="Description of HomePageZurich" />
+                </Helmet>
+                <div className='about-tab' onClick={this.handleAboutToggle}>
+                  <div className='about-label-container'>
+                    <h4 className='about-label'>information</h4>
+                  </div>
+                  <Drawer
+                    open={this.state.aboutOpen}
+                    width='50%'
+                    containerStyle={style.bg}
+                  >
+                    <div>
+                      <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                      <About />
+                    </div>
+                  </Drawer>
+                </div>
+                <div className='blog-initial'>
+                  <div style={{ position: 'relative', height: '100vh', width: '50vw' }}>
+                    <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                    <Icon type="close" onClick={this.handleBlogDismiss} style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
+                    <div onClick={this.handleFirstBlogClick}>
+                      <ArticlesContainerInitial />
+                    </div>
+                  </div>
+                  <Drawer
+                    open={this.state.blogOpen}
+                    width='50%'
+                    containerStyle={style.bg}
+                    openSecondary={true}
+                  >
+                    <div>
+                      <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                      <ArticlesContainer />
+                    </div>
+                  </Drawer>
+                </div>
+                <div className={contentWidth} >
+                  <InfoCopy
+                    blogOpen={this.props.blogOpen}
+                    aboutOpen={this.props.aboutOpen}
+                    initial={this.props.initial}
+                  />
+                  <Names
+                    blogOpen={this.props.blogOpen}
+                    aboutOpen={this.props.aboutOpen}
+                    initial={this.props.initial}
+                  />
+                </div>
               </div>
-            </Drawer>
-          </div>
-          <div className='blog-initial'>
-            <div style={{ position: 'relative', height: '100vh', width: '50vw' }}>
-              <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-              <Icon type="close" onClick={this.handleBlogDismiss} style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
-              <div onClick={this.handleFirstBlogClick}>
-                <ArticlesContainerInitial />
+              <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+                <Marquee />
+                <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
               </div>
             </div>
-            <Drawer
-              open={this.state.blogOpen}
-              width='50%'
-              containerStyle={style.bg}
-              openSecondary={true}
-            >
-              <div>
-                <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                <ArticlesContainer />
-              </div>
-            </Drawer>
-          </div>
-          <div className={contentWidth} >
-            <Center
-              blogOpen={this.state.blogOpen}
-              aboutOpen={this.state.aboutOpen}
-              initial={this.state.initial}
-            />
-          </div>
-        </div>
-        <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
-          <Marquee />
-          <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
-        </div>
+          </MediaQuery>
         </div>
         )} else {
       return (
-        <div style={{ height: '100vh' }}>
-        <div style={{ position: 'relative', height: '100vh', backgroundColor: '#EB3331', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
-          <Helmet>
-            <title>HomePageZurich</title>
-            <meta name="description" content="Description of HomePageZurich" />
-          </Helmet>
-          <div className='about-tab' onClick={this.handleAboutToggle}>
-            <div className='about-label-container'>
-              <h4 className='about-label'>information</h4>
-            </div>
-            <Drawer
-              open={this.state.aboutOpen}
-              width='50%'
-              containerStyle={style.bg}
-            >
-              <div>
-                <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
-                <About />
+        <div>
+        <MediaQuery maxWidth={767}>
+          <div style={{ backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll' }}>
+            <div style={{  minHeight: 'calc(100vh - 60px)' }}>
+              <div className='about-tab-mobile' onClick={this.handleAboutToggle}>
+                <h4 className='about-label-mobile'>information</h4>
               </div>
-            </Drawer>
-          </div>
-          <div className='blog-tab' onClick={this.handleBlogToggle}>
-            <div className='blog-label-container'>
-              <h4 className='blog-label'>blog</h4>
+              <Drawer
+                open={this.state.aboutOpen}
+                width='89%'
+                containerStyle={style.bg}
+                onTouchTap={this.handleAboutClose}
+              >
+                <div>
+                  <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '3.5vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                  <AboutMobile
+                  handleAboutClose={this.handleAboutClose}
+                  />
+                </div>
+              </Drawer>
+              <div className='blog-tab-mobile'></div>
+              <InfoCopyMobile />
+              <Image className='zurich-logo-mobile' cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+              <NamesMobile
+                blogOpen={this.props.blogOpen}
+                aboutOpen={this.props.aboutOpen}
+                initial={this.props.initial}
+              />
             </div>
-            <Drawer
-              open={this.state.blogOpen}
-              width='50%'
-              containerStyle={style.bg}
-              openSecondary={true}
-            >
-              <div>
-                <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                <ArticlesContainer />
+            <MarqueeMobile />
+          </div>
+        </MediaQuery>
+        <MediaQuery minWidth={768}>
+          <div style={{ height: '100vh' }}>
+            <div style={{ position: 'relative', height: '100vh', backgroundColor: '#EB3331', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
+              <Helmet>
+                <title>HomePageZurich</title>
+                <meta name="description" content="Description of HomePageZurich" />
+              </Helmet>
+              <div className='about-tab' onClick={this.handleAboutToggle}>
+                <div className='about-label-container'>
+                  <h4 className='about-label'>information</h4>
+                </div>
+                <Drawer
+                  open={this.state.aboutOpen}
+                  width='50%'
+                  containerStyle={style.bg}
+                >
+                  <div>
+                    <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                    <About />
+                  </div>
+                </Drawer>
               </div>
-            </Drawer>
-          </div>
-          <div className={contentWidth}>
-            <Center
-              blogOpen={this.state.blogOpen}
-              aboutOpen={this.state.aboutOpen}
-              initial={this.state.initial}
-            />
-          </div>
+              <div className='blog-tab' onClick={this.handleBlogToggle}>
+                <div className='blog-label-container'>
+                  <h4 className='blog-label'>blog</h4>
+                </div>
+                <Drawer
+                  open={this.state.blogOpen}
+                  width='50%'
+                  containerStyle={style.bg}
+                  openSecondary={true}
+                >
+                  <div>
+                    <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                    <ArticlesContainer />
+                  </div>
+                </Drawer>
+              </div>
+              <div className={contentWidth}>
+                <Center
+                  blogOpen={this.state.blogOpen}
+                  aboutOpen={this.state.aboutOpen}
+                  initial={this.state.initial}
+                />
+              </div>
+            </div>
+            <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+              <Marquee />
+              <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+            </div>
         </div>
-        <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
-          <Marquee />
-          <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
-        </div>
-      </div>
+      </MediaQuery>
+    </div>
       )}
   }
 }

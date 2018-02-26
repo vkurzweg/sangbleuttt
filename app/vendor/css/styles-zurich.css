@@ -56,6 +56,7 @@
   transition: margin-right 0.5s ease;
 }
 
+
 .about-label-container {
   position: relative;
   height: 100vh;
@@ -66,6 +67,42 @@
 .about-tab:hover .about-label-container {
   width: 120px;
 }
+
+/*MOBILE NAV
+*/
+
+.about-tab-mobile {
+  position: absolute;
+  left: 0;
+  width: 10vw;
+  height: 100%;
+  background-color: black;
+}
+
+.blog-tab-mobile {
+  position: absolute;
+  right: 0;
+  width: 10vw;
+  height: 100%;
+  background-color: black;
+}
+
+.about-label-mobile {
+  margin-left: 10px;
+  margin-top: 40vh;
+  font-size: 3.5vw;
+  letter-spacing: 2px;
+  z-index: 100;
+  position: fixed;
+  color: #FFFFFF;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'SuisseCond';
+  transition: margin-right 0.5s ease;
+}
+
 
 /*content resizing animation
 */
@@ -208,6 +245,22 @@
   z-index: 20;
 }
 
+.title-mobile {
+  font-family: BRRR;
+  font-size: 5.2vw;
+  text-transform: uppercase;
+  z-index: 20;
+  text-align: center;
+}
+
+.zurich-subtitle-mobile {
+  font-family: SuisseCond;
+  font-size: 4.8vw;
+  letter-spacing: 3px;
+  color: black;
+  z-index: 20;
+}
+
 .zurich-subtitle {
   font-family: SuisseCond;
   font-size: 2.5vw;
@@ -216,6 +269,13 @@
   z-index: 20;
 }
 
+.zurich-logo-mobile {
+  width: 10vw;
+  position: absolute;
+  right: 0;
+  margin-right: 20vw;
+  display: block;
+}
 
 .insta-hover {
   display: flex;
@@ -309,6 +369,19 @@
   z-index: 5;
   padding: .5%;
   border-radius: 2px;
+}
+
+.name-mobile {
+  color: #FFFFFF;
+  font-size: 5vw;
+  letter-spacing: 2px;
+  font-family: SuisseCond;
+  padding: 5%;
+
+}
+
+.name-right {
+  margin-left: 30vw;
 }
 
 .max:hover {
@@ -454,6 +527,43 @@
   text-transform: uppercase;
 }
 
+.zurich-about-image-mobile {
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+  padding-top: 3vh;
+}
+
+.zurich-about-header-mobile {
+  font-family: SuisseCond;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 4%;
+  padding-left: 8%;
+  opacity: .9;
+  font-size: 4vw;
+}
+
+.zurich-about-copy-mobile {
+  color: white;
+  font-size: 3vw;
+  text-align: justify;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 5%;
+  letter-spacing: .5px;
+  font-family: SuisseCond;
+  opacity: .9;
+}
+
+.zurich-links-mobile a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5vw;
+  display: block;
+  text-transform: uppercase;
+}
+
 .zurich-logo {
   display: block;
   margin: 0 auto;
@@ -485,9 +595,38 @@
   height: 40px;
   width: 100vw;
   bottom: 0;
+  left: 0;
 }
 
 .marquee .marquee-text {
+  display: inline-block;
+  padding-left: 100vw;
+  animation: marquee 15s linear infinite;
+  padding: 1%;
+}
+
+.marquee-mobile {
+  position: relative;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  background: black;
+  width: 100vw;
+  height: 40px;
+  color: white;
+  font-family: SuisseLightItalic;
+  text-transform: uppercase;
+  z-index: 2000;
+}
+
+.marquee-text-mobile {
+  position: absolute;
+  height: 40px;
+  width: 100vw;
+  bottom: 0;
+}
+
+.marquee-mobile .marquee-text-mobile {
   display: inline-block;
   padding-left: 100vw;
   animation: marquee 15s linear infinite;

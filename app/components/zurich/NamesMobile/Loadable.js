@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for Right
+ * Asynchronously loads the component for InstaHover
  *
  */
 
