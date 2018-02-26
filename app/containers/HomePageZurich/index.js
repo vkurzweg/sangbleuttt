@@ -162,16 +162,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     </div>
                   </Drawer>
                 </div>
-                <div className={contentWidth} >
-                  <InfoCopy
-                    blogOpen={this.props.blogOpen}
-                    aboutOpen={this.props.aboutOpen}
-                    initial={this.props.initial}
-                  />
-                  <Names
-                    blogOpen={this.props.blogOpen}
-                    aboutOpen={this.props.aboutOpen}
-                    initial={this.props.initial}
+                <div className={contentWidth}>
+                  <Center
+                    blogOpen={this.state.blogOpen}
+                    aboutOpen={this.state.aboutOpen}
+                    initial={this.state.initial}
                   />
                 </div>
               </div>
