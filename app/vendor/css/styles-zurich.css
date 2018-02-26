@@ -461,22 +461,40 @@
 */
 
 .zurich-about-image {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   display: block;
-  padding-top: 10vh;
+  padding-top: 3vh;
+}
+
+.zurich-about-header {
+  font-family: SuisseCond;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 4%;
+  padding-left: 8%;
+  opacity: .9;
+  font-size: 2vw;
 }
 
 .zurich-about-copy {
-  opacity: .8;
   color: white;
-  font-size: 1.3vw;
+  font-size: 1.2vw;
   text-align: justify;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   padding-top: 5%;
   letter-spacing: .5px;
-  line-height: 2em;
+  font-family: SuisseCond;
+  opacity: .9;
+}
+
+.zurich-links a {
+  text-decoration: none;
+  color: white;
+  font-size: .9vw;
+  display: block;
+  text-transform: uppercase;
 }
 
 .zurich-logo {
@@ -543,6 +561,7 @@
   animation: fadeMailto 1s;
   text-decoration: none;
   color: white;
+  padding: 1%;
 }
 
 @keyframes marquee {
