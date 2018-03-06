@@ -48,7 +48,7 @@ const PostDate = styled.h5`
   text-align: center;
   letter-spacing: 2px;
   position: absolute;
-  margin-left: 25%;
+  margin-left: 20%;
   bottom: 0;
 `;
 
@@ -69,31 +69,38 @@ const Close = styled.div`
 `;
 
 const ModalTitle = styled.h3`
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 5vh;
   text-align: center;
   font-family: SangBleu;
-  font-size: 2.5vw;
+  font-size: 25px;
   letter-spacing: 3px;
   text-transform: uppercase;
 `;
 
 const ModalImg = styled.img`
-  width: 100%;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
   padding: 1em;
-  height: 45vh;
-  object-fit: cover;
+  max-height: 100%;
 `;
 
 const ModalText = styled.p`
   margin-top: 5vh;
   padding: 1%;
-  font-size: 1.2vw;
-  font-family: SuisseLight;
+  font-size: 15px;
+  font-family: SuisseRegular;
   line-height: 2em;
   width: 100%;
+`;
+
+const ModalDate = styled.h5`
+  font-family: SuisseLight;
+  font-size: 12px;
+  margin-top: 5vh;
+  text-align: center;
+  letter-spacing: 2px;
 `;
 
 const options = {
@@ -192,34 +199,35 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
         <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh', paddingBottom: '100vh' }}>
           <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
+            <div className="london-article-container">
+              <ReactHover
+                options={options}>
+                <ReactHover.Trigger type='trigger'>
+                  <div className='hover-article article1' style={{ marginTop: '8vh' }}>
+                    <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                      <div style={{ position: 'relative' }}>
+                        <PostDate>
+                          {article1.date.value}
+                        </PostDate>
+                        <Title className="article-title">
+                          {article1.title.value[0].text}
+                        </Title>
+                      </div>
+                      <Subtitle className="article-title">
+                        {article1.subhead.value}
+                      </Subtitle>
+                    </a>
+                  </div>
+                </ReactHover.Trigger>
+                <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
+                  <div className="hover-container">
+                    <img className="hover-article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
+                  </div>
+                </ReactHover.Hover>
+              </ReactHover>
+            </div>
 
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <div className='hover-article article1' style={{ marginTop: '8vh' }}>
-                  <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>
-                    <div style={{ position: 'relative' }}>
-                      <PostDate>
-                        {article1.date.value}
-                      </PostDate>
-                      <Title className="article-title">
-                        {article1.title.value[0].text}
-                      </Title>
-                    </div>
-                    <Subtitle className="article-title">
-                      {article1.subhead.value}
-                    </Subtitle>
-                  </a>
-                </div>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
-                <div className="hover-container">
-                  <img className="hover-article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
-                </div>
-              </ReactHover.Hover>
-            </ReactHover>
-
-
+          <div className="london-article-container">
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
@@ -245,7 +253,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </div>
               </ReactHover.Hover>
             </ReactHover>
+          </div>
 
+          <div className="london-article-container">
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
@@ -272,8 +282,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </div>
               </ReactHover.Hover>
             </ReactHover>
-
           </div>
+        </div>
 
           {link}
 
@@ -286,6 +296,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
+            <ModalDate>
+              {article1.date.value}
+            </ModalDate>
             <ModalTitle>
               {article1.title.value[0].text}
             </ModalTitle>
@@ -305,6 +318,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
+            <ModalDate>
+              {article2.date.value}
+            </ModalDate>
             <ModalTitle>
               {article2.title.value[0].text}
             </ModalTitle>
@@ -324,6 +340,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
+            <ModalDate>
+              {article3.date.value}
+            </ModalDate>
             <ModalTitle>
               {article3.title.value[0].text}
             </ModalTitle>

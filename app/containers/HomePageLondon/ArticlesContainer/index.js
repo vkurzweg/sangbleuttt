@@ -101,12 +101,10 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
   }
 
   openModal1() {
-    console.log('clicked');
     this.setState({modal1IsOpen: true});
   }
 
   closeModal1() {
-    console.log('clicked')
     this.setState({modal1IsOpen: false});
   }
 
