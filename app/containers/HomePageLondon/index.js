@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
-import ArticlesContainer from './ArticlesContainer';
+import BlogContainer from './BlogContainer';
 import ArticlesContainerMobile from './ArticlesContainerMobile';
 import Nav from 'components/london/Nav';
 import NavMobile from 'components/london/NavMobile';
@@ -32,7 +32,6 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
     this.state = {
       transform: null
     }
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
@@ -41,13 +40,6 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 
   componentWillUnmount() {
       window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll(event){
-      var scrollTop = window.pageYOffset;
-      if (scrollTop > 150){
-        document.getElementById('id').scrollIntoView();
-      }
   }
 
   render() {
@@ -61,7 +53,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Delay wait={400}>
               <About />
             </Delay>
-            <ArticlesContainer />
+            <BlogContainer />
           </div>
         </MediaQuery>
         <MediaQuery maxWidth={767}>

@@ -13,26 +13,43 @@ import Prismic from 'prismic-javascript';
 import PrismicDOM from 'prismic-dom';
 import {Link, RichText, Date} from 'prismic-reactjs';
 import styled from 'styled-components';
-import Modal from 'react-modal';
+import Modal from 'antd/lib/modal';
 import Icon from 'antd/lib/icon';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ReactHover from 'react-hover';
 import Footer from 'components/london/Footer';
 
 const Title = styled.h3`
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
   font-family: SangBleu;
   text-align: center;
-  font-size: 3vw;
+  font-size: 45px;
   letter-spacing: 3px;
   text-transform: uppercase;
 `;
 
 const Subtitle = styled.h4`
   font-family: SuisseLight;
-  font-size: 2.4vw;
+  font-size: 32px;
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 2px;
+`;
+
+const PostDate = styled.h5`
+  display: inline;
+  padding-right: 3%;
+  font-family: SuisseLight;
+  font-size: 12px;
+  margin-top: 1vh;
+  text-align: center;
+  letter-spacing: 2px;
+  position: absolute;
+  margin-left: 25%;
+  bottom: 0;
 `;
 
 const StyledImg = styled.img`
@@ -181,9 +198,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               <ReactHover.Trigger type='trigger'>
                 <div className='hover-article article1' style={{ marginTop: '8vh' }}>
                   <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>
-                    <Title className="article-title">
-                      {article1.title.value[0].text}
-                    </Title>
+                    <div style={{ position: 'relative' }}>
+                      <PostDate>
+                        {article1.date.value}
+                      </PostDate>
+                      <Title className="article-title">
+                        {article1.title.value[0].text}
+                      </Title>
+                    </div>
                     <Subtitle className="article-title">
                       {article1.subhead.value}
                     </Subtitle>
@@ -203,9 +225,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               <ReactHover.Trigger type='trigger'>
                 <div className='hover-article article2' style={{ marginTop: '38vh' }}>
                   <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
-                    <Title className="article-title">
-                      {article2.title.value[0].text}
-                    </Title>
+                    <div style={{ position: 'relative' }}>
+                      <PostDate>
+                        {article2.date.value}
+                      </PostDate>
+                      <Title className="article-title">
+                        {article2.title.value[0].text}
+                      </Title>
+                    </div>
                     <Subtitle className="article-title">
                       {article2.subhead.value}
                     </Subtitle>
@@ -225,9 +252,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <div className='hover-article article3' style={{ marginTop: '68vh' }}>
 
                   <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
-                    <Title className="article-title">
-                      {article3.title.value[0].text}
-                    </Title>
+                    <div style={{ position: 'relative' }}>
+                      <PostDate>
+                        {article3.date.value}
+                      </PostDate>
+                      <Title className="article-title">
+                        {article3.title.value[0].text}
+                      </Title>
+                    </div>
                     <Subtitle className="article-title">
                       {article3.subhead.value}
                     </Subtitle>
@@ -247,39 +279,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
 
         <Modal
-          isOpen={this.state.modal1IsOpen}
-          onRequestClose={this.closeModal1}
-          contentLabel={article1.title.value[0].text}
-          style={{
-                overlay: {
-                      position: 'fixed',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                      width: '70%',
-                      margin: '0 auto',
-                      marginTop: '5%',
-                      overflow: 'scroll',
-                    },
-                content: {
-                  top: '65%',
-                  left: '50%',
-                  right: 'auto',
-                  bottom: 'auto',
-                  marginRight: '-50%',
-                  transform: 'translate(-50%, -50%)',
-                  marginTop: '57%',
-                  border: '1px solid black',
-                  WebkitOverflowScrolling: 'auto',
-                },
-              }}
+          visible={this.state.modal1IsOpen}
+          onCancel={this.closeModal1}
+          title={null}
+          footer={null}
+          style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <Close onClick={this.closeModal1}>
-              <Icon type="close" />
-            </Close>
             <ModalTitle>
               {article1.title.value[0].text}
             </ModalTitle>
@@ -292,39 +298,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Modal>
 
         <Modal
-          isOpen={this.state.modal2IsOpen}
-          onRequestClose={this.closeModal2}
-          contentLabel={article2.title.value[0].text}
-          style={{
-                overlay: {
-                      position: 'fixed',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                      width: '70%',
-                      margin: '0 auto',
-                      marginTop: '5%',
-                      overflow: 'scroll',
-                    },
-                content: {
-                  top: '65%',
-                  left: '50%',
-                  right: 'auto',
-                  bottom: 'auto',
-                  marginRight: '-50%',
-                  transform: 'translate(-50%, -50%)',
-                  marginTop: '57%',
-                  border: '1px solid black',
-                  WebkitOverflowScrolling: 'auto',
-                },
-              }}
+          visible={this.state.modal2IsOpen}
+          onCancel={this.closeModal2}
+          title={null}
+          footer={null}
+          style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <Close onClick={this.closeModal2}>
-              <Icon type="close" />
-            </Close>
             <ModalTitle>
               {article2.title.value[0].text}
             </ModalTitle>
@@ -337,41 +317,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         </Modal>
 
         <Modal
-          isOpen={this.state.modal3IsOpen}
-          onRequestClose={this.closeModal3}
-          contentLabel={article3.title.value[0].text}
-          style={{
-                overlay: {
-                      position: 'fixed',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      backgroundColor: 'rgba(255, 255, 255, 0.75)',
-                      width: '70%',
-                      margin: '0 auto',
-                      marginTop: '5%',
-                      overflow: 'scroll',
-                      zIndex: '100'
-                    },
-                content: {
-                  top: '65%',
-                  left: '50%',
-                  right: 'auto',
-                  bottom: 'auto',
-                  marginRight: '-50%',
-                  transform: 'translate(-50%, -50%)',
-                  marginTop: '57%',
-                  border: '1px solid black',
-                  WebkitOverflowScrolling: 'auto',
-                  zIndex: '100'
-                },
-              }}
+          visible={this.state.modal3IsOpen}
+          onCancel={this.closeModal3}
+          title={null}
+          footer={null}
+          style={{ width: '75%', margin: '0 auto'}}
           >
           <div style={{ width: '75%', margin: '0 auto' }}>
-            <Close onClick={this.closeModal3}>
-              <Icon type="close" />
-            </Close>
             <ModalTitle>
               {article3.title.value[0].text}
             </ModalTitle>

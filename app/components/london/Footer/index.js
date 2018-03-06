@@ -53,7 +53,7 @@ const Button = styled.button`
 
 function Footer() {
   return (
-    <div className="container-fluid" style={{ position: 'absolute', bottom: '0', height: '15vh', width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '.8vw', textAlign: 'center', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0' }}>
+    <div className="container-fluid" style={{ position: 'absolute', bottom: '0', height: '15vh', width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '12px', textAlign: 'center', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0' }}>
       <div className="row" style={{ paddingTop: '2vh', position: 'relative', width: '100%', height: '15vh', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0' }}>
         <div className="col-sm-2">
           <A href="/zurich">

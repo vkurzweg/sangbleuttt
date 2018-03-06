@@ -97,15 +97,13 @@
 
 .masonry:hover > .item-container {
   opacity: 0;
-  transition: opacity 0.25s ease;
   cursor: pointer;
 }
 
 .artist-name {
   opacity: 0;
-  transition: opacity 0.5s ease;
   font-size: 15px;
-  font-family: SuisseLight;
+  font-family: SuisseRegular;
   text-transform: uppercase;
   color: black;
   overflow: visible;
@@ -358,7 +356,7 @@ img {
 
 .article-link {
   padding: 3%;
-  display: block;
+  display: inline;
   margin: 0 auto;
 }
 
@@ -395,4 +393,8 @@ img {
   top: 0; left: 0; bottom: 0; right: 0;
 }
 
+.ant-modal {
+  width: 60% !important;
+  margin: 0 auto;
+}
 
