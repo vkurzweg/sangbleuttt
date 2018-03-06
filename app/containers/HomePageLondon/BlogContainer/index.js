@@ -10,12 +10,8 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import Prismic from 'prismic-javascript';
-import PrismicDOM from 'prismic-dom';
-import {Link, RichText, Date} from 'prismic-reactjs';
 import styled from 'styled-components';
 import Modal from 'antd/lib/modal';
-import Icon from 'antd/lib/icon';
-import ScrollAnimation from 'react-animate-on-scroll';
 import ReactHover from 'react-hover';
 import Footer from 'components/london/Footer';
 
@@ -45,27 +41,11 @@ const PostDate = styled.h5`
   font-family: SuisseLight;
   font-size: 12px;
   margin-top: 1vh;
+  margin-left: 3%;
   text-align: center;
   letter-spacing: 2px;
   position: absolute;
-  margin-left: 20%;
   bottom: 0;
-`;
-
-const StyledImg = styled.img`
-    padding: 1em;
-    padding-top: 3em;
-    width: 55%;
-    display: block;
-    margin: 0 auto;
-`;
-
-const Close = styled.div`
-  position: absolute;
-  margin-left: 50vw;
-  margin-top: -5vh;
-  font-size: 2vw;
-  color: black;
 `;
 
 const ModalTitle = styled.h3`
@@ -104,18 +84,19 @@ const ModalDate = styled.h5`
 `;
 
 const options = {
-  followCursor:false,
-}
+  followCursor: false,
+};
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       docs: [],
       modal1IsOpen: false,
       modal2IsOpen: false,
-      modal3IsOpen: false
-    }
+      modal3IsOpen: false,
+    };
+
     this.openModal1 = this.openModal1.bind(this);
     this.closeModal1 = this.closeModal1.bind(this);
     this.openModal2 = this.openModal2.bind(this);
@@ -124,86 +105,92 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     this.closeModal3 = this.closeModal3.bind(this);
   }
 
+  componentDidMount() {
+    const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
+    Prismic.getApi(apiEndpoint).then((api) =>
+      api.query('') // An empty query will return all the documents
+    ).then((response) => {
+      console.log('Documents: ', response.results);
+      const documents = response.results;
+      this.setState({ docs: documents });
+    }, (err) => {
+      console.log('Something went wrong: ', err);
+    });
+  }
+
   openModal1() {
-    console.log('clicked');
-    this.setState({modal1IsOpen: true});
+    this.setState({ modal1IsOpen: true });
   }
 
   closeModal1() {
-    console.log('clicked')
-    this.setState({modal1IsOpen: false});
+    this.setState({ modal1IsOpen: false });
   }
 
   openModal2() {
-    this.setState({modal2IsOpen: true});
+    this.setState({ modal2IsOpen: true });
   }
 
   closeModal2() {
-    this.setState({modal2IsOpen: false});
+    this.setState({ modal2IsOpen: false });
   }
 
   openModal3() {
-    this.setState({modal3IsOpen: true});
+    this.setState({ modal3IsOpen: true });
   }
 
   closeModal3() {
-    this.setState({modal3IsOpen: false});
-  }
-
-  componentDidMount() {
-    const apiEndpoint = "https://sb-london-blog.prismic.io/api";
-    Prismic.getApi(apiEndpoint).then(function(api) {
-      return api.query(""); // An empty query will return all the documents
-    }).then(function(response) {
-      console.log("Documents: ", response.results);
-      const documents = response.results;
-      this.setState({docs: documents})
-    }.bind(this), function(err) {
-      console.log("Something went wrong: ", err);
-    });
+    this.setState({ modal3IsOpen: false });
   }
 
   render() {
     if (this.state.docs.length > 0) {
-      let documents = this.state.docs
-      let article1 = documents[0].data.blog_post;
-      let article2 = documents[1].data.blog_post;
-      let article3 = documents[2].data.blog_post;
+      // shortcuts for cms data
+      const documents = this.state.docs;
+      const article1 = documents[0].data.blog_post;
+      const article2 = documents[1].data.blog_post;
+      const article3 = documents[2].data.blog_post;
+      // variables for images to avoid errors if a post has less than 4 images (TODO: DRY refactor)
       let article1image2;
       let article1image3;
       let article1image4;
-      article1.image2 ? article1image2 = <ModalImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} /> : article1image2;
-      article1.image3 ? article1image3 = <ModalImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} /> : article1image3;
-      article1.image4 ? article1image4 = <ModalImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} /> : article1image4;
+      if (article1.image2) article1image2 = <ModalImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} />;
+      if (article1.image3) article1image3 = <ModalImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} />;
+      if (article1.image4) article1image4 = <ModalImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} />;
       let article2image2;
       let article2image3;
       let article2image4;
-      article2.image2 ? article2image2 = <ModalImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} /> : article2image2;
-      article2.image3 ? article2image3 = <ModalImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} /> : article2image3;
-      article2.image4 ? article2image4 = <ModalImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} /> : article2image4;
+      if (article2.image2) article2image2 = <ModalImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} />;
+      if (article2.image3) article2image3 = <ModalImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} />;
+      if (article2.image4) article2image4 = <ModalImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} />;
       let article3image2;
       let article3image3;
       let article3image4;
-      article3.image2 ? article3image2 = <ModalImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} /> : article3image2;
-      article3.image3 ? article3image3 = <ModalImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} /> : article3image3;
-      article3.image4 ? article3image4 = <ModalImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} /> : article3image4;
-      let articlesNum = this.state.docs.length;
+      if (article3.image2) article3image2 = <ModalImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} />;
+      if (article3.image3) article3image3 = <ModalImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} />;
+      if (article3.image4) article3image4 = <ModalImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} />;
+      // TODO: make page for all posts, accessible via link that appears when there are more than 3 posts
+      const articlesNum = this.state.docs.length;
       let link;
-      articlesNum > 3 ? link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a> : link;
-    return (
-      <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
-        <Helmet>
-          <title>Sang Bleu London Blog</title>
-          <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
-        </Helmet>
-
-        <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh', paddingBottom: '100vh' }}>
-          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
+      if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
+      return (
+        <div style={{ position: 'relative', height: '120vh', width: '100%' }}>
+          <Helmet>
+            <title>Sang Bleu London Blog</title>
+            <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
+          </Helmet>
+          <h3
+            style={{
+              fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '1px', marginLeft: '4vw', paddingTop: '1vw'
+            }}
+          >blog
+          </h3>
+          <div className="articles-container">
             <div className="london-article-container">
               <ReactHover
-                options={options}>
-                <ReactHover.Trigger type='trigger'>
-                  <div className='hover-article article1' style={{ marginTop: '8vh' }}>
+                options={options}
+              >
+                <ReactHover.Trigger type="trigger">
+                  <div className="article" style={{ marginTop: '4vh' }}>
                     <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
                       <div style={{ position: 'relative' }}>
                         <PostDate>
@@ -219,149 +206,195 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                     </a>
                   </div>
                 </ReactHover.Trigger>
-                <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
+                <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                   <div className="hover-container">
-                    <img className="hover-article-image" src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
+                    <div className="article-image" style={{ backgroundImage: `url(${article1.main_image.value.main.url})` }} alt={article1.main_image.value.alt}>
+                      <div className="article-hover" style={{ paddingTop: '18vh' }}>
+                        <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                          <div style={{ position: 'relative' }}>
+                            <PostDate className="article-title mix-test">
+                              {article1.date.value}
+                            </PostDate>
+                            <Title className="article-title mix-test">
+                              {article1.title.value[0].text}
+                            </Title>
+                          </div>
+                          <Subtitle className="article-title mix-test">
+                            {article1.subhead.value}
+                          </Subtitle>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </ReactHover.Hover>
               </ReactHover>
             </div>
-
-          <div className="london-article-container">
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <div className='hover-article article2' style={{ marginTop: '38vh' }}>
-                  <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
-                    <div style={{ position: 'relative' }}>
-                      <PostDate>
-                        {article2.date.value}
-                      </PostDate>
-                      <Title className="article-title">
-                        {article2.title.value[0].text}
-                      </Title>
+            <div className="london-article-container">
+              <ReactHover
+                options={options}
+              >
+                <ReactHover.Trigger type="trigger">
+                  <div className="article" style={{ marginTop: '34vh' }}>
+                    <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
+                      <div style={{ position: 'relative' }}>
+                        <PostDate>
+                          {article2.date.value}
+                        </PostDate>
+                        <Title className="article-title">
+                          {article2.title.value[0].text}
+                        </Title>
+                      </div>
+                      <Subtitle className="article-title">
+                        {article2.subhead.value}
+                      </Subtitle>
+                    </a>
+                  </div>
+                </ReactHover.Trigger>
+                <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
+                  <div className="hover-container">
+                    <div className="article-image" style={{ backgroundImage: `url(${article2.main_image.value.main.url})` }} alt={article2.main_image.value.alt}>
+                      <div className="article-hover" style={{ paddingTop: '48vh' }}>
+                        <a className="article-link-hover" onClick={this.openModal2} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                          <div style={{ position: 'relative' }}>
+                            <PostDate className="article-title-hover mix-test">
+                              {article2.date.value}
+                            </PostDate>
+                            <Title className="article-title-hover mix-test">
+                              {article2.title.value[0].text}
+                            </Title>
+                          </div>
+                          <Subtitle className="article-title-hover mix-test">
+                            {article2.subhead.value}
+                          </Subtitle>
+                        </a>
+                      </div>
                     </div>
-                    <Subtitle className="article-title">
-                      {article2.subhead.value}
-                    </Subtitle>
-                  </a>
-                </div>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
-                <div className="hover-container">
-                  <img className="hover-article-image" src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
-                </div>
-              </ReactHover.Hover>
-            </ReactHover>
-          </div>
-
-          <div className="london-article-container">
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <div className='hover-article article3' style={{ marginTop: '68vh' }}>
-
-                  <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
-                    <div style={{ position: 'relative' }}>
-                      <PostDate>
-                        {article3.date.value}
-                      </PostDate>
-                      <Title className="article-title">
-                        {article3.title.value[0].text}
-                      </Title>
+                  </div>
+                </ReactHover.Hover>
+              </ReactHover>
+            </div>
+            <div className="london-article-container">
+              <ReactHover
+                options={options}
+              >
+                <ReactHover.Trigger type="trigger">
+                  <div className="article" style={{ marginTop: '64vh' }}>
+                    <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
+                      <div style={{ position: 'relative' }}>
+                        <PostDate>
+                          {article3.date.value}
+                        </PostDate>
+                        <Title className="article-title">
+                          {article3.title.value[0].text}
+                        </Title>
+                      </div>
+                      <Subtitle className="article-title">
+                        {article3.subhead.value}
+                      </Subtitle>
+                    </a>
+                  </div>
+                </ReactHover.Trigger>
+                <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
+                  <div className="hover-container">
+                    <div className="article-image" style={{ backgroundImage: `url(${article3.main_image.value.main.url})` }} alt={article3.main_image.value.alt}>
+                      <div className="article-hover" style={{ paddingTop: '78vh' }}>
+                        <a className="article-link-hover" onClick={this.openModal3} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                          <div style={{ position: 'relative' }}>
+                            <PostDate className="article-title-hover mix-test">
+                              {article3.date.value}
+                            </PostDate>
+                            <Title className="article-title-hover mix-test">
+                              {article3.title.value[0].text}
+                            </Title>
+                          </div>
+                          <Subtitle className="article-title-hover mix-test">
+                            {article3.subhead.value}
+                          </Subtitle>
+                        </a>
+                      </div>
                     </div>
-                    <Subtitle className="article-title">
-                      {article3.subhead.value}
-                    </Subtitle>
-                  </a>
-                </div>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover' style={{ width: '100%', margin: '0 auto' }}>
-                <div className="hover-container">
-                  <img className="hover-article-image" src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
-                </div>
-              </ReactHover.Hover>
-            </ReactHover>
+                  </div>
+                </ReactHover.Hover>
+              </ReactHover>
+            </div>
           </div>
-        </div>
-
           {link}
-
-
-        <Modal
-          visible={this.state.modal1IsOpen}
-          onCancel={this.closeModal1}
-          title={null}
-          footer={null}
-          style={{ width: '75%', margin: '0 auto'}}
+          <Modal
+            visible={this.state.modal1IsOpen}
+            onCancel={this.closeModal1}
+            title={null}
+            footer={null}
+            style={{ width: '75%', margin: '0 auto' }}
           >
-          <div style={{ width: '75%', margin: '0 auto' }}>
-            <ModalDate>
-              {article1.date.value}
-            </ModalDate>
-            <ModalTitle>
-              {article1.title.value[0].text}
-            </ModalTitle>
-            <ModalImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
-            <ModalText>{article1.body.value[0].text}</ModalText>
-            {article1image2}
-            {article1image3}
-            {article1image4}
-          </div>
-        </Modal>
-
-        <Modal
-          visible={this.state.modal2IsOpen}
-          onCancel={this.closeModal2}
-          title={null}
-          footer={null}
-          style={{ width: '75%', margin: '0 auto'}}
+            <div style={{ width: '75%', margin: '0 auto' }}>
+              <ModalDate>
+                {article1.date.value}
+              </ModalDate>
+              <ModalTitle>
+                {article1.title.value[0].text}
+              </ModalTitle>
+              <ModalImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
+              <ModalText>{article1.body.value[0].text}</ModalText>
+              {article1image2}
+              {article1image3}
+              {article1image4}
+            </div>
+          </Modal>
+          <Modal
+            visible={this.state.modal2IsOpen}
+            onCancel={this.closeModal2}
+            title={null}
+            footer={null}
+            style={{ width: '75%', margin: '0 auto' }}
           >
-          <div style={{ width: '75%', margin: '0 auto' }}>
-            <ModalDate>
-              {article2.date.value}
-            </ModalDate>
-            <ModalTitle>
-              {article2.title.value[0].text}
-            </ModalTitle>
-            <ModalImg src={article2.main_image.value.main.url} alt={article1.main_image.value.alt} />
-            <ModalText>{article2.body.value[0].text}</ModalText>
-            {article2image2}
-            {article2image3}
-            {article2image4}
-          </div>
-        </Modal>
-
-        <Modal
-          visible={this.state.modal3IsOpen}
-          onCancel={this.closeModal3}
-          title={null}
-          footer={null}
-          style={{ width: '75%', margin: '0 auto'}}
+            <div style={{ width: '75%', margin: '0 auto' }}>
+              <ModalDate>
+                {article2.date.value}
+              </ModalDate>
+              <ModalTitle>
+                {article2.title.value[0].text}
+              </ModalTitle>
+              <ModalImg src={article2.main_image.value.main.url} alt={article1.main_image.value.alt} />
+              <ModalText>{article2.body.value[0].text}</ModalText>
+              {article2image2}
+              {article2image3}
+              {article2image4}
+            </div>
+          </Modal>
+          <Modal
+            visible={this.state.modal3IsOpen}
+            onCancel={this.closeModal3}
+            title={null}
+            footer={null}
+            style={{ width: '75%', margin: '0 auto' }}
           >
-          <div style={{ width: '75%', margin: '0 auto' }}>
-            <ModalDate>
-              {article3.date.value}
-            </ModalDate>
-            <ModalTitle>
-              {article3.title.value[0].text}
-            </ModalTitle>
-            <ModalImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
-            <ModalText>{article3.body.value[0].text}</ModalText>
-            {article3image2}
-            {article3image3}
-            {article3image4}
+            <div style={{ width: '75%', margin: '0 auto' }}>
+              <ModalDate>
+                {article3.date.value}
+              </ModalDate>
+              <ModalTitle>
+                {article3.title.value[0].text}
+              </ModalTitle>
+              <ModalImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
+              <ModalText>{article3.body.value[0].text}</ModalText>
+              {article3image2}
+              {article3image3}
+              {article3image4}
+            </div>
+          </Modal>
+          <div
+            style={{
+              position: 'relative', height: '15vh', width: '100%', bottom: '0'
+            }}
+          >
+            <Footer />
           </div>
-        </Modal>
-        <div style={{ position: 'relative', height: '15vh', width: '100%', bottom: '0' }}>
-        <Footer />
         </div>
-      </div>
-    )} else {
-      return (
-        <p>Loading...</p>
-      )
+      );
     }
+    return (
+      <p>Loading...</p>
+    );
   }
 }
 
@@ -378,11 +411,4 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(null, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-)(ArticlesContainer);
-
-// <img src={article1.image.value.main.url} style={{ width: '100%' }} />
-// <img src={article2.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }}/>
-// <img src={article3.image.value.main.url} style={{ width: '100%', display: 'block', margin: '0 auto', padding: '2%' }} />
-
+export default compose(withConnect)(ArticlesContainer);

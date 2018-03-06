@@ -1,5 +1,8 @@
 
-
+/*LONDON HOVER + GRID STYLES (reusable element styles are styled components and one-off styles are inline)
+*/
+/*header logo
+*/
 .logo-london {
   float: right;
   z-index: 150;
@@ -327,48 +330,78 @@ img {
   display: none;
 }
 
-/*SHOW MAIN ARTICLE IMAGE ON TITLE HOVER
+/*BLOG
 */
+
+/*set viewport size
+*/
+.articles-container {
+  margin: 0 auto;
+  padding-top: 5vh;
+  padding-bottom: 100vh;
+  width: 60%;
+}
+
+.london-article-container {
+  width: 100%;
+  margin: 0 auto;
+}
 
 .london-article-container div:nth-child(1) div:nth-child(2) {
   display: block;
   margin: 0 auto !important;
-  height: 100vh !important;
+  height: 120vh !important;
   width: 60% !important;
-  margin-left: 20% !important;
   top: 0px !important;
 }
 
-.hover-container {
-  opacity: .9;
+/*hide black text on hover + show blended text
+*/
+
+.articles-container:hover .article {
+  opacity: 0;
+}
+
+.articles-container:hover .article-hover {
+  position: absolute;
+  mix-blend-mode: difference;
+  color: white;
+  z-index: 10;
   width: 100%;
 }
 
-.hover-article-image {
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: 100vh;
+.mix-test {
+  mix-blend-mode: difference !important;
+  color: white;
 }
 
-.hover-article {
+.article {
   position: absolute;
   display: inline;
-  color: black;
   z-index: 5;
   padding: .5%;
   margin-top: 10vh;
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
   line-height: 1em;
 }
+
+.article-hover {
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+  padding: .5%;
+  margin: 0 auto;
+  line-height: 1em;
+}
+
+/*don't show title text or hover image inside modal
+*/
 
 .article-link {
   padding: 3%;
   display: inline;
   margin: 0 auto;
-  width: 70%;
 }
 
 .article-link:after .article-image {
@@ -384,7 +417,29 @@ img {
 }
 
 .article-link:hover .article-title {
-  position: relative;
+  z-index: 1 !important;
+  mix-blend-mode: difference !important;
+}
+
+.article-link-hover {
+  padding: 3%;
+  display: inline;
+  margin: 0 auto;
+}
+
+.article-link-hover:after .article-image {
+  display: none;
+}
+
+.article-link-hover:after {
+  display: none;
+}
+
+.article-title-hover:after .article-link-hover {
+  display: none;
+}
+
+.article-link-hover:hover .article-title-hover {
   z-index: 1 !important;
   mix-blend-mode: difference !important;
 }
@@ -393,16 +448,27 @@ img {
   position: relative;
 }
 
-.article-link:hover .article-image {
-  position: absolute;
-  display: inline-block;
-  height: 100vh;
-  width: auto;
-  z-index: 2;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
+/*show full-height background image on hover
+*/
+.hover-container {
+  width: 100%;
+  position: relative;
 }
 
+.article-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+/*override ant design library styles to make modal same width as image
+*/
 .ant-modal {
   width: 60% !important;
   height: 100vh !important;
