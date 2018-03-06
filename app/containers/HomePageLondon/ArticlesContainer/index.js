@@ -169,12 +169,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     return (
       <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
         <Helmet>
-          <title>ArticlesContainer</title>
-          <meta name="description" content="Description of ArticlesContainer" />
+          <title>Sang Bleu London Blog</title>
+          <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
         </Helmet>
 
         <div className='articles-container' style={{ margin: '1em auto', paddingTop: '5vh', paddingBottom: '100vh' }}>
-          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '2.2vw', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
+          <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '1px', marginLeft: '4vw' }}>blog</h3>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>

@@ -29,7 +29,7 @@
 */
 .wrapper {
     animation: fadeMe 2s;
-    width: 76%;
+    width: 95%;
     margin: 3em auto;
     padding-bottom: 1vh;
 }
@@ -104,8 +104,8 @@
 .artist-name {
   opacity: 0;
   transition: opacity 0.5s ease;
-  font-size: 1vw;
-  font-family: SuisseIntlSemiBold;
+  font-size: 15px;
+  font-family: SuisseLight;
   text-transform: uppercase;
   color: black;
   overflow: visible;

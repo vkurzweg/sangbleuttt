@@ -19,6 +19,7 @@ const A = styled.a`
   color: black;
   bottom: 0;
   position: absolute;
+  font-size: 12px;
   &:hover {
     color: black;
   }
@@ -26,17 +27,19 @@ const A = styled.a`
 
 const Button = styled.button`
   border: 1px solid black;
-  width: 60%;
+  width: 208px;
+  height: 25px;
   font-family: SuisseLight;
   text-transform: uppercase;
-  font-size: .8vw;
+  font-size: 12px;
   margin: 0 auto;
   white-space: no-wrap;
   display: block;
   position: absolute;
   bottom: 0;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   margin-left: 5vw;
+  padding: 3px;
  &:hover, &:active, &:focus {
    background-color: black;
    color: #FAFAFA;
@@ -45,6 +48,8 @@ const Button = styled.button`
 }
 
 `;
+
+
 
 function Footer() {
   return (

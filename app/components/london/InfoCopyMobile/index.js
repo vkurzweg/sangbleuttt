@@ -10,12 +10,13 @@ import { Image } from 'cloudinary-react';
 
 const Button = styled.button`
   border: 1px solid black;
-  width: 90%;
+  width: 65%;
   font-family: SuisseLight;
   text-transform: uppercase;
-  font-size: 3vw;
-  white-space: no-wrap;
+  font-size: 2.5vw;
   display: block;
+  border-radius: 2px;
+  padding: 3px;
  &:hover, &:active, &:focus {
    background-color: black;
    color: #FAFAFA;
