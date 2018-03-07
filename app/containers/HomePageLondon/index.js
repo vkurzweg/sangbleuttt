@@ -12,34 +12,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
+import Delay from 'react-delay';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
-import BlogContainer from './BlogContainer';
-import ArticlesContainerMobile from './ArticlesContainerMobile';
 import Nav from 'components/london/Nav';
 import NavMobile from 'components/london/NavMobile';
-import HeaderMobile from 'components/london/HeaderMobile';
 import About from 'components/london/About';
 import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import InstaMobile from 'components/london/InstaMobile';
-import Delay from 'react-delay';
-import Footer from 'components/london/Footer';
+import BlogContainer from './BlogContainer';
+import BlogContainerMobile from './BlogContainerMobile';
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       transform: null
-    }
+    };
   }
 
   componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -47,7 +45,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <MediaQuery minWidth={768}>
           <div style={{ }}>
-            <Nav/>
+            <Nav />
             <InfoCopy />
             <Insta />
             <Delay wait={400}>
@@ -64,7 +62,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Delay wait={400}>
               <AboutMobile />
             </Delay>
-            <ArticlesContainerMobile />
+            <BlogContainerMobile />
           </div>
         </MediaQuery>
       </div>
@@ -76,7 +74,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
 function mapDispatchToProps(dispatch) {
   return {
     dispatch
-  }
+  };
 }
 
 

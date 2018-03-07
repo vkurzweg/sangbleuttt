@@ -476,3 +476,14 @@ img {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 767px) {
+    .ant-modal {
+      width: 100% !important;
+      height: 92vh !important;
+      top: 8vh !important;
+    }
+    .ant-modal-mask {
+      background-color: #FFFFFF;
+    }
+}
+

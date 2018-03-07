@@ -6,16 +6,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import ReactDOM from 'react-dom';
 import AppBar from 'material-ui/AppBar';
-import Menu from 'antd/lib/menu';
-import Icon from 'antd/lib/icon';
-import Drawer from 'material-ui/Drawer';
-import { MenuItem } from 'material-ui/Menu';
-import { Image } from 'cloudinary-react';
-import IconButton from 'material-ui/IconButton';
-import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
-import { browserHistory } from 'react-router';
 
 
 const Brand = styled.h1`
@@ -31,22 +22,25 @@ const Brand = styled.h1`
   letter-spacing: 1px;
   padding: 2%;
   margin-top: 10px;
+  z-index: 100;
 `;
 
 class Nav extends React.Component { // eslint-disable-line react/prefer-stateless-function
-
-
   render() {
     const brand =
-        <Brand>Sang Bleu London</Brand>
+      <Brand>Sang Bleu London</Brand>;
     return (
-      <div style={{ position: 'fixed', width: '100%', zIndex: '100', top: '0' }}>
+      <div
+        style={{
+          position: 'fixed', width: '100%', zIndex: '100', top: '0'
+        }}
+      >
         <AppBar
-            title={brand}
-            style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent' }}
-            iconElementLeft={<div style={{ position: 'absolute' }}></div>}
-            zDepth={0}
-          />
+          title={brand}
+          style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent' }}
+          iconElementLeft={<div style={{ position: 'absolute' }}></div>}
+          zDepth={0}
+        />
       </div>
     );
   }
@@ -60,7 +54,7 @@ export default Nav;
 
 // Hamburger menu and scroll effect:
 
-const SubMenu = Menu.SubMenu;
+// const SubMenu = Menu.SubMenu;
 
 // const A = styled.a`
 //   font-family: 'Poiret One';
@@ -106,7 +100,7 @@ const SubMenu = Menu.SubMenu;
 //   }
 // };
 
- // constructor(props){
+// constructor(props){
 //    super(props);
 //    this.state = {
 //      blue: false,

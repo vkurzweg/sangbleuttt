@@ -17,6 +17,7 @@ const StyledImage = styled(Image)`
 const A = styled.a`
   text-decoration: none;
   color: black;
+  padding-top: 10px;
   &:hover {
     color: black;
   }
@@ -24,32 +25,32 @@ const A = styled.a`
 
 const Button = styled.button`
   border: 1px solid black;
-  width: 50vw;
-  margin: 0 auto;
+  width: 200px;
+  height: 25px;
   font-family: SuisseLight;
   text-transform: uppercase;
-  font-size: 3vw;
-  white-space: no-wrap;
-  margin-bottom: 3vh;
-  margin-top: 2vh;
-  margin-left: 5vw;
+  font-size: 12px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 3px;
+  letter-spacing: 1px;
  &:hover, &:active, &:focus {
    background-color: black;
    color: #FAFAFA;
    border: none;
    outline: 0;
 }
-
 `;
 
 function Footer() {
   return (
-    <div style={{ width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '3vw', lineHeight: '2', textAlign: 'center', margin: '0 auto', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0' }}>
+    <div style={{ width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '3vw', lineHeight: '2', textAlign: 'center', margin: '0 auto', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0', paddingBottom: '10vh' }}>
       <a style={{ color: 'black', paddingTop: '5vh' }} href="mailto:london@sangbleu.tattoo" target="_blank">
         <Button className="btn btn-default">Book an Appointment</Button>
       </a>
       <A href="https://www.instagram.com/sangbleutattoolondon/" target="_blank">
-        <p>instagram</p>
+        <p style={{ paddingTop: '15px' }}>instagram</p>
       </A>
       <A href="mailto:london@sangbleu.tattoo" target="_blank">
         <p>london@sangbleu.tattoo</p>
@@ -57,13 +58,13 @@ function Footer() {
       <div style={{ position: 'relative', height: '100%', display: 'flex', width: '100%', marginTop: '15vh', paddingBottom: '5vh', lineHeight: '.5' }}>
         <div style={{ width: '50%', position: 'absolute', bottom: '0' }}>
           <A href="http://www.sangbleu.com" target="_blank">
-            <p>sangbleu.com</p>
+            <p style={{ paddingTop: '15px' }}>sangbleu.com</p>
           </A>
           <A href="https://sangbleu.com/privacypolicy/" target="_blank">
-            <p>Privacy Policy</p>
+            <p style={{ paddingTop: '15px' }}>Privacy Policy</p>
           </A>
           <A href="https://sangbleu.com/termsandconditions/" target="_blank">
-            <p>T&C<span style={{ textTransform: 'lowercase' }}>s</span></p>
+            <p style={{ paddingTop: '15px' }}>T&C<span style={{ textTransform: 'lowercase' }}>s</span></p>
           </A>
         </div>
         <div style={{ width: '50%', position: 'absolute', bottom: '0', left: '50%' }}>
