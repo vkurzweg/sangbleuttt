@@ -21,14 +21,12 @@ const Button = styled.button`
   white-space: no-wrap;
   margin-left: 20%;
   letter-spacing: 1px;
- &:hover, &:active, &:focus {
-   background-color: black;
-   color: #FAFAFA;
-   border: none;
-   outline: 0;
-}
-
-`;
+  &:hover {
+    background-color: black;
+    color: #FAFAFA;
+    border: none;
+    outline: 0;
+ }`;
 
 
 function Logo() {
@@ -45,7 +43,9 @@ function Logo() {
           <p>Open 11am — 7pm<br />7 days a week</p>
         </div>
         <div className="col-sm-3">
-          <Button className="btn btn-default">Book an Appointment</Button>
+          <a style={{ color: 'black', paddingTop: '5vh' }} href="mailto:london@sangbleu.tattoo" target="_blank">
+            <Button className="btn btn-default">Book an Appointment</Button>
+          </a>
         </div>
       </div>
     </div>

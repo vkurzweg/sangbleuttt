@@ -13,33 +13,41 @@ function Logo(props) {
   let blogState = props.blogOpen;
   let aboutState = props.aboutOpen;
   let initialState = props.initial;
-  let titleSize = 'title-initial'
-  let subtitleMargin;
-  if(!initialState && !blogState && !aboutState){
-    titleSize = 'title-full'
-    subtitleMargin = '2vw'
-  }
   let subtitle =
       <div>
-        <h3 className='zurich-subtitle' style={{ marginLeft: subtitleMargin }}>Dienerstrasse 26, 8004 Zürich, Switzerland </h3>
-        <h3 className="zurich-subtitle" style={{ marginLeft: subtitleMargin }}>+41 43 545 88 38</h3>
+        <h3 className='zurich-subtitle'>Dienerstrasse 26, 8004 Zürich, Switzerland </h3>
+        <h3 className="zurich-subtitle">+41 43 545 88 38</h3>
       </div>
   if(blogState || aboutState){
-    titleSize = 'title-half';
     subtitle =
       <div>
         <h3 className='zurich-subtitle'>Dienerstrasse 26, 8004 <br /> Zürich, Switzerland </h3>
         <h3 className="zurich-subtitle">+41 43 545 88 38</h3>
       </div>
   }
-  let leftMargin = '1vw'
-  aboutState ? leftMargin = '3vw' : leftMargin;
   return (
     <div style={{ zIndex: '20', width: '100%', paddingLeft: '0', paddingRight: '0', marginRight: '0', right: '0', marginLeft: '0' }}>
-      <div style={{ marginLeft: leftMargin, marginRight: '1vw', paddingTop: '2vh' }} >
-        <h1 className={titleSize}>Sang Bleu Zurich</h1>
-        {subtitle}
+      <div className="zurich-title-container" >
+        <h1 className="zurich-title">
+          <span>S</span>
+          <span>a</span>
+          <span>n</span>
+          <span>g</span>
+          <span></span>
+          <span>b</span>
+          <span>l</span>
+          <span>e</span>
+          <span>u</span>
+          <span></span>
+          <span>z</span>
+          <span>u</span>
+          <span>r</span>
+          <span>i</span>
+          <span>c</span>
+          <span>h</span>
+        </h1>
       </div>
+      {subtitle}
     </div>
   );
 }

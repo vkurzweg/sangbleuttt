@@ -18,20 +18,20 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     const options = {
       followCursor:false,
     }
-    let widthValue = '40vw';
+    let widthValue = '48%';
     let imageClass = 'hover-container-blog';
-    let fontShrink = 'font-shrink';
+    let fontShrink = '';
     return (
       <div>
-        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginLeft: '-2vw', paddingTop: '2vh' }}>
-          <div className={`${imageClass} + col-sm-4`}>
+        <div className="insta-hover row" style={{ paddingLeft: '10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+          <div className={`${imageClass} + col-sm-5`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div className='name-container' style={{ marginTop: '-2vh' }}>
+                <div className='name-container'>
                   <a href='https://www.instagram.com/mxmttt/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name max`}>
-                      Maxime Plescia-Buchi<br /><span style={{ fontSize: '1vw', marginLeft: '10vw' }}>@mxmttt</span>
+                      Maxime Plescia-Buchi<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@mxmttt</span>
                     </h2>
                   </a>
                 </div>
@@ -56,10 +56,10 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginBottom: '5vh' }}>
+                <div>
                   <a href='https://www.instagram.com/giorgiodeduesanti/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name giorgio`}>
-                      Giorgio<br /><span style={{ fontSize: '1vw', marginLeft: '5vh' }}>@giorgiodeduesanti</span>
+                      Giorgio<br /><span style={{ fontSize: '.7vw', marginLeft: '3vw', textTransform: 'uppercase' }}>@giorgiodeduesanti</span>
                     </h2>
                   </a>
                 </div>
@@ -80,14 +80,16 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+        </div>
+        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+          <div className={`${imageClass} + col-sm-6`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
                 <div>
                   <a href='https://www.instagram.com/jordalive/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name jordan`}>
-                      Jordan Angius<br /><span style={{ fontSize: '1vw', marginLeft: '9vh' }}>@jordalive</span>
+                      Jordan Angius<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@jordalive</span>
                     </h2>
                   </a>
                 </div>
@@ -108,17 +110,14 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
-        </div>
-
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '10vh' }}>
-          <div className={`${imageClass} + col-sm-4`}>
+          <div className={`${imageClass} + col-sm-6`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginTop: '-7vh', marginLeft: '1vw' }}>
+                <div>
                   <a href='https://www.instagram.com/paolo_bosson/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name paolo`}>
-                      Paolo Bosson<br /><span style={{ fontSize: '1vw', marginLeft: '10vh' }}>@paolo_bosson</span>
+                      Paolo Bosson<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@paolo_bosson</span>
                     </h2>
                   </a>
                 </div>
@@ -139,14 +138,16 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+        </div>
+        <div className="row insta-hover" style={{ paddingLeft: '5vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+          <div className={`${imageClass} + col-sm-6`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginLeft: '2vw', marginBottom: '-2vh' }}>
+                <div>
                   <a href='https://www.instagram.com/zilba.1/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name labaz`}>
-                      Labaz 1<br /><span style={{ fontSize: '1vw', marginLeft: '3vh' }}>@zilba.1</span>
+                      Labaz 1<br /><span style={{ fontSize: '.7vw', marginLeft: '3vw', textTransform: 'uppercase' }}>@zilba.1</span>
                     </h2>
                   </a>
                 </div>
@@ -167,14 +168,14 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+          <div className={`${imageClass} + col-sm-6`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginTop: '-5vh', marginLeft: '-5vw' }}>
+                <div>
                   <a href='https://www.instagram.com/stephane_devidal_tattoo/?hl=en' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name stephane`}>
-                      Stephane Devidal<br /><span style={{ fontSize: '1vw', marginLeft: '2vw' }}>@stephane_devidal_tattoo</span>
+                      Stephane Devidal<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@stephane_devidal_tattoo</span>
                     </h2>
                   </a>
                 </div>
@@ -198,15 +199,15 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
         </div>
 
 
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '10vh' }}>
-          <div className={`${imageClass} + col-sm-4`}>
+        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+          <div className={`${imageClass} + col-sm-5`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
                 <div style={{ marginTop: '-5vh' }}>
                   <a href='https://www.instagram.com/diagal_faust/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name diego`}>
-                      Diego Thonney<br /><span style={{ fontSize: '1vw', marginLeft: '9vh' }}>@diagal_faust</span>
+                      Diego Thonney<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@diagal_faust</span>
                     </h2>
                   </a>
                 </div>
@@ -227,6 +228,9 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
+        </div>
+        <div className="col-sm-7"></div>
+        <div className="insta-hover row" style={{ paddingLeft: '5vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-4`}>
             <ReactHover
               options={options}>
@@ -234,7 +238,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
                 <div>
                   <a href='https://www.instagram.com/golda.kracks/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name golda`}>
-                      Golda Kracks<br /><span style={{ fontSize: '1vw', marginLeft: '9vh' }}>@golda.kracks</span>
+                      Golda Kracks<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@golda.kracks</span>
                     </h2>
                   </a>
                 </div>
@@ -259,10 +263,10 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginTop: '-7vh', marginLeft: '-5vw' }}>
+                <div style={{ marginTop: '-10vh' }}>
                   <a href='https://www.instagram.com/marco_romegialli/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name marco`}>
-                      Marco Romegialli<br /><span style={{ fontSize: '1vw', marginLeft: '9vh' }}>@marco_romegialli</span>
+                      Marco Romegialli<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@marco_romegialli</span>
                     </h2>
                   </a>
                 </div>
@@ -283,16 +287,14 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
           </div>
-        </div>
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '5vh' }}>
-          <div className={imageClass}>
+          <div className={`${imageClass} + col-sm-4`}>
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginLeft: '10vw' }}>
+                <div>
                   <a href='https://www.instagram.com/black_arm_tattoo/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name matt`}>
-                      Matt Powers<br /><span style={{ fontSize: '1vw', marginLeft: '8vh' }}>@black_arm_tattoo</span>
+                      Matt Powers<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@black_arm_tattoo</span>
                     </h2>
                   </a>
                 </div>
@@ -313,7 +315,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               </ReactHover.Hover>
             </ReactHover>
         </div>
-        </div>
+      </div>
       </div>
     );
   }

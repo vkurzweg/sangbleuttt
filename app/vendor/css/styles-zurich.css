@@ -112,7 +112,7 @@
     width: 100vw;
   }
   to {
-    width: 50vw;
+    width: 52vw;
   }
 }
 
@@ -149,7 +149,7 @@
 }
 
 .left-half {
-  margin-left: 45vw;
+  margin-left: 42vw;
   animation: shrink .5s;
   animation-fill-mode: forwards;
 }
@@ -226,23 +226,20 @@
   }
 }
 
-.title-full {
-  animation: growTitle .75s;
-  animation-fill-mode: forwards;
+.zurich-title-container {
   font-family: BRRR;
-  font-size: 5vw;
-  text-transform: uppercase;
+  font-size: 49px;
   z-index: 20;
   text-align: center;
+  display: flex;
+  width: 100%;
 }
 
-.title-half {
-  animation: shrinkTitle .75s;
-  animation-fill-mode: forwards;
-  font-family: BRRR;
-  font-size: 3vw;
+.zurich-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   text-transform: uppercase;
-  z-index: 20;
 }
 
 .title-mobile {
@@ -263,7 +260,7 @@
 
 .zurich-subtitle {
   font-family: SuisseCond;
-  font-size: 2.5vw;
+  font-size: 53px;
   letter-spacing: 3px;
   color: black;
   z-index: 20;
@@ -311,8 +308,8 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 25%;
-  left: -50vw;
+  top: 30%;
+  left: -40vw;
 }
 
 .insta-hover .hover-container-about div:nth-child(1) div:nth-child(2) {
@@ -321,8 +318,8 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 25%;
-  left: 50vw;
+  top: 30%;
+  left: 45vw;
 }
 
 .hover-image {
@@ -363,7 +360,7 @@
   position: absolute;
   display: inline;
   color: #FFFFFF;
-  font-size: 1.7vw;
+  font-size: 1.32vw;
   letter-spacing: 2px;
   font-family: SuisseCond;
   z-index: 5;
@@ -382,66 +379,6 @@
 
 .name-right {
   margin-left: 30vw;
-}
-
-.max:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.giorgio:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.jordan:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.paolo:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.stephane:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.labaz:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.matt:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.diego:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.golda:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.marco:hover {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 .insta-hover:hover .marco {

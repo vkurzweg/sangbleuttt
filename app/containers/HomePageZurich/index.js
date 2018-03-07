@@ -133,7 +133,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   </div>
                   <Drawer
                     open={this.state.aboutOpen}
-                    width='50%'
+                    width='45%'
                     containerStyle={style.bg}
                   >
                     <div>
@@ -152,7 +152,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   </div>
                   <Drawer
                     open={this.state.blogOpen}
-                    width='50%'
+                    width='45%'
                     containerStyle={style.bg}
                     openSecondary={true}
                   >
@@ -224,7 +224,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width='50%'
+                  width='44%'
                   containerStyle={style.bg}
                 >
                   <div>
@@ -239,7 +239,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <Drawer
                   open={this.state.blogOpen}
-                  width='50%'
+                  width='45%'
                   containerStyle={style.bg}
                   openSecondary={true}
                 >

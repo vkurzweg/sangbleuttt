@@ -29,27 +29,26 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   let fontGrow;
   let imageClass;
   let content = <NamesFull />
-  initialState ? widthValue = '70vw' : widthValue;
+  initialState ? widthValue = '90%' : widthValue;
   if(blogState){
-    fontShrink = 'font-shrink';
-    widthValue = '40vw';
+    fontShrink = '';
+    widthValue = '90%';
     content = <NamesBlog />
   }
   if(aboutState){
-    fontShrink = 'font-shrink';
-    widthValue = '45vw';
+    fontShrink = '';
+    widthValue = '90%';
     content = <NamesAbout />
   }
   if(!initialState && !blogState && !aboutState){
     widthValue = '98vw';
-    fullMarginLeft = '13vw';
+    fullMarginLeft = '5vw';
     fullMarginTop = '1vh';
-    fontGrow = 'font-grow';
     content = <NamesFull />
   }
   initialState ? content = <NamesInitial /> : content;
     return (
-      <div className='container' style={{ width: widthValue, margin: '0 auto', marginTop: fullMarginTop, fontSize: fontGrow, marginLeft: fullMarginLeft, paddingLeft: '0', paddingRight: '0', height: '60vh' }}>
+      <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, fontSize: fontGrow, paddingLeft: '0', paddingRight: '0' }}>
         {content}
       </div>
     );
