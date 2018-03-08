@@ -204,7 +204,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <ReactHover
               options={options}>
               <ReactHover.Trigger type='trigger'>
-                <div style={{ marginTop: '-5vh' }}>
+                <div style={{ marginLeft: '-10vw' }}>
                   <a href='https://www.instagram.com/diagal_faust/' target='_blank' style={{ textDecoration: 'none' }}>
                     <h2 className={`${fontShrink} + hover-name diego`}>
                       Diego Thonney<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@diagal_faust</span>

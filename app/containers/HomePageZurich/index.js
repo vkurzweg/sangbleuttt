@@ -17,7 +17,7 @@ import InfoCopy from 'components/zurich/InfoCopy';
 import InfoCopyMobile from 'components/zurich/InfoCopyMobile';
 import Names from 'components/zurich/Names';
 import NamesMobile from 'components/zurich/NamesMobile';
-import Center from './Center';
+import ArtistsContainer from './ArtistsContainer';
 import Icon from 'antd/lib/icon';
 import Drawer from 'material-ui/Drawer';
 import About from 'components/zurich/About';
@@ -25,7 +25,6 @@ import AboutMobile from 'components/zurich/AboutMobile';
 import Marquee from 'components/zurich/Marquee';
 import MarqueeMobile from 'components/zurich/MarqueeMobile';
 import { Image } from 'cloudinary-react';
-
 
 const Background = styled.div`
   width: calc(100vw - 80px);
@@ -163,7 +162,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   </Drawer>
                 </div>
                 <div className={contentWidth}>
-                  <Center
+                  <ArtistsContainer
                     blogOpen={this.state.blogOpen}
                     aboutOpen={this.state.aboutOpen}
                     initial={this.state.initial}
@@ -250,7 +249,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </Drawer>
               </div>
               <div className={contentWidth}>
-                <Center
+                <ArtistsContainer
                   blogOpen={this.state.blogOpen}
                   aboutOpen={this.state.aboutOpen}
                   initial={this.state.initial}

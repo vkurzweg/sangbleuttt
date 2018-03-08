@@ -28,25 +28,25 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   let fullMarginTop;
   let fontGrow;
   let imageClass;
-  let content = <NamesFull />
+  let content = <NamesFull openLightbox={this.props.openLightbox} />
   initialState ? widthValue = '90%' : widthValue;
   if(blogState){
     fontShrink = '';
     widthValue = '90%';
-    content = <NamesBlog />
+    content = <NamesBlog openLightbox={this.props.openLightbox} />
   }
   if(aboutState){
     fontShrink = '';
     widthValue = '90%';
-    content = <NamesAbout />
+    content = <NamesAbout openLightbox={this.props.openLightbox} />
   }
   if(!initialState && !blogState && !aboutState){
     widthValue = '98vw';
     fullMarginLeft = '5vw';
     fullMarginTop = '1vh';
-    content = <NamesFull />
+    content = <NamesFull openLightbox={this.props.openLightbox} />
   }
-  initialState ? content = <NamesInitial /> : content;
+  initialState ? content = <NamesInitial openLightbox={this.props.openLightbox} /> : content;
     return (
       <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, fontSize: fontGrow, paddingLeft: '0', paddingRight: '0' }}>
         {content}
