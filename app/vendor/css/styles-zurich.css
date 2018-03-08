@@ -21,7 +21,7 @@
 }
 
 .blog-initial:hover {
-  width: 53vw;
+  width: 51vw;
 }
 
 /*SIDENAV TABS
@@ -36,7 +36,7 @@
 }
 
 .about-tab:hover {
-  width: 120px;
+  width: 90px;
 }
 
 .about-label {
@@ -65,7 +65,7 @@
 }
 
 .about-tab:hover .about-label-container {
-  width: 120px;
+  width: 90px;
 }
 
 /*MOBILE NAV
@@ -533,6 +533,7 @@
   width: 100vw;
   bottom: 0;
   left: 0;
+  margin-bottom: 8px;
 }
 
 .marquee .marquee-text {
@@ -571,7 +572,7 @@
 }
 
 .marquee:hover .marquee-text {
-  animation: fadeMarquee 1s;
+  animation: fadeMarquee .5s;
   animation-fill-mode: forwards;
 }
 
@@ -591,7 +592,7 @@
 .marquee:hover .marquee-mailto {
   display: block;
   text-align: center;
-  animation: fadeMailto 1s;
+  animation: fadeMailto .5s;
   text-decoration: none;
   color: white;
   padding: 1%;
@@ -642,7 +643,7 @@
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
 .close-label {

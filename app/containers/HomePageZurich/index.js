@@ -171,7 +171,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
               <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
                 <Marquee />
-                <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+                <img className='swiss-flag' src='https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg' alt="swiss flag" />
               </div>
             </div>
           </MediaQuery>
@@ -258,7 +258,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </div>
             <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
               <Marquee />
-              <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
+              <img className='swiss-flag' src='https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg' alt="swiss flag" />
             </div>
         </div>
       </MediaQuery>

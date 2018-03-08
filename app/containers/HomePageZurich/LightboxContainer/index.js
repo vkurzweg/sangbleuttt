@@ -51,7 +51,6 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
             open={this.props.isOpen}
             onRequestClose={this.props.handleClose}
           >
-            <ArtistName>{name}</ArtistName>
             <div>
               {this.props.photos.map((photo, key) => {
                 return (
@@ -84,12 +83,5 @@ export default compose(
   withConnect,
 )(LightboxContainer);
 
-// <div>
-//   {this.state.photos.map((photo, key) => {
-//     return (
-//       <div key={photo.id}>
-//         <img src={photo.images.standard_resolution.url} alt={photo.caption}/>
-//       </div>
-//     )
-//   })}
-// </div>
+// <ArtistName>{name}</ArtistName>
+
