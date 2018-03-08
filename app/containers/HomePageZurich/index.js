@@ -120,7 +120,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </div>
           </MediaQuery>
           <MediaQuery minWidth={768}>
-            <div style={{ height: '100vh' }}>
+            <div style={{ height: '100vh', backgroundColor: '#FF001F' }}>
               <div className='initial-container'>
                 <Helmet>
                   <title>HomePageZurich</title>
@@ -212,7 +212,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
         </MediaQuery>
         <MediaQuery minWidth={768}>
           <div style={{ height: '100vh' }}>
-            <div style={{ position: 'relative', height: '100vh', backgroundColor: '#EB3331', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
+            <div style={{ position: 'relative', height: '100vh', backgroundColor: '#FF001F', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
               <Helmet>
                 <title>HomePageZurich</title>
                 <meta name="description" content="Description of HomePageZurich" />

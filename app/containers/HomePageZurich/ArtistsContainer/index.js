@@ -19,11 +19,12 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
   constructor(props){
     super(props);
     this.state = {
-      showLightbox: false,
+      isOpen: false,
       userId: null,
       photos: []
     }
     this.openLightbox = this.openLightbox.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   openLightbox(userId) {
@@ -34,12 +35,16 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
          this.setState({
            photos: res.body.data,
            userId: userId,
-           showLightbox: true
+           isOpen: true
          })
        })
        .catch(function(err) {
          console.log('err: ', err.status)
     })
+  }
+
+  handleClose() {
+    this.setState({ isOpen: false })
   }
 
   render() {
@@ -61,9 +66,10 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
           openLightbox={this.openLightbox}
         />
         <LightboxContainer
-          isOpen={this.state.showLightbox}
+          isOpen={this.state.isOpen}
           userId={this.state.userId}
           photos={this.state.photos}
+          handleClose={this.handleClose}
         />
       </div>
     );
