@@ -19,6 +19,9 @@ const Button = styled.button`
 `;
 
 class Marco extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  shouldComponentUpdate() {
+    return false;
+  }
   render() {
     const options = {
       followCursor:false,

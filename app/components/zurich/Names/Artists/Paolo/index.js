@@ -19,6 +19,9 @@ const Button = styled.button`
 `;
 
 class Paolo extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  shouldComponentUpdate() {
+    return false;
+  }
   render() {
     const options = {
       followCursor:false,

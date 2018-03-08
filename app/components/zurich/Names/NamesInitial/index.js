@@ -6,8 +6,6 @@
 
 import React from 'react';
 // import styled from 'styled-components';
-import ReactHover from 'react-hover';
-import Instafeed from 'react-instafeed';
 import Maxime from '../Artists/Maxime';
 import Giorgio from '../Artists/Giorgio';
 import Jordan from '../Artists/Jordan';
@@ -25,15 +23,11 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     return false;
   }
   render() {
-    const options = {
-      followCursor:false,
-    }
     let widthValue = '90%';
     let imageClass = 'hover-container-initial';
-    let fontShrink = '';
     return (
       <div style={{ marginTop: '-5vh' }}>
-        <div className="insta-hover row" style={{ paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+        <div className="insta-hover row" style={{ paddingTop: '5vh', paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Maxime openLightbox={this.props.openLightbox} />
           </div>
@@ -49,7 +43,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Paolo openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="row insta-hover" style={{ paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+        <div className="row insta-hover" style={{ marginTop: '-3vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-6`}>
             <Labaz openLightbox={this.props.openLightbox} />
           </div>
@@ -59,17 +53,17 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
         </div>
 
 
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+        <div className="row insta-hover" style={{ marginTop: '-2vh', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Diego openLightbox={this.props.openLightbox} />
           </div>
+          <div className="col-sm-7"></div>
         </div>
-        <div className="col-sm-7"></div>
-        <div className="insta-hover row" style={{ paddingLeft: '10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{ marginTop: '-10vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-4`}>
             <Golda openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginBottom: '-20vh' }}>
             <Marco openLightbox={this.props.openLightbox} />
           </div>
           <div className={`${imageClass} + col-sm-4`}>
