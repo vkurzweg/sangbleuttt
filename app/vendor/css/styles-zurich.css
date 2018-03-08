@@ -638,12 +638,13 @@
 }
 
 .slideshow-image {
-  width: 35vw;
-  height: 50vh;
+  width: 25vw;
+  height: 40vh;
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 25vh;
+  margin-right: 40%;
 }
 
 .close-label {

@@ -28,6 +28,17 @@ const ArtistName = styled.h3`
   padding-top: 5vh;
 `;
 
+const Button = styled.button`
+  font-family: BRRR;
+  text-transform: uppercase;
+  backgroundColor: transparent;
+  border: none;
+  outline: 0;
+  position: fixed;
+  &:hover, &:active, &:focus {
+    outline: 0
+  }
+`;
 
 
 export class LightboxContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -39,6 +50,16 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
         <h4 className='close-label'>close</h4>
       </button>
     ]
+    const backButton = <Button style={{ left: '0', marginLeft: '10vw', marginTop: '13vh' }} onClick={this.props.previousImage}>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
+                      </Button>
+    const nextButton = <Button style={{ right: '0', top: '0', marginRight: '15vw', marginTop: '35vh' }} onClick={this.props.nextImage}>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
+                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
+                      </Button>
     let artistName;
     if (this.props.userId == '1529406200') name = 'Labaz';
     return (
@@ -51,14 +72,20 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
             open={this.props.isOpen}
             onRequestClose={this.props.handleClose}
           >
-            <div>
+            <div style={{ position: 'relative' }}>
+              {console.log('slideCount: ', this.props.slideCount)}
+              {this.props.slideCount !== 0 ? backButton : '' }
               {this.props.photos.map((photo, key) => {
-                return (
-                  <div key={photo.id}>
-                    <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
-                  </div>
-                )
+                if (this.props.photos.indexOf(photo) === this.props.slideCount) {
+                  return (
+                    <div key={photo.id}>
+                      <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
+                    </div>
+                  )
+                }
+                  return ''
               })}
+              {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
             </div>
           </Dialog>
         </div>
