@@ -20,7 +20,7 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
     super(props);
     this.state = {
       isOpen: false,
-      userId: null,
+      userId: '',
       photos: [],
       slideCount: 0,
     }

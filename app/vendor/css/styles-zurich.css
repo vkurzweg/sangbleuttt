@@ -632,9 +632,9 @@
 
 .zurich-modal div:nth-child(1) div:nth-child(1) {
   background-color: #FF001F !important;
-  width: 80vw !important;
+  width: 90vw !important;
   height: 90vh !important;
-  margin-top: -5vh !important;
+  margin-top: -1vh !important;
 }
 
 .slideshow-image {
@@ -643,8 +643,9 @@
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 25vh;
-  margin-right: 40%;
+  margin-top: 5vh;
+  position: fixed;
+  margin-left: 30vw;
 }
 
 .close-label {
