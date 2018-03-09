@@ -29,9 +29,6 @@ import { Image } from 'cloudinary-react';
 const Background = styled.div`
   width: calc(100vw - 80px);
   margin: 0 auto;
-  &:hover {
-    background-color: #EB3331;
-  }
 `;
 
 const style = {

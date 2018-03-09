@@ -32,7 +32,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     let imageClass = 'hover-container-blog';
     let fontShrink = '';
     return (
-      <div style={{ marginTop: '-5vh' }}>
+      <div style={{ marginTop: '-8vh' }}>
         <div className="insta-hover row" style={{ paddingLeft: '10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Maxime openLightbox={this.props.openLightbox} />

@@ -34,33 +34,13 @@ const Title = styled.h3`
   padding-left: 5%;
 `;
 
-const Subtitle = styled.h4`
-  text-align: center;
+const PostDate = styled.h4`
   font-family: SuisseCond;
-  padding-bottom: 10%;
-  color: #FAFAFA;
-  fontSize: 2vw;
-  padding-left: 5%;
+  font-size: 19px;
+  text-align: center;
+  color: white;
+  margin-top: -2vh;
 `;
-
-const StyledImage = styled.div`
-  position: absolute;
-  display: inline-block;
-  height: 100vh;
-  width: 50vw;
-  top: 0; left: 0;
-  margin-left: -50vw;
-  margin-top: -50vh;
-`;
-
-const ImageContainer = styled.div`
-  display: inline-block;
-  vertical-align: top;
-  width: 50vw;
-  height: 100vh;
-  opacity: .9;
-  position: relative;
-`
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props){
@@ -91,45 +71,27 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article1 = documents[0].data.blog_post;
     let article2 = documents[1].data.blog_post;
     let article3 = documents[2].data.blog_post;
+    let article4 = documents[3].data.blog_post;
+    let articles = [article1, article2, article3, article4]
     return (
       <div style={{ backgroundColor: 'black', height: '100vh' }}>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <div style={{ paddingTop: '10vh' }}>
+          <div style={{ paddingTop: '5vh' }}>
+          { articles.map((article, idx, articles) => (
             <div>
-              <Article>
+              <Article style={{ marginTop: '10vh' }}>
                 <Title>
-                  {article1.title.value[0].text}
+                  {article.title.value[0].text}
                 </Title>
-                <Subtitle>
-                  {article1.subtitle.value}
-                </Subtitle>
+                <PostDate>
+                  {article.date.value}
+                </PostDate>
               </Article>
             </div>
-
-            <div>
-              <Article>
-                <Title>
-                  {article2.title.value[0].text}
-                </Title>
-                <Subtitle>
-                  {article2.subtitle.value}
-                </Subtitle>
-              </Article>
-            </div>
-
-            <div>
-              <Article>
-                <Title>
-                  {article3.title.value[0].text}
-                </Title>
-                <Subtitle>
-                  {article3.subtitle.value}
-                </Subtitle>
-              </Article>
-            </div>
+            ))}
         </div>
       </div>
     )} else {
@@ -156,15 +118,3 @@ const withConnect = connect(null, mapDispatchToProps);
 export default compose(
   withConnect,
 )(ArticlesContainer);
-
-// { documents.map( (document, idx, documents) => {
-//   let article = document.data.article;
-//   console.log(article)
-//   return (
-//     <div>
-//       <h3 key={idx}>{article.title.value[0].text}</h3>
-//       <img key={idx+1} src={article.image.value.main.url} />
-//       {article.body.value[0].text}
-//     </div>
-//  )
-// })}

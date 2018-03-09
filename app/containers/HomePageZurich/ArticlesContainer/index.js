@@ -19,7 +19,7 @@ import { Image } from 'cloudinary-react';
 
 
 const Article = styled.div`
-  width: 70%;
+  width: 90%;
   display: block;
   margin: 0 auto;
   opacity: .9;
@@ -33,46 +33,48 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 2.3vw;
+  font-size: 30px;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
 `;
 
-const Subtitle = styled.h4`
-  text-align: center;
+const PostDate = styled.h4`
   font-family: SuisseCond;
-  color: #FAFAFA;
-  fontSize: 2vw;
-  padding-left: 5%;
+  font-size: 19px;
+  text-align: center;
+  color: white;
+  margin-top: -2vh;
 `;
 
 const StyledImage = styled.div`
   position:absolute;
   width: 100%;
+  height: 100%;
   display:block;
   margin: 0 auto;
   top:0;
   right:0;
   bottom:0;
   left:0;
+  background-repeat: no-repeat;
   background-position: center;
-  background-size:cover;
-  opacity: .9;
-  overflow: hidden;
-
+  background-size:cover !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 50vw;
+  width: 53vw;
   height: 100vh;
   border: none;
-  margin-top: -70%;
-  margin-left: -100%;
+  border-radius:4px;
+  top: 0;
   overflow: hidden;
 `
 
@@ -105,78 +107,40 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     let article1 = documents[0].data.blog_post;
     let article2 = documents[1].data.blog_post;
     let article3 = documents[2].data.blog_post;
+    let article4 = documents[3].data.blog_post;
+    let articles = [article1, article2, article3, article4]
     return (
-      <div className='blog-container' style={{ marginTop: '10%', height: '100vh' }}>
+      <div className='blog-container'>
         <Helmet>
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '-4.75%', opacity: '.7', paddingLeft: '5%' }} />
-          <div className='blog-hover-image'>
-            <ReactHover
-              options={options}>
-              <ReactHover.Trigger type='trigger'>
-                <Article className='titles-container'>
-                  <Title>
-                    {article1.title.value[0].text}
-                  </Title>
-                  <Subtitle>
-                    {article1.subtitle.value}
-                  </Subtitle>
-                </Article>
-              </ReactHover.Trigger>
-              <ReactHover.Hover type='hover'>
-                <ImageContainer>
-                  <StyledImage style={{ background: `url(${article1.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
-                    <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                  </StyledImage>
-                </ImageContainer>
-              </ReactHover.Hover>
-            </ReactHover>
-          </div>
-          <div className='blog-hover-image'>
-            <ReactHover
-                options={options}>
-                <ReactHover.Trigger type='trigger'>
-                  <Article className='titles-container'>
-                    <Title>
-                      {article2.title.value[0].text}
-                    </Title>
-                    <Subtitle>
-                      {article2.subtitle.value}
-                    </Subtitle>
-                  </Article>
-                </ReactHover.Trigger>
-                <ReactHover.Hover type='hover'>
-                  <ImageContainer>
-                    <StyledImage style={{ background: `url(${article2.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
-                      <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                    </StyledImage>
-                  </ImageContainer>
-                </ReactHover.Hover>
-              </ReactHover>
-            </div>
-            <div className='blog-hover-image'>
-              <ReactHover
-                options={options}>
-                <ReactHover.Trigger type='trigger'>
-                  <Article className='titles-container' style={{ marginTop: '5vh' }}>
-                    <Title>
-                      {article3.title.value[0].text}
-                    </Title>
-                    <Subtitle>
-                      {article3.subtitle.value}
-                    </Subtitle>
-                  </Article>
-                </ReactHover.Trigger>
-                <ReactHover.Hover type='hover'>
-                  <ImageContainer>
-                    <StyledImage style={{ background: `url(${article3.main_image.value.main.url}) no-repeat left center`}} alt={article1.main_image.value.main.alt}>
-                      <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                    </StyledImage>
-                  </ImageContainer>
-                </ReactHover.Hover>
-              </ReactHover>
+          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', opacity: '.7', paddingLeft: '5%', paddingTop: '5%' }} />
+          <div className="blog-wrapper">
+          { articles.map((article, idx, articles) => (
+              <div key={idx} className='blog-hover-image'>
+                <ReactHover
+                  options={options}>
+                  <ReactHover.Trigger type='trigger'>
+                    <Article className='titles-container' style={{ marginTop: '5vh' }}>
+                      <Title>
+                        {article.title.value[0].text}
+                      </Title>
+                      <PostDate>
+                        {article.date.value}
+                      </PostDate>
+                    </Article>
+                  </ReactHover.Trigger>
+                  <ReactHover.Hover type='hover'>
+                    <ImageContainer>
+                      <StyledImage style={{ background: `url(${article.main_image.value.main.url}) no-repeat center`}} alt={article.main_image.value.main.alt}>
+                        <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                      </StyledImage>
+                    </ImageContainer>
+                  </ReactHover.Hover>
+                </ReactHover>
+              </div>
+            ))}
             </div>
         </div>
     )} else {
@@ -203,15 +167,3 @@ const withConnect = connect(null, mapDispatchToProps);
 export default compose(
   withConnect,
 )(ArticlesContainer);
-
-// { documents.map( (document, idx, documents) => {
-//   let article = document.data.article;
-//   console.log(article)
-//   return (
-//     <div>
-//       <h3 key={idx}>{article.title.value[0].text}</h3>
-//       <img key={idx+1} src={article.image.value.main.url} />
-//       {article.body.value[0].text}
-//     </div>
-//  )
-// })}
