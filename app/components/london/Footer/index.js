@@ -40,6 +40,7 @@ const Button = styled.button`
   margin-bottom: 1vh;
   margin-left: 5vw;
   padding: 3px;
+  letter-spacing: 1.5px;
  &:hover, &:active, &:focus {
    background-color: black;
    color: #FAFAFA;

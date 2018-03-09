@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { Image } from 'cloudinary-react';
 
 const Button = styled.button`
+
   border: 1px solid black;
   width: 208px;
   height: 25px;
@@ -19,20 +20,23 @@ const Button = styled.button`
   display: block;
   margin: 0 auto;
   white-space: no-wrap;
-  margin-left: 20%;
-  letter-spacing: 1px;
-  &:hover {
+  margin-left: 10%;
+  letter-spacing: 1.5px;
+  position: relative;
+  clear: both;
+  &:hover, &:active, &:focus {
     background-color: black;
     color: #FAFAFA;
     border: none;
     outline: 0;
- }`;
+ }
+ `;
 
 
 function Logo() {
   return (
     <div id="info" className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black'}}>
-      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '12.25vw', letterSpacing: '1px', fontFamily: 'SuisseRegular', color: 'black', fontSize: '.9vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '2vh' }}>
+      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '11.6vw', letterSpacing: '1px', fontFamily: 'SuisseRegular', color: 'black', fontSize: '.9vw', width: '100%', margin: '0 auto', marginTop: '10vh', marginBottom: '2vh' }}>
         <div className="col-sm-3">
           <p>Sang Bleu London <br />29B Dalston Ln,<br />London E8 3DF</p>
         </div>
@@ -43,7 +47,7 @@ function Logo() {
           <p>Open 11am — 7pm<br />7 days a week</p>
         </div>
         <div className="col-sm-3">
-          <a style={{ color: 'black', paddingTop: '5vh' }} href="mailto:london@sangbleu.tattoo" target="_blank">
+          <a style={{ color: 'black', paddingTop: '5vh', position: 'relative' }} href="mailto:london@sangbleu.tattoo" target="_blank">
             <Button className="btn btn-default">Book an Appointment</Button>
           </a>
         </div>

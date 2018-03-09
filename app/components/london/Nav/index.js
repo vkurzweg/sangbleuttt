@@ -22,7 +22,7 @@ const Brand = styled.h1`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
   font-size: 23pt;
-  letter-spacing: 1px;
+  letter-spacing: 0.16;
   margin-left: 12vw;
   padding-top: 1vw;
 `;
@@ -37,8 +37,10 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
       <div style={{ position: 'fixed', width: '100%', zIndex: '1', top: '0' }}>
         <AppBar
             title={brand}
+            className="appbar"
             style={{ width: '100%', backgroundColor: 'transparent' }}
             iconElementRight={<Image className="logo-london" cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
+            iconStyleRight={{ display: 'inline', position: 'absolute', right: '0', marginRight: '1vw'}}
             iconStyleLeft={{ display: 'none'}}
             zDepth={0}
           />

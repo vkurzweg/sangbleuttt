@@ -23,7 +23,7 @@ const Title = styled.h3`
   font-family: SangBleu;
   text-align: center;
   font-size: 45px;
-  letter-spacing: 3px;
+  letter-spacing: 14px;
   text-transform: uppercase;
 `;
 
@@ -32,18 +32,19 @@ const Subtitle = styled.h4`
   font-size: 32px;
   margin-top: 1vh;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  line-height: 20px;
 `;
 
 const PostDate = styled.h5`
   display: inline;
-  padding-right: 3%;
+  padding-right: 39px;
   font-family: SuisseLight;
   font-size: 12px;
   margin-top: 1vh;
-  margin-left: 3%;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1.1px;
+  line-height: 20px;
   position: absolute;
   bottom: 0;
 `;
@@ -180,7 +181,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           </Helmet>
           <h3
             style={{
-              fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '1px', marginLeft: '4vw', paddingTop: '1vw'
+              fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '.16px', marginLeft: '4vw', paddingTop: '1vw'
             }}
           >blog
           </h3>
