@@ -156,8 +156,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <div className='blog-initial'>
                   <div style={{ position: 'relative', height: '100vh', width: '50vw' }}>
-                    <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                    <Icon type="close" onClick={this.handleBlogDismiss} style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', marginTop: '5vh', opacity: '.7', paddingLeft: '5%' }} />
+                    <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
                     <div onClick={this.handleFirstBlogClick}>
                       <ArticlesContainerInitial />
                     </div>
@@ -169,7 +168,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     openSecondary={true}
                   >
                     <div>
-                      <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                      <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
                       <ArticlesContainer />
                     </div>
                   </Drawer>
@@ -256,7 +255,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   openSecondary={true}
                 >
                   <div>
-                    <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                    <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
                     <ArticlesContainer />
                   </div>
                 </Drawer>

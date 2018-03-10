@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Maxime from '../Artists/Maxime';
 import Giorgio from '../Artists/Giorgio';
 import Jordan from '../Artists/Jordan';
@@ -16,7 +16,14 @@ import Diego from '../Artists/Diego';
 import Golda from '../Artists/Golda';
 import Marco from '../Artists/Marco';
 import Matt from '../Artists/Matt';
+import { pulse } from 'react-animations';
 
+const pulseAnimation = keyframes`${pulse}`;
+
+const PulseDiv = styled.div`
+  animation: .5s ${pulseAnimation};
+  margin-top: -7vh;
+`;
 
 class NamesFull extends React.Component { // eslint-disable-line react/prefer-stateless-function
   shouldComponentUpdate() {
@@ -29,7 +36,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     let widthValue = '98vw';
     let imageClass = 'hover-container-full';
     return (
-      <div style={{ marginTop: '-5vh' }}>
+      <PulseDiv>
         <div className="insta-hover row" style={{ margintop: '-5vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Maxime openLightbox={this.props.openLightbox} />
@@ -73,7 +80,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Matt openLightbox={this.props.openLightbox} />
           </div>
         </div>
-      </div>
+      </PulseDiv>
     );
   }
 }

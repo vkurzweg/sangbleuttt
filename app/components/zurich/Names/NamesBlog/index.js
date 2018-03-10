@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ReactHover from 'react-hover';
 import Instafeed from 'react-instafeed';
 import Maxime from '../Artists/Maxime';
@@ -18,6 +18,15 @@ import Diego from '../Artists/Diego';
 import Golda from '../Artists/Golda';
 import Marco from '../Artists/Marco';
 import Matt from '../Artists/Matt';
+import { slideInRight } from 'react-animations';
+
+
+const rightAnimation = keyframes`${slideInRight}`;
+
+const SlideRightDiv = styled.div`
+  animation: .5s ${rightAnimation};
+  margin-top: -8vh;
+`;
 
 
 class NamesFull extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -32,7 +41,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     let imageClass = 'hover-container-blog';
     let fontShrink = '';
     return (
-      <div style={{ marginTop: '-8vh' }}>
+      <SlideRightDiv>
         <div className="insta-hover row" style={{ paddingLeft: '10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Maxime openLightbox={this.props.openLightbox} />
@@ -76,7 +85,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Matt openLightbox={this.props.openLightbox} />
           </div>
         </div>
-      </div>
+      </SlideRightDiv>
     );
   }
 }

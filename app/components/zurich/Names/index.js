@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-// import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import ReactHover from 'react-hover';
 import Instafeed from 'react-instafeed';
 import NamesFull from './NamesFull';
@@ -38,7 +38,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   if(aboutState){
     fontShrink = '';
     widthValue = '90%';
-    content = <NamesAbout openLightbox={this.props.openLightbox} />
+    content = <NamesAbout openLightbox={this.props.openLightbox} />;
   }
   if(!initialState && !blogState && !aboutState){
     widthValue = '98vw';
@@ -50,6 +50,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     return (
       <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, fontSize: fontGrow, paddingLeft: '0', paddingRight: '0' }}>
         {content}
+      }
       </div>
     );
   }

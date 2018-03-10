@@ -115,7 +115,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <Icon type="close" style={{ float: 'left', color: 'white', fontSize: '2vw', left: '0', opacity: '.7', paddingLeft: '5%', paddingTop: '5%' }} />
           <div className="blog-wrapper">
           { articles.map((article, idx, articles) => (
               <div key={idx} className='blog-hover-image'>
