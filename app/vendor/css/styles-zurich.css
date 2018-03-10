@@ -103,6 +103,18 @@
   transition: margin-right 0.5s ease;
 }
 
+/*drawers scroll
+*/
+
+.drawer-blog div:nth-child(2) {
+  overflow: scroll;
+}
+
+.drawer-about div:nth-child(1) {
+  height: 100%;
+  overflow-y: scroll;
+}
+
 
 /*content resizing animation
 */
@@ -191,7 +203,6 @@
   margin-top: 44vh;
   font-size: 19px;
   letter-spacing: 2.36px;
-  z-index: 100;
   position: absolute;
   color: #FFFFFF;
   writing-mode: vertical-lr;
@@ -428,9 +439,9 @@
   margin: 0 auto !important;
   position: fixed !important;
   height: 120vh !important;
-  width: 100%;
+  width: 118%;
   top: 0;
-  right: 53vw;
+  right: 44.5vw;
 }
 
 
@@ -650,11 +661,16 @@
 /*SLIDESHOW MODAL
 */
 
-.zurich-modal div:nth-child(1) div:nth-child(1) {
+.zurich-modal div:nth-child(1) {
   background-color: #FF001F !important;
   width: 100vw !important;
   height: 100vh !important;
   margin-top: -10vh !important;
+}
+
+.slideshow-image-container {
+  min-width: 35vw;
+  min-height: 40vh;
 }
 
 .slideshow-image {
@@ -663,9 +679,8 @@
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 5vh;
-  position: fixed;
-  margin-left: 30vw;
+  margin-top: 15vh;
+  z-index: 19;
 }
 
 .close-label {

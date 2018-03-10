@@ -20,19 +20,26 @@ const customContentStyle = {
   height: '50%'
 };
 
+const NameContainer = styled.div`
+  min-width: 100vw;
+  min-height: 200px;
+`;
+
 const ArtistName = styled.h3`
   font-family: BRRR;
   font-size: 40px;
   color: white;
   text-align: center;
-  padding-top: 10vh;
-  height: 200px;
+  padding-top: 5vh;
+  height: 100px;
+  letter-spacing: -1.99px;
 `;
 
 const ArtistHandle = styled.h4`
   color: white;
   font-family: SuisseCond;
   font-size: 19px;
+  letter-spacing: 2.36;
   text-align: center;
 `;
 
@@ -58,6 +65,7 @@ const BackButton = styled.button`
   top: 0;
   height: 130vh;
   width: 400px;
+  z-index: 20;
   position: fixed;
   &:hover, &:active, &:focus {
     outline: 0;
@@ -76,6 +84,7 @@ const NextButton = styled.button`
   top: 0;
   height: 100vh;
   width: 400px;
+  z-index: 20;
   position: fixed;
     &:hover, &:active, &:focus {
       outline: 0;
@@ -88,10 +97,10 @@ const PostDate = styled.p`
   color: white;
   font-size: 19px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 10vh;
-  margin-left: 34vw;
+  letter-spacing: 2.36px;
+  position: absolute;
+  top: 45vh;
+  left: 35vw;
 `;
 
 
@@ -166,27 +175,31 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
             open={this.props.isOpen}
             onRequestClose={this.props.handleClose}
           >
-            <ArtistName>{artistName}</ArtistName>
-            <ArtistHandle>{artistHandle}</ArtistHandle>
-            <div style={{ position: 'relative' }}>
-              {console.log('photos', this.props.photos)}
-              {this.props.slideCount !== 0 ? backButton : '' }
-              {this.props.photos.map((photo, key) => {
-                if (this.props.photos.indexOf(photo) === this.props.slideCount) {
-                  return (
-                    <div key={photo.id} style={{ position: 'relative' }}>
-                      <a href={photo.link} target="_blank">
-                        <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
-                      </a>
-                      <PostDate>
-                        <Moment unix>{photo.created_time}</Moment>
-                      </PostDate>
-                    </div>
-                  )
-                }
-                  return ''
-              })}
-              {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
+            <div style={{ width: 'calc(100% - 40px)', paddingTop: '15vh' }}>
+              <ArtistName>{artistName}</ArtistName>
+              <ArtistHandle>{artistHandle}</ArtistHandle>
+              <div style={{ position: 'relative' }}>
+                {console.log('photos', this.props.photos)}
+                {this.props.slideCount !== 0 ? backButton : '' }
+                {this.props.photos.map((photo, key) => {
+                  if (this.props.photos.indexOf(photo) === this.props.slideCount) {
+                    return (
+                      <div key={photo.id} style={{ position: 'relative' }}>
+                        <div className="slideshow-image-container">
+                          <a href={photo.link} target="_blank">
+                            <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
+                          </a>
+                        </div>
+                        <PostDate>
+                          <Moment unix>{photo.created_time}</Moment>
+                        </PostDate>
+                      </div>
+                    )
+                  }
+                    return ''
+                })}
+                {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
+              </div>
             </div>
           </Dialog>
         </div>

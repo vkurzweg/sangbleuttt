@@ -63,6 +63,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       aboutOpen: false,
       blogOpen: false,
       initial: true,
+      viewPost: false,
     };
     this.handleAboutToggle = this.handleAboutToggle.bind(this);
     this.handleBlogToggle = this.handleBlogToggle.bind(this);
@@ -70,6 +71,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleBlogClose = this.handleBlogClose.bind(this);
     this.handleFirstBlogClick = this.handleFirstBlogClick.bind(this);
     this.handleBlogDismiss = this.handleBlogDismiss.bind(this);
+    this.handleViewPost = this.handleViewPost.bind(this);
+    this.handleDismissPost = this.handleDismissPost.bind(this);
    }
 
    handleAboutToggle(){
@@ -96,10 +99,21 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     return this.setState({initial: false});
   }
 
+  handleViewPost() {
+    console.log('clicked');
+    return this.setState({ blogOpen: true, viewPost: true })
+  }
+
+  handleDismissPost() {
+    return this.setState({ viewPost: false, blogOpen: true })
+  }
+
   render() {
     let contentWidth;
     this.state.aboutOpen ? contentWidth = 'left-half' : contentWidth;
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
+    let blogWidth;
+    this.state.viewPost ? blogWidth = '100%' : blogWidth = '45%'
     if (this.state.initial) {
       return (
         <div>
@@ -147,6 +161,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     open={this.state.aboutOpen}
                     width='45%'
                     containerStyle={style.bg}
+                    className="drawer-about"
                   >
                     <div>
                       <AboutLabel>information</AboutLabel>
@@ -163,13 +178,17 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   </div>
                   <Drawer
                     open={this.state.blogOpen}
-                    width='45%'
+                    width={blogWidth}
                     containerStyle={style.bg}
                     openSecondary={true}
+                    className="drawer-blog"
                   >
                     <div>
                       <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                      <ArticlesContainer />
+                      <ArticlesContainer
+                        handleViewPost={this.handleViewPost}
+                        handleDismissPost={this.handleDismissPost}
+                      />
                     </div>
                   </Drawer>
                 </div>
@@ -237,6 +256,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   open={this.state.aboutOpen}
                   width='44%'
                   containerStyle={style.bg}
+                  className="drawer-about"
                 >
                   <div>
                     <AboutLabel>information</AboutLabel>
@@ -250,13 +270,17 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <Drawer
                   open={this.state.blogOpen}
-                  width='45%'
+                  width={blogWidth}
                   containerStyle={style.bg}
                   openSecondary={true}
+                  className="drawer-blog"
                 >
                   <div>
                     <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                    <ArticlesContainer />
+                    <ArticlesContainer
+                      handleViewPost={this.handleViewPost}
+                      handleDismissPost={this.handleDismissPost}
+                    />
                   </div>
                 </Drawer>
               </div>

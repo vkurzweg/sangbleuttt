@@ -115,13 +115,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <div className="blog-wrapper">
+          <div className="blog-wrapper" onClick={this.props.handleDismissPost}>
           { articles.map((article, idx, articles) => (
               <div key={idx} className='blog-hover-image'>
                 <ReactHover
                   options={options}>
                   <ReactHover.Trigger type='trigger'>
-                    <Article className='titles-container' style={{ marginTop: '5vh' }}>
+                    <Article onClick={this.props.handleViewPost} className='titles-container' style={{ marginTop: '5vh' }}>
                       <Title>
                         {article.title.value[0].text}
                       </Title>
