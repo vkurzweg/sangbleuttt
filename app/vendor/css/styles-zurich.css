@@ -647,15 +647,18 @@
   z-index: 2000;
 }
 
+/*SLIDESHOW MODAL
+*/
+
 .zurich-modal div:nth-child(1) div:nth-child(1) {
   background-color: #FF001F !important;
-  width: 90vw !important;
-  height: 90vh !important;
-  margin-top: -1vh !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin-top: -10vh !important;
 }
 
 .slideshow-image {
-  width: 25vw;
+  width: 35vw;
   height: 40vh;
   object-fit: cover;
   display: block;

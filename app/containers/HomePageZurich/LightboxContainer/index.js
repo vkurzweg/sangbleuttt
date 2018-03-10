@@ -26,7 +26,7 @@ const ArtistName = styled.h3`
   color: white;
   text-align: center;
   padding-top: 10vh;
-  z-index: 2000;
+  height: 200px;
 `;
 
 const ArtistHandle = styled.h4`
@@ -48,6 +48,41 @@ const Button = styled.button`
   }
 `;
 
+const BackButton = styled.button`
+  font-family: BRRR;
+  text-transform: uppercase;
+  backgroundColor: transparent;
+  border: none;
+  outline: 0;
+  left: 0;
+  top: 0;
+  height: 130vh;
+  width: 400px;
+  position: fixed;
+  &:hover, &:active, &:focus {
+    outline: 0;
+    cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661716/backbtn_1.png), auto;
+  }
+`;
+
+const NextButton = styled.button`
+  font-family: BRRR;
+  text-transform: uppercase;
+  backgroundColor: black;
+  border: none;
+  outline: 0;
+  right: 0;
+  margin-right: 150px;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  position: fixed;
+    &:hover, &:active, &:focus {
+      outline: 0;
+      cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661714/nextbtn_1.png), auto;
+    }
+`;
+
 const PostDate = styled.p`
   font-family: SuisseCond;
   color: white;
@@ -56,7 +91,7 @@ const PostDate = styled.p`
   position: fixed;
   bottom: 0;
   margin-bottom: 10vh;
-  margin-left: 31vw;
+  margin-left: 34vw;
 `;
 
 
@@ -69,16 +104,10 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
         <h4 className='close-label'>close</h4>
       </button>
     ]
-    const backButton = <Button style={{ left: '0', marginLeft: '12vw', marginTop: '16vh' }} onClick={this.props.previousImage}>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>back</h4>
-                      </Button>
-    const nextButton = <Button style={{ right: '0', top: '0', marginRight: '15vw', marginTop: '40vh' }} onClick={this.props.nextImage}>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
-                        <h4 style={{ color: 'white', fontSize: '20px' }}>next</h4>
-                      </Button>
+    const backButton = <BackButton onClick={this.props.previousImage}>
+                      </BackButton>
+    const nextButton = <NextButton onClick={this.props.nextImage}>
+                      </NextButton>
     let artistName;
     let artistHandle;
     let userId = this.props.userId;
