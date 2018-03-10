@@ -20,9 +20,8 @@ const Button = styled.button`
   display: block;
   margin: 0 auto;
   white-space: no-wrap;
-  margin-left: 10%;
+  margin-left: 30%;
   letter-spacing: 1.5px;
-  position: relative;
   clear: both;
   &:hover, &:active, &:focus {
     background-color: black;

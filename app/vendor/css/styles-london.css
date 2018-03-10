@@ -355,7 +355,7 @@ img {
 .london-article-container div:nth-child(1) div:nth-child(2) {
   display: block;
   margin: 0 auto !important;
-  height: 120vh !important;
+  height: 140vh !important;
   width: 60% !important;
   top: 0px !important;
 }
@@ -363,7 +363,15 @@ img {
 /*hide black text on hover + show blended text
 */
 
-.articles-container:hover .article {
+.article-text:hover .article {
+  opacity: 0;
+}
+
+.article:hover .article-text {
+  opacity: 0;
+}
+
+.article-text:hover .article + a {
   opacity: 0;
 }
 
@@ -376,7 +384,7 @@ img {
 }
 
 .mix-test {
-  mix-blend-mode: difference !important;
+  mix-blend-mode: difference;
   color: white;
 }
 
@@ -478,6 +486,8 @@ img {
   width: 60% !important;
   height: 100vh !important;
   top: 0px !important;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
   margin: 0 auto;
 }
 

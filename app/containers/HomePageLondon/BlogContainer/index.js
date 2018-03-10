@@ -47,6 +47,7 @@ const PostDate = styled.h5`
   line-height: 20px;
   position: absolute;
   bottom: 0;
+  left: 0;
 `;
 
 const ModalTitle = styled.h3`
@@ -55,7 +56,7 @@ const ModalTitle = styled.h3`
   text-align: center;
   font-family: SangBleu;
   font-size: 25px;
-  letter-spacing: 3px;
+  letter-spacing: 7.78px;
   text-transform: uppercase;
 `;
 
@@ -150,6 +151,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const article1 = documents[0].data.blog_post;
       const article2 = documents[1].data.blog_post;
       const article3 = documents[2].data.blog_post;
+      const articles = [article1, article2, article3];
       // variables for images to avoid errors if a post has less than 4 images (TODO: DRY refactor)
       let article1image2;
       let article1image3;
@@ -194,14 +196,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <div className="article" style={{ marginTop: '4vh' }}>
                     <a className="article-link" onClick={this.openModal1} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
                       <div style={{ position: 'relative' }}>
-                        <PostDate>
+                        <PostDate className="article-text">
                           {article1.date.value}
                         </PostDate>
-                        <Title className="article-title">
+                        <Title className="article-title article-text">
                           {article1.title.value[0].text}
                         </Title>
                       </div>
-                      <Subtitle className="article-title">
+                      <Subtitle className="article-title article-text">
                         {article1.subhead.value}
                       </Subtitle>
                     </a>
@@ -238,14 +240,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <div className="article" style={{ marginTop: '34vh' }}>
                     <a className="article-link" onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
                       <div style={{ position: 'relative' }}>
-                        <PostDate>
+                        <PostDate className="article-text">
                           {article2.date.value}
                         </PostDate>
-                        <Title className="article-title">
+                        <Title className="article-title article-text">
                           {article2.title.value[0].text}
                         </Title>
                       </div>
-                      <Subtitle className="article-title">
+                      <Subtitle className="article-title article-text">
                         {article2.subhead.value}
                       </Subtitle>
                     </a>
@@ -282,14 +284,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <div className="article" style={{ marginTop: '64vh' }}>
                     <a className="article-link" onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
                       <div style={{ position: 'relative' }}>
-                        <PostDate>
+                        <PostDate className="article-text">
                           {article3.date.value}
                         </PostDate>
-                        <Title className="article-title">
+                        <Title className="article-title article-text">
                           {article3.title.value[0].text}
                         </Title>
                       </div>
-                      <Subtitle className="article-title">
+                      <Subtitle className="article-title article-text">
                         {article3.subhead.value}
                       </Subtitle>
                     </a>
