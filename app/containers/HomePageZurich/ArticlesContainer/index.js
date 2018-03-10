@@ -23,7 +23,6 @@ const Article = styled.div`
   display: block;
   margin: 0 auto;
   opacity: .9;
-  margin-bottom: 10vh;
   &:hover{
     opacity: 1;
   }
@@ -33,8 +32,8 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 30px;
-  letter-spacing: 2px;
+  font-size: 40px;
+  letter-spacing: -1.99px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
@@ -121,7 +120,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <ReactHover
                   options={options}>
                   <ReactHover.Trigger type='trigger'>
-                    <Article onClick={this.props.handleViewPost} className='titles-container' style={{ marginTop: '5vh' }}>
+                    <Article onClick={this.props.handleViewPost} className='titles-container' style={{ marginTop: '7vh' }}>
                       <Title>
                         {article.title.value[0].text}
                       </Title>

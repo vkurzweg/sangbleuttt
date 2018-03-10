@@ -27,8 +27,8 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 2.3vw;
-  letter-spacing: 2px;
+  font-size: 40px;
+  letter-spacing: -1.99px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
@@ -79,10 +79,10 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <div style={{ paddingTop: '5vh' }}>
+          <div style={{ paddingTop: '3vh' }}>
           { articles.map((article, idx, articles) => (
             <div>
-              <Article style={{ marginTop: '10vh' }}>
+              <Article style={{ marginTop: '7vh' }}>
                 <Title>
                   {article.title.value[0].text}
                 </Title>

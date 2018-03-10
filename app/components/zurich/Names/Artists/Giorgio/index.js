@@ -33,7 +33,7 @@ class Giorgio extends React.Component { // eslint-disable-line react/prefer-stat
           <ReactHover.Trigger type='trigger'>
             <div>
               <h2 className="hover-name giorgio">
-                Giorgio<br /><span style={{ fontSize: '.7vw', marginLeft: '3vw', textTransform: 'uppercase' }}>@giorgiodeduesanti</span>
+                Giorgio<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '3vw', textTransform: 'uppercase' }}>@giorgiodeduesanti</span>
               </h2>
             </div>
           </ReactHover.Trigger>

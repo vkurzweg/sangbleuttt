@@ -100,7 +100,7 @@ const PostDate = styled.p`
   letter-spacing: 2.36px;
   position: absolute;
   top: 45vh;
-  left: 35vw;
+  left: 35%;
 `;
 
 

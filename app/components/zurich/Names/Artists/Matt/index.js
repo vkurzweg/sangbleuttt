@@ -33,7 +33,7 @@ class Matt extends React.Component { // eslint-disable-line react/prefer-statele
           <ReactHover.Trigger type='trigger'>
             <div>
               <h2 className="hover-name matt">
-                Matt Powers<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@black_arm_tattoo</span>
+                Matt Powers<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>@black_arm_tattoo</span>
               </h2>
             </div>
           </ReactHover.Trigger>

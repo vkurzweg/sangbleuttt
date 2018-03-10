@@ -33,7 +33,7 @@ class Diego extends React.Component { // eslint-disable-line react/prefer-statel
           <ReactHover.Trigger type='trigger'>
             <div style={{ marginTop: '-5vh' }}>
               <h2 className="hover-name diego">
-                Diego Thonney<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@diagal_faust</span>
+                Diego Thonney<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>@diagal_faust</span>
               </h2>
             </div>
           </ReactHover.Trigger>

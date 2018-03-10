@@ -33,7 +33,7 @@ class Golda extends React.Component { // eslint-disable-line react/prefer-statel
           <ReactHover.Trigger type='trigger'>
             <div>
               <h2 className="hover-name golda">
-                Golda Kracks<br /><span style={{ fontSize: '.7vw', marginLeft: '6vw', textTransform: 'uppercase' }}>@golda.kracks</span>
+                Golda Kracks<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>@golda.kracks</span>
               </h2>
             </div>
           </ReactHover.Trigger>

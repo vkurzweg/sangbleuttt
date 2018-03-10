@@ -38,6 +38,11 @@
   src: url('../fonts/SuisseIntl-LightItalic.otf');
 }
 
+@font-face {
+  font-family: SuisseCondItalic;
+  src: url('../fonts/SuisseIntlCond-RegularItalic.otf');
+}
+
 /*BLACK & WHITE HOVER EFFECT
 */
 

@@ -33,7 +33,7 @@ class Labaz extends React.Component { // eslint-disable-line react/prefer-statel
           <ReactHover.Trigger type='trigger'>
             <div>
               <h2 className="hover-name labaz">
-                Labaz 1<br /><span style={{ fontSize: '.7vw', marginLeft: '3vw', textTransform: 'uppercase' }}>@zilba.1</span>
+                Labaz 1<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '3vw', textTransform: 'uppercase' }}>@zilba.1</span>
               </h2>
             </div>
           </ReactHover.Trigger>
