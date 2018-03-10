@@ -101,7 +101,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
 
   handleViewPost() {
     console.log('clicked');
-    return this.setState({ blogOpen: true, viewPost: true })
+    return this.setState({ viewPost: true, blogOpen: false })
   }
 
   handleDismissPost() {
@@ -112,8 +112,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     let contentWidth;
     this.state.aboutOpen ? contentWidth = 'left-half' : contentWidth;
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
-    let blogWidth;
-    this.state.viewPost ? blogWidth = '100%' : blogWidth = '45%'
     if (this.state.initial) {
       return (
         <div>
@@ -176,21 +174,12 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                       <ArticlesContainerInitial />
                     </div>
                   </div>
-                  <Drawer
-                    open={this.state.blogOpen}
-                    width={blogWidth}
-                    containerStyle={style.bg}
-                    openSecondary={true}
-                    className="drawer-blog"
-                  >
-                    <div>
-                      <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                      <ArticlesContainer
-                        handleViewPost={this.handleViewPost}
-                        handleDismissPost={this.handleDismissPost}
-                      />
-                    </div>
-                  </Drawer>
+                  <ArticlesContainer
+                    handleViewPost={this.handleViewPost}
+                    handleDismissPost={this.handleDismissPost}
+                    viewPost={this.state.viewPost}
+                    blogOpen={this.state.blogOpen}
+                  />
                 </div>
                 <div className={contentWidth}>
                   <ArtistsContainer
@@ -268,21 +257,12 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 <div className='blog-label-container'>
                   <h4 className='blog-label'>blog</h4>
                 </div>
-                <Drawer
-                  open={this.state.blogOpen}
-                  width={blogWidth}
-                  containerStyle={style.bg}
-                  openSecondary={true}
-                  className="drawer-blog"
-                >
-                  <div>
-                    <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
-                    <ArticlesContainer
-                      handleViewPost={this.handleViewPost}
-                      handleDismissPost={this.handleDismissPost}
-                    />
-                  </div>
-                </Drawer>
+                <ArticlesContainer
+                  handleViewPost={this.handleViewPost}
+                  handleDismissPost={this.handleDismissPost}
+                  viewPost={this.state.viewPost}
+                  blogOpen={this.state.blogOpen}
+                />
               </div>
               <div className={contentWidth}>
                 <ArtistsContainer

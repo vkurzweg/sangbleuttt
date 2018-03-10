@@ -16,15 +16,29 @@ import {Link, RichText, Date} from 'prismic-reactjs';
 import Icon from 'antd/lib/icon';
 import ReactHover from 'react-hover';
 import { Image } from 'cloudinary-react';
+import Drawer from 'material-ui/Drawer';
+
+const style = {
+  bg: {
+    backgroundColor: '#000000',
+    color: '#F5F5F5',
+    height: '100vh',
+    overflow: 'visible'
+  }
+};
 
 
-const Article = styled.div`
+const Article = styled.button`
   width: 90%;
   display: block;
   margin: 0 auto;
   opacity: .9;
+  border: 0;
+  background: transparent;
+  outline: 0;
   &:hover{
     opacity: 1;
+    outline: 0;
   }
 `;
 
@@ -114,32 +128,63 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <title>ArticlesContainer</title>
           <meta name="description" content="Description of ArticlesContainer" />
         </Helmet>
-          <div className="blog-wrapper" onClick={this.props.handleDismissPost}>
-          { articles.map((article, idx, articles) => (
-              <div key={idx} className='blog-hover-image'>
-                <ReactHover
-                  options={options}>
-                  <ReactHover.Trigger type='trigger'>
-                    <Article onClick={this.props.handleViewPost} className='titles-container' style={{ marginTop: '7vh' }}>
-                      <Title>
-                        {article.title.value[0].text}
-                      </Title>
-                      <PostDate>
-                        {article.date.value}
-                      </PostDate>
-                    </Article>
-                  </ReactHover.Trigger>
-                  <ReactHover.Hover type='hover'>
-                    <ImageContainer>
-                      <StyledImage style={{ background: `url(${article.main_image.value.main.url}) no-repeat center`}} alt={article.main_image.value.main.alt}>
-                        <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                      </StyledImage>
-                    </ImageContainer>
-                  </ReactHover.Hover>
-                </ReactHover>
+        <Drawer
+          open={this.props.blogOpen}
+          width="45%"
+          containerStyle={style.bg}
+          openSecondary={true}
+          className="drawer-blog"
+          docked={false}
+          onRequestChange={this.props.handleDismissPost}
+        >
+          <div style={{ height: '100%', overflowY: 'scroll' }}>
+            <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+
+            <div className="blog-wrapper">
+            { articles.map((article, idx, articles) => (
+                <div key={idx}>
+                  <div className='blog-hover-image'>
+                    <ReactHover
+                      options={options}>
+                      <ReactHover.Trigger type='trigger'>
+                        <Article className='titles-container' style={{ marginTop: '7vh' }}>
+                          <Title onClick={this.props.handleViewPost}>
+                            {article.title.value[0].text}
+                          </Title>
+                          <PostDate onClick={this.props.handleViewPost}>
+                            {article.date.value}
+                          </PostDate>
+                        </Article>
+                      </ReactHover.Trigger>
+                      <ReactHover.Hover type='hover'>
+                        <ImageContainer>
+                          <StyledImage style={{ background: `url(${article.main_image.value.main.url}) no-repeat center`}} alt={article.main_image.value.main.alt}>
+                            <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                          </StyledImage>
+                        </ImageContainer>
+                      </ReactHover.Hover>
+                    </ReactHover>
+                  </div>
+                </div>
+                ))}
               </div>
-            ))}
             </div>
+          </Drawer>
+          <Drawer
+            open={this.props.viewPost}
+            width="100%"
+            containerStyle={style.bg}
+            openSecondary={true}
+            className="drawer-post"
+          >
+            <div style={{ position: 'relative '}}>
+              <button type="close" onClick={this.props.handleDismissPost} style={{ position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100vh' }}>
+                <h4 className='close-label'>close</h4>
+              </button>
+              <Title>title</Title>
+              <PostDate>date</PostDate>
+            </div>
+          </Drawer>
         </div>
     )} else {
       return (
