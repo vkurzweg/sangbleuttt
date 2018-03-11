@@ -25,6 +25,8 @@ import AboutMobile from 'components/zurich/AboutMobile';
 import Marquee from 'components/zurich/Marquee';
 import MarqueeMobile from 'components/zurich/MarqueeMobile';
 import { Image } from 'cloudinary-react';
+import Prismic from 'prismic-javascript';
+
 
 const Background = styled.div`
   width: calc(100vw - 80px);
@@ -64,6 +66,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       blogOpen: false,
       initial: true,
       viewPost: false,
+      postId: '',
+      currentPost: null,
     };
     this.handleAboutToggle = this.handleAboutToggle.bind(this);
     this.handleBlogToggle = this.handleBlogToggle.bind(this);
@@ -99,9 +103,17 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     return this.setState({initial: false});
   }
 
-  handleViewPost() {
-    console.log('clicked');
-    return this.setState({ viewPost: true, blogOpen: false })
+  handleViewPost(postId) {
+    const apiEndpoint = "https://sb-zurich-blog.prismic.io/api";
+    Prismic.api(apiEndpoint).then(api => {
+      return api.query(
+        Prismic.Predicates.at('document.id', postId),
+      ).then(response => {
+        console.log("Post: ", response.results[0]);
+        const document = response.results;
+        this.setState({currentPost: document, postId: postId, viewPost:true, blogOpen: false })
+      });
+    });
   }
 
   handleDismissPost() {
@@ -179,6 +191,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     handleDismissPost={this.handleDismissPost}
                     viewPost={this.state.viewPost}
                     blogOpen={this.state.blogOpen}
+                    postId={this.state.postId}
+                    currentPost={this.state.currentPost}
                   />
                 </div>
                 <div className={contentWidth}>
@@ -262,6 +276,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   handleDismissPost={this.handleDismissPost}
                   viewPost={this.state.viewPost}
                   blogOpen={this.state.blogOpen}
+                  postId={this.state.postId}
+                  currentPost={this.state.currentPost}
                 />
               </div>
               <div className={contentWidth}>

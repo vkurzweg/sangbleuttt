@@ -179,7 +179,6 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
               <ArtistName>{artistName}</ArtistName>
               <ArtistHandle>{artistHandle}</ArtistHandle>
               <div style={{ position: 'relative' }}>
-                {console.log('photos', this.props.photos)}
                 {this.props.slideCount !== 0 ? backButton : '' }
                 {this.props.photos.map((photo, key) => {
                   if (this.props.photos.indexOf(photo) === this.props.slideCount) {

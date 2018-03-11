@@ -17,6 +17,7 @@ import Icon from 'antd/lib/icon';
 import ReactHover from 'react-hover';
 import { Image } from 'cloudinary-react';
 import Drawer from 'material-ui/Drawer';
+import BlogPostContainer from '../BlogPostContainer';
 
 const style = {
   bg: {
@@ -59,6 +60,7 @@ const PostDate = styled.h4`
   text-align: center;
   color: white;
   margin-top: -2vh;
+  letter-spacing: 2.36px;
 `;
 
 const StyledImage = styled.div`
@@ -117,11 +119,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     }
     if (this.state.docs.length > 0) {
     let documents = this.state.docs
-    let article1 = documents[0].data.blog_post;
-    let article2 = documents[1].data.blog_post;
-    let article3 = documents[2].data.blog_post;
-    let article4 = documents[3].data.blog_post;
-    let articles = [article1, article2, article3, article4]
+    let article0 = documents[0];
+    let article1 = documents[1];
+    let article2 = documents[2];
+    let article3 = documents[3];
+    let articles = [article0, article1, article2, article3]
     return (
       <div className='blog-container'>
         <Helmet>
@@ -141,6 +143,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
 
             <div className="blog-wrapper">
+            {console.log('id', articles[0].id)}
             { articles.map((article, idx, articles) => (
                 <div key={idx}>
                   <div className='blog-hover-image'>
@@ -148,17 +151,17 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       options={options}>
                       <ReactHover.Trigger type='trigger'>
                         <Article className='titles-container' style={{ marginTop: '7vh' }}>
-                          <Title onClick={this.props.handleViewPost}>
-                            {article.title.value[0].text}
+                          <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
+                            {article.data.blog_post.title.value[0].text}
                           </Title>
-                          <PostDate onClick={this.props.handleViewPost}>
-                            {article.date.value}
+                          <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
+                            {article.data.blog_post.date.value}
                           </PostDate>
                         </Article>
                       </ReactHover.Trigger>
                       <ReactHover.Hover type='hover'>
                         <ImageContainer>
-                          <StyledImage style={{ background: `url(${article.main_image.value.main.url}) no-repeat center`}} alt={article.main_image.value.main.alt}>
+                          <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center`}} alt={article.data.blog_post.main_image.value.main.alt}>
                             <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                           </StyledImage>
                         </ImageContainer>
@@ -177,13 +180,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             openSecondary={true}
             className="drawer-post"
           >
-            <div style={{ position: 'relative '}}>
-              <button type="close" onClick={this.props.handleDismissPost} style={{ position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100vh' }}>
-                <h4 className='close-label'>close</h4>
-              </button>
-              <Title>title</Title>
-              <PostDate>date</PostDate>
-            </div>
+            <BlogPostContainer
+              handleDismissPost={this.props.handleDismissPost}
+              postId={this.props.postId}
+              currentPost={this.props.currentPost}
+            />
           </Drawer>
         </div>
     )} else {
