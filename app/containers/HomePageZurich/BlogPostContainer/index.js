@@ -107,7 +107,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
 
 BlogPostContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  currentPost: PropTypes.str,
+  currentPost: PropTypes.obj,
   handleDismissPost: PropTypes.func,
 };
 

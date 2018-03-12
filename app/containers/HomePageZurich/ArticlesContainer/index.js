@@ -135,12 +135,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             onRequestChange={this.props.handleDismissPost}
           >
             <div style={{ height: '100%', overflowY: 'scroll' }}>
-              <h4
-                style={{
-                  left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond'
-                }}
-              >blog
-              </h4>
+              <h4 className='blog-label'>blog</h4>
 
               <div className="blog-wrapper">
                 {console.log('id', articles[0].id)}

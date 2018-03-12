@@ -36,7 +36,7 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
      request
        .get(url)
        .then((res) => {
-         this.setState({
+         return this.setState({
            photos: res.body.data,
            userId: userId,
            isOpen: true,

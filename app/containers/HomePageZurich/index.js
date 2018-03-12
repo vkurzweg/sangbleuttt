@@ -60,8 +60,8 @@ const AboutLabel = styled.h4`
 
 export class HomePageZurich extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
-     super(props);
-     this.state = {
+    super(props);
+    this.state = {
       aboutOpen: false,
       blogOpen: false,
       initial: true,
@@ -77,47 +77,45 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleBlogDismiss = this.handleBlogDismiss.bind(this);
     this.handleViewPost = this.handleViewPost.bind(this);
     this.handleDismissPost = this.handleDismissPost.bind(this);
-   }
-
-   handleAboutToggle(){
-    return this.setState({aboutOpen: !this.state.aboutOpen, initial: false, blogOpen: false})
   }
 
-   handleBlogToggle() {
-    return this.setState({blogOpen: !this.state.blogOpen, initial: false, aboutOpen: false})
+  handleAboutToggle() {
+    return this.setState({ aboutOpen: !this.state.aboutOpen, initial: false, blogOpen: false });
   }
 
-   handleAboutClose() {
-    return this.setState({aboutOpen: false, initial: false})
+  handleBlogToggle() {
+    return this.setState({ blogOpen: !this.state.blogOpen, initial: false, aboutOpen: false });
   }
 
-   handleBlogClose() {
-    return this.setState({blogOpen: false, initial: false})
+  handleAboutClose() {
+    return this.setState({ aboutOpen: false, initial: false });
+  }
+
+  handleBlogClose() {
+    return this.setState({ blogOpen: false, initial: false });
   }
 
   handleFirstBlogClick() {
-    return this.setState({initial: false, blogOpen: true})
+    return this.setState({ initial: false, blogOpen: true });
   }
 
   handleBlogDismiss() {
-    return this.setState({initial: false});
+    return this.setState({ initial: false });
   }
 
   handleViewPost(postId) {
-    const apiEndpoint = "https://sb-zurich-blog.prismic.io/api";
-    Prismic.api(apiEndpoint).then(api => {
-      return api.query(
-        Prismic.Predicates.at('document.id', postId),
-      ).then(response => {
-        console.log("Post: ", response.results[0]);
-        const document = response.results;
-        this.setState({currentPost: document, postId: postId, viewPost:true, blogOpen: false })
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.id', postId),).then((response) => {
+      console.log('Post: ', response.results[0]);
+      const document = response.results;
+      return this.setState({
+        currentPost: document, postId, viewPost: true, blogOpen: false
       });
-    });
+    }));
   }
 
   handleDismissPost() {
-    return this.setState({ viewPost: false, blogOpen: true })
+    return this.setState({ viewPost: false, blogOpen: true });
   }
 
   render() {
@@ -128,25 +126,29 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       return (
         <div>
           <MediaQuery maxWidth={767}>
-            <div style={{ backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll' }}>
-              <div style={{  minHeight: 'calc(100vh - 60px)' }}>
-                <div className='about-tab-mobile' onClick={this.handleAboutToggle}>
-                  <h4 className='about-label-mobile'>information</h4>
+            <div
+              style={{
+                backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll'
+              }}
+            >
+              <div style={{ minHeight: 'calc(100vh - 60px)' }}>
+                <div className="about-tab-mobile" onClick={this.handleAboutToggle}>
+                  <h4 className="about-label-mobile">information</h4>
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width='90%'
+                  width="90%"
                   containerStyle={style.bg}
                   onTouchTap={this.handleAboutClose}
                 >
                   <div>
-                    <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '1.3vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                    <h4 className="about-label">information</h4>
                     <AboutMobile />
                   </div>
                 </Drawer>
-                <div className='blog-tab-mobile'></div>
+                <div className="blog-tab-mobile"></div>
                 <InfoCopyMobile />
-                <Image className='zurich-logo-mobile' cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                <Image className="zurich-logo-mobile" cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                 <NamesMobile
                   blogOpen={this.props.blogOpen}
                   aboutOpen={this.props.aboutOpen}
@@ -158,30 +160,30 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           </MediaQuery>
           <MediaQuery minWidth={768}>
             <div style={{ height: '100vh', backgroundColor: '#FF001F' }}>
-              <div className='initial-container'>
+              <div className="initial-container">
                 <Helmet>
                   <title>HomePageZurich</title>
                   <meta name="description" content="Description of HomePageZurich" />
                 </Helmet>
-                <div className='about-tab' onClick={this.handleAboutToggle}>
-                  <div className='about-label-container'>
-                    <h4 className='about-label'>information</h4>
+                <div className="about-tab" onClick={this.handleAboutToggle}>
+                  <div className="about-label-container">
+                    <h4 className="about-label">information</h4>
                   </div>
                   <Drawer
                     open={this.state.aboutOpen}
-                    width='45%'
+                    width="45%"
                     containerStyle={style.bg}
                     className="drawer-about"
                   >
                     <div>
-                      <AboutLabel>information</AboutLabel>
+                      <h4 className="about-label">information</h4>
                       <About />
                     </div>
                   </Drawer>
                 </div>
-                <div className='blog-initial'>
+                <div className="blog-initial">
                   <div style={{ position: 'relative', height: '100vh', width: '50vw' }}>
-                    <h4 onClick={this.handleFirstBlogClick} style={{ marginLeft: '15px', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+                    <h4 onClick={this.handleFirstBlogClick} className="blog-label" >blog</h4>
                     <div onClick={this.handleFirstBlogClick}>
                       <ArticlesContainerInitial />
                     </div>
@@ -203,38 +205,47 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   />
                 </div>
               </div>
-              <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+              <div
+                style={{
+                  position: 'relative', height: '40px', width: '40px', marginTop: '-40px'
+                }}
+              >
                 <Marquee />
-                <img className='swiss-flag' src='https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg' alt="swiss flag" />
+                <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
               </div>
             </div>
           </MediaQuery>
         </div>
-        )} else {
-      return (
-        <div>
+      );
+    }
+    return (
+      <div>
         <MediaQuery maxWidth={767}>
-          <div style={{ backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll' }}>
-            <div style={{  minHeight: 'calc(100vh - 60px)' }}>
-              <div className='about-tab-mobile' onClick={this.handleAboutToggle}>
-                <h4 className='about-label-mobile'>information</h4>
+          <div
+            style={{
+              backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll'
+            }}
+          >
+            <div style={{ minHeight: 'calc(100vh - 60px)' }}>
+              <div className="about-tab-mobile" onClick={this.handleAboutToggle}>
+                <h4 className="about-label-mobile">information</h4>
               </div>
               <Drawer
                 open={this.state.aboutOpen}
-                width='89%'
+                width="89%"
                 containerStyle={style.bg}
                 onTouchTap={this.handleAboutClose}
               >
                 <div>
-                  <h4 style={{ right: '0', marginRight: '1vw', marginTop: '40vh', fontSize: '3.5vw', letterSpacing: '2px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', transform: 'rotate(180deg)', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>information</h4>
+                  <h4 className="about-label">information</h4>
                   <AboutMobile
-                  handleAboutClose={this.handleAboutClose}
+                    handleAboutClose={this.handleAboutClose}
                   />
                 </div>
               </Drawer>
-              <div className='blog-tab-mobile'></div>
+              <div className="blog-tab-mobile"></div>
               <InfoCopyMobile />
-              <Image className='zurich-logo-mobile' cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+              <Image className="zurich-logo-mobile" cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
               <NamesMobile
                 blogOpen={this.props.blogOpen}
                 aboutOpen={this.props.aboutOpen}
@@ -246,18 +257,22 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
         </MediaQuery>
         <MediaQuery minWidth={768}>
           <div style={{ height: '100vh' }}>
-            <div style={{ position: 'relative', height: '100vh', backgroundColor: '#FF001F', borderLeft: '40px solid black', borderRight: '40px solid black',  height: '100vh' }}>
+            <div
+              style={{
+                position: 'relative', height: '100vh', backgroundColor: '#FF001F', borderLeft: '40px solid black', borderRight: '40px solid black', height: '100vh'
+              }}
+            >
               <Helmet>
                 <title>HomePageZurich</title>
                 <meta name="description" content="Description of HomePageZurich" />
               </Helmet>
-              <div className='about-tab' onClick={this.handleAboutToggle}>
-                <div className='about-label-container'>
-                  <h4 className='about-label'>information</h4>
+              <div className="about-tab" onClick={this.handleAboutToggle}>
+                <div className="about-label-container">
+                  <h4 className="about-label">information</h4>
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width='44%'
+                  width="44%"
                   containerStyle={style.bg}
                   className="drawer-about"
                 >
@@ -267,9 +282,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   </div>
                 </Drawer>
               </div>
-              <div className='blog-tab' onClick={this.handleBlogToggle}>
-                <div className='blog-label-container'>
-                  <h4 className='blog-label'>blog</h4>
+              <div className="blog-tab" onClick={this.handleBlogToggle}>
+                <div className="blog-label-container">
+                  <h4 className="blog-label">blog</h4>
                 </div>
                 <ArticlesContainer
                   handleViewPost={this.handleViewPost}
@@ -288,14 +303,18 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 />
               </div>
             </div>
-            <div style={{ position: 'relative', height: '40px', width: '40px', marginTop: '-40px' }}>
+            <div
+              style={{
+                position: 'relative', height: '40px', width: '40px', marginTop: '-40px'
+              }}
+            >
               <Marquee />
-              <img className='swiss-flag' src='https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg' alt="swiss flag" />
+              <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
             </div>
-        </div>
-      </MediaQuery>
-    </div>
-      )}
+          </div>
+        </MediaQuery>
+      </div>
+    );
   }
 }
 
@@ -312,9 +331,7 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(null, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-)(HomePageZurich);
+export default compose(withConnect, )(HomePageZurich);
 
 // <Icon type="caret-right" style={{ marginLeft: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
 // <Icon type="caret-left" style={{ right: '0', marginRight: '1.5vw', position: 'absolute', width: '2.5vw', color: '#D9453C', paddingTop: '45vh', fontSize: '2.2vw', zIndex: '100' }} />
