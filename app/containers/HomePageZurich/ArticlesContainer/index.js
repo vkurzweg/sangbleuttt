@@ -11,9 +11,6 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import styled from 'styled-components';
 import Prismic from 'prismic-javascript';
-import PrismicDOM from 'prismic-dom';
-import {Link, RichText, Date} from 'prismic-reactjs';
-import Icon from 'antd/lib/icon';
 import ReactHover from 'react-hover';
 import { Image } from 'cloudinary-react';
 import Drawer from 'material-ui/Drawer';
@@ -91,84 +88,88 @@ const ImageContainer = styled.div`
   border-radius:4px;
   top: 0;
   overflow: hidden;
-`
+`;
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = { docs: [] }
+    this.state = { docs: [] };
   }
 
 
   componentDidMount() {
-    const apiEndpoint = "https://sb-zurich-blog.prismic.io/api";
-    Prismic.getApi(apiEndpoint).then(function(api) {
-      return api.query(""); // An empty query will return all the documents
-    }).then(function(response) {
-      console.log("Documents: ", response.results);
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    Prismic.getApi(apiEndpoint).then((api) => api.query('')).then((response) => {
+      console.log('Documents: ', response.results);
       const documents = response.results;
-      this.setState({docs: documents})
-    }.bind(this), function(err) {
-      console.log("Something went wrong: ", err);
+      this.setState({ docs: documents });
+    }, (err) => {
+      console.log('Something went wrong: ', err);
     });
   }
 
   render() {
     const options = {
-      followCursor:false,
-    }
+      followCursor: false,
+    };
     if (this.state.docs.length > 0) {
-    let documents = this.state.docs
-    let article0 = documents[0];
-    let article1 = documents[1];
-    let article2 = documents[2];
-    let article3 = documents[3];
-    let articles = [article0, article1, article2, article3]
-    return (
-      <div className='blog-container'>
-        <Helmet>
-          <title>ArticlesContainer</title>
-          <meta name="description" content="Description of ArticlesContainer" />
-        </Helmet>
-        <Drawer
-          open={this.props.blogOpen}
-          width="45%"
-          containerStyle={style.bg}
-          openSecondary={true}
-          className="drawer-blog"
-          docked={false}
-          onRequestChange={this.props.handleDismissPost}
-        >
-          <div style={{ height: '100%', overflowY: 'scroll' }}>
-            <h4 style={{ left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond' }}>blog</h4>
+      const documents = this.state.docs;
+      const article0 = documents[0];
+      const article1 = documents[1];
+      const article2 = documents[2];
+      const article3 = documents[3];
+      const articlesZurich = [article0, article1, article2, article3];
+      return (
+        <div className="blog-container">
+          <Helmet>
+            <title>ArticlesContainer</title>
+            <meta name="description" content="Description of ArticlesContainer" />
+          </Helmet>
+          <Drawer
+            open={this.props.blogOpen}
+            width="45%"
+            containerStyle={style.bg}
+            openSecondary
+            className="drawer-blog"
+            docked={false}
+            onRequestChange={this.props.handleDismissPost}
+          >
+            <div style={{ height: '100%', overflowY: 'scroll' }}>
+              <h4
+                style={{
+                  left: '0', marginLeft: '1vw', marginTop: '44vh', fontSize: '19px', letterSpacing: '2.36px', zIndex: '100', position: 'absolute', color: '#FFFFFF', writingMode: 'vertical-lr', textTransform: 'uppercase', textAlign: 'center', fontFamily: 'SuisseCond'
+                }}
+              >blog
+              </h4>
 
-            <div className="blog-wrapper">
-            {console.log('id', articles[0].id)}
-            { articles.map((article, idx, articles) => (
-                <div key={idx}>
-                  <div className='blog-hover-image'>
-                    <ReactHover
-                      options={options}>
-                      <ReactHover.Trigger type='trigger'>
-                        <Article className='titles-container' style={{ marginTop: '7vh' }}>
-                          <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
-                            {article.data.blog_post.title.value[0].text}
-                          </Title>
-                          <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
-                            {article.data.blog_post.date.value}
-                          </PostDate>
-                        </Article>
-                      </ReactHover.Trigger>
-                      <ReactHover.Hover type='hover'>
-                        <ImageContainer>
-                          <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center`}} alt={article.data.blog_post.main_image.value.main.alt}>
-                            <Image className='zurich-logo' cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
-                          </StyledImage>
-                        </ImageContainer>
-                      </ReactHover.Hover>
-                    </ReactHover>
+              <div className="blog-wrapper">
+                {console.log('id', articles[0].id)}
+                { articlesZurich.map((article, idx, articles) => (
+                  <div key={idx}>
+                    <div className="blog-hover-image">
+                      <ReactHover
+                        options={options}
+                      >
+                        <ReactHover.Trigger type="trigger">
+                          <Article className="titles-container" style={{ marginTop: '7vh' }}>
+                            <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
+                              {article.data.blog_post.title.value[0].text}
+                            </Title>
+                            <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
+                              {article.data.blog_post.date.value}
+                            </PostDate>
+                          </Article>
+                        </ReactHover.Trigger>
+                        <ReactHover.Hover type="hover">
+                          <ImageContainer>
+                            <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
+                              <Image className="zurich-logo" cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                            </StyledImage>
+                          </ImageContainer>
+                        </ReactHover.Hover>
+                      </ReactHover>
+                    </div>
                   </div>
-                </div>
                 ))}
               </div>
             </div>
@@ -177,7 +178,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             open={this.props.viewPost}
             width="100%"
             containerStyle={style.bg}
-            openSecondary={true}
+            openSecondary
             className="drawer-post"
           >
             <BlogPostContainer
@@ -187,16 +188,22 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             />
           </Drawer>
         </div>
-    )} else {
-      return (
-        <p>Loading...</p>
-      )
+      );
     }
+    return (
+      <p>Loading...</p>
+    );
   }
 }
 
 ArticlesContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  blogOpen: PropTypes.bool,
+  handleDismissPost: PropTypes.func,
+  handleViewPost: PropTypes.func,
+  viewPost: PropTypes.bool,
+  postId: PropTypes.str,
+  currentPost: PropTypes.str,
 };
 
 
@@ -208,6 +215,4 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(null, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-)(ArticlesContainer);
+export default compose(withConnect, )(ArticlesContainer);

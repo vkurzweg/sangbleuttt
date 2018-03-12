@@ -53,34 +53,62 @@ const PostContent = styled.p`
 
 export class BlogPostContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    if(this.props.currentPost !== null) {
-    const article = this.props.currentPost[0].data.blog_post;
-    console.log(this.props.currentPost[0].data.blog_post)
+    if (this.props.currentPost !== null) {
+      const article = this.props.currentPost[0].data.blog_post;
+      console.log(this.props.currentPost[0].data.blog_post);
+      let image2 = <div />;
+      let image3 = <div />;
+      let articlePart2 = <div />;
+      const image4 = <div />;
+      if (article.image2) image2 = <PostImage src={article.image2.value.main.url} />;
+      if (article.image3) image3 = <PostImage src={article.image3.value.main.url} />;
+      if (article.article_part_2) articlePart2 = <PostContent>{article.article_part_2.value[0].text}</PostContent>;
+      if (article.image4) image3 = <PostImage src={article.image4.value.main.url} />;
+      return (
+        <div style={{ position: 'relative', overflow: 'scroll', height: '100%' }}>
+          <button
+            type="close"
+            onClick={this.props.handleDismissPost}
+            style={{
+              position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '120vh'
+            }}
+          >
+            <h4 className="close-label">close</h4>
+          </button>
+          <div style={{ width: '85%', margin: '0 auto' }}>
+            <Title>{article.title.value[0].text}</Title>
+            <PostDate>{article.date.value}</PostDate>
+            <PostImage src={article.main_image.value.main.url} />
+            <PostContent>{article.article_part_1.value[0].text}</PostContent>
+            {image2}
+            {image3}
+            {articlePart2}
+            {image4}
+          </div>
+        </div>
+      );
+    }
     return (
-      <div style={{ position: 'relative', overflow: 'scroll', height: '100%'}}>
-       <button type="close" onClick={this.props.handleDismissPost} style={{ position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '120vh' }}>
-         <h4 className='close-label'>close</h4>
-       </button>
-       <div style={{ width: '85%', margin: '0 auto' }}>
-        <Title>{article.title.value[0].text}</Title>
-        <PostDate>{article.date.value}</PostDate>
-        <PostImage src={article.main_image.value.main.url} />
-        <PostContent>{article.article_part_1.value[0].text}</PostContent>
-        <PostImage src={article.image2.value.main.url} />
-        <PostImage src={article.image3.value.main.url} />
-        <PostContent>{article.article_part_2.value[0].text}</PostContent>
-        <PostImage src={article.image4.value.main.url} />
+      <div style={{ position: 'relative', overflow: 'scroll', height: '100%' }}>
+        <button
+          type="close"
+          onClick={this.props.handleDismissPost}
+          style={{
+            position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '120vh'
+          }}
+        >
+          <h4 className="close-label">close</h4>
+        </button>
+        <p>Loading...</p>
       </div>
-     </div>
-    ) }
-    return (
-      <p>Loading...</p>
     );
   }
 }
 
 BlogPostContainer.propTypes = {
   dispatch: PropTypes.func.isRequired,
+  currentPost: PropTypes.str,
+  handleDismissPost: PropTypes.func,
 };
 
 
@@ -92,6 +120,4 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(null, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-)(BlogPostContainer);
+export default compose(withConnect, )(BlogPostContainer);
