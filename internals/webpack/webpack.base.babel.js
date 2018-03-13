@@ -34,8 +34,10 @@ module.exports = (options) => ({
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-              'style-loader', 'css-loader', 'postcss-loader',
-            ]
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          'postcss-loader'
+        ]
       },
       {
         // Preprocess 3rd party .css files located in node_modules
@@ -115,6 +117,7 @@ module.exports = (options) => ({
   },
   node: {
     fs: 'empty',
+    module: 'empty',
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window

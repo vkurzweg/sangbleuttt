@@ -122,8 +122,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       return (
         <div className="blog-container">
           <Helmet>
-            <title>ArticlesContainer</title>
-            <meta name="description" content="Description of ArticlesContainer" />
+            <title>Sang Bleu Zurich</title>
+            <meta name="description" content="Artist portfolios, news, and upcoming events at the Sang Bleu tattoo studio in Zurich, Switzerland." />
           </Helmet>
           <Drawer
             open={this.props.blogOpen}

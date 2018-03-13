@@ -76,8 +76,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     return (
       <div style={{ backgroundColor: 'black', height: '100vh' }}>
         <Helmet>
-          <title>ArticlesContainer</title>
-          <meta name="description" content="Description of ArticlesContainer" />
+          <title>Sang Bleu Zurich</title>
+          <meta name="description" content="Artist portfolios, news, and upcoming events at the Sang Bleu tattoo studio in Zurich, Switzerland." />
         </Helmet>
           <div style={{ paddingTop: '3vh' }}>
           { articles.map((article, idx, articles) => (
