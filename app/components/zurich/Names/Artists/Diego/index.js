@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import ReactHover from 'react-hover';
 import Instafeed from 'react-instafeed';
 
-const Button = styled.button`
+const Button = styled.div`
   background-color: transparent;
   border: none;
   outline: 0;

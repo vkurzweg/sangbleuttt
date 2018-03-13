@@ -26,7 +26,7 @@ const style = {
 };
 
 
-const Article = styled.button`
+const Article = styled.div`
   width: 90%;
   display: block;
   margin: 0 auto;

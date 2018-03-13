@@ -31,12 +31,10 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   let content = <NamesFull openLightbox={this.props.openLightbox} />
   initialState ? widthValue = '90%' : widthValue;
   if(blogState){
-    fontShrink = '';
     widthValue = '90%';
     content = <NamesBlog openLightbox={this.props.openLightbox} />
   }
   if(aboutState){
-    fontShrink = '';
     widthValue = '90%';
     content = <NamesAbout openLightbox={this.props.openLightbox} />;
   }
@@ -48,7 +46,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
   }
   initialState ? content = <NamesInitial openLightbox={this.props.openLightbox} /> : content;
     return (
-      <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, fontSize: fontGrow, paddingLeft: '0', paddingRight: '0' }}>
+      <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, paddingLeft: '0', paddingRight: '0' }}>
         {content}
       }
       </div>
