@@ -17,7 +17,7 @@ const StyledImage = styled(Image)`
 `;
 
 function IntroCopy() {
-  const studio = 'http://res.cloudinary.com/kurzweg/image/upload/v1519322649/sblondon.png';
+  const studio = 'http://res.cloudinary.com/kurzweg/image/upload/v1519322649/sangbleu/sblondon.png';
   return (
     <div id="about" style={{ paddingTop: '8vh', paddingBottom: '3vh' }}>
       <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '.16px', marginLeft: '4vw', paddingBottom: '3vh' }}>about</h3>

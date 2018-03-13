@@ -69,7 +69,7 @@ const BackButton = styled.button`
   position: fixed;
   &:hover, &:active, &:focus {
     outline: 0;
-    cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661716/backbtn_1.png), auto;
+    cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661716/sangbleu/backbtn_1.png), auto;
   }
 `;
 
@@ -88,7 +88,7 @@ const NextButton = styled.button`
   position: fixed;
     &:hover, &:active, &:focus {
       outline: 0;
-      cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661714/nextbtn_1.png), auto;
+      cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661714/sangbleu/nextbtn_1.png), auto;
     }
 `;
 

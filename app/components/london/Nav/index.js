@@ -39,7 +39,7 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
             title={brand}
             className="appbar"
             style={{ width: '100%', backgroundColor: 'transparent' }}
-            iconElementRight={<Image className="logo-london" cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
+            iconElementRight={<Image className="logo-london" cloudName="kurzweg" publicId="sangbleu/logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
             iconStyleRight={{ display: 'inline', position: 'absolute', right: '0', marginRight: '1vw'}}
             iconStyleLeft={{ display: 'none'}}
             zDepth={0}

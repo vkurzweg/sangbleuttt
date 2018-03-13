@@ -36,6 +36,9 @@
 /*masonry
 */
 .wrapper {
+    -webkit-animation: fadeMe 2s;
+    -moz-animation: fadeMe 2s;
+    -ms-animation: fadeMe 2s;
     animation: fadeMe 2s;
     width: 95%;
     margin: 3em auto;
@@ -45,7 +48,13 @@
 
 .masonry {
     column-count: 9;
+    -webkit-column-count: 9;
+    -moz-column-count: 9;
+    -ms-column-count: 9;
     column-gap: 1em;
+    -ms-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
     width: 100%;
     margin: 0 auto;
     align-items: stretch;
@@ -55,6 +64,7 @@
 @media only screen and (min-width: 700px) {
     .masonry {
         -moz-column-count: 5;
+        -ms-column-count: 5;
         -webkit-column-count: 5;
         column-count: 5;
     }
@@ -63,6 +73,7 @@
 @media only screen and (min-width: 900px) {
     .masonry {
         -moz-column-count: 7;
+        -ms-column-count: 7;
         -webkit-column-count: 7;
         column-count: 7;
     }
@@ -71,6 +82,7 @@
 @media only screen and (min-width: 1100px) {
     .masonry {
         -moz-column-count: 9;
+        -ms-column-count: 9;
         -webkit-column-count: 9;
         column-count: 9;
     }
@@ -93,6 +105,8 @@
   width: 100%;
   color: black;
   display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   align-items: center;
   break-inside: avoid-column;
 }

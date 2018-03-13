@@ -21,7 +21,7 @@ function IntroCopy() {
   return (
     <div style={{ paddingBottom: '3vh' }}>
       <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', marginLeft: '4vw' }}>about</h3>
-      <StyledImage cloudName="kurzweg" publicId="sblondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+      <StyledImage cloudName="kurzweg" publicId="sangbleu/sblondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <ScrollAnimation animateIn="fadeInLeft">
         <p style={{ fontFamily: 'SuisseCond', fontSize: '3.5vw', color: '#323232', width: '85%', margin: '0 auto', paddingTop: '4vh', letterSpacing: '1px', lineHeight: '2em' }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

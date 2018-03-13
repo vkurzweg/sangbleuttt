@@ -69,7 +69,7 @@ function Footer() {
         </div>
         <div style={{ width: '50%', position: 'absolute', bottom: '0', left: '50%' }}>
           <A href="/zurich">
-            <StyledImage cloudName="kurzweg" publicId="logozurich" alt="sang bleu london" quality="auto" crop="scale" responsive />
+            <StyledImage cloudName="kurzweg" publicId="sangbleu/logozurich" alt="sang bleu london" quality="auto" crop="scale" responsive />
             <p style={{ paddingTop: '2vh' }}>Sang Bleu Zurich</p>
           </A>
         </div>

@@ -13,7 +13,7 @@ function About() {
   return (
     <div>
       <h3 className='zurich-about-header'>about sbzh</h3>
-      <Image className='zurich-about-image' cloudName="kurzweg" publicId="table" alt="sang bleu london" quality="auto" crop="scale" responsive />
+      <Image className='zurich-about-image' cloudName="kurzweg" publicId="sangbleu/table" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <p className='zurich-about-copy'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>

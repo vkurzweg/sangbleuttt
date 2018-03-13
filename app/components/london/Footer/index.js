@@ -57,7 +57,7 @@ function Footer() {
       <div className="row" style={{ paddingTop: '2vh', width: '96%', height: '15vh', margin: '0 auto' }}>
         <div style={{ display: 'flex', position: 'relative' }}>
           <A href="/zurich">
-            <StyledImage cloudName="kurzweg" publicId="logozurich" alt="sang bleu london" quality="auto" crop="scale" responsive />
+            <StyledImage cloudName="kurzweg" publicId="sangbleu/logozurich" alt="sang bleu london" quality="auto" crop="scale" responsive />
             <p style={{ paddingTop: '1vh' }}>Sang Bleu Zurich</p>
           </A>
           <div style={{ position: 'relative', marginLeft: '3vw', marginRight: '3vw', paddingTop: '6.75vh' }}>

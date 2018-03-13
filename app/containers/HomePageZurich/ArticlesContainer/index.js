@@ -133,6 +133,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             className="drawer-blog"
             docked={false}
             onRequestChange={this.props.handleDismissPost}
+            overlayStyle={{ backgroundColor: 'transparent', zIndex: '1' }}
           >
             <div style={{ height: '100%', overflowY: 'scroll' }}>
               <h4 className='blog-label'>blog</h4>
@@ -158,7 +159,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                         <ReactHover.Hover type="hover">
                           <ImageContainer>
                             <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
-                              <Image className="zurich-logo" cloudName="kurzweg" publicId="zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+                              <Image className="zurich-logo" cloudName="kurzweg" publicId="sangbleu/zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                             </StyledImage>
                           </ImageContainer>
                         </ReactHover.Hover>

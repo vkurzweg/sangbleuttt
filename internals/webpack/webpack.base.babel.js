@@ -33,7 +33,9 @@ module.exports = (options) => ({
         // for a list of loaders, see https://webpack.js.org/loaders/#styling
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [
+              'style-loader', 'css-loader', 'postcss-loader',
+            ]
       },
       {
         // Preprocess 3rd party .css files located in node_modules
@@ -110,6 +112,9 @@ module.exports = (options) => ({
       'jsnext:main',
       'main',
     ],
+  },
+  node: {
+    fs: 'empty',
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
