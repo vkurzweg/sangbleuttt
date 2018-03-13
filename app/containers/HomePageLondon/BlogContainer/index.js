@@ -176,17 +176,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let link;
       if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
       return (
-        <div style={{ position: 'relative', height: '120vh', width: '100%' }}>
+        <div id="blog" style={{ position: 'relative', height: '120vh', width: '100%' }}>
           <Helmet>
             <title>Sang Bleu London Blog</title>
             <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
           </Helmet>
-          <h3
-            style={{
-              fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '.16px', marginLeft: '4vw', paddingTop: '1vw'
-            }}
-          >blog
-          </h3>
           <div className="articles-container">
             <div className="london-article-container">
               <ReactHover

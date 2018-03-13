@@ -13,6 +13,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import Delay from 'react-delay';
+import styled from 'styled-components';
+import { StickyContainer, Sticky } from 'react-sticky';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import Nav from 'components/london/Nav';
@@ -24,33 +26,41 @@ import InstaMobile from 'components/london/InstaMobile';
 import BlogContainer from './BlogContainer';
 import BlogContainerMobile from './BlogContainerMobile';
 
+const Heading = styled.h3`
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 23pt;
+  letter-spacing: .16px;
+  margin-left: 4vw;
+  padding-top: 1vw;
+`;
+
+const A = styled.a`
+  text-decoration: none;
+  color: black;
+  &:hover, &:active, &:visited {
+    color: black;
+  }
+`;
+
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props) {
-    super(props);
-    this.state = {
-      transform: null
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
   render() {
     return (
-      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+      <StickyContainer style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <MediaQuery minWidth={768}>
           <div style={{ }}>
             <Nav />
             <InfoCopy />
             <Insta />
-            <Delay wait={400}>
+                <Sticky>
+                  <A href="#about"><Heading>about</Heading></A>
+                </Sticky>
               <About />
-            </Delay>
+                <Sticky>
+                  <div style={{ paddingTop: '4vh' }}>
+                    <A href="#blog"><Heading>Blog</Heading></A>
+                  </div>
+                </Sticky>
             <BlogContainer />
           </div>
         </MediaQuery>
@@ -65,7 +75,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <BlogContainerMobile />
           </div>
         </MediaQuery>
-      </div>
+      </StickyContainer>
     );
   }
 }
@@ -79,3 +89,19 @@ function mapDispatchToProps(dispatch) {
 
 
 export default connect(null, mapDispatchToProps)(HomePage);
+
+// <StickyContainer style={{ height: '100px' }}>
+//   <Sticky
+//     >
+//     {({
+//       isSticky,
+//       distanceFromTop,
+//       calculatedHeight
+//     }) => {
+//       console.log({
+//         isSticky,
+//       });
+//       return <Heading>about</Heading>;
+//     }}
+//   </Sticky>
+// </StickyContainer>

@@ -9,18 +9,10 @@ import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Image } from 'cloudinary-react';
 
-const StyledImage = styled(Image)`
-  height: 50vh;
-  width: 100%;
-  object-fit: cover;
-  padding-top: 5vh;
-`;
-
 function IntroCopy() {
   const studio = 'http://res.cloudinary.com/kurzweg/image/upload/v1519322649/sangbleu/sblondon.png';
   return (
     <div id="about" style={{ paddingTop: '8vh', paddingBottom: '3vh' }}>
-      <h3 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23pt', letterSpacing: '.16px', marginLeft: '4vw', paddingBottom: '3vh' }}>about</h3>
       <div style={{ height: '425px', backgroundImage: `url(${studio})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
       <ScrollAnimation animateIn="fadeIn">
         <p style={{ fontFamily: 'SuisseRegular', marginLeft: '10vw', lineHeight: '20px', fontSize: '15pt', color: 'black', width: '40%', paddingTop: '10vh', paddingBottom: '10vh' }}>
