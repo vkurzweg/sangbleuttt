@@ -12,7 +12,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
-import Delay from 'react-delay';
 import styled from 'styled-components';
 import { StickyContainer, Sticky } from 'react-sticky';
 import InfoCopy from 'components/london/InfoCopy';
@@ -43,39 +42,57 @@ const A = styled.a`
   }
 `;
 
+const HeadingMobile = styled.h3`
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 5vw;
+  letter-spacing: .16px;
+  margin-left: 4vw;
+  padding-top: 5vw;
+
+`;
+
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <StickyContainer style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <MediaQuery minWidth={768}>
-          <div style={{ }}>
+          <StickyContainer>
             <Nav />
             <InfoCopy />
             <Insta />
-                <Sticky>
-                  <A href="#about"><Heading>about</Heading></A>
-                </Sticky>
-              <About />
-                <Sticky>
-                  <div style={{ paddingTop: '4vh' }}>
-                    <A href="#blog"><Heading>Blog</Heading></A>
-                  </div>
-                </Sticky>
+            <Sticky>
+              <A href="#about"><Heading>about</Heading></A>
+            </Sticky>
+            <About />
+            <Sticky>
+              <div style={{ paddingTop: '4vh' }}>
+                <A href="#blog"><Heading>Blog</Heading></A>
+              </div>
+            </Sticky>
             <BlogContainer />
-          </div>
+          </StickyContainer>
         </MediaQuery>
         <MediaQuery maxWidth={767}>
           <div>
-            <NavMobile />
-            <InfoCopyMobile />
-            <InstaMobile />
-            <Delay wait={400}>
+            <StickyContainer>
+              <NavMobile />
+              <InfoCopyMobile />
+              <InstaMobile />
+              <Sticky>
+                <HeadingMobile>about</HeadingMobile>
+              </Sticky>
               <AboutMobile />
-            </Delay>
-            <BlogContainerMobile />
+            </StickyContainer>
+            <StickyContainer>
+              <Sticky>
+                <HeadingMobile>blog</HeadingMobile>
+              </Sticky>
+              <BlogContainerMobile />
+            </StickyContainer>
           </div>
         </MediaQuery>
-      </StickyContainer>
+      </div>
     );
   }
 }

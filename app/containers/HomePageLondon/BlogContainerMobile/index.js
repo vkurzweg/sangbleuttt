@@ -202,12 +202,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           </Helmet>
 
           <div style={{ margin: '1em auto' }}>
-            <h3
-              style={{
-                fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', marginLeft: '4vw'
-              }}
-            >blog
-            </h3>
 
             <div>
               <a onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>

@@ -357,13 +357,26 @@ img {
 .articles-container {
   margin: 0 auto;
   padding-top: 5vh;
-  padding-bottom: 100vh;
+  padding-bottom: 50vh;
   width: 60%;
 }
 
-.london-article-container {
+.london-article-container0 {
   width: 100%;
   margin: 0 auto;
+  margin-top: 4vh;
+}
+
+.london-article-container1 {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 34vh;
+}
+
+.london-article-container2 {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 64vh;
 }
 
 .london-article-container div:nth-child(1) div:nth-child(2) {
@@ -376,6 +389,7 @@ img {
 
 /*hide black text on hover + show blended text
 */
+
 
 .article-text:hover .article {
   opacity: 0;
@@ -420,6 +434,18 @@ img {
   padding: .5%;
   margin: 0 auto;
   line-height: 1em;
+}
+
+.article-hover0 {
+  margin-top: 9vh;
+}
+
+.article-hover1{
+  margin-top: 39vh;
+}
+
+.article-hover2{
+  margin-top: 69vh;
 }
 
 /*don't show title text or hover image inside modal
