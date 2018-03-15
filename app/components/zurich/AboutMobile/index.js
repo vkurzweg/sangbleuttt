@@ -11,8 +11,7 @@ import Icon from 'antd/lib/icon';
 
 function About(props) {
   return (
-    <div>
-      <Icon onTouchTap={props.handleAboutClose} type="close" style={{ position: 'absolute', color: 'white', fontSize: '5vw', opacity: '.7', right: '0', paddingTop: '5%', paddingRight: '5%' }} />
+    <div onTouchTap={props.handleAboutClose}>
       <h3 className='zurich-about-header-mobile'>about sbzh</h3>
       <Image className='zurich-about-image-mobile' cloudName="kurzweg" publicId="sangbleu/table" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <p className='zurich-about-copy-mobile'>

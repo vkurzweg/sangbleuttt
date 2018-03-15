@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import ArticlesContainer from './ArticlesContainer';
+import ArticlesContainerMobile from './ArticlesContainerMobile';
 import ArticlesContainerInitial from './ArticlesContainerInitial';
 import InfoCopy from 'components/zurich/InfoCopy';
 import InfoCopyMobile from 'components/zurich/InfoCopyMobile';
@@ -26,6 +27,7 @@ import Marquee from 'components/zurich/Marquee';
 import MarqueeMobile from 'components/zurich/MarqueeMobile';
 import { Image } from 'cloudinary-react';
 import Prismic from 'prismic-javascript';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 
 const Background = styled.div`
@@ -104,6 +106,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   }
 
   handleViewPost(postId) {
+    console.log('clicked')
     const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.id', postId),).then((response) => {
       console.log('Post: ', response.results[0]);
@@ -128,34 +131,48 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           <MediaQuery maxWidth={767}>
             <div
               style={{
-                backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll'
+                backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
               }}
             >
-              <div style={{ minHeight: 'calc(100vh - 60px)' }}>
                 <div className="about-tab-mobile" onClick={this.handleAboutToggle}>
                   <h4 className="about-label-mobile">information</h4>
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width="90%"
+                  width="89%"
                   containerStyle={style.bg}
                   onTouchTap={this.handleAboutClose}
                 >
                   <div>
                     <h4 className="about-label">information</h4>
-                    <AboutMobile />
+                    <AboutMobile
+                      handleAboutClose={this.handleAboutClose}
+                    />
                   </div>
                 </Drawer>
-                <div className="blog-tab-mobile"></div>
+                <div className="blog-tab-mobile" onClick={this.handleBlogToggle}>
+                  <div className="blog-label-container">
+                    <h4 className="blog-label-mobile">blog</h4>
+                  </div>
+                </div>
+                <ArticlesContainerMobile
+                  handleViewPost={this.handleViewPost}
+                  handleDismissPost={this.handleDismissPost}
+                  viewPost={this.state.viewPost}
+                  blogOpen={this.state.blogOpen}
+                  postId={this.state.postId}
+                  currentPost={this.state.currentPost}
+                />
                 <InfoCopyMobile />
-                <Image className="zurich-logo-mobile" cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                 <NamesMobile
                   blogOpen={this.props.blogOpen}
                   aboutOpen={this.props.aboutOpen}
                   initial={this.props.initial}
                 />
-              </div>
-              <MarqueeMobile />
+                <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
+                  <MarqueeMobile />
+                  <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+                </div>
             </div>
           </MediaQuery>
           <MediaQuery minWidth={768}>
@@ -223,10 +240,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
         <MediaQuery maxWidth={767}>
           <div
             style={{
-              backgroundColor: '#FF001F', position: 'relative', width: '100vw', minHeight: '100%', height: '100%', overflowX: 'hidden', overflowY: 'scroll'
+              backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
             }}
           >
-            <div style={{ minHeight: 'calc(100vh - 60px)' }}>
               <div className="about-tab-mobile" onClick={this.handleAboutToggle}>
                 <h4 className="about-label-mobile">information</h4>
               </div>
@@ -243,16 +259,29 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   />
                 </div>
               </Drawer>
-              <div className="blog-tab-mobile"></div>
+              <div className="blog-tab-mobile" onClick={this.handleBlogToggle}>
+                <div className="blog-label-container">
+                  <h4 className="blog-label-mobile">blog</h4>
+                </div>
+              </div>
+              <ArticlesContainerMobile
+                handleViewPost={this.handleViewPost}
+                handleDismissPost={this.handleDismissPost}
+                viewPost={this.state.viewPost}
+                blogOpen={this.state.blogOpen}
+                postId={this.state.postId}
+                currentPost={this.state.currentPost}
+              />
               <InfoCopyMobile />
-              <Image className="zurich-logo-mobile" cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
               <NamesMobile
                 blogOpen={this.props.blogOpen}
                 aboutOpen={this.props.aboutOpen}
                 initial={this.props.initial}
               />
-            </div>
-            <MarqueeMobile />
+              <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
+                <MarqueeMobile />
+                <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+              </div>
           </div>
         </MediaQuery>
         <MediaQuery minWidth={768}>
@@ -340,4 +369,7 @@ export default compose(withConnect, )(HomePageZurich);
 //   <Marquee />
 //   <Image className='swiss-flag' cloudName="kurzweg" publicId="flag" alt="swiss flag" quality="auto" crop="scale" responsive />
 // </div>
+
+// <Image className="zurich-logo-mobile" cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+
 

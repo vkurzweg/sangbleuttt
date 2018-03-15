@@ -14,8 +14,8 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 40px;
-  letter-spacing: -1.99px;
+  font-size: 20px;
+  letter-spacing: -1px;
   text-transform: uppercase;
   padding-bottom: 3%;
   padding-left: 5%;
@@ -32,7 +32,7 @@ const PostDate = styled.h4`
 `;
 
 const PostImage = styled.img`
-  max-width: 70%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   padding-top: 5vh;
@@ -40,10 +40,10 @@ const PostImage = styled.img`
 `;
 
 const PostContent = styled.p`
-  font-size: 19px;
+  font-size: 12px;
   color: white;
   font-family: SuisseRegular;
-  letter-spacing: 2.36px;
+  letter-spacing: 1.49px;
   text-align: justify;
   width: 80%;
   margin: 0 auto;
@@ -70,12 +70,12 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             type="close"
             onClick={this.props.handleDismissPost}
             style={{
-              position: 'absolute', backgroundColor: '#FF001F', fontSize: '19px', right: '0', top: '0', width: '30px', height: '120vh'
+              position: 'absolute', backgroundColor: '#FF001F', fontSize: '19px', right: '0', top: '0', bottom: '0', width: '30px', height: '100% !important', overflow: 'visible'
             }}
           >
             <h4 className="close-label">close</h4>
           </button>
-          <div style={{ width: '85%', margin: '0 auto' }}>
+          <div style={{ width: '100%', margin: '0 auto', marginRight: '30px' }}>
             <Title>{article.title.value[0].text}</Title>
             <PostDate>{article.date.value}</PostDate>
             <PostImage src={article.main_image.value.main.url} />
