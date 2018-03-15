@@ -30,9 +30,11 @@ const ArtistName = styled.h3`
   font-size: 20px;
   color: white;
   text-align: center;
-  padding-top: 5vh;
+  padding-top: 10vh;
   height: 100px;
   letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-right: 30px;
 `;
 
 const ArtistHandle = styled.h4`
@@ -43,13 +45,20 @@ const ArtistHandle = styled.h4`
   text-align: center;
 `;
 
-const Button = styled.button`
+const NextButton = styled.button`
   font-family: BRRR;
+  font-size: 20px;
+  letter-spacing: 2.48px;
   text-transform: uppercase;
   backgroundColor: transparent;
   border: none;
   outline: 0;
-  position: fixed;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 15%;
+  margin-top: 95%;
   &:hover, &:active, &:focus {
     outline: 0
   }
@@ -57,70 +66,57 @@ const Button = styled.button`
 
 const BackButton = styled.button`
   font-family: BRRR;
+  font-size: 20px;
+  letter-spacing: 2.48px;
   text-transform: uppercase;
   backgroundColor: transparent;
   border: none;
   outline: 0;
+  color: white;
+  position: absolute;
+  top: 0;
   left: 0;
-  top: 0;
-  height: 130vh;
-  width: 400px;
-  z-index: 20;
-  position: fixed;
+  margin-left: 15%;
+  margin-top: 95%;
+  z-index: 2001;
   &:hover, &:active, &:focus {
-    outline: 0;
-    cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661716/sangbleu/backbtn_1.png), auto;
+    outline: 0
   }
-`;
-
-const NextButton = styled.button`
-  font-family: BRRR;
-  text-transform: uppercase;
-  backgroundColor: black;
-  border: none;
-  outline: 0;
-  right: 0;
-  margin-right: 150px;
-  top: 0;
-  height: 100vh;
-  width: 400px;
-  z-index: 20;
-  position: fixed;
-    &:hover, &:active, &:focus {
-      outline: 0;
-      cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661714/sangbleu/nextbtn_1.png), auto;
-    }
 `;
 
 const PostDate = styled.p`
   font-family: SuisseCond;
   color: white;
-  font-size: 19px;
+  font-size: 12px;
   text-align: center;
   letter-spacing: 2.36px;
   position: absolute;
-  top: 45vh;
-  left: 35%;
+  top: 65vh;
+  left: 15%;
 `;
 
 
 export class LightboxContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
-
-
   render() {
     const actions = [
-      <button type="close" onClick={this.props.handleClose} style={{ position: 'absolute', backgroundColor: 'black', fontSize: '19px', letterSpacing: '2.36', right: '0', top: '0', width: '30px', height: '100%' }}>
-        <h4 className='close-label'>close</h4>
+      <button
+        type="close"
+        onClick={this.props.handleClose}
+        style={{
+          position: 'absolute', backgroundColor: 'black', fontSize: '19px', letterSpacing: '2.36', right: '0', top: '0', width: '30px', height: '100%'
+        }}
+      >
+        <h4 className="close-label">close</h4>
       </button>
-    ]
-    const backButton = <Button onClick={this.props.previousImage}>back
-                      </Button>
-    const nextButton = <Button onClick={this.props.nextImage}>next
-                      </Button>
+    ];
+    const backButton = (<BackButton onClick={this.props.previousImage}>back
+    </BackButton>);
+    const nextButton = (<NextButton onClick={this.props.nextImage}>next
+    </NextButton>);
     let artistName;
     let artistHandle;
-    let userId = this.props.userId;
-    switch(userId) {
+    const userId = this.props.userId;
+    switch (userId) {
       case '1529406200':
         artistName = 'Labaz 1';
         artistHandle = '@zilba.1';
@@ -166,42 +162,42 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
         artistHandle = '';
     }
     return (
-        <div>
-          <Dialog
-            actions={actions}
-            modal={true}
-            contentStyle={customContentStyle}
-            className="zurich-modal-mobile"
-            open={this.props.isOpen}
-            onRequestClose={this.props.handleClose}
-          >
-            <div style={{ width: 'calc(100% - 30px)', paddingTop: '5vh' }}>
-              <ArtistName>{artistName}</ArtistName>
-              <ArtistHandle>{artistHandle}</ArtistHandle>
-              <div style={{ position: 'relative' }}>
-                {this.props.slideCount !== 0 ? backButton : '' }
-                {this.props.photos.map((photo, key) => {
-                  if (this.props.photos.indexOf(photo) === this.props.slideCount) {
-                    return (
-                      <div key={photo.id} style={{ position: 'relative' }}>
-                        <div className="slideshow-image-container">
-                          <a href={photo.link} target="_blank">
-                            <img className="slideshow-image-mobile" src={photo.images.standard_resolution.url} alt={photo.caption}/>
-                          </a>
-                        </div>
-                        <PostDate>
-                          <Moment unix>{photo.created_time}</Moment>
-                        </PostDate>
+      <Dialog
+        actions={actions}
+        modal
+        contentStyle={customContentStyle}
+        className="zurich-modal-mobile"
+        open={this.props.isOpen}
+        onRequestClose={this.props.handleClose}
+      >
+        <div style={{ width: '100%', paddingTop: '5vh' }}>
+          <ArtistName>{artistName}</ArtistName>
+          <ArtistHandle>{artistHandle}</ArtistHandle>
+          <div style={{ position: 'relative' }}>
+            {this.props.slideCount !== 0 ? backButton : '' }
+            {this.props.photos.map((photo, key) => {
+              if (this.props.photos.indexOf(photo) === this.props.slideCount) {
+                return (
+                  <div key={photo.id} style={{ position: 'relative', minHeight: '55vh' }}>
+                    <div style={{ height: '55vh' }}>
+                      <div className="slideshow-image-container-mobile">
+                        <a href={photo.link} target="_blank">
+                          <img className="slideshow-image-mobile" src={photo.images.standard_resolution.url} alt={photo.caption} />
+                        </a>
                       </div>
-                    )
-                  }
-                    return ''
-                })}
-                {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
-              </div>
-            </div>
-          </Dialog>
+                      <PostDate>
+                        <Moment unix>{photo.created_time}</Moment>
+                      </PostDate>
+                    </div>
+                  </div>
+                );
+              }
+              return '';
+            })}
+            {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
+          </div>
         </div>
+      </Dialog>
     );
   }
 }
@@ -219,8 +215,5 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(null, mapDispatchToProps);
 
-export default compose(
-  withConnect,
-)(LightboxContainer);
-
+export default compose(withConnect, )(LightboxContainer);
 

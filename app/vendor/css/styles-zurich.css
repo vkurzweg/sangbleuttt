@@ -736,18 +736,23 @@
   width: 100vw !important;
   height: 100vh !important;
   top: -15vh !important;
+  padding: 0 !important;
+  min-height: 100vh !important;
 }
 
-.slideshow-image-container {
-  width: 100vw;
+
+.slideshow-image-container-mobile {
+  min-width: 100vw;
+  min-height: 50vh !important;
 }
 
 .slideshow-image-mobile {
-  width: 100%;
+  width: 100vw;
+  height: 50vh !important;
   object-fit: cover;
   display: block;
   margin: 0 auto;
-  margin-top: 15vh;
+  margin-top: 5vh;
   z-index: 19;
 }
 
