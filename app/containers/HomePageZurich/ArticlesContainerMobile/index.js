@@ -15,6 +15,8 @@ import ReactHover from 'react-hover';
 import { Image } from 'cloudinary-react';
 import Drawer from 'material-ui/Drawer';
 import BlogPostContainerMobile from '../BlogPostContainerMobile';
+import Icon from 'antd/lib/icon';
+
 
 const style = {
   bg: {
@@ -28,7 +30,7 @@ const style = {
 
 const Article = styled.div`
   position: relative;
-  padding-top: 5vh;
+  padding-top: 7vh;
   padding-bottom: 5vh;
   width: 90%;
   display: block;
@@ -116,23 +118,25 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           </Helmet>
             <Drawer
               open={this.props.blogOpen}
-              width="89%"
+              width="91%"
               containerStyle={style.bg}
-              onTouchTap={this.props.handleBlogClose}
+              onRequestChange={this.props.handleBlogClose}
               openSecondary
+              overlayStyle={{ backgroundColor: 'transparent', zIndex: '1' }}
             >
-            <div style={{ height: '100%', overflowY: 'scroll' }}>
+            <div onClick={this.props.handleBlogClose} style={{ height: '100%', overflowY: 'scroll' }}>
+              <Icon onClick={this.props.handleBlogClose} type="close" style={{ position: 'absolute', color: 'white', fontSize: '5vw', opacity: '.7', paddingTop: '5%', left: '0', paddingLeft: '7%' }} />
               <h4 className='blog-open-label-mobile' onClick={this.props.handleBlogClose}>blog</h4>
               { articles.map((article, idx, articles) => (
-                <div key={idx} onClick={this.props.handleViewPost.bind(this, article.id)}>
+                <div key={idx}>
                   <Article>
-                    <Title>
+                    <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
                       {article.data.blog_post.title.value[0].text}
                     </Title>
-                    <PostDate>
+                    <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
                       {article.data.blog_post.date.value}
                     </PostDate>
-                    <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
+                    <StyledImage onClick={this.props.handleViewPost.bind(this, article.id)} style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
                     </StyledImage>
                   </Article>
                 </div>

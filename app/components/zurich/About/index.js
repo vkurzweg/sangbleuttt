@@ -17,7 +17,7 @@ function About() {
       <p className='zurich-about-copy'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
-      <div className='container-fluid zurich-about-copy' >
+      <div className='container zurich-about-copy' >
         <div className='row' style={{ padding: '0', width: '100%', margin: '0 auto' }}>
           <div className='col-sm-6  zurich-typefaces zurich-links'>
             <a href='https://www.instagram.com/sangbleutattoozurich/?hl=en'>instagram</a>

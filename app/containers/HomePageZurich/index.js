@@ -95,6 +95,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
   }
 
   handleBlogClose() {
+    console.log('clicked')
     return this.setState({ blogOpen: false, initial: false });
   }
 
@@ -140,11 +141,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width="89%"
+                  width="91%"
                   containerStyle={style.bg}
                   onTouchTap={this.handleAboutClose}
                 >
-                  <div>
+                  <div tyle={{ height: '100%', overflowY: 'scroll' }}>
                     <h4 className="about-label">information</h4>
                     <AboutMobile
                       handleAboutClose={this.handleAboutClose}
@@ -163,6 +164,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   blogOpen={this.state.blogOpen}
                   postId={this.state.postId}
                   currentPost={this.state.currentPost}
+                  handleBlogToggle={this.handleBlogToggle}
+                  handleBlogClose={this.handleBlogClose}
                 />
                 <InfoCopyMobile />
                 <ArtistsContainerMobile />
@@ -245,11 +248,11 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
               <Drawer
                 open={this.state.aboutOpen}
-                width="89%"
+                width="91%"
                 containerStyle={style.bg}
                 onTouchTap={this.handleAboutClose}
               >
-                <div>
+                <div style={{ height: '100%', overflowY: 'scroll' }}>
                   <h4 className="about-label">information</h4>
                   <AboutMobile
                     handleAboutClose={this.handleAboutClose}
@@ -268,6 +271,8 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 blogOpen={this.state.blogOpen}
                 postId={this.state.postId}
                 currentPost={this.state.currentPost}
+                handleBlogClose={this.handleBlogClose}
+                handleBlogToggle={this.handleBlogToggle}
               />
               <InfoCopyMobile />
               <ArtistsContainerMobile />

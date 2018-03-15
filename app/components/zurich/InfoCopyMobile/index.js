@@ -11,7 +11,7 @@ import { Image } from 'cloudinary-react';
 
 function Logo() {
   return (
-    <div style={{ position: 'fixed', zIndex: '20', width: '100%', paddingLeft: '8.5vw', paddingRight: '9vw', marginRight: '0', right: '0', marginLeft: '10vw' }}>
+    <div style={{ position: 'fixed', zIndex: '20', width: '100%', paddingLeft: '30px', paddingRight: '30px', marginRight: '0', right: '0', marginLeft: '10vw' }}>
       <div style={{ margin: '0 auto', paddingTop: '2vh' }} >
         <div className="zurich-title-container-mobile" >
           <h1 className="zurich-title-mobile">

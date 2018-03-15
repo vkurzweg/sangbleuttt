@@ -73,7 +73,7 @@
 .about-tab-mobile {
   position: fixed;
   left: 0;
-  width: 10vw;
+  width: 30px;
   height: 100%;
   background-color: black;
 }
@@ -81,13 +81,13 @@
 .blog-tab-mobile {
   position: fixed;
   right: 0;
-  width: 10vw;
+  width: 30px;
   height: 100%;
   background-color: black;
 }
 
 .about-label-mobile {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 40vh;
   font-size: 19px;
   letter-spacing: 2.36px;
@@ -104,7 +104,7 @@
 
 .blog-label-mobile {
   right: 0;
-  margin-right: 10px;
+  margin-right: 5px;
   margin-top: -5vh;
   font-size: 19px;
   position: fixed;
@@ -168,24 +168,6 @@
   }
 }
 
-@keyframes shrinkFont {
-  from {
-    font-size: 1.7vw;
-  }
-  to {
-    font-size: 1vw;
-  }
-}
-
-@keyframes growFont {
-  from {
-    font-size: 1vw;
-  }
-  to {
-    font-size: 2.7vw;
-  }
-}
-
 .right-half {
   animation: shrink .5s;
   animation-fill-mode: forwards;
@@ -194,16 +176,6 @@
 .left-half {
   margin-left: 42vw;
   animation: shrink .5s;
-  animation-fill-mode: forwards;
-}
-
-.font-shrink {
-  animation: shrinkFont .5s;
-  animation-fill-mode: forwards;
-}
-
-.font-grow {
-  animation: growFont .5s;
   animation-fill-mode: forwards;
 }
 
@@ -250,24 +222,6 @@
   z-index: 20;
 }
 
-@keyframes growTitle {
-  from {
-    letter-spacing: 0px;
-  }
-  to {
-    letter-spacing: 13px;
-  }
-}
-
-@keyframes shrinkTitle {
-  from {
-    letter-spacing: 13px;
-  }
-  to {
-    letter-spacing: 0px;
-  }
-}
-
 .zurich-title-container {
   font-family: BRRR;
   font-size: 49px;
@@ -286,7 +240,7 @@
 
 .zurich-title-container-mobile {
   font-family: BRRR;
-  font-size: 21px;
+  font-size: 21.5px;
   z-index: 20;
   text-align: center;
   display: flex;
@@ -298,7 +252,7 @@
 .zurich-title-mobile {
   width: 100%;
   font-family: BRRR;
-  font-size: 21px;
+  font-size: 21.5px;
   z-index: 20;
 }
 
@@ -546,7 +500,7 @@
 }
 
 .zurich-about-image-mobile {
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   display: block;
   padding-top: 3vh;
@@ -559,17 +513,17 @@
   padding-top: 4%;
   padding-left: 8%;
   opacity: .9;
-  font-size: 4vw;
+  font-size: 19px;
+  letter-spacing: 2.36px;
 }
 
 .zurich-about-copy-mobile {
   color: white;
-  font-size: 3vw;
-  text-align: justify;
-  width: 75%;
+  font-size: 12px;
+  width: 84%;
   margin: 0 auto;
   padding-top: 5%;
-  letter-spacing: .5px;
+  letter-spacing: 2.36px;
   font-family: SuisseCond;
   opacity: .9;
 }
@@ -577,9 +531,11 @@
 .zurich-links-mobile a {
   text-decoration: none;
   color: white;
-  font-size: 2.5vw;
+  font-size: 10px;
+  letter-spacing: 1.24px;
   display: block;
   text-transform: uppercase;
+  font-family: SuisseCond;
 }
 
 .zurich-logo {
