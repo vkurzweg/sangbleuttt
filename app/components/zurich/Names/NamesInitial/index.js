@@ -26,8 +26,8 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     let widthValue = '90%';
     let imageClass = 'hover-container-initial';
     return (
-      <div style={{ marginTop: '-5vh' }}>
-        <div className="insta-hover row" style={{ paddingTop: '5vh', paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+      <div style={{ marginTop: '-3vh' }}>
+        <div className="insta-hover row" style={{ paddingTop: '3vh', paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Maxime openLightbox={this.props.openLightbox} />
           </div>
@@ -35,7 +35,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Giorgio openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{ paddingTop: '3vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-6`}>
             <Jordan openLightbox={this.props.openLightbox} />
           </div>
@@ -43,7 +43,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Paolo openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="row insta-hover" style={{ marginTop: '-3vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+        <div className="row insta-hover" style={{ paddingTop: '3vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-6`}>
             <Labaz openLightbox={this.props.openLightbox} />
           </div>
@@ -53,13 +53,13 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
         </div>
 
 
-        <div className="row insta-hover" style={{ marginTop: '-2vh', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Diego openLightbox={this.props.openLightbox} />
           </div>
           <div className="col-sm-7"></div>
         </div>
-        <div className="insta-hover row" style={{ marginTop: '-10vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{  display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-4`}>
             <Golda openLightbox={this.props.openLightbox} />
           </div>

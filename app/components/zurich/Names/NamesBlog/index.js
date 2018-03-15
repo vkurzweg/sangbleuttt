@@ -25,7 +25,7 @@ const rightAnimation = keyframes`${slideInRight}`;
 
 const SlideRightDiv = styled.div`
   animation: .5s ${rightAnimation};
-  margin-top: -8vh;
+  margin-top: -3vh;
 `;
 
 

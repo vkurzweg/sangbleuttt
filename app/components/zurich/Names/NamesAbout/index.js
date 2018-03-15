@@ -46,7 +46,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
             <Giorgio openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="insta-hover row" style={{ marginTop: '-10vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
           <div className={`${imageClass} + col-sm-6`}>
             <Jordan openLightbox={this.props.openLightbox} />
           </div>

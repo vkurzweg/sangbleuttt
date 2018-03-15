@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
 import MediaQuery from 'react-responsive';
 import styled from 'styled-components';
 import { StickyContainer, Sticky } from 'react-sticky';
+import { Helmet } from 'react-helmet';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import Nav from 'components/london/Nav';
@@ -56,6 +57,10 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
   render() {
     return (
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+        <Helmet>
+          <title>Sang Bleu London</title>
+          <meta name="description" content="Artist portfolios and news from the Sang Bleu tattoo studio in London." />
+        </Helmet>
         <MediaQuery minWidth={768}>
           <StickyContainer>
             <Nav />

@@ -32,7 +32,7 @@ import { StickyContainer, Sticky } from 'react-sticky';
 
 
 const Background = styled.div`
-  width: calc(100vw - 80px);
+  width: calc(100vw - 60px);
   margin: 0 auto;
 `;
 
@@ -140,6 +140,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     if (this.state.initial) {
       return (
         <div>
+          <Helmet>
+            <title>Sang Bleu Zurich</title>
+            <meta name="description" content="Artist portfolios, news, and upcoming events at the Sang Bleu tattoo studio in Zurich, Switzerland." />
+          </Helmet>
           <MediaQuery maxWidth={767}>
             <div
               style={{
@@ -194,10 +198,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           <MediaQuery minWidth={768}>
             <div style={{ height: '100vh', backgroundColor: '#FF001F' }}>
               <div className="initial-container">
-                <Helmet>
-                  <title>HomePageZurich</title>
-                  <meta name="description" content="Description of HomePageZurich" />
-                </Helmet>
                 <div className="about-tab" onClick={this.handleAboutToggle}>
                   <div className="about-label-container">
                     <h4 className="about-label">information</h4>
@@ -311,10 +311,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 position: 'relative', height: '100vh', backgroundColor: '#FF001F', borderLeft: '40px solid black', borderRight: '40px solid black', height: '100vh'
               }}
             >
-              <Helmet>
-                <title>HomePageZurich</title>
-                <meta name="description" content="Description of HomePageZurich" />
-              </Helmet>
               <div className="about-tab" onClick={this.handleAboutToggle}>
                 <div className="about-label-container">
                   <h4 className="about-label">information</h4>

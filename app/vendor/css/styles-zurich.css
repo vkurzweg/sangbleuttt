@@ -463,9 +463,8 @@
 .zurich-about-copy {
   color: white;
   font-size: 19px;
-  text-align: justify;
   width: 85%;
-  margin: 0 auto;
+  padding-left: 3vw;
   padding-top: 5%;
   letter-spacing: 2.36px;
   font-family: SuisseRegular;
