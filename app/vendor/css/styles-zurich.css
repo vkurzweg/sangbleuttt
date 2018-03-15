@@ -721,6 +721,29 @@
 .slideshow-image {
   width: 35vw;
   height: 40vh;
+  -webkit-object-fit: cover;
+  -moz-object-fit: cover;
+  -ms-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15vh;
+  z-index: 19;
+}
+
+.zurich-modal-mobile div:nth-child(1) {
+  background-color: #FF001F !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  top: -15vh !important;
+}
+
+.slideshow-image-container {
+  width: 100vw;
+}
+
+.slideshow-image-mobile {
+  width: 100%;
   object-fit: cover;
   display: block;
   margin: 0 auto;

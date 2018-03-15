@@ -19,6 +19,7 @@ import InfoCopyMobile from 'components/zurich/InfoCopyMobile';
 import Names from 'components/zurich/Names';
 import NamesMobile from 'components/zurich/NamesMobile';
 import ArtistsContainer from './ArtistsContainer';
+import ArtistsContainerMobile from './ArtistsContainerMobile';
 import Icon from 'antd/lib/icon';
 import Drawer from 'material-ui/Drawer';
 import About from 'components/zurich/About';
@@ -164,11 +165,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   currentPost={this.state.currentPost}
                 />
                 <InfoCopyMobile />
-                <NamesMobile
-                  blogOpen={this.props.blogOpen}
-                  aboutOpen={this.props.aboutOpen}
-                  initial={this.props.initial}
-                />
+                <ArtistsContainerMobile />
                 <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
                   <MarqueeMobile />
                   <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
@@ -273,11 +270,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 currentPost={this.state.currentPost}
               />
               <InfoCopyMobile />
-              <NamesMobile
-                blogOpen={this.props.blogOpen}
-                aboutOpen={this.props.aboutOpen}
-                initial={this.props.initial}
-              />
+              <ArtistsContainerMobile />
               <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
                 <MarqueeMobile />
                 <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />

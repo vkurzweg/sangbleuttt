@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for NamesFull
+ * Asynchronously loads the component for Center
  *
  */
 
