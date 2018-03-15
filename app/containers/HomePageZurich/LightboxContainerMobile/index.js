@@ -56,7 +56,7 @@ const NextButton = styled.button`
   top: 0;
   right: 0;
   margin-right: 15%;
-  margin-top: 120%;
+  margin-top: 110%;
   &:hover, &:active, &:focus {
     outline: 0
   }
@@ -75,7 +75,7 @@ const BackButton = styled.button`
   top: 0;
   left: 0;
   margin-left: 15%;
-  margin-top: 120%;
+  margin-top: 110%;
   z-index: 2001;
   &:hover, &:active, &:focus {
     outline: 0
