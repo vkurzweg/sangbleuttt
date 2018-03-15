@@ -99,7 +99,7 @@ const PostDate = styled.p`
 export class LightboxContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     const actions = [
-      <button
+      <div
         type="close"
         onClick={this.props.handleClose}
         style={{
@@ -107,7 +107,7 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
         }}
       >
         <h4 className="close-label">close</h4>
-      </button>
+      </div>
     ];
     const backButton = (<BackButton onClick={this.props.previousImage}>back
     </BackButton>);

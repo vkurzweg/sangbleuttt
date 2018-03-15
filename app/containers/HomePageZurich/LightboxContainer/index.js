@@ -109,9 +109,9 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
 
   render() {
     const actions = [
-      <button type="close" onClick={this.props.handleClose} style={{ position: 'absolute', backgroundColor: 'black', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%' }}>
+      <div type="close" onClick={this.props.handleClose} style={{ position: 'absolute', backgroundColor: 'black', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%' }}>
         <h4 className='close-label'>close</h4>
-      </button>
+      </div>
     ]
     const backButton = <BackButton onClick={this.props.previousImage}>
                       </BackButton>
