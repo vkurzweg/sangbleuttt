@@ -61,7 +61,7 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
 
   render() {
     return (
-      <div>
+      <div style={{ height: '100%', overflowY: 'scroll' }}>
         <Helmet>
           <title>Sang Bleu Zurich</title>
           <meta name="description" content="Book an appointment at the Sang Bleu tattoo studio in Zurich, Switzerland." />

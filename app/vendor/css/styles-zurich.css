@@ -240,7 +240,7 @@
 
 .zurich-title-container-mobile {
   font-family: BRRR;
-  font-size: 21.5px;
+  font-size: 21px;
   z-index: 20;
   text-align: center;
   display: flex;
@@ -252,7 +252,7 @@
 .zurich-title-mobile {
   width: 100%;
   font-family: BRRR;
-  font-size: 21.5px;
+  font-size: 21px;
   z-index: 20;
 }
 
