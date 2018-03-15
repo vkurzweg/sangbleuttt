@@ -618,6 +618,15 @@
   z-index: 2000;
 }
 
+.marquee-mailto-mobile {
+  font-family: SuisseCondItalic;
+  letter-spacing: 1px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-top: 40%;
+  text-align: center;
+}
+
 .marquee:hover .marquee-text {
   opacity: 0;
 }

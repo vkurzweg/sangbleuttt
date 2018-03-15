@@ -71,6 +71,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       viewPost: false,
       postId: '',
       currentPost: null,
+      isPanelShowing: false,
     };
     this.handleAboutToggle = this.handleAboutToggle.bind(this);
     this.handleBlogToggle = this.handleBlogToggle.bind(this);
@@ -80,6 +81,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleBlogDismiss = this.handleBlogDismiss.bind(this);
     this.handleViewPost = this.handleViewPost.bind(this);
     this.handleDismissPost = this.handleDismissPost.bind(this);
+    this.handlePanelToggle = this.handlePanelToggle.bind(this);
   }
 
   handleAboutToggle() {
@@ -107,6 +109,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     return this.setState({ initial: false });
   }
 
+  handlePanelToggle() {
+    return this.setState({ isPanelShowing: !this.state.isPanelShowing });
+  }
+
   handleViewPost(postId) {
     console.log('clicked')
     const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
@@ -127,6 +133,10 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     let contentWidth;
     this.state.aboutOpen ? contentWidth = 'left-half' : contentWidth;
     this.state.blogOpen ? contentWidth = 'right-half' : contentWidth;
+    let displayPanel;
+    this.state.isPanelShowing ? displayPanel = 'block' : displayPanel = 'none';
+    let displayMarquee;
+    this.state.isPanelShowing ? displayMarquee = 'none' : displayMarquee = 'block';
     if (this.state.initial) {
       return (
         <div>
@@ -169,9 +179,15 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 />
                 <InfoCopyMobile />
                 <ArtistsContainerMobile />
-                <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
-                  <MarqueeMobile />
-                  <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+                <div onClick={this.handlePanelToggle} style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
+                  <div style={{ display: displayMarquee }}>
+                    <MarqueeMobile />
+                    <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+                  </div>
+                  <div style={{ position: 'relative', display: displayPanel, backgroundColor: 'black', color: 'white', height: '50vh', width: '100vw' }}>
+                    <div style={{ position: 'absolute', left: '0', width: '30px', height: '100%', backgroundColor: '#FF001F' }}><Icon type="close" style={{ color: 'white', fontWeight: 'bold', fontSize: '30px', paddingTop: '5px' }} /></div>
+                    <a href="mailto:zurich@sangbleu.tattoo" target="_blank" style={{ textDecoration: 'none', color: 'white' }}><p className="marquee-mailto-mobile">book now — zurich@sangbleu.tattoo</p></a>
+                  </div>
                 </div>
             </div>
           </MediaQuery>
@@ -276,9 +292,15 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               />
               <InfoCopyMobile />
               <ArtistsContainerMobile />
-              <div style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
-                <MarqueeMobile />
-                <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+              <div onClick={this.handlePanelToggle} style={{ position: 'fixed', bottom: '0', zIndex: '2000' }}>
+                <div style={{ display: displayMarquee }}>
+                  <MarqueeMobile />
+                  <img className="swiss-flag" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Switzerland.svg" alt="swiss flag" />
+                </div>
+                <div style={{ position: 'relative', display: displayPanel, backgroundColor: 'black', color: 'white', height: '50vh', width: '100vw' }}>
+                  <div style={{ position: 'absolute', left: '0', width: '30px', height: '100%', backgroundColor: '#FF001F' }}><Icon type="close" style={{ color: 'white', fontWeight: 'bold', fontSize: '30px', paddingTop: '5px' }} /></div>
+                  <a href="mailto:zurich@sangbleu.tattoo" target="_blank" style={{ textDecoration: 'none', color: 'white' }}><p className="marquee-mailto-mobile">book now — zurich@sangbleu.tattoo</p></a>
+                </div>
               </div>
           </div>
         </MediaQuery>
