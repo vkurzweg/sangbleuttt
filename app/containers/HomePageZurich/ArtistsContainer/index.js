@@ -32,6 +32,7 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
 
 
   openLightbox(userId) {
+    console.log('clicked')
     let url = 'https://api.instagram.com/v1/users/' + userId + '/media/recent/?access_token=258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f&count=9'
      request
        .get(url)

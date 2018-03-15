@@ -670,7 +670,7 @@
 /*SLIDESHOW MODAL
 */
 
-.zurich-modal div:nth-child(1) {
+.zurich-modal div:nth-child(1) div:nth-child(1) div:nth-child(1) {
   background-color: #FF001F !important;
   width: 100vw !important;
   height: 100vh !important;

@@ -15,9 +15,8 @@ import styled from 'styled-components';
 import Moment from 'react-moment';
 
 const customContentStyle = {
-  width: '50%',
-  maxWidth: 'none',
-  height: '50%'
+  width: '100vw',
+  height: '100vh'
 };
 
 const NameContainer = styled.div`
@@ -108,11 +107,6 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
 
 
   render() {
-    const actions = [
-      <div type="close" onClick={this.props.handleClose} style={{ position: 'absolute', backgroundColor: 'black', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%' }}>
-        <h4 className='close-label'>close</h4>
-      </div>
-    ]
     const backButton = <BackButton onClick={this.props.previousImage}>
                       </BackButton>
     const nextButton = <NextButton onClick={this.props.nextImage}>
@@ -165,42 +159,36 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
         artistName = '';
         artistHandle = '';
     }
+    let display = 'block';
+    this.props.isOpen ? display : display = 'none';
     return (
-        <div>
-          <Dialog
-            actions={actions}
-            modal={true}
-            contentStyle={customContentStyle}
-            className="zurich-modal"
-            open={this.props.isOpen}
-            onRequestClose={this.props.handleClose}
-          >
-            <div style={{ width: 'calc(100% - 40px)', paddingTop: '15vh' }}>
-              <ArtistName>{artistName}</ArtistName>
-              <ArtistHandle>{artistHandle}</ArtistHandle>
-              <div style={{ position: 'relative' }}>
-                {this.props.slideCount !== 0 ? backButton : '' }
-                {this.props.photos.map((photo, key) => {
-                  if (this.props.photos.indexOf(photo) === this.props.slideCount) {
-                    return (
-                      <div key={photo.id} style={{ position: 'relative' }}>
-                        <div className="slideshow-image-container">
-                          <a href={photo.link} target="_blank">
-                            <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
-                          </a>
-                        </div>
-                        <PostDate>
-                          <Moment unix>{photo.created_time}</Moment>
-                        </PostDate>
-                      </div>
-                    )
-                  }
-                    return ''
-                })}
-                {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
-              </div>
-            </div>
-          </Dialog>
+        <div style={{ display, width: '110vw', marginLeft: '-80px', height: '100vh', backgroundColor: '#FF001F', position: 'absolute', top: '0', zIndex: '2000' }}>
+          <div type="close" onClick={this.props.handleClose} style={{ position: 'fixed', backgroundColor: 'black', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%', zIndex: '2001' }}>
+            <h4 className='close-label'>close</h4>
+          </div>
+          <ArtistName>{artistName}</ArtistName>
+          <ArtistHandle>{artistHandle}</ArtistHandle>
+          <div style={{ position: 'relative' }}>
+            {this.props.slideCount !== 0 ? backButton : '' }
+            {this.props.photos.map((photo, key) => {
+              if (this.props.photos.indexOf(photo) === this.props.slideCount) {
+                return (
+                  <div key={photo.id} style={{ position: 'relative' }}>
+                    <div className="slideshow-image-container">
+                      <a href={photo.link} target="_blank">
+                        <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
+                      </a>
+                    </div>
+                    <PostDate>
+                      <Moment unix>{photo.created_time}</Moment>
+                    </PostDate>
+                  </div>
+                )
+              }
+                return ''
+            })}
+            {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
+          </div>
         </div>
     );
   }
@@ -223,4 +211,11 @@ export default compose(
   withConnect,
 )(LightboxContainer);
 
-
+// <Dialog
+//   actions={actions}
+//   modal={true}
+//   contentStyle={customContentStyle}
+//   className="zurich-modal"
+//   open={this.props.isOpen}
+//   onRequestClose={this.props.handleClose}
+// >
