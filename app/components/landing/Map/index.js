@@ -23,13 +23,13 @@ class Map extends React.Component { // eslint-disable-line react/prefer-stateles
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
-            <div style={{ position: 'absolute', width: '1em', marginLeft: '47.5vw' }} >
+            <div style={{ position: 'absolute', width: '1em', marginLeft: '45.5vw', marginTop: '.5vh' }} >
               <span style={{ color: '#3D8EE2', fontSize: '130px' }}>.</span>
             </div>
           </ReactHover.Trigger>
           <ReactHover.Hover type='hover'>
             <div style={{ backgroundColor: '#FFFFFF', textAlign: 'center', width: '20vw', fontSize: '18px' }}>
-              <Image style={{ width: '20%', display: 'block', margin: '0 auto', paddingTop: '5%' }} cloudName="kurzweg" publicId="logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
+              <Image style={{ width: '20%', display: 'block', margin: '0 auto', paddingTop: '5%' }} cloudName="kurzweg" publicId="sangbleu/logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
               <h3 style={{ padding: '2%' }}>Sang Bleu London</h3>
             </div>
           </ReactHover.Hover>
@@ -38,13 +38,13 @@ class Map extends React.Component { // eslint-disable-line react/prefer-stateles
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
-            <div style={{ position: 'absolute', width: '1em', marginLeft: '49vw', marginTop: '2vh' }} >
+            <div style={{ position: 'absolute', width: '1em', marginLeft: '47.5vw', marginTop: '3vh' }} >
               <span style={{ color: '#3D8EE2', fontSize: '130px' }}>.</span>
             </div>
           </ReactHover.Trigger>
           <ReactHover.Hover type='hover'>
             <div style={{ backgroundColor: '#FFFFFF', textAlign: 'center', width: '20vw', fontSize: '18px' }}>
-              <Image style={{ width: '15%', display: 'block', margin: '0 auto', paddingTop: '5%' }} cloudName="kurzweg" publicId="logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
+              <Image style={{ width: '15%', display: 'block', margin: '0 auto', paddingTop: '5%' }} cloudName="kurzweg" publicId="sangbleu/logozurich" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
               <h3 style={{ padding: '2%' }}>Sang Bleu Zurich</h3>
             </div>
           </ReactHover.Hover>
@@ -53,7 +53,7 @@ class Map extends React.Component { // eslint-disable-line react/prefer-stateles
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
-            <div style={{ position: 'absolute', width: '1em', marginLeft: '26.25vw', marginTop: '7.25vh' }} >
+            <div style={{ position: 'absolute', width: '1em', marginLeft: '16vw', marginTop: '8vh' }} >
               <span style={{ color: '#3D8EE2', fontSize: '130px' }}>.</span>
             </div>
           </ReactHover.Trigger>
@@ -64,7 +64,7 @@ class Map extends React.Component { // eslint-disable-line react/prefer-stateles
           </ReactHover.Hover>
         </ReactHover>
 
-        <Image style={{ height: '60vh', width: 'auto', display: 'block', margin: '0 auto' }} cloudName="kurzweg" publicId="map3" alt="map of sang bleu locations" quality="auto" crop="scale" responsive />
+        <Image style={{ height: '60vh', width: 'auto', display: 'block', margin: '0 auto' }} cloudName="kurzweg" publicId="sangbleu/map3" alt="map of sang bleu locations" quality="auto" crop="scale" responsive />
 
       </div>
     );

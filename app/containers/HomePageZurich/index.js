@@ -45,22 +45,6 @@ const style = {
   }
 };
 
-const AboutLabel = styled.h4`
-  right: 0;
-  margin-right: 1vw;
-  margin-top: 40vh;
-  font-size: 19px;
-  letter-spacing: 2.36px;
-  z-index: 100;
-  position: absolute;
-  color: #FFFFFF;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  text-transform: uppercase;
-  text-align: center;
-  font-family: SuisseCond;
-`;
-
 export class HomePageZurich extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);

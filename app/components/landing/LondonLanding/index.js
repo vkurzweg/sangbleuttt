@@ -14,8 +14,8 @@ function LondonLanding() {
     <div>
       <div className="cathedrals">
         <a href="/london">
-          <Image className="cathedral" cloudName="kurzweg" publicId="cathedral" alt="sang bleu london" quality="auto" crop="scale" responsive />
-          <Image className="cathedral-invert" cloudName="kurzweg" publicId="cathedral_invert" alt="sang bleu london" quality="auto" crop="scale" responsive />
+          <Image className="cathedral" cloudName="kurzweg" publicId="sangbleu/cathedral" alt="sang bleu london" quality="auto" crop="scale" responsive />
+          <Image className="cathedral-invert" cloudName="kurzweg" publicId="sangbleu/cathedral_invert" alt="sang bleu london" quality="auto" crop="scale" responsive />
           <h2 className="bleu-invert">bleu</h2>
           <h2 className="london-invert">london</h2>
         </a>

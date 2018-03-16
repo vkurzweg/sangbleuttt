@@ -14,8 +14,8 @@ function ZurichLanding() {
     <div>
       <div className="birds">
         <a href="/zurich">
-          <Image className="bird" cloudName="kurzweg" publicId="birds" alt="sang bleu london" quality="auto" crop="scale" responsive />
-          <Image className="bird-invert" cloudName="kurzweg" publicId="birds_invert" alt="sang bleu london" quality="auto" crop="scale" responsive />
+          <Image className="bird" cloudName="kurzweg" publicId="sangbleu/birds" alt="sang bleu london" quality="auto" crop="scale" responsive />
+          <Image className="bird-invert" cloudName="kurzweg" publicId="sangbleu/birds_invert" alt="sang bleu london" quality="auto" crop="scale" responsive />
           <h2 className="sang-invert">sang</h2>
           <h2 className="zurich-invert">zurich</h2>
         </a>
