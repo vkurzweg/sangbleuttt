@@ -117,6 +117,21 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <meta name="description" content="Artist portfolios, news, and upcoming events at the Sang Bleu tattoo studio in Zurich, Switzerland." />
           </Helmet>
             <Drawer
+              open={this.props.viewPost}
+              width="100%"
+              containerStyle={style.bg}
+              openSecondary
+              className="drawer-post"
+              docked={false}
+              onRequestChange={this.props.handleDismissPost}
+            >
+              <BlogPostContainerMobile
+                handleDismissPost={this.props.handleDismissPost}
+                postId={this.props.postId}
+                currentPost={this.props.currentPost}
+              />
+            </Drawer>
+            <Drawer
               open={this.props.blogOpen}
               width="91%"
               containerStyle={style.bg}
@@ -142,21 +157,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </div>
               ))}
             </div>
-          </Drawer>
-          <Drawer
-            open={this.props.viewPost}
-            width="100%"
-            containerStyle={style.bg}
-            openSecondary
-            className="drawer-post"
-            docked={false}
-            onRequestChange={this.props.handleDismissPost}
-          >
-            <BlogPostContainerMobile
-              handleDismissPost={this.props.handleDismissPost}
-              postId={this.props.postId}
-              currentPost={this.props.currentPost}
-            />
           </Drawer>
         </div>
       );
