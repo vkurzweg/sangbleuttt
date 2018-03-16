@@ -11,7 +11,6 @@ const Button = styled.button`
 
   border: 1px solid black;
   width: 14.44vw;
-  height: 3vh;
   font-family: SuisseLight;
   text-transform: uppercase;
   font-size: .83vw;

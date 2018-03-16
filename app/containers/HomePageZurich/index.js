@@ -159,7 +159,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   containerStyle={style.bg}
                   onTouchTap={this.handleAboutClose}
                 >
-                  <div tyle={{ height: '100%', overflowY: 'scroll' }}>
+                  <div style={{ height: '100%', overflowY: 'scroll' }}>
                     <h4 className="about-label">information</h4>
                     <AboutMobile
                       handleAboutClose={this.handleAboutClose}
@@ -196,7 +196,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             </div>
           </MediaQuery>
           <MediaQuery minWidth={768}>
-            <div style={{ height: '100vh', backgroundColor: '#FF001F' }}>
+            <div style={{ height: '100vh', backgroundColor: '#FF001F', overflow: 'hidden' }}>
               <div className="initial-container">
                 <div className="about-tab" onClick={this.handleAboutToggle}>
                   <div className="about-label-container">

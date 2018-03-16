@@ -66,7 +66,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
       if (article.image4) image3 = <PostImage src={article.image4.value.main.url} />;
       return (
         <div style={{ position: 'relative', overflow: 'scroll', height: '100%' }}>
-          <button
+          <div
             type="close"
             onClick={this.props.handleDismissPost}
             style={{
@@ -74,7 +74,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             }}
           >
             <h4 className="close-label">close</h4>
-          </button>
+          </div>
           <div style={{ width: '85%', margin: '0 auto' }}>
             <Title>{article.title.value[0].text}</Title>
             <PostDate>{article.date.value}</PostDate>

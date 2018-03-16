@@ -6,7 +6,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-
+import Marquee from 'react-smooth-marquee';
 
 function Banner() {
   return (

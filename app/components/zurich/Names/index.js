@@ -48,7 +48,6 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     return (
       <div className='container' style={{ maxWidth: widthValue, margin: '0 auto', marginLeft: fullMarginLeft, marginTop: fullMarginTop, paddingLeft: '0', paddingRight: '0' }}>
         {content}
-      }
       </div>
     );
   }

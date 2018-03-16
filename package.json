@@ -262,6 +262,7 @@
     "react-router-dom": "4.1.1",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scroll": "^1.7.7",
+    "react-smooth-marquee": "^1.0.0",
     "react-sticky": "^5.0.8",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "3.6.0",

@@ -88,7 +88,7 @@
 
 .about-label-mobile {
   margin-left: 5px;
-  margin-top: 40vh;
+  margin-top: 30vh;
   font-size: 19px;
   letter-spacing: 2.36px;
   z-index: 100;
@@ -105,7 +105,7 @@
 .blog-label-mobile {
   right: 0;
   margin-right: 5px;
-  margin-top: -5vh;
+  margin-top: -15vh;
   font-size: 19px;
   position: fixed;
   letter-spacing: 2.36px;
