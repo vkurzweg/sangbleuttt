@@ -204,7 +204,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           <div style={{ margin: '1em auto' }}>
 
             <div>
-              <a onClick={this.openModal1} href="#" style={{ textDecoration: 'none' }}>
+              <div onClick={this.openModal1} style={{ textDecoration: 'none' }}>
                 <StyledImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
                 <PostDate>
                   {article1.date.value}
@@ -215,12 +215,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <Subtitle>
                   {article1.subhead.value}
                 </Subtitle>
-              </a>
+              </div>
             </div>
 
 
             <div>
-              <a onClick={this.openModal2} href="#" style={{ textDecoration: 'none' }}>
+              <div onClick={this.openModal2} style={{ textDecoration: 'none' }}>
                 <StyledImg src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
                 <PostDate>
                   {article2.date.value}
@@ -231,11 +231,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <Subtitle>
                   {article2.subhead.value}
                 </Subtitle>
-              </a>
+              </div>
             </div>
 
             <div>
-              <a onClick={this.openModal3} href="#" style={{ textDecoration: 'none' }}>
+              <div onClick={this.openModal3} style={{ textDecoration: 'none' }}>
                 <StyledImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
                 <PostDate>
                   {article3.date.value}
@@ -246,7 +246,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <Subtitle>
                   {article3.subhead.value}
                 </Subtitle>
-              </a>
+              </div>
             </div>
 
           </div>

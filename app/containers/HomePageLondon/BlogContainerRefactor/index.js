@@ -62,13 +62,18 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     super(props);
     this.state = {
       docs: [],
-      modalIsOpen: false,
+      modal0IsOpen: false,
       postIdLondon: '',
       currentPostLondon: null,
+      isHovering0: false,
+      isHovering1: false,
+      isHovering2: false,
     };
 
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.openModal0 = this.openModal0.bind(this);
+    this.closeModal0 = this.closeModal0.bind(this);
+    this.showImage0 = this.showImage0.bind(this);
+    this.hideImage0 = this.hideImage0.bind(this);
   }
 
   componentDidMount() {
@@ -84,19 +89,37 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     });
   }
 
-  openModal(postId) {
+  openModal0(postId) {
     const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.id', postId),).then((response) => {
       console.log('Post: ', response.results[0]);
       const document = response.results;
       return this.setState({
-        currentPostLondon: document, postIdLondon: postId, modalIsOpen: true
+        currentPostLondon: document, postIdLondon: postId, modal0IsOpen: true
       });
     }));
   }
 
-  closeModal() {
-    this.setState({ modalIsOpen: false });
+  closeModal0() {
+    this.setState({ modal0IsOpen: false });
+  }
+
+  showImage0() {
+    console.log('hover')
+    this.setState({ isHovering0: true });
+  }
+
+  hideImage0() {
+    console.log('no hover')
+    this.setState({ isHovering0: false });
+  }
+
+  showImage1() {
+    this.setState({ isHovering1: true });
+  }
+
+  showImage2() {
+    this.setState({ isHovering2: true });
   }
 
   render() {
@@ -112,6 +135,10 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const articlesNum = this.state.docs.length;
       let link;
       if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
+      let textClass = "article-title article-text"
+      this.state.isHovering0 ? textClass = "article-title mix-test" : textClass;
+      let opacity;
+      this.state.isHovering0 ? opacity = '1' : opacity = '0'
       return (
         <div id="blog" style={{ position: 'relative', height: '120vh', width: '100%' }}>
           <Helmet>
@@ -119,50 +146,26 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
           </Helmet>
           <div className="articles-container">
-            { articles.map((article, idx, articles) => (
-                <div key={idx} className={`london-article-container london-article-container${idx}`}>
-                  <ReactHover
-                    options={options}>
-                    <ReactHover.Trigger type="trigger">
-                      <div className="article">
-                        <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
-                          <div className={`article${idx}`} style={{ position: 'relative' }}>
-                            <Title className="article-title article-text">
-                              {article.data.blog_post.title.value[0].text}
-                            </Title>
-                          </div>
-                          <Subtitle className="article-title article-text">
-                            {article.data.blog_post.subhead.value}
-                          </Subtitle>
-                        </div>
-                      </div>
-                    </ReactHover.Trigger>
-                    <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
-                      <div className="hover-container">
-                        <div className="article-image" style={{ backgroundImage: `url(${article.data.blog_post.main_image.value.main.url})` }} alt={article.data.blog_post.main_image.value.alt}>
-                          <div className={`article-hover article-hover${idx}`}>
-                            <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
-                              <div style={{ position: 'relative' }}>
-                                <Title className="article-title mix-test">
-                                  {article.data.blog_post.title.value[0].text}
-                                </Title>
-                              </div>
-                              <Subtitle className="article-title mix-test">
-                                {article.data.blog_post.subhead.value}
-                              </Subtitle>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </ReactHover.Hover>
-                  </ReactHover>
-                  <Modal visible={this.state.modalIsOpen} onCancel={this.closeModal} title={null} footer={null} style={{ width: '75%', margin: '0 auto' }} maskStyle={{ backgroundColor: 'transparent' }} >
-                    <BlogPostContainer
-                      currentPost={this.state.currentPostLondon}
-                      postId={this.state.postIdLondon} />
-                  </Modal>
-                </div>
-            ))}
+
+              <div className="london-article-container-refactor">
+
+                  <div onClick={this.openModal0.bind(this, article0.id)} style={{ position: 'relative' }}>
+                    <Title onMouseOver={this.showImage0} onMouseOut={this.hideImage0} className={textClass}>
+                      {article0.data.blog_post.title.value[0].text}
+                    </Title>
+                    <Subtitle onMouseOver={this.showImage0} onMouseOut={this.hideImage0} className={textClass}>
+                      {article0.data.blog_post.subhead.value}
+                    </Subtitle>
+                  </div>
+                  <div className="article-image-refactor" style={{ opacity, backgroundImage: `url(${article0.data.blog_post.main_image.value.main.url})` }} alt={article0.data.blog_post.main_image.value.alt}>
+                  </div>
+
+                <Modal visible={this.state.modalIsOpen} onCancel={this.closeModal} title={null} footer={null} style={{ width: '75%', margin: '0 auto' }} maskStyle={{ backgroundColor: 'transparent' }} >
+                  <BlogPostContainer
+                    currentPost={article0}
+                    postId={article0.id} />
+                </Modal>
+              </div>
           </div>
           {link}
           <div
