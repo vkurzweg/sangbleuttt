@@ -76,7 +76,9 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             <h4 className="close-label">close</h4>
           </div>
           <div style={{ width: '100%', margin: '0 auto', marginRight: '30px' }}>
-            <Title>{article.title.value[0].text}</Title>
+            <div style={{ marginRight: '30px' }} >
+              <Title>{article.title.value[0].text}</Title>
+            </div>
             <PostDate>{article.date.value}</PostDate>
             <PostImage src={article.main_image.value.main.url} />
             <PostContent>{article.article_part_1.value[0].text}</PostContent>
