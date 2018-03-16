@@ -125,7 +125,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                     options={options}>
                     <ReactHover.Trigger type="trigger">
                       <div className="article">
-                        <a className="article-link" onClick={this.openModal.bind(this, article.id)} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                        <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
                           <div className={`article${idx}`} style={{ position: 'relative' }}>
                             <PostDate className="article-title article-text">
                               {article.data.blog_post.date.value}
@@ -137,14 +137,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                           <Subtitle className="article-title article-text">
                             {article.data.blog_post.subhead.value}
                           </Subtitle>
-                        </a>
+                        </div>
                       </div>
                     </ReactHover.Trigger>
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">
                         <div className="article-image" style={{ backgroundImage: `url(${article.data.blog_post.main_image.value.main.url})` }} alt={article.data.blog_post.main_image.value.alt}>
                           <div className={`article-hover article-hover${idx}`}>
-                            <a className="article-link" onClick={this.openModal.bind(this, article.id)} href="#" style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+                            <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
                               <div style={{ position: 'relative' }}>
                                 <PostDate className="article-title mix-test">
                                   {article.data.blog_post.date.value}
@@ -156,16 +156,16 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                               <Subtitle className="article-title mix-test">
                                 {article.data.blog_post.subhead.value}
                               </Subtitle>
-                            </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </ReactHover.Hover>
                   </ReactHover>
                   <Modal visible={this.state.modalIsOpen} onCancel={this.closeModal} title={null} footer={null} style={{ width: '75%', margin: '0 auto' }} maskStyle={{ backgroundColor: 'transparent' }} >
-                      <BlogPostContainer
-                        currentPost={this.state.currentPostLondon}
-                        postId={this.state.postIdLondon} />
+                    <BlogPostContainer
+                      currentPost={this.state.currentPostLondon}
+                      postId={this.state.postIdLondon} />
                   </Modal>
                 </div>
             ))}
