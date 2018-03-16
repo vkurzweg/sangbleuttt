@@ -776,12 +776,12 @@
 
 .slideshow-image-container-mobile {
   min-width: 100vw;
-  min-height: 50vh !important;
+  min-height: 40vh !important;
 }
 
 .slideshow-image-mobile {
   width: 100vw;
-  height: 50vh !important;
+  height: 40vh !important;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;

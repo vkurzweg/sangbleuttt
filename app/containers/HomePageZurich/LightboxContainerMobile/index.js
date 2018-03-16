@@ -89,7 +89,7 @@ const PostDate = styled.p`
   text-align: center;
   letter-spacing: 2.36px;
   position: absolute;
-  top: 55vh;
+  top: 45vh;
   left: 15%;
 `;
 
