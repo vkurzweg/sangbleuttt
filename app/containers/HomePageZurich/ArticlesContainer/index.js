@@ -99,13 +99,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
   componentDidMount() {
     const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
-    Prismic.getApi(apiEndpoint).then((api) => api.query('')).then((response) => {
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'blog_post'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
-      this.setState({ docs: documents });
-    }, (err) => {
-      console.log('Something went wrong: ', err);
-    });
+      return this.setState({ docs: documents });
+    }));
   }
 
   render() {
