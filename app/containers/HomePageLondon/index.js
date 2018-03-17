@@ -24,6 +24,7 @@ import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import InstaMobile from 'components/london/InstaMobile';
 import BlogContainer from './BlogContainer';
+import BlogContainerRefactor from './BlogContainerRefactor';
 import BlogContainerMobile from './BlogContainerMobile';
 
 const Heading = styled.h3`
