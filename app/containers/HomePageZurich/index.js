@@ -72,6 +72,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       postId: '',
       currentPost: null,
       isPanelShowing: false,
+      aboutSection: null,
     };
     this.handleAboutToggle = this.handleAboutToggle.bind(this);
     this.handleBlogToggle = this.handleBlogToggle.bind(this);
@@ -83,6 +84,16 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleDismissPost = this.handleDismissPost.bind(this);
     this.handlePanelToggle = this.handlePanelToggle.bind(this);
   }
+
+  componentDidMount() {
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'about_section'),).then((response) => {
+      console.log('Documents: ', response.results);
+      const aboutSection = response.results;
+      return this.setState({ aboutSection: aboutSection });
+    }));
+  }
+
 
   handleAboutToggle() {
     return this.setState({ aboutOpen: !this.state.aboutOpen, initial: false, blogOpen: false });
@@ -138,7 +149,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.state.isPanelShowing ? displayPanel = 'block' : displayPanel = 'none';
     let displayMarquee;
     this.state.isPanelShowing ? displayMarquee = 'none' : displayMarquee = 'block';
-    if (this.state.initial) {
+    if (this.state.aboutSection) {
+    let about = this.state.aboutSection[0].data.about_section.about.value[0].text;
+    if (this.state.initial && about) {
       return (
         <div>
           <Helmet>
@@ -164,6 +177,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     <h4 className="about-label">information</h4>
                     <AboutMobile
                       handleAboutClose={this.handleAboutClose}
+                      about={about}
                     />
                   </div>
                 </Drawer>
@@ -211,7 +225,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   >
                     <div>
                       <h4 className="about-label">information</h4>
-                      <About />
+                      <About
+                        about={about}
+                      />
                     </div>
                   </Drawer>
                 </div>
@@ -252,6 +268,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
         </div>
       );
     }
+  }
+  if(this.state.aboutSection) {
+    let about = this.state.aboutSection[0].data.about_section.about.value[0].text;
     return (
       <div>
         <MediaQuery maxWidth={767}>
@@ -272,6 +291,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 <div style={{ height: '100%', overflowY: 'scroll' }}>
                   <h4 className="about-label">information</h4>
                   <AboutMobile
+                    about={about}
                     handleAboutClose={this.handleAboutClose}
                   />
                 </div>
@@ -324,7 +344,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 >
                   <div>
                     <AboutLabel>information</AboutLabel>
-                    <About />
+                    <About
+                      about={about}
+                    />
                   </div>
                 </Drawer>
               </div>
@@ -361,6 +383,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
         </MediaQuery>
       </div>
     );
+  } return ( <div/> )
   }
 }
 

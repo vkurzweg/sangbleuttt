@@ -15,6 +15,7 @@ import MediaQuery from 'react-responsive';
 import styled from 'styled-components';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { Helmet } from 'react-helmet';
+import Prismic from 'prismic-javascript';
 import InfoCopy from 'components/london/InfoCopy';
 import InfoCopyMobile from 'components/london/InfoCopyMobile';
 import Nav from 'components/london/Nav';
@@ -55,7 +56,26 @@ const HeadingMobile = styled.h3`
 `;
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props)
+    this.state = {
+      aboutCopy: null,
+    }
+  }
+
+  componentDidMount() {
+    const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'about_section'),).then((response) => {
+      console.log('Documents: ', response.results);
+      const aboutCopy = response.results;
+      return this.setState({ aboutCopy: aboutCopy });
+    }));
+  }
+
   render() {
+    if (this.state.aboutCopy){
+    const about = this.state.aboutCopy[0].data.about_section.about.value[0].text
+    console.log('about', about)
     return (
       <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <Helmet>
@@ -70,7 +90,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Sticky>
               <A href="#about"><Heading>about</Heading></A>
             </Sticky>
-            <About />
+            <About
+              about={about}
+            />
             <Sticky>
               <div style={{ paddingTop: '4vh' }}>
                 <A href="#blog"><Heading>Blog</Heading></A>
@@ -88,7 +110,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
               <Sticky>
                 <HeadingMobile>about</HeadingMobile>
               </Sticky>
-              <AboutMobile />
+              <AboutMobile
+                about={about}
+              />
             </StickyContainer>
             <StickyContainer>
               <Sticky>
@@ -101,8 +125,11 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
       </div>
     );
   }
+    return (
+      <div />
+      )
+    }
 }
-
 
 function mapDispatchToProps(dispatch) {
   return {

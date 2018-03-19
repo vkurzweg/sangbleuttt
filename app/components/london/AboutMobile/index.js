@@ -17,13 +17,13 @@ const StyledImage = styled(Image)`
 `;
 
 
-function IntroCopy() {
+function IntroCopy(props) {
   return (
     <div style={{ paddingBottom: '3vh' }}>
       <StyledImage cloudName="kurzweg" publicId="sangbleu/sblondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <ScrollAnimation animateIn="fadeIn">
         <p style={{ fontFamily: 'SuisseCond', fontSize: '3.5vw', color: '#323232', width: '85%', margin: '0 auto', paddingTop: '4vh', letterSpacing: '1px', lineHeight: '2em' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          {props.about}
         </p>
       </ScrollAnimation>
     </div>
