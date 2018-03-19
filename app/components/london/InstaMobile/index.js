@@ -26,9 +26,6 @@ let artists = [
     name: 'Ruby Quilter',
     userId: '11348723'
   }, {
-    name: 'Eszter David',
-    userId: '273712202'
-  }, {
     name: 'Javier Rodriguez',
     userId: '14376307'
   }, {
@@ -40,9 +37,6 @@ let artists = [
   }, {
     name: 'Wolfgang',
     userId: '1461855489'
-  }, {
-    name: 'Frederico Rabelo',
-    userId: '361861981'
   }, {
     name: 'Caio Pineiro',
     userId: '188422421'
