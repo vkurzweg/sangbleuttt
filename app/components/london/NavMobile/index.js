@@ -19,7 +19,7 @@ const Brand = styled.h1`
   white-space: nowrap;
   text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 0.16px;
   padding: 2%;
   margin-top: 10px;
   z-index: 100;
@@ -32,12 +32,12 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
     return (
       <div
         style={{
-          position: 'fixed', width: '100%', zIndex: '100', top: '0'
+          position: 'fixed', width: '100%', zIndex: '100', top: '0', float: 'left'
         }}
       >
         <AppBar
           title={brand}
-          style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent' }}
+          style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent', float: 'left' }}
           iconElementLeft={<div style={{ position: 'absolute' }}></div>}
           zDepth={0}
         />

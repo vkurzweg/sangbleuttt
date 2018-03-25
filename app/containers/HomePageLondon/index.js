@@ -31,15 +31,17 @@ import BlogContainerMobile from './BlogContainerMobile';
 const Heading = styled.h3`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
-  font-size: 23pt;
+  font-size: 23px;
   letter-spacing: .16px;
   margin-left: 4vw;
   padding-top: 1vw;
+  z-index: 2000;
 `;
 
 const A = styled.a`
   text-decoration: none;
   color: black;
+  cursor: pointer;
   &:hover, &:active, &:visited {
     color: black;
   }
@@ -87,9 +89,9 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Nav />
             <InfoCopy />
             <Insta />
-            <Sticky>
-              <A href="#about"><Heading>about</Heading></A>
-            </Sticky>
+            <A href="#about_section"><Sticky>
+              <Heading>about</Heading>
+            </Sticky></A>
             <About
               about={about}
             />

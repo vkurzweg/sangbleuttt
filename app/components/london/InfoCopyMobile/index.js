@@ -32,11 +32,11 @@ function Logo() {
     <div className="container" style={{ width: '100%', margin: '0 auto', color: 'black', paddingTop: '8vh', paddingBottom: '1vh' }}>
       <div style={{ marginLeft: '34vw' }}>
         <div style={{ fontSize: '3vw', fontFamily: 'SuisseRegular', letterSpacing: '1px', color: 'black', width: '100%' }}>
-          <p>29B Dalston Ln,<br /> London E8 3DF</p>
+          <p><a href="https://www.google.com/maps/place/Sang+Bleu+Tattoo/@51.5463764,-0.0726058,15z/data=!4m2!3m1!1s0x0:0x3e5c154937010676?sa=X&ved=0ahUKEwi50v-Nl4baAhVn8IMKHQCeBj4Q_BIIdzAK" target="_blank" style={{ color: 'black', textDecoration: 'none' }}>29B Dalston Ln,<br /> London E8 3DF</a></p>
           <div style={{ fontSize: '3vw', fontFamily: 'SuisseRegular', letterSpacing: '1px', color: 'black', width: '100%' }}>
-            <p>+44 20 8616 0840<br />
-            london@sangbleu.tattoo<br />
-            @sangbleutattoolondon</p>
+            <p><a href="tel:+44 20 8616 0840" style={{ color: 'black', textDecoration: 'none' }}>+44 20 8616 0840</a><br />
+            <a href="mailto:london@sangbleu.tattoo" style={{ color: 'black', textDecoration: 'none' }}>london@sangbleu.tattoo</a><br />
+            <a href="https://www.instagram.com/sangbleutattoolondon/?hl=en" target="_blank" style={{ color: 'black', textDecoration: 'none' }}>@sangbleutattoolondon</a></p>
           </div>
           <p>Open 11am — 7pm<br />7 days a week</p>
         </div>

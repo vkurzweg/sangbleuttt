@@ -34,7 +34,7 @@ const Subtitle = styled.h4`
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 5px;
-  line-height: 20px;
+  line-height: 37px;
 `;
 
 const PostDate = styled.h5`

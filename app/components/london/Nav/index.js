@@ -21,8 +21,8 @@ import { browserHistory } from 'react-router';
 const Brand = styled.h1`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
-  font-size: 23pt;
-  letter-spacing: 0.16;
+  font-size: 23px;
+  letter-spacing: 0.16px;
   margin-left: 12vw;
   padding-top: 1vw;
 `;

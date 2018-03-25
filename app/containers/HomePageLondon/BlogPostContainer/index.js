@@ -12,8 +12,8 @@ import { compose } from 'redux';
 
 
 const ModalTitle = styled.h3`
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 35px;
+  margin-bottom: 35px;
   text-align: center;
   font-family: SangBleu;
   font-size: 25px;
@@ -27,21 +27,26 @@ const ModalImg = styled.img`
   margin: 0 auto;
   padding: 1em;
   max-height: 100%;
+  margin-top: 35px;
+  margin-bottom: 35px;
 `;
 
 const ModalText = styled.p`
-  margin-top: 5vh;
+  margin-top: 35px;
+  margin-bottom: 35px;
   padding: 1%;
-  font-size: 15px;
+  font-size: 1.04vw;
   font-family: SuisseRegular;
-  line-height: 2em;
+  line-height: 20px;
+  color: black;
   width: 100%;
 `;
 
 const ModalDate = styled.h5`
   font-family: SuisseLight;
   font-size: 12px;
-  margin-top: 5vh;
+  margin-top: 35px;
+  margin-bottom: 35px;
   text-align: center;
   letter-spacing: 2px;
 `;

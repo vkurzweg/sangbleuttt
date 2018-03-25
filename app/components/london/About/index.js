@@ -11,12 +11,12 @@ import ScrollAnimation from 'react-animate-on-scroll';
 function IntroCopy(props) {
   const studio = 'http://res.cloudinary.com/kurzweg/image/upload/v1519322649/sangbleu/sblondon.png';
   return (
-    <div id="about" style={{ paddingTop: '8vh', paddingBottom: '1vh' }}>
-      <div style={{ height: '525px', backgroundImage: `url(${studio})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+    <div style={{ paddingTop: '8vh', paddingBottom: '1vh' }}>
+      <div style={{ height: '700px', backgroundImage: `url(${studio})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
       <ScrollAnimation animateIn="fadeIn">
-        <p style={{ fontFamily: 'SuisseRegular', marginLeft: '10vw', letterSpacing: '.02em', fontSize: '15pt', color: 'black', width: '45%', paddingTop: '5vh', paddingBottom: '10vh' }}>
+        <a name="about_section" style={{ color: 'black', textDecoration: 'none' }}><p style={{ fontFamily: 'SuisseRegular', marginLeft: '10vw', letterSpacing: '.02em', fontSize: '1.04vw', lineHeight: '20px', color: 'black', width: '45%', paddingTop: '20vh', paddingBottom: '15vh' }}>
           {props.about}
-        </p>
+        </p></a>
       </ScrollAnimation>
     </div>
   );
