@@ -23,6 +23,7 @@ import NavMobile from 'components/london/NavMobile';
 import About from 'components/london/About';
 import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
+import ArtistsGrid from 'components/london/ArtistsGrid';
 import InstaMobile from 'components/london/InstaMobile';
 import BlogContainer from './BlogContainer';
 import BlogContainerRefactor from './BlogContainerRefactor';
@@ -95,7 +96,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           <StickyContainer>
             <Nav />
             <InfoCopy />
-            <Insta />
+            <ArtistsGrid />
             <A href="#about_section"><Sticky style={{ position: 'absolute' }}>
               <Heading>about</Heading>
             </Sticky></A>
