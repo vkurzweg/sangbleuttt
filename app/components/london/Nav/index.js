@@ -23,8 +23,13 @@ const Brand = styled.h1`
   text-transform: uppercase;
   font-size: 23px;
   letter-spacing: 0.16px;
-  margin-left: 12vw;
+  line-height: 30px;
+  display: inline;
+  float: left;
+  padding-left: 12vw;
   padding-top: 1vw;
+  position: relative;
+  z-index: 1;
 `;
 
 
@@ -32,13 +37,13 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
 
   render() {
     const brand =
-        <Brand>Sang Bleu London</Brand>
+        <Brand><a href="#top" style={{ color: 'black', textDecoration: 'none', position: 'relative', zIndex: '1' }}>Sang Bleu London</a></Brand>
     return (
       <div style={{ position: 'fixed', width: '100%', zIndex: '1', top: '0' }}>
         <AppBar
             title={brand}
             className="appbar"
-            style={{ width: '100%', backgroundColor: 'transparent' }}
+            style={{ backgroundColor: 'transparent', position: 'relative' }}
             iconElementRight={<Image className="logo-london" cloudName="kurzweg" publicId="sangbleu/logolondon" alt="sang bleu london" quality="auto" crop="scale" responsive />}
             iconStyleRight={{ display: 'inline', position: 'absolute', right: '0', marginRight: '1vw'}}
             iconStyleLeft={{ display: 'none'}}
@@ -54,107 +59,3 @@ Nav.propTypes = {
 };
 
 export default Nav;
-
-// Hamburger menu:
-
-// const SubMenu = Menu.SubMenu;
-
-// const A = styled.a`
-//   font-family: 'Poiret One';
-//   text-transform: uppercase;
-//   font-size: 18px;
-//   vertical-align: sub;
-//   letter-spacing: 2px;
-//   color: #F5F5F5 !important;
-//   font-weight: bold;
-//   &:hover {
-//     color: #24A5DA;
-//     text-decoration: none;
-//   }
-// `;
-
-// const StyledMenuItem = styled(MenuItem)`
-//   font-family: Helvetica;
-//   color: #F5F5F5;
-//   background-color: #000000;
-//   letter-spacing: 2px;
-//   padding: 2%;
-//   color: #F5F5F5;
-//   &:hover {
-//     color: #3D8EE2;
-//   }
-// `;
-
-// const items = [
-//   {
-//     name: 'SANG BLEU ZURICH',
-//     url: '/zurich',
-//   },
-//   {
-//     name: 'sangbleu.com',
-//     url: 'http://www.sangbleu.com',
-//   }
-// ];
-
-// const style = {
-//   bg: {
-//     backgroundColor: '#000000',
-//     color: '#F5F5F5',
-//   }
-// };
-
-//  constructor(props){
-//    super(props);
-//    this.state = {
-//      open: false,
-//    }
-//    this.handleToggle = this.handleToggle.bind(this);
-//    this.handleClose = this.handleClose.bind(this);
-//    }
-
-//  handleToggle() {
-//     this.setState({ open: !this.state.open });
-//   }
-
-// handleClose(url) {
-//   this.setState({ open: false });
-//   browserHistory.push(url);
-// }
-
-
-//  handleScroll(event) {
-//    let offset = 100;
-//    var scrollTop = window.pageYOffset;
-//    if (scrollTop > offset){
-//        this.setState({
-//          blue: true
-//        });
-//      } else {
-//        this.setState({
-//          blue: false
-//        })
-//      }
-//    }
-
-// let display = 'none';
-// (this.state.showMenu) ? display = 'block' : display = 'none';
-
-
-// iconElementLeft={<IconButton><NavigationMenu color={'black'} /></IconButton>}
-// onLeftIconButtonTouchTap={this.handleToggle}
-
-// <Drawer
-//   docked={false}
-//   width={250}
-//   open={this.state.open}
-//   onRequestChange={(open) => this.setState({ open })}
-//   containerStyle={style.bg}
-// >
-//   <div style={{ paddingTop: '25%' }}>
-//   {items.map((item, idx) => {
-//     return (
-//       <StyledMenuItem key={idx} onTouchTap={this.handleClose.bind(null, item.url)} style={{ color: '#F5F5F5', backgroundColor: '#000000', fontFamily: 'Helvetica', letterSpacing: '2px', padding: '2%' }}>{item.name}</StyledMenuItem>
-//     );
-//   })}
-//   </div>
-// </Drawer>

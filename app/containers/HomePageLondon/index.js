@@ -32,16 +32,23 @@ const Heading = styled.h3`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
   font-size: 23px;
+  line-height: 30px;
   letter-spacing: .16px;
-  margin-left: 4vw;
+  display: inline;
+  float: left;
+  padding-left: 4vw;
   padding-top: 1vw;
-  z-index: 2000;
+  padding-bottom: 1vw;
+  z-index: 3000 !important;
+  position: relative;
 `;
 
 const A = styled.a`
   text-decoration: none;
   color: black;
   cursor: pointer;
+  position: absolute;
+  z-index: 3000;
   &:hover, &:active, &:visited {
     color: black;
   }
@@ -79,7 +86,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
     const about = this.state.aboutCopy[0].data.about_section.about.value[0].text
     console.log('about', about)
     return (
-      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+      <div id="top" style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <Helmet>
           <title>Sang Bleu London</title>
           <meta name="description" content="Artist portfolios and news from the Sang Bleu tattoo studio in London." />
@@ -89,17 +96,17 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Nav />
             <InfoCopy />
             <Insta />
-            <A href="#about_section"><Sticky>
+            <A href="#about_section"><Sticky style={{ position: 'absolute' }}>
               <Heading>about</Heading>
             </Sticky></A>
             <About
               about={about}
             />
-            <Sticky>
-              <div style={{ paddingTop: '4vh' }}>
-                <A href="#blog"><Heading>Blog</Heading></A>
+            <A href="#blog"><Sticky style={{ position: 'absolute' }}>
+              <div style={{ marginTop: '3vh', position: 'absolute' }}>
+                <Heading>Blog</Heading>
               </div>
-            </Sticky>
+            </Sticky></A>
             <BlogContainer />
           </StickyContainer>
         </MediaQuery>
