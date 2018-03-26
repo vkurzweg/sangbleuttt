@@ -10,7 +10,7 @@ import AppBar from 'material-ui/AppBar';
 
 
 const Brand = styled.h1`
-  margin-left: 31vw;
+  margin-left: 100px;
   font-family: SuisseIntlSemiBold;
   text-align: right;
   position: fixed;
@@ -18,7 +18,7 @@ const Brand = styled.h1`
   overflow: visible;
   white-space: nowrap;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 23px;
   letter-spacing: 0.16px;
   padding: 2%;
   margin-top: 10px;
@@ -37,7 +37,7 @@ class Nav extends React.Component { // eslint-disable-line react/prefer-stateles
       >
         <AppBar
           title={brand}
-          style={{ position: 'fixed', width: '100%', backgroundColor: 'transparent', float: 'left' }}
+          style={{ position: 'fixed', width: '100%', backgroundColor: '#FFFFFF', float: 'left' }}
           iconElementLeft={<div style={{ position: 'absolute' }}></div>}
           zDepth={0}
         />

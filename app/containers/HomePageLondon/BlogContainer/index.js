@@ -34,7 +34,7 @@ const Subtitle = styled.h4`
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 5px;
-  line-height: 37px;
+  line-height: 20px;
 `;
 
 const PostDate = styled.h5`
@@ -155,6 +155,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <Modal visible={this.state.modalIsOpen} onCancel={this.closeModal} title={null} footer={null} style={{ width: '75%', margin: '0 auto' }} maskStyle={{ backgroundColor: 'transparent' }} >
                     <BlogPostContainer
                       currentPost={this.state.currentPostLondon}
+                      closeModal={this.closeModal}
                       postId={this.state.postIdLondon} />
                   </Modal>
                 </div>

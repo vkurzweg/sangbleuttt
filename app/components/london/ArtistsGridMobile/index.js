@@ -6,12 +6,11 @@
 
 import React from 'react';
 // import styled from 'styled-components';
-// import Instafeed from 'react-instafeed';
-// import { Image } from 'cloudinary-react';
+import Instafeed from 'react-instafeed';
 import Prismic from 'prismic-javascript';
 
 
-const artists = [
+let artists = [
   {
     name: 'Maxime Plescia-Buchi',
     userId: '1789183639',
@@ -34,7 +33,7 @@ const artists = [
     name: 'Malwina',
     userId: '975175955'
   }, {
-    name: 'Tattoos For Your Enemies',
+    name: 'Tattoosforyourenemies',
     userId: '1079415228'
   }, {
     name: 'Wolfgang',
@@ -49,7 +48,7 @@ const artists = [
 ];
 
 
-class Insta extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class InstaMobile extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
     this.state = {
@@ -70,38 +69,33 @@ class Insta extends React.Component { // eslint-disable-line react/prefer-statel
     const artists = this.state.artists;
     if (artists.length > 0) {
     return (
-      <div style={{ width: '100%' }}>
-        <div className="wrapper">
-          <div className="masonry">
-            { artists.map((artist, idx, artists) => (
+      <div className="wrapper-mobile">
+        <div className="masonry-mobile">
+          { artists.map((artist, idx, artists) => (
+            <div key={idx} className="artist-container">
               <div
-                className="item-container"
+                className="item-container-mobile"
                 id={`instafeed-${idx}`}
-                key={idx}
               >
-                <p className="artist-name" id={`artist-${idx}`}>{artist.data.artist.name.value[0].text}</p>
-                <div></div>
-                <a className='item' href={artist.data.artist.insta.value.url} target='_blank'>
-                  <img src={artist.data.artist.image1.value.main.url} alt="artist portfolio image" />
-                </a>
-                <a className='item' href={artist.data.artist.insta.value.url} target='_blank'>
-                  <img src={artist.data.artist.image2.value.main.url} alt="artist portfolio image" />
+                <a className='item-mobile' href={artist.data.artist.insta.value.url} target='_blank'>
+                  <img className='item-image-mobile' src={artist.data.artist.image1.value.main.url} />
                 </a>
               </div>
-            ))}
-          </div>
+              <a className='item-mobile' href={artist.data.artist.insta.value.url} target='_blank'><p className="artist-name-mobile" id={`artist-${idx}`}>{artist.data.artist.name.value[0].text}</p></a>
+            </div>
+          ))}
         </div>
       </div>
     )}
-    return (<div></div>)
+    return ( <div></div> )
   }
 }
 
-Insta.propTypes = {
+InstaMobile.propTypes = {
 
 };
 
-export default Insta;
+export default InstaMobile;
 
 // <div style={{width: '100%', marginTop: '2%', marginBottom: '10%' }}>
 //   <div style={{width: '100%', margin: '2em auto' }}>

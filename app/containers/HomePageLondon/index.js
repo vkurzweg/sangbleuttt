@@ -25,6 +25,7 @@ import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import ArtistsGrid from 'components/london/ArtistsGrid';
 import InstaMobile from 'components/london/InstaMobile';
+import ArtistsGridMobile from 'components/london/ArtistsGridMobile';
 import BlogContainer from './BlogContainer';
 import BlogContainerRefactor from './BlogContainerRefactor';
 import BlogContainerMobile from './BlogContainerMobile';
@@ -55,14 +56,26 @@ const A = styled.a`
   }
 `;
 
+const AMobile = styled.a`
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  &:hover, &:active, &:visited {
+    color: black;
+  }
+`;
+
 const HeadingMobile = styled.h3`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
-  font-size: 5vw;
+  font-size: 23px;
   letter-spacing: .16px;
   margin-left: 4vw;
-  padding-top: 5vw;
-
+  padding: 2%;
+  margin-top: 2.7vh;
+  color: black;
 `;
 
 export class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -103,7 +116,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <About
               about={about}
             />
-            <A href="#blog"><Sticky style={{ position: 'absolute' }}>
+            <A href="#blog"><Sticky>
               <div style={{ marginTop: '3vh', position: 'absolute' }}>
                 <Heading>Blog</Heading>
               </div>
@@ -116,18 +129,20 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <StickyContainer>
               <NavMobile />
               <InfoCopyMobile />
-              <InstaMobile />
-              <Sticky>
+              <ArtistsGridMobile />
+              <AMobile href="#about_section"><Sticky>
                 <HeadingMobile>about</HeadingMobile>
-              </Sticky>
+              </Sticky></AMobile>
               <AboutMobile
                 about={about}
               />
             </StickyContainer>
             <StickyContainer>
-              <Sticky>
+              <div style={{ marginTop: '-5vh' }}>
+              <AMobile href="#blog"><Sticky>
                 <HeadingMobile>blog</HeadingMobile>
-              </Sticky>
+              </Sticky></AMobile>
+              </div>
               <BlogContainerMobile />
             </StickyContainer>
           </div>

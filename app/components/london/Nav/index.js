@@ -30,6 +30,7 @@ const Brand = styled.h1`
   padding-top: 1vw;
   position: relative;
   z-index: 1;
+  color: black;
 `;
 
 

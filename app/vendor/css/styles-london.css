@@ -344,7 +344,7 @@ img {
 
 .item-image-mobile {
   width: 100%;
-  height: 10vh;
+  height: 20vh;
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 7%;
@@ -353,8 +353,8 @@ img {
 .artist-name-mobile {
   width: 100%;
   text-align: center;
-  font-size: 2.8vw;
-  font-family: Helvetica;
+  font-size: 10px;
+  font-family: SuisseRegular;
   overflow: visible;
   font-weight: bold;
   text-transform: uppercase;
@@ -371,7 +371,7 @@ img {
           break-inside: avoid-column;
 }
 
-.artist-container:nth-child(7) hr {
+.artist-container:nth-child(6) hr {
   display: none;
 }
 
@@ -630,6 +630,10 @@ img {
   border-left: 1px solid black;
   border-right: 1px solid black;
   margin: 0 auto;
+}
+
+.ant-modal-close {
+  display: none;
 }
 
 .ant-modal-content {

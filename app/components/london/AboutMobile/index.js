@@ -10,19 +10,19 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import { Image } from 'cloudinary-react';
 
 const StyledImage = styled(Image)`
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   object-fit: cover;
-  padding-top: 1vh;
+  padding-top: 10vh;
 `;
 
 
 function IntroCopy(props) {
   return (
-    <div style={{ paddingBottom: '3vh' }}>
+    <div id="about_section" style={{ paddingBottom: '100px' }}>
       <StyledImage cloudName="kurzweg" publicId="sangbleu/sblondon" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <ScrollAnimation animateIn="fadeIn">
-        <p style={{ fontFamily: 'SuisseCond', fontSize: '3.5vw', color: '#323232', width: '85%', margin: '0 auto', paddingTop: '4vh', letterSpacing: '1px', lineHeight: '2em' }}>
+        <p style={{ fontFamily: 'SuisseRegular', fontSize: '15px', lineHeight: '20px', color: '#323232', width: '85%', margin: '0 auto', paddingTop: '30px' }}>
           {props.about}
         </p>
       </ScrollAnimation>

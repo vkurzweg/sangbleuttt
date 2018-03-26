@@ -9,9 +9,10 @@ import styled from 'styled-components';
 import { Image } from 'cloudinary-react';
 
 const StyledImage = styled(Image)`
-  width: 5vw;
+  width: 6vw;
   display: block;
   margin: 0 auto;
+  padding-bottom: 1vh;
 `;
 
 const A = styled.a`
@@ -45,18 +46,18 @@ const Button = styled.button`
 
 function Footer() {
   return (
-    <div style={{ width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '3vw', lineHeight: '2', textAlign: 'center', margin: '0 auto', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0', paddingBottom: '10vh' }}>
+    <div style={{ width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '12px', lineHeight: '20px', letterSpacing: '1.1px', textAlign: 'center', margin: '0 auto', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0', paddingBottom: '10vh' }}>
       <a style={{ color: 'black', paddingTop: '5vh' }} href="mailto:london@sangbleu.tattoo" target="_blank">
         <Button className="btn btn-default">Book an Appointment</Button>
       </a>
       <A href="https://www.instagram.com/sangbleutattoolondon/" target="_blank">
-        <p style={{ paddingTop: '15px' }}>instagram</p>
+        <p style={{ paddingTop: '30px', paddingBottom: '10px' }}>instagram</p>
       </A>
       <A href="mailto:london@sangbleu.tattoo" target="_blank">
-        <p>london@sangbleu.tattoo</p>
+        <p style={{ paddingBottom: '40px' }}>london@sangbleu.tattoo</p>
       </A>
-      <div style={{ position: 'relative', height: '100%', display: 'flex', width: '100%', marginTop: '15vh', paddingBottom: '5vh', lineHeight: '.5' }}>
-        <div style={{ width: '50%', position: 'absolute', bottom: '0' }}>
+      <div style={{ position: 'relative', height: '100%', display: 'flex', width: '100%', marginTop: '120px', paddingBottom: '5vh', lineHeight: '.5' }}>
+        <div style={{ width: '50%', position: 'absolute', bottom: '0', textAlign: 'left', marginLeft: '43px' }}>
           <A href="http://www.sangbleu.com" target="_blank">
             <p style={{ paddingTop: '15px' }}>sangbleu.com</p>
           </A>

@@ -22,17 +22,17 @@ const Brand = styled.h1`
   overflow: visible;
   white-space: nowrap;
   text-transform: uppercase;
-  font-size: 5.5vw;
-  letter-spacing: 1px;
-  z-index: 100;
-  margin-top: -5vh;
+  font-size: 23px;
+  letter-spacing: 0.16px;
+  z-index: 4001;
   padding-right: 3vw;
+  margin-top: -5.8vh;
 `;
 
 const PostDate = styled.h5`
   font-family: SuisseLight;
   font-size: 12px;
-  margin-top: 5vh;
+  margin-top: 50px;
   text-align: center;
   letter-spacing: 2px;
 `;
@@ -42,7 +42,7 @@ const Title = styled.h3`
   font-family: SangBleu;
   text-align: center;
   font-size: 35px;
-  letter-spacing: 3px;
+  letter-spacing: 10.89px;
   text-transform: uppercase;
 `;
 
@@ -52,11 +52,12 @@ const Subtitle = styled.h4`
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 2px;
-  padding-bottom: 5vh;
+  padding-bottom: 100px;
 `;
 
 const StyledImg = styled.img`
-  width: 94vw;
+  width: 355px;
+  height: 350px;
   margin: 0 auto;
   display: block;
   height: 250px;
@@ -64,37 +65,44 @@ const StyledImg = styled.img`
 `;
 
 const ModalTitle = styled.h3`
-  margin-top: 3vh;
-  margin-bottom: 5vh;
   text-align: center;
   font-family: SangBleu;
   font-size: 25px;
-  letter-spacing: 3px;
+  letter-spacing: 7.78px;
+  line-height: 37px;
   text-transform: uppercase;
+  width: 268px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
 `;
 
 const ModalImg = styled.img`
-  width: 100%;
+  width: 353px;
+  margin: 0 auto
   display: block;
   margin: 0 auto;
-  padding: .25em;
+  margin-top: 25px;
+  margin-bottom: 25px;
   height: 250px;
   object-fit: cover;
 `;
 
 const ModalText = styled.p`
-  margin-top: 3vh;
-  padding: .25em;
-  font-size: 13px;
+  font-size: 15px;
   font-family: SuisseRegular;
-  line-height: 2em;
-  width: 100%;
+  line-height: 20px;
+  width: 353px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
 `;
 
 const ModalDate = styled.h5`
   font-family: SuisseLight;
   font-size: 12px;
-  margin-top: 2vh;
+  margin-top: 25px;
+  margin-bottom: 25px;
   text-align: center;
   letter-spacing: 2px;
 `;
@@ -159,25 +167,73 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const article1 = documents[0].data.blog_post;
       const article2 = documents[1].data.blog_post;
       const article3 = documents[2].data.blog_post;
-      // variables for images to avoid errors if a post has less than 4 images (TODO: DRY refactor)
+      // variables for images to avoid errors if a post has less than 10 images (TODO: DRY refactor)
       let article1image2;
       let article1image3;
       let article1image4;
+      let article1body2;
+      let article1image5;
+      let article1image6;
+      let article1image7;
+      let article1body3;
+      let article1image8;
+      let article1image9;
+      let article1image10;
+      if (article1.body2) article1body2 = <ModalText>{article1.body2.value[0].text}</ModalText>
+      if (article1.body3) article1body3 = <ModalText>{article1.body3.value[0].text}</ModalText>
       if (article1.image2) article1image2 = <ModalImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} />;
       if (article1.image3) article1image3 = <ModalImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} />;
       if (article1.image4) article1image4 = <ModalImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} />;
+      if (article1.image5) article1image5 = <ModalImg src={article1.image5.value.main.url} alt={article1.image5.value.alt} />;
+      if (article1.image6) article1image6 = <ModalImg src={article1.image6.value.main.url} alt={article1.image6.value.alt} />;
+      if (article1.image7) article1image7 = <ModalImg src={article1.image7.value.main.url} alt={article1.image7.value.alt} />;
+      if (article1.image8) article1image8 = <ModalImg src={article1.image8.value.main.url} alt={article1.image8.value.alt} />;
+      if (article1.image9) article1image9 = <ModalImg src={article1.image9.value.main.url} alt={article1.image9.value.alt} />;
+      if (article1.image10) article1image10 = <ModalImg src={article1.image10.value.main.url} alt={article1.image10.value.alt} />;
       let article2image2;
       let article2image3;
       let article2image4;
+      let article2body2;
+      let article2image5;
+      let article2image6;
+      let article2image7;
+      let article2body3;
+      let article2image8;
+      let article2image9;
+      let article2image10;
+      if (article2.body2) article2body2 = <ModalText>{article2.body2.value[0].text}</ModalText>
+      if (article2.body3) article2body3 = <ModalText>{article2.body3.value[0].text}</ModalText>
       if (article2.image2) article2image2 = <ModalImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} />;
       if (article2.image3) article2image3 = <ModalImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} />;
       if (article2.image4) article2image4 = <ModalImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} />;
+      if (article2.image5) article2image5 = <ModalImg src={article2.image5.value.main.url} alt={article2.image5.value.alt} />;
+      if (article2.image6) article2image6 = <ModalImg src={article2.image6.value.main.url} alt={article2.image6.value.alt} />;
+      if (article2.image7) article2image7 = <ModalImg src={article2.image7.value.main.url} alt={article2.image7.value.alt} />;
+      if (article2.image8) article2image8 = <ModalImg src={article2.image8.value.main.url} alt={article2.image8.value.alt} />;
+      if (article2.image9) article2image9 = <ModalImg src={article2.image9.value.main.url} alt={article2.image9.value.alt} />;
+      if (article2.image10) article2image10 = <ModalImg src={article2.image10.value.main.url} alt={article2.image10.value.alt} />;
       let article3image2;
       let article3image3;
       let article3image4;
+      let article3body2;
+      let article3image5;
+      let article3image6;
+      let article3image7;
+      let article3body3;
+      let article3image8;
+      let article3image9;
+      let article3image10;
+      if (article3.body2) article3body2 = <ModalText>{article3.body2.value[0].text}</ModalText>
+      if (article3.body3) article3body3 = <ModalText>{article3.body3.value[0].text}</ModalText>
       if (article3.image2) article3image2 = <ModalImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} />;
       if (article3.image3) article3image3 = <ModalImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} />;
       if (article3.image4) article3image4 = <ModalImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} />;
+      if (article3.image5) article3image5 = <ModalImg src={article3.image5.value.main.url} alt={article3.image5.value.alt} />;
+      if (article3.image6) article3image6 = <ModalImg src={article3.image6.value.main.url} alt={article3.image6.value.alt} />;
+      if (article3.image7) article3image7 = <ModalImg src={article3.image7.value.main.url} alt={article3.image7.value.alt} />;
+      if (article3.image8) article3image8 = <ModalImg src={article3.image8.value.main.url} alt={article3.image8.value.alt} />;
+      if (article3.image9) article3image9 = <ModalImg src={article3.image9.value.main.url} alt={article3.image9.value.alt} />;
+      if (article3.image10) article3image10 = <ModalImg src={article3.image10.value.main.url} alt={article3.image10.value.alt} />;
       // TODO: make page for all posts, accessible via link that appears when there are more than 3 posts
       const articlesNum = this.state.docs.length;
       let link;
@@ -191,7 +247,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </a>);
       }
       return (
-        <div style={{ width: '100%' }}>
+        <div id="blog" style={{ width: '100%', paddingTop: '8vh' }}>
           <Helmet>
             <title>ArticlesContainer</title>
             <meta name="description" content="Description of ArticlesContainer" />
@@ -259,12 +315,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
               <div
                 style={{
-                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '100'
+                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
                 }}
               >
                 <h3
                   style={{
-                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', paddingLeft: '4vw', paddingTop: '2vh'
+                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
                 >blog
                 </h3>
@@ -295,6 +351,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article1image2}
               {article1image3}
               {article1image4}
+              {article1body2}
+              {article1image5}
+              {article1image6}
+              {article1image7}
+              {article1body3}
+              {article1image8}
+              {article1image9}
+              {article1image10}
             </div>
           </Modal>
 
@@ -308,12 +372,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
               <div
                 style={{
-                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '100'
+                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
                 }}
               >
                 <h3
                   style={{
-                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', paddingLeft: '4vw', paddingTop: '2vh'
+                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
                 >blog
                 </h3>
@@ -344,6 +408,15 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article2image2}
               {article2image3}
               {article2image4}
+              {article2body2}
+              {article2image5}
+              {article2image6}
+              {article2image7}
+              {article2body3}
+              {article2image8}
+              {article2image9}
+              {article2image10}
+
             </div>
           </Modal>
 
@@ -357,12 +430,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
               <div
                 style={{
-                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '100'
+                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
                 }}
               >
                 <h3
                   style={{
-                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '5.5vw', letterSpacing: '1px', paddingLeft: '4vw', paddingTop: '2vh'
+                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
                 >blog
                 </h3>
@@ -393,6 +466,15 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article3image2}
               {article3image3}
               {article3image4}
+              {article3body2}
+              {article3image5}
+              {article3image6}
+              {article3image7}
+              {article3body3}
+              {article3image8}
+              {article3image9}
+              {article3image10}
+
             </div>
           </Modal>
           <div
