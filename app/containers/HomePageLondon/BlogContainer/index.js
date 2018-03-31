@@ -18,7 +18,6 @@ import BlogPostContainer from '../BlogPostContainer';
 
 const Title = styled.h3`
   display: inline-block;
-  position: relative;
   width: 100%;
   margin: 0 auto;
   font-family: SangBleu;
@@ -29,12 +28,13 @@ const Title = styled.h3`
 `;
 
 const Subtitle = styled.h4`
+  display: inline-block;
+  width: 100%;
   font-family: SuisseLight;
   font-size: 32px;
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 5px;
-  line-height: 20px;
 `;
 
 const PostDate = styled.h5`
@@ -65,10 +65,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       modalIsOpen: false,
       postIdLondon: '',
       currentPostLondon: null,
+      isHovering: false,
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this)
   }
 
   componentDidMount() {
@@ -91,6 +94,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     }));
   }
 
+  handleHover() {
+    this.setState({ isHovering: true })
+  }
+
+  handleMouseOut() {
+    this.setState({ isHovering: false })
+  }
+
   closeModal() {
     this.setState({ modalIsOpen: false });
   }
@@ -108,6 +119,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const articlesNum = this.state.docs.length;
       let link;
       if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
+      let titleClass = 'article-text';
+      if(this.state.isHovering) titleClass = 'title-hide'
       return (
         <div id="blog" style={{ position: 'relative', height: '120vh', width: '100%' }}>
           <Helmet>
@@ -120,34 +133,18 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <ReactHover
                     options={options}>
                     <ReactHover.Trigger type="trigger">
-                      <div className="article">
-                        <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
-                          <div className={`article${idx}`} style={{ position: 'relative' }}>
-                            <Title className="article-title article-text">
-                              {article.data.blog_post.title.value[0].text}
-                            </Title>
-                          </div>
-                          <Subtitle className="article-title article-text">
-                            {article.data.blog_post.subhead.value}
-                          </Subtitle>
-                        </div>
+                      <div onClick={this.openModal.bind(this, article.id)} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut} className="article">
+                        <Title className={titleClass}>
+                          {article.data.blog_post.title.value[0].text}
+                        </Title>
+                        <Subtitle className={titleClass}>
+                          {article.data.blog_post.subhead.value}
+                        </Subtitle>
                       </div>
                     </ReactHover.Trigger>
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">
                         <div className="article-image" style={{ backgroundImage: `url(${article.data.blog_post.main_image.value.main.url})` }} alt={article.data.blog_post.main_image.value.alt}>
-                          <div className={`article-hover article-hover${idx}`}>
-                            <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
-                              <div style={{ position: 'relative' }}>
-                                <Title className="article-title mix-test">
-                                  {article.data.blog_post.title.value[0].text}
-                                </Title>
-                              </div>
-                              <Subtitle className="article-title mix-test">
-                                {article.data.blog_post.subhead.value}
-                              </Subtitle>
-                            </div>
-                          </div>
                         </div>
                       </div>
                     </ReactHover.Hover>
@@ -192,3 +189,16 @@ function mapDispatchToProps(dispatch) {
 const withConnect = connect(null, mapDispatchToProps);
 
 export default compose(withConnect)(ArticlesContainer);
+
+// <div className={`article-hover article-hover${idx}`}>
+//   <div className="article-link" onClick={this.openModal.bind(this, article.id)} style={{ textDecoration: 'none', width: '70%', margin: '0 auto' }}>
+//     <div style={{ position: 'relative' }}>
+//       <Title className="article-title mix-test">
+//         {article.data.blog_post.title.value[0].text}
+//       </Title>
+//     </div>
+//     <Subtitle className="article-title mix-test">
+//       {article.data.blog_post.subhead.value}
+//     </Subtitle>
+//   </div>
+// </div>
