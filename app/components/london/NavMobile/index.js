@@ -10,7 +10,7 @@ import AppBar from 'material-ui/AppBar';
 
 
 const Brand = styled.h1`
-  margin-left: 30.5vw;
+  margin-left: 31.5vw;
   font-family: SuisseIntlSemiBold;
   text-align: left;
   position: fixed;
