@@ -119,8 +119,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const articlesNum = this.state.docs.length;
       let link;
       if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
-      let titleClass = 'article-text';
-      if(this.state.isHovering) titleClass = 'title-hide'
       return (
         <div id="blog" style={{ position: 'relative', height: '120vh', width: '100%' }}>
           <Helmet>
@@ -133,11 +131,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <ReactHover
                     options={options}>
                     <ReactHover.Trigger type="trigger">
-                      <div onClick={this.openModal.bind(this, article.id)} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut} className="article">
-                        <Title className={titleClass}>
+                      <div onClick={this.openModal.bind(this, article.id)} className="article">
+                        <Title name="text" className='article-title article-text'>
                           {article.data.blog_post.title.value[0].text}
                         </Title>
-                        <Subtitle className={titleClass}>
+                        <Subtitle name="text" className='article-title article-text'>
                           {article.data.blog_post.subhead.value}
                         </Subtitle>
                       </div>
@@ -145,6 +143,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">
                         <div className="article-image" style={{ backgroundImage: `url(${article.data.blog_post.main_image.value.main.url})` }} alt={article.data.blog_post.main_image.value.alt}>
+                          <div onClick={this.openModal.bind(this, article.id)} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut} className="article-onhover">
+                            <Title className="article-text mix-test">
+                              {article.data.blog_post.title.value[0].text}
+                            </Title>
+                            <Subtitle className="article-text mix-test">
+                              {article.data.blog_post.subhead.value}
+                            </Subtitle>
+                          </div>
                         </div>
                       </div>
                     </ReactHover.Hover>

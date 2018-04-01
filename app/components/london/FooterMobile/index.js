@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { Image } from 'cloudinary-react';
 
 const StyledImage = styled(Image)`
-  width: 6vw;
+  width: 25px;
   display: block;
   margin: 0 auto;
   padding-bottom: 1vh;

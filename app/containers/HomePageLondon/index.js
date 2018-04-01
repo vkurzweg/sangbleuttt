@@ -105,7 +105,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           <title>Sang Bleu London</title>
           <meta name="description" content="Artist portfolios and news from the Sang Bleu tattoo studio in London." />
         </Helmet>
-        <MediaQuery minWidth={768}>
+        <MediaQuery minWidth={1025}>
           <StickyContainer>
             <Nav />
             <InfoCopy />
@@ -124,7 +124,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <BlogContainer />
           </StickyContainer>
         </MediaQuery>
-        <MediaQuery maxWidth={767}>
+        <MediaQuery maxWidth={1024}>
           <div>
             <StickyContainer>
               <NavMobile />

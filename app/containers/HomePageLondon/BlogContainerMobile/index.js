@@ -57,7 +57,6 @@ const Subtitle = styled.h4`
 
 const StyledImg = styled.img`
   width: 355px;
-  height: 350px;
   margin: 0 auto;
   display: block;
   height: 250px;
@@ -79,7 +78,6 @@ const ModalTitle = styled.h3`
 
 const ModalImg = styled.img`
   width: 353px;
-  margin: 0 auto
   display: block;
   margin: 0 auto;
   margin-top: 25px;

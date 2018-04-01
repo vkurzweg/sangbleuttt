@@ -80,7 +80,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
 
       return (
         <div style={{ width: '75%', margin: '0 auto' }}>
-          <div style={{ backgroundColor: '#FFFFFF', color: 'black', position: 'absolute', right: '0', marginRight: '-20vw', width: '100px', height: '200px', top: '0' }} onClick={this.props.closeModal}>
+          <div style={{ backgroundColor: '#FFFFFF', color: 'black', position: 'absolute', right: '0', marginRight: '-15vw', width: '150px', height: '200px', top: '0' }} onClick={this.props.closeModal}>
             <p style={{ fontFamily: 'SuisseLight', fontSize: '12px', letterSpacing: '1.1px', lineHeight: '20px', textTransform: 'uppercase', marginTop: '40px' }}>close</p>
           </div>
           <ModalDate>
