@@ -143,14 +143,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">
                         <div className="article-image" style={{ backgroundImage: `url(${article.data.blog_post.main_image.value.main.url})` }} alt={article.data.blog_post.main_image.value.alt}>
-                          <div onClick={this.openModal.bind(this, article.id)} onMouseOver={this.handleHover} onMouseOut={this.handleMouseOut} className="article-onhover">
-                            <Title className="article-text mix-test">
-                              {article.data.blog_post.title.value[0].text}
-                            </Title>
-                            <Subtitle className="article-text mix-test">
-                              {article.data.blog_post.subhead.value}
-                            </Subtitle>
-                          </div>
                         </div>
                       </div>
                     </ReactHover.Hover>

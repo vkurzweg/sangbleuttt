@@ -422,15 +422,21 @@ img {
 
 
 .article-title:hover {
-  opacity: 0;
+  color: white;
+  mix-blend-mode: difference;
+
 }
 
 .article:hover .article-title {
-  opacity: 0;
+  color: white;
+  mix-blend-mode: difference;
+
 }
 
 .article-text:hover .article + a {
-  opacity: 0;
+  color: white;
+  mix-blend-mode: difference;
+
 }
 
 .articles-container:hover .article-hover {
