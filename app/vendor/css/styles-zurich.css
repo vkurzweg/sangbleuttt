@@ -361,8 +361,8 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 55%;
-  left: 45vw;
+  top: 60vh;
+  left: 40vw;
 }
 
 .insta-hover .hover-container-initial div:nth-child(1) div:nth-child(2) {
@@ -371,7 +371,7 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 55%;
+  top: 60vh;
   left: 30%;
 }
 
@@ -381,8 +381,8 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 55%;
-  left: 25vw;
+  top: 60vh;
+  left: 20vw;
 }
 
 .insta-hover .hover-container-about div:nth-child(1) div:nth-child(2) {
@@ -391,7 +391,7 @@
   position: fixed !important;
   height: 50vh;
   width: 30vw;
-  top: 55%;
+  top: 60vh;
   left: 65vw;
 }
 

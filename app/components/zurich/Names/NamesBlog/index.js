@@ -6,16 +6,16 @@
 
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import Artist0 from '../Artists/Maxime';
-import Artist1 from '../Artists/Giorgio';
-import Artist2 from '../Artists/Jordan';
-import Artist3 from '../Artists/Paolo';
-import Artist4 from '../Artists/Labaz';
-import Artist5 from '../Artists/Stephane';
-import Artist6 from '../Artists/Diego';
-import Artist7 from '../Artists/Golda';
-import Artist8 from '../Artists/Marco';
-import Artist9 from '../Artists/Matt';
+import Artist0 from '../Artists/Artist0';
+import Artist1 from '../Artists/Artist1';
+import Artist2 from '../Artists/Artist2';
+import Artist3 from '../Artists/Artist3';
+import Artist4 from '../Artists/Artist4';
+import Artist5 from '../Artists/Artist5';
+import Artist6 from '../Artists/Artist6';
+import Artist7 from '../Artists/Artist7';
+import Artist8 from '../Artists/Artist8';
+import Artist9 from '../Artists/Artist9';
 import { slideInRight } from 'react-animations';
 
 
