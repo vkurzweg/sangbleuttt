@@ -19,36 +19,26 @@ const Button = styled.div`
 `;
 
 class Marco extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  shouldComponentUpdate() {
-    return false;
-  }
   render() {
     const options = {
       followCursor:false,
     }
+    const artist = this.props.artist8;
+    const Background = artist.data.image.url
     return (
-      <Button onClick={this.props.openLightbox.bind(this, '1599024779')}>
+      <Button onClick={this.props.openLightbox.bind(this, artist)}>
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
-            <div style={{ marginTop: '-10vh' }}>
-              <h2 className="hover-name marco">
-                Marco Romegialli<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>@marco_romegialli</span>
+            <div className='name-container'>
+              <h2 className="hover-name max">
+                {artist.data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>{artist.data.handle[0].text}</span>
               </h2>
             </div>
           </ReactHover.Trigger>
           <ReactHover.Hover type='hover'>
-            <div id="instafeed-9" className='hover-image'>
-              <Instafeed
-                limit='1'
-                ref='instafeed'
-                resolution='standard_resolution'
-                sortBy='most-liked'
-                target={'instafeed-9'}
-                template="<div class='bg' style='background-image: url({{image}})'></div>"
-                userId='1599024779'
-                clientId='da06fb6699f1497bb0d5d4234a50da75'
-                accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
+            <div id="instafeed-8" className='hover-image'>
+              <div className='bg' style={{ backgroundImage: `url(${Background})` }}></div>
             </div>
           </ReactHover.Hover>
         </ReactHover>

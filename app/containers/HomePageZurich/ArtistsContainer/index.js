@@ -13,6 +13,7 @@ import InfoCopy from 'components/zurich/InfoCopy';
 import Names from 'components/zurich/Names';
 import LightboxContainer from '../LightboxContainer';
 import request from 'superagent';
+import Prismic from 'prismic-javascript';
 
 
 export class Center extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -20,9 +21,12 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
     super(props);
     this.state = {
       isOpen: false,
-      userId: '',
+      artistName: '',
+      artistHandle: '',
+      artistUrl: '',
       photos: [],
       slideCount: 0,
+      artists: [],
     }
     this.openLightbox = this.openLightbox.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -30,21 +34,33 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
     this.nextImage = this.nextImage.bind(this);
   }
 
+  componentDidMount() {
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'artist'),).then((response) => {
+      console.log('Documents artists: ', response.results);
+      const artistsZurich = response.results;
+      return this.setState({ artists: artistsZurich });
+    }));
+  }
 
-  openLightbox(userId) {
-    console.log('clicked')
-    let url = 'https://api.instagram.com/v1/users/' + userId + '/media/recent/?access_token=258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f&count=9'
-     request
-       .get(url)
-       .then((res) => {
-         return this.setState({
-           photos: res.body.data,
-           userId: userId,
-           isOpen: true,
-         })
-       })
-       .catch(function(err) {
-         console.log('err: ', err.status)
+
+  openLightbox(artist) {
+    console.log('clicked', artist)
+    let image2; let image3; let image4; let image5; let image6; let image7; let image8;
+    if(artist.data.image2.url) image2 = artist.data.image2.url;
+    if(artist.data.image3.url) image3 = artist.data.image3.url;
+    if(artist.data.image4.url) image4 = artist.data.image4.url;
+    if(artist.data.image5.url) image5 = artist.data.image5.url;
+    if(artist.data.image6.url) image6 = artist.data.image6.url;
+    if(artist.data.image7.url) image7 = artist.data.image7.url;
+    if(artist.data.image8.url) image8 = artist.data.image8.url;
+    const images = [image2, image3, image4, image5, image6, image7, image8];
+    return this.setState({
+      artistName: artist.data.name[0].text,
+      artistHandle: artist.data.handle[0].text,
+      artistUrl: artist.data.link.url,
+      photos: images,
+      isOpen: true,
     })
   }
 
@@ -77,10 +93,12 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
           aboutOpen={this.props.aboutOpen}
           initial={this.props.initial}
           openLightbox={this.openLightbox}
+          artists={this.state.artists}
         />
         <LightboxContainer
           isOpen={this.state.isOpen}
-          userId={this.state.userId}
+          artistName={this.state.artistName}
+          artistHandle={this.state.artistHandle}
           photos={this.state.photos}
           slideCount={this.state.slideCount}
           handleClose={this.handleClose}

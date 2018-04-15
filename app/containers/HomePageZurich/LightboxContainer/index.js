@@ -111,54 +111,6 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
                       </BackButton>
     const nextButton = <NextButton onClick={this.props.nextImage}>
                       </NextButton>
-    let artistName;
-    let artistHandle;
-    let userId = this.props.userId;
-    switch(userId) {
-      case '1529406200':
-        artistName = 'Labaz 1';
-        artistHandle = '@zilba.1';
-        break;
-      case '1210201419':
-        artistName = 'Diego Thonney';
-        artistHandle = '@diagal_faust';
-        break;
-      case '55968406':
-        artistName = 'Giorgio Deduesanti';
-        artistHandle = '@giorgiodeduesanti';
-        break;
-      case '2268101836':
-        artistName = 'Golda Kraks';
-        artistHandle = '@golda.kracks';
-        break;
-      case '51624775':
-        artistName = 'Jordan Angius';
-        artistHandle = '@jordalive';
-        break;
-      case '1599024779':
-        artistName = 'Marco Romegialli';
-        artistHandle = '@marco_romegialli';
-        break;
-      case '17337198':
-        artistName = 'Matt Powers';
-        artistHandle = '@black_arm_tattoo';
-        break;
-      case '1789183639':
-        artistName = 'Maxime Plescia-Buchi';
-        artistHandle = '@mxmttt';
-        break;
-      case '378914167':
-        artistName = 'Paolo Bosson';
-        artistHandle = '@paolo_bosson';
-        break;
-      case '2179164383':
-        artistName = 'Stephane Devidal';
-        artistHandle = '@stephane_devidal_tattoo';
-        break;
-      case '':
-        artistName = '';
-        artistHandle = '';
-    }
     let display = 'block';
     this.props.isOpen ? display : display = 'none';
     return (
@@ -166,8 +118,8 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
           <div type="close" onClick={this.props.handleClose} style={{ position: 'fixed', backgroundColor: 'black', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%', zIndex: '2001' }}>
             <h4 className='close-label'>close</h4>
           </div>
-          <ArtistName>{artistName}</ArtistName>
-          <ArtistHandle>{artistHandle}</ArtistHandle>
+          <ArtistName>{this.props.artistName}</ArtistName>
+          <ArtistHandle>{this.props.artistHandle}</ArtistHandle>
           <div style={{ position: 'relative' }}>
             {this.props.slideCount !== 0 ? backButton : '' }
             {this.props.photos.map((photo, key) => {
@@ -175,13 +127,10 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
                 return (
                   <div key={photo.id} style={{ position: 'relative' }}>
                     <div className="slideshow-image-container">
-                      <a href={photo.link} target="_blank">
-                        <img className="slideshow-image" src={photo.images.standard_resolution.url} alt={photo.caption}/>
+                      <a href={this.props.artistUrl} target="_blank">
+                        <img className="slideshow-image" src={photo} alt="artist portfolio" />
                       </a>
                     </div>
-                    <PostDate>
-                      <Moment unix>{photo.created_time}</Moment>
-                    </PostDate>
                   </div>
                 )
               }

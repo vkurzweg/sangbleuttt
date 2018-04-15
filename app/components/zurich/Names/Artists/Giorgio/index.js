@@ -19,36 +19,26 @@ const Button = styled.div`
 `;
 
 class Giorgio extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  shouldComponentUpdate() {
-    return false;
-  }
   render() {
     const options = {
       followCursor:false,
     }
+    const artist = this.props.artist1;
+    const Background = artist.data.image.url
     return (
-      <Button onClick={this.props.openLightbox.bind(this, '55968406')}>
+      <Button onClick={this.props.openLightbox.bind(this, artist)}>
         <ReactHover
           options={options}>
           <ReactHover.Trigger type='trigger'>
-            <div>
-              <h2 className="hover-name giorgio">
-                Giorgio<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '3vw', textTransform: 'uppercase' }}>@giorgiodeduesanti</span>
+            <div className='name-container'>
+              <h2 className="hover-name max">
+                {artist.data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', marginLeft: '6vw', textTransform: 'uppercase' }}>{artist.data.handle[0].text}</span>
               </h2>
             </div>
           </ReactHover.Trigger>
           <ReactHover.Hover type='hover'>
             <div id="instafeed-1" className='hover-image'>
-              <Instafeed
-                limit='1'
-                ref='instafeed'
-                resolution='standard_resolution'
-                sortBy='most-liked'
-                target={'instafeed-1'}
-                template="<div class='bg' style='background-image: url({{image}})'></div>"
-                userId='55968406'
-                clientId='da06fb6699f1497bb0d5d4234a50da75'
-                accessToken='258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f' />
+              <div className='bg' style={{ backgroundImage: `url(${Background})` }}></div>
             </div>
           </ReactHover.Hover>
         </ReactHover>
