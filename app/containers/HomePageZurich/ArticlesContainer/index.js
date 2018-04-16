@@ -28,7 +28,7 @@ const style = {
 
 const Article = styled.div`
   width: 90%;
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   opacity: .9;
   border: 0;

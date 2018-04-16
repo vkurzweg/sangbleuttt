@@ -25,8 +25,8 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     const artists = this.props.artists;
     if(artists.length > 0){
     return (
-      <div style={{ marginTop: '-3vh' }}>
-        <div className="insta-hover row" style={{ paddingTop: '3vh', paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+      <div>
+        <div className="insta-hover row" style={{ paddingTop: '6vh', paddingLeft: '20%', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Artist0
               artist0={artists[0]}
@@ -64,7 +64,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
         </div>
 
 
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
+        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '3vh' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Artist6
               artist6={artists[6]}
@@ -72,13 +72,13 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
           </div>
           <div className="col-sm-7"></div>
         </div>
-        <div className="insta-hover row" style={{  display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{  display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '3vh' }}>
           <div className={`${imageClass} + col-sm-4`}>
             <Artist7
               artist7={artists[7]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`} style={{ marginBottom: '-20vh' }}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginBottom: '-10vh' }}>
             <Artist8
               artist8={artists[8]}
               openLightbox={this.props.openLightbox} />

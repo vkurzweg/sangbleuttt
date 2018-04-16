@@ -36,19 +36,19 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     if(artists.length > 0){
     return (
       <SlideLeftDiv>
-        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+        <div className="insta-hover row" style={{ paddingTop: '5vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Artist0
               artist0={artists[0]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '-15vw' }}>
             <Artist1
               artist1={artists[1]}
               openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '10vh' }}>
           <div className={`${imageClass} + col-sm-6`}>
             <Artist2
               artist2={artists[2]}
@@ -60,29 +60,25 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               openLightbox={this.props.openLightbox} />
           </div>
         </div>
-        <div className="row insta-hover" style={{ paddingLeft: '5vw', display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
-          <div className={`${imageClass} + col-sm-6`}>
+        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '10vh' }}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '-5vw' }}>
             <Artist4
               artist4={artists[4]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-6`}>
+          <div className={`${imageClass} + col-sm-4`}>
             <Artist5
               artist5={artists[5]}
               openLightbox={this.props.openLightbox} />
           </div>
-        </div>
-
-
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '6vh' }}>
-          <div className={`${imageClass} + col-sm-7`} style={{ marginLeft: '-15%' }}>
+          <div className={`${imageClass} + col-sm-4`} >
             <Artist6
               artist6={artists[6]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className="col-sm-5"></div>
         </div>
-        <div className="insta-hover row" style={{ marginTop: '-5vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '6vh' }}>
+
+        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '10vh' }}>
           <div className={`${imageClass} + col-sm-4`}>
             <Artist7
               artist7={artists[7]}

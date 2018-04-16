@@ -165,11 +165,13 @@
 
 .drawer-blog div:nth-child(2) {
   overflow-y: scroll;
+  box-shadow: none !important;
 }
 
 .drawer-about div:nth-child(1) {
   height: 100%;
   overflow-y: scroll;
+  box-shadow: none !important;
 }
 
 
@@ -351,8 +353,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .insta-hover .hover-container-full div:nth-child(1) div:nth-child(2) {

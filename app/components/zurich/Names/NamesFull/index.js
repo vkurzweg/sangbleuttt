@@ -22,7 +22,7 @@ const pulseAnimation = keyframes`${pulse}`;
 
 const PulseDiv = styled.div`
   animation: .5s ${pulseAnimation};
-  margin-top: -7vh;
+  margin-top: 5vh;
 `;
 
 class NamesFull extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -36,7 +36,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     if(artists.length > 0){
     return (
       <PulseDiv>
-        <div className="insta-hover row" style={{ margintop: '-5vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+        <div className="insta-hover row" style={{ marginTop: '10vh', paddingLeft: '20vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Artist0
               artist0={artists[0]}
