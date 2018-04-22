@@ -12,8 +12,8 @@ function Banner() {
   return (
     <div className="marquee-mobile">
       <span className="marquee-text-mobile">
-        Book an appointment --- Open 11am to 7pm  Tuesday to Saturday  --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday ---
-        Book an appointment --- Open 11am to 7pm  Tuesday to Saturday  --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday --- Book an appointment --- Open 11am to 7pm  Tuesday to Saturday ---
+        Book an appointment — Open 11am to 7pm  Tuesday to Saturday  — Book an appointment — Open 11am to 7pm  Tuesday to Saturday — Book an appointment — Open 11am to 7pm  Tuesday to Saturday — Book an appointment — Open 11am to 7pm  Tuesday to Saturday —
+        Book an appointment — Open 11am to 7pm  Tuesday to Saturday  — Book an appointment — Open 11am to 7pm  Tuesday to Saturday — Book an appointment — Open 11am to 7pm  Tuesday to Saturday — Book an appointment — Open 11am to 7pm  Tuesday to Saturday —
       </span>
     </div>
   );

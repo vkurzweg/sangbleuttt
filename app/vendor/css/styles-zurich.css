@@ -87,7 +87,7 @@
 .about-tab-mobile {
   position: fixed;
   left: 0;
-  width: 30px;
+  width: 40px;
   height: 100%;
   background-color: black;
 }
@@ -95,13 +95,13 @@
 .blog-tab-mobile {
   position: fixed;
   right: 0;
-  width: 30px;
+  width: 40px;
   height: 100%;
   background-color: black;
 }
 
 .about-label-mobile {
-  margin-left: 5px;
+  margin-left: 8px;
   margin-top: 30vh;
   font-size: 19px;
   letter-spacing: 2.36px;
@@ -124,7 +124,7 @@
 
 .blog-label-mobile {
   right: 0;
-  margin-right: 5px;
+  margin-right: 8px;
   margin-top: -15vh;
   font-size: 19px;
   position: fixed;
@@ -314,8 +314,10 @@
 .zurich-title-mobile {
   width: 100%;
   font-family: BRRR;
-  font-size: 21px;
+  font-size: 20px;
   z-index: 20;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .zurich-subtitle-mobile {
@@ -324,6 +326,7 @@
   letter-spacing: 1.57px;
   color: black;
   z-index: 20;
+  margin-left: 10px;
 }
 
 .zurich-subtitle {

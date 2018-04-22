@@ -34,9 +34,9 @@ function Logo() {
           </h1>
         </div>
         <div>
-          <h3 className='zurich-subtitle-mobile' style={{ marginLeft: '2vw' }}>Dienerstrasse 26, 8004</h3>
-          <h3 className='zurich-subtitle-mobile' style={{ marginLeft: '2vw' }}>Zürich, Switzerland </h3>
-          <h3 className="zurich-subtitle-mobile" style={{ marginLeft: '2vw' }}>+41 43 545 88 38</h3>
+          <h3 className='zurich-subtitle-mobile'>Dienerstrasse 26, 8004</h3>
+          <h3 className='zurich-subtitle-mobile'>Zürich, Switzerland </h3>
+          <h3 className="zurich-subtitle-mobile">+41 43 545 88 38</h3>
         </div>
       </div>
     </div>

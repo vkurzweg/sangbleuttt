@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import NamesMobile from 'components/zurich/NamesMobile';
 import LightboxContainerMobile from '../LightboxContainerMobile';
-import request from 'superagent';
+import Prismic from 'prismic-javascript';
 
 
 export class Center extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -19,9 +19,12 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
     super(props);
     this.state = {
       isOpen: false,
-      userId: '',
+      artistName: '',
+      artistHandle: '',
+      artistUrl: '',
       photos: [],
       slideCount: 0,
+      artists: [],
     }
     this.openLightbox = this.openLightbox.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -29,35 +32,71 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
     this.nextImage = this.nextImage.bind(this);
   }
 
+  componentDidMount() {
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'artist'),).then((response) => {
+      console.log('Documents artists: ', response.results);
+      const artistsZurich = response.results;
+      return this.setState({ artists: artistsZurich });
+    }));
+  }
 
-  openLightbox(userId) {
-    console.log('userId', userId)
-    let url = 'https://api.instagram.com/v1/users/' + userId + '/media/recent/?access_token=258559306.da06fb6.c222db6f1a794dccb7a674fec3f0941f&count=9'
-     request
-       .get(url)
-       .then((res) => {
-         return this.setState({
-           photos: res.body.data,
-           userId: userId,
-           isOpen: true,
-         })
-       })
-       .catch(function(err) {
-         console.log('err: ', err.status)
+
+  openLightbox(artist) {
+    let images = [];
+    images.push(artist.data.image.url);
+    if(artist.data.image2.url){
+      let image2 = artist.data.image2.url;
+      images.push(image2)}
+    if(artist.data.image3.url){
+      let image3 = artist.data.image3.url;
+      images.push(image3)}
+    if(artist.data.image4.url){
+      let image4 = artist.data.image4.url;
+      images.push(image4)}
+    if(artist.data.image5.url){
+      let image5 = artist.data.image5.url;
+      images.push(image5)}
+    if(artist.data.image6.url){
+      let image6 = artist.data.image6.url;
+      images.push(image6)}
+    if(artist.data.image7.url) {
+      let image7 = artist.data.image7.url;
+      images.push(image7)}
+    if(artist.data.image8.url){
+      let image8 = artist.data.image8.url;
+      images.push(image8)}
+    return this.setState({
+      artistName: artist.data.name[0].text,
+      artistHandle: artist.data.handle[0].text,
+      artistUrl: artist.data.link.url,
+      photos: images,
+      isOpen: true,
     })
   }
 
   nextImage() {
-    this.setState({ slideCount: this.state.slideCount + 1 })
+    let slideCountState = this.state.slideCount;
+    console.log(slideCountState)
+    let photoLength = this.state.photos.length;
+    if(slideCountState === photoLength - 1){ return this.setState({slideCount: 0})
+    } else {
+    return this.setState({ slideCount: this.state.slideCount + 1 })}
   }
 
   previousImage() {
-    this.setState({ slideCount: this.state.slideCount - 1 })
+    console.log(this.state.slideCount)
+    let slideCountState = this.state.slideCount;
+    let photoLength = this.state.photos.length;
+    if(slideCountState === 0){ return this.setState({slideCount: photoLength})
+    } else {
+    return this.setState({ slideCount: this.state.slideCount - 1 })}
   }
 
   handleClose() {
     this.setState({ isOpen: false, photos: [] })
   }
+
 
   render() {
     return (
@@ -68,15 +107,17 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
         </Helmet>
         <NamesMobile
           openLightbox={this.openLightbox}
+          artists={this.state.artists}
         />
         <LightboxContainerMobile
-          isOpen={this.state.isOpen}
-          userId={this.state.userId}
-          photos={this.state.photos}
-          slideCount={this.state.slideCount}
-          handleClose={this.handleClose}
-          previousImage={this.previousImage}
-          nextImage={this.nextImage}
+           isOpen={this.state.isOpen}
+           artistName={this.state.artistName}
+           artistHandle={this.state.artistHandle}
+           photos={this.state.photos}
+           slideCount={this.state.slideCount}
+           handleClose={this.handleClose}
+           previousImage={this.previousImage}
+           nextImage={this.nextImage}
         />
       </div>
     );
