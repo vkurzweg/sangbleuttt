@@ -14,7 +14,7 @@ const Title = styled.h3`
   text-align: center;
   font-family: BRRR;
   color: #FAFAFA;
-  font-size: 40px;
+  font-size: 55px;
   letter-spacing: -1.99px;
   text-transform: uppercase;
   padding-bottom: 3%;
@@ -44,7 +44,6 @@ const PostContent = styled.p`
   color: white;
   font-family: SuisseRegular;
   letter-spacing: 2.36px;
-  text-align: justify;
   width: 80%;
   margin: 0 auto;
   margin-top: 10vh;

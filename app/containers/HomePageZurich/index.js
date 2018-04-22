@@ -83,6 +83,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     this.handleViewPost = this.handleViewPost.bind(this);
     this.handleDismissPost = this.handleDismissPost.bind(this);
     this.handlePanelToggle = this.handlePanelToggle.bind(this);
+    this.handleNavClose = this.handleNavClose.bind(this);
   }
 
   componentDidMount() {
@@ -94,6 +95,9 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     }));
   }
 
+  handleNavClose() {
+    return this.setState({ aboutOpen: false, initial: false, blogOpen: false })
+  }
 
   handleAboutToggle() {
     return this.setState({ aboutOpen: !this.state.aboutOpen, initial: false, blogOpen: false });
@@ -248,7 +252,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     currentPost={this.state.currentPost}
                   />
                 </div>
-                <div className={contentWidth}>
+                <div className={contentWidth} onClick={this.handleNavClose}>
                   <ArtistsContainer
                     blogOpen={this.state.blogOpen}
                     aboutOpen={this.state.aboutOpen}
@@ -364,7 +368,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   currentPost={this.state.currentPost}
                 />
               </div>
-              <div className={contentWidth}>
+              <div className={contentWidth} onClick={this.handleNavClose}>
                 <ArtistsContainer
                   blogOpen={this.state.blogOpen}
                   aboutOpen={this.state.aboutOpen}

@@ -32,13 +32,14 @@ const ArtistName = styled.h3`
   padding-top: 5vh;
   height: 100px;
   letter-spacing: -1.99px;
+  text-transform: uppercase;
 `;
 
 const ArtistHandle = styled.h4`
   color: white;
   font-family: SuisseCond;
   font-size: 19px;
-  letter-spacing: 2.36;
+  letter-spacing: 2.36px;
   text-align: center;
 `;
 
@@ -63,7 +64,7 @@ const BackButton = styled.button`
   left: 0;
   top: 0;
   height: 130vh;
-  width: 400px;
+  width: 50%;
   z-index: 20;
   position: fixed;
   &:hover, &:active, &:focus {
@@ -82,7 +83,7 @@ const NextButton = styled.button`
   margin-right: 150px;
   top: 0;
   height: 100vh;
-  width: 400px;
+  width: 50%;
   z-index: 20;
   position: fixed;
     &:hover, &:active, &:focus {
@@ -121,11 +122,11 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
           <ArtistName>{this.props.artistName}</ArtistName>
           <ArtistHandle>{this.props.artistHandle}</ArtistHandle>
           <div style={{ position: 'relative' }}>
-            {this.props.slideCount !== 0 ? backButton : '' }
+            {backButton}
             {this.props.photos.map((photo, key) => {
               if (this.props.photos.indexOf(photo) === this.props.slideCount) {
                 return (
-                  <div key={photo.id} style={{ position: 'relative' }}>
+                  <div style={{ position: 'relative' }}>
                     <div className="slideshow-image-container">
                       <a href={this.props.artistUrl} target="_blank">
                         <img className="slideshow-image" src={photo} alt="artist portfolio" />
@@ -136,7 +137,7 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
               }
                 return ''
             })}
-            {this.props.slideCount !== (this.props.photos.length - 1) ? nextButton : ''}
+            {nextButton}
           </div>
         </div>
     );

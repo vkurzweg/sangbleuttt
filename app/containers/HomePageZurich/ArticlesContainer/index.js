@@ -56,8 +56,9 @@ const PostDate = styled.h4`
   font-size: 19px;
   text-align: center;
   color: white;
-  margin-top: -2vh;
+  margin-top: -4vh;
   letter-spacing: 2.36px;
+  padding-left: 5%;
 `;
 
 const StyledImage = styled.div`
@@ -82,10 +83,9 @@ const ImageContainer = styled.div`
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 53vw;
+  width: 100%;
   height: 100vh;
   border: none;
-  border-radius:4px;
   top: 0;
   overflow: hidden;
 `;
@@ -144,7 +144,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             className="drawer-blog"
             overlayStyle={{ backgroundColor: 'transparent', zIndex: '1' }}
           >
-            <div style={{ height: '100%', overflowY: 'scroll' }}>
+            <div style={{ height: '100%' }}>
               <h4 className='blog-label'>blog</h4>
 
               <div className="blog-wrapper">
@@ -155,8 +155,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                       <ReactHover
                         options={options}
                       >
-                        <ReactHover.Trigger type="trigger">
-                          <div style={{ position: 'relative' }}>
+                        <ReactHover.Trigger type="trigger" className="trigger">
+                          <div style={{ position: 'relative', display: 'inline' }}>
                           <Article className="titles-container" style={{ marginTop: '7vh' }}>
                             <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
                               {article.data.blog_post.title.value[0].text}
@@ -168,7 +168,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                           </div>
                         </ReactHover.Trigger>
                         <ReactHover.Hover type="hover">
-                          <ImageContainer>
+                          <ImageContainer className="image-container-not">
                             <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
                               <Image className="zurich-logo" cloudName="kurzweg" publicId="sangbleu/zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                             </StyledImage>

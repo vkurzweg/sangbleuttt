@@ -39,7 +39,7 @@ const PostDate = styled.h4`
   font-size: 19px;
   text-align: center;
   color: white;
-  margin-top: -2vh;
+  margin-top: -4vh;
 `;
 
 export class ArticlesContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function

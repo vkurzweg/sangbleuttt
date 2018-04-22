@@ -507,6 +507,10 @@
   right: 44.5vw;
 }
 
+/*.blog-hover-image div:first-child div:first-child :not(.image-container-not) {
+  display: inline;
+}*/
+
 
 
 /*ABOUT SECTION
@@ -523,10 +527,11 @@
   font-family: SuisseCond;
   text-transform: uppercase;
   color: white;
-  padding-top: 4%;
+  padding-top: 1%;
   padding-left: 8%;
   opacity: .9;
   font-size: 19px;
+  letter-spacing: 2.36px;
 }
 
 .zurich-about-copy {
@@ -755,16 +760,11 @@
 }
 
 .slideshow-image {
-  width: 35vw;
-  height: 40vh;
-  -webkit-object-fit: cover;
-  -moz-object-fit: cover;
-  -ms-object-fit: cover;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-width: 514px;
+  max-height: 514px;
   display: block;
   margin: 0 auto;
-  margin-top: 15vh;
+  margin-top: 5vh;
   z-index: 19;
 }
 

@@ -36,13 +36,13 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
     if(artists.length > 0){
     return (
       <SlideLeftDiv>
-        <div className="insta-hover row" style={{ paddingTop: '5vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
-          <div className={`${imageClass} + col-sm-5`}>
+        <div className="insta-hover row" style={{ paddingLeft: '3vw', paddingTop: '5vh', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto' }}>
+          <div className={`${imageClass} + col-sm-6`}>
             <Artist0
               artist0={artists[0]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '-15vw' }}>
+          <div className={`${imageClass} + col-sm-6`}>
             <Artist1
               artist1={artists[1]}
               openLightbox={this.props.openLightbox} />
@@ -54,32 +54,31 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               artist2={artists[2]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-6`} style={{ paddingRight: '25%' }}>
+          <div className={`${imageClass} + col-sm-6`}>
             <Artist3
               artist3={artists[3]}
               openLightbox={this.props.openLightbox} />
           </div>
         </div>
         <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '10vh' }}>
-          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '-5vw' }}>
+          <div className={`${imageClass} + col-sm-4`} style={{ paddingRight: '5vw', marginLeft: '-10vw' }}>
             <Artist4
               artist4={artists[4]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '10vw' }}>
             <Artist5
               artist5={artists[5]}
               openLightbox={this.props.openLightbox} />
           </div>
-          <div className={`${imageClass} + col-sm-4`} >
+          <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '10vw' }}>
             <Artist6
               artist6={artists[6]}
               openLightbox={this.props.openLightbox} />
           </div>
         </div>
-
-        <div className="insta-hover row" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '10vh' }}>
-          <div className={`${imageClass} + col-sm-4`}>
+        <div className="insta-hover row" style={{ marginLeft: '-10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '10vh' }}>
+          <div className={`${imageClass} + col-sm-4`} style={{ marginTop: '10h' }}>
             <Artist7
               artist7={artists[7]}
               openLightbox={this.props.openLightbox} />

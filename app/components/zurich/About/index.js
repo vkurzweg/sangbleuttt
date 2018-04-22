@@ -32,7 +32,7 @@ function About(props) {
           <div className='col-sm-6 zurich-typefaces'>
             <p>typefaces:</p>
             <div style={{ marginLeft: '1vw' }}>
-              <p>Suisse Int'l + BRRR<br />by swisstypefaces</p>
+              <p>Suisse Int'l + BRRR<br /><a href="swisstypefaces.com" target="_blank" style={{ color: 'white', textDecoration: 'none' }}>by swisstypefaces</a></p>
             </div>
           </div>
           <div className='col-sm-6 zurich-typefaces'>
