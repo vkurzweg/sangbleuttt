@@ -131,14 +131,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             </Drawer>
             <Drawer
               open={this.props.blogOpen}
-              width="91%"
+              width="89%"
               containerStyle={style.bg}
               onRequestChange={this.props.handleBlogClose}
               openSecondary
               overlayStyle={{ backgroundColor: 'transparent', zIndex: '1' }}
             >
             <div onClick={this.props.handleBlogClose} style={{ height: '100%', overflowY: 'scroll' }}>
-              <Icon onClick={this.props.handleBlogClose} type="close" style={{ position: 'absolute', color: 'white', fontSize: '5vw', opacity: '.7', paddingTop: '5%', left: '0', paddingLeft: '7%' }} />
               <h4 className='blog-open-label-mobile' onClick={this.props.handleBlogClose}>blog</h4>
               { articles.map((article, idx, articles) => (
                 <div key={idx}>

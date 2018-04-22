@@ -37,8 +37,8 @@ const ArtistName = styled.h3`
 const ArtistHandle = styled.h4`
   color: white;
   font-family: SuisseCond;
-  font-size: 19px;
-  letter-spacing: 2.36;
+  font-size: 10px;
+  letter-spacing: 2.36px;
   text-align: center;
 `;
 

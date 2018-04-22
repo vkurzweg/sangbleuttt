@@ -173,7 +173,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
                 <Drawer
                   open={this.state.aboutOpen}
-                  width="91%"
+                  width="88%"
                   containerStyle={style.bg}
                   onTouchTap={this.handleAboutClose}
                   className="drawer-about"
@@ -289,7 +289,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
               <Drawer
                 open={this.state.aboutOpen}
-                width="91%"
+                width="88%"
                 containerStyle={style.bg}
                 onTouchTap={this.handleAboutClose}
               >
