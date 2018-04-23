@@ -24,6 +24,7 @@ import About from 'components/london/About';
 import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import ArtistsGrid from 'components/london/ArtistsGrid';
+import Artists from 'components/london/Artists';
 import InstaMobile from 'components/london/InstaMobile';
 import ArtistsGridMobile from 'components/london/ArtistsGridMobile';
 import BlogContainer from './BlogContainer';

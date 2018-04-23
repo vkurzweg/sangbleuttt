@@ -247,8 +247,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       return (
         <div id="blog" style={{ width: '100%', paddingTop: '8vh' }}>
           <Helmet>
-            <title>ArticlesContainer</title>
-            <meta name="description" content="Description of ArticlesContainer" />
+            <title>Sang Bleu London</title>
+            <meta name="description" content="" />
           </Helmet>
 
           <div style={{ margin: '1em auto' }}>

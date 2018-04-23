@@ -308,6 +308,184 @@ img {
   max-height: 100%;
 }
 
+/*NEW GRID
+*/
+
+.artist-name-mix {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 65vh;
+  display: block;
+  margin-left: -9%;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix1 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 65vh;
+  display: block;
+  margin-left: -18%;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix2 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 65vh;
+  display: block;
+  margin-left: -27%;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix2 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 65vh;
+  display: block;
+  margin-left: -50%;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix3 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 160vw;
+  margin-top: 65vh;
+  display: block;
+  margin-left: -80vw;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix4 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 140vw;
+  margin-top: 65vh;
+  margin-left: -70vw;
+  display: block;
+  color: white;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artists-wrapper5 {
+
+}
+
+.artist-name-mix5 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 65vh;
+  margin-left: -50vw;
+  display: block;
+  color: white;
+  position: absolute;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+/*.artists-wrapper0 div:nth-child(1) div:nth-child(2) {
+  display: block;
+  margin: 0 auto !important;
+  position: absolute !important;
+  height: 60vh;
+  width: 40vw;
+  top: 87vh;
+  left: 5%;
+}*/
+
+
+.image-container-london {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  height: 80vh;
+  border: none;
+  margin-top: -70vh;
+  margin-left: 9vw;
+  background-color: #FFFFFF;
+  isolation: isolate;
+}
+
+.image-container-london .bg-london {
+  position:absolute;
+  max-width: 40vw;
+  height: 71vh;
+  display:block;
+  margin: 0 auto;
+  background-position: center;
+  background-size:cover;
+  overflow: visible;
+  background-color: #FFFFFF;
+  isolation: isolate !important;
+  z-index: 100;
+}
+
+.image-container-london-right {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 100vw;
+  height: 80vh;
+  border: none;
+  margin-top: -70vh;
+  margin-left: 9vw;
+  background-color: #FFFFFF;
+  isolation: isolate;
+}
+
+.image-container-london-right .bg-london-right {
+  position:absolute;
+  max-width: 40vw;
+  height: 71vh;
+  display:block;
+  margin: 0 auto;
+  background-position: center;
+  background-size:cover;
+  overflow: visible;
+  background-color: #FFFFFF;
+  isolation: isolate !important;
+  z-index: 100;
+  margin-left: -49vw;
+}
+
 /*INSTAGRAM GRID - MOBILE*/
 
 .wrapper-mobile {

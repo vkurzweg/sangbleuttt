@@ -31,7 +31,7 @@ const style = {
 const Article = styled.div`
   position: relative;
   padding-top: 7vh;
-  padding-bottom: 5vh;
+  padding-bottom: 2vh;
   width: 90%;
   display: block;
   margin: 0 auto;
@@ -68,11 +68,10 @@ const PostDate = styled.h4`
 
 const StyledImage = styled.div`
   margin-top: -3vh;
-  width: 100%;
-  height: 100%;
   display:block;
   margin: 0 auto;
-  width: 250px;
+  margin-right: -15px;
+  width: 300px;
   height: 250px;
   background-repeat: no-repeat;
   background-position: center;

@@ -40,11 +40,10 @@ const PostImage = styled.img`
 `;
 
 const PostContent = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   font-family: SuisseRegular;
   letter-spacing: 1.49px;
-  text-align: justify;
   width: 80%;
   margin: 0 auto;
   margin-top: 10vh;
