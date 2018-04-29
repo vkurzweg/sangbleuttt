@@ -162,7 +162,7 @@
 /*drawers scroll
 */
 
-.drawer-blog div:nth-child(2) {
+.drawer-blog div:nth-child(1) {
   overflow-y: scroll;
   box-shadow: none !important;
 }
