@@ -410,9 +410,24 @@ img {
   text-transform: uppercase;
   font-size: 80px;
   text-align: center;
+  width: 180vw;
+  margin-top: 65vh;
+  margin-left: -95vw;
+  display: block;
+  color: white;
+  position: absolute;
+  mix-blend-mode: difference;
+  z-index: 100;
+}
+
+.artist-name-mix10 {
+  font-family: SuisseIntlSemiBold;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
   width: 100vw;
   margin-top: 65vh;
-  margin-left: -50vw;
+  margin-left: -80vw;
   display: block;
   color: white;
   position: absolute;
@@ -458,20 +473,7 @@ img {
   z-index: 100;
 }
 
-.image-container-london-right {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  width: 100vw;
-  height: 80vh;
-  border: none;
-  margin-top: -70vh;
-  margin-left: 9vw;
-  background-color: #FFFFFF;
-  isolation: isolate;
-}
-
-.image-container-london-right .bg-london-right {
+.image-container-london .bg-london-right {
   position:absolute;
   max-width: 40vw;
   height: 71vh;

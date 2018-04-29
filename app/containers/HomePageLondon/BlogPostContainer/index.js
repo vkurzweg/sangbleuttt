@@ -75,8 +75,12 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
       if (article.image8) image8 = <ModalImg src={article.image8.value.main.url} alt={article.image8.value.alt} />;
       if (article.image9) image9 = <ModalImg src={article.image9.value.main.url} alt={article.image9.value.alt} />;
       if (article.image10) image10 = <ModalImg src={article.image10.value.main.url} alt={article.image10.value.alt} />;
-      if (article.body2) body2 = <ModalText>{article.body2.value[0].text}</ModalText>
-      if (article.body3) body3 = <ModalText>{article.body3.value[0].text}</ModalText>
+      if (article.body2) body2 = article.body2.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
+      if (article.body3) body3 = article.body3.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
 
       return (
         <div style={{ width: '75%', margin: '0 auto' }}>
@@ -90,7 +94,9 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             {article.title.value[0].text}
           </ModalTitle>
           <ModalImg src={article.main_image.value.main.url} alt={article.main_image.value.alt} />
-          <ModalText>{article.body.value[0].text}</ModalText>
+          {article.body.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))}
           {image2}
           {image3}
           {image4}

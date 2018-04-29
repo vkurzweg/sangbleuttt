@@ -110,10 +110,10 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh', zIndex: '1' }}></div>
+              <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
-              <div className="image-container-london-right" style={{  }}>
+              <div className="image-container-london" style={{  }}>
                 <img className="bg-london-right" style={{  }} src={artists[5].data.artist.image1.value.main.url} />
                 <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[5].data.artist.name.value[0].text}</h3></div>
               </div>
@@ -127,7 +127,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
               <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh', isolation: 'isolate'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
-              <div className="image-container-london-right" style={{  }}>
+              <div className="image-container-london" style={{  }}>
                 <img className="bg-london-right" style={{  }} src={artists[6].data.artist.image1.value.main.url} />
                 <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[6].data.artist.name.value[0].text}</h3></div>
               </div>
@@ -141,9 +141,9 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
               <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh', isolation: 'isolate'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
-              <div className="image-container-london-right" style={{  }}>
+              <div className="image-container-london" style={{  }}>
                 <img className="bg-london-right" style={{  }} src={artists[7].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[7].data.artist.name.value[0].text}</h3></div>
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[7].data.artist.name.value[0].text}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
@@ -155,9 +155,37 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
               <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
-              <div className="image-container-london-right" style={{  }}>
+              <div className="image-container-london" style={{  }}>
                 <img className="bg-london-right" style={{  }} src={artists[8].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[8].data.artist.name.value[0].text}</h3></div>
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[8].data.artist.name.value[0].text}</h3></div>
+              </div>
+            </ReactHover.Hover>
+          </ReactHover>
+        </div>
+        <div className="artists-wrapper9">
+          <ReactHover
+            options={options}>
+            <ReactHover.Trigger type="trigger">
+              <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh'}}></div>
+            </ReactHover.Trigger>
+            <ReactHover.Hover type="hover">
+              <div className="image-container-london" style={{  }}>
+                <img className="bg-london-right" style={{  }} src={artists[9].data.artist.image1.value.main.url} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[9].data.artist.name.value[0].text}</h3></div>
+              </div>
+            </ReactHover.Hover>
+          </ReactHover>
+        </div>
+        <div className="artists-wrapper10">
+          <ReactHover
+            options={options}>
+            <ReactHover.Trigger type="trigger">
+              <div style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '70vh'}}></div>
+            </ReactHover.Trigger>
+            <ReactHover.Hover type="hover">
+              <div className="image-container-london" style={{  }}>
+                <img className="bg-london-right" style={{  }} src={artists[10].data.artist.image1.value.main.url} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[10].data.artist.name.value[0].text}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
