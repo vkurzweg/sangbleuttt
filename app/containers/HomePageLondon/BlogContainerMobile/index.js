@@ -177,8 +177,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let article1image8;
       let article1image9;
       let article1image10;
-      if (article1.body2) article1body2 = <ModalText>{article1.body2.value[0].text}</ModalText>
-      if (article1.body3) article1body3 = <ModalText>{article1.body3.value[0].text}</ModalText>
+      if (article1.body2) article1body2 = article1.body2.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
+      if (article1.body3) article1body3 = article1.body3.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
       if (article1.image2) article1image2 = <ModalImg src={article1.image2.value.main.url} alt={article1.image2.value.alt} />;
       if (article1.image3) article1image3 = <ModalImg src={article1.image3.value.main.url} alt={article1.image3.value.alt} />;
       if (article1.image4) article1image4 = <ModalImg src={article1.image4.value.main.url} alt={article1.image4.value.alt} />;
@@ -199,8 +203,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let article2image8;
       let article2image9;
       let article2image10;
-      if (article2.body2) article2body2 = <ModalText>{article2.body2.value[0].text}</ModalText>
-      if (article2.body3) article2body3 = <ModalText>{article2.body3.value[0].text}</ModalText>
+      if (article2.body2) article2body2 = article2.body2.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
+      if (article2.body3) article2body3 = article2.body3.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
       if (article2.image2) article2image2 = <ModalImg src={article2.image2.value.main.url} alt={article2.image2.value.alt} />;
       if (article2.image3) article2image3 = <ModalImg src={article2.image3.value.main.url} alt={article2.image3.value.alt} />;
       if (article2.image4) article2image4 = <ModalImg src={article2.image4.value.main.url} alt={article2.image4.value.alt} />;
@@ -221,8 +229,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let article3image8;
       let article3image9;
       let article3image10;
-      if (article3.body2) article3body2 = <ModalText>{article3.body2.value[0].text}</ModalText>
-      if (article3.body3) article3body3 = <ModalText>{article3.body3.value[0].text}</ModalText>
+      if (article3.body2) article3body2 = article3.body2.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
+      if (article3.body3) article3body3 = article3.body3.value.map((value, idx, values) => (
+              <ModalText>{value.text}</ModalText>
+            ))
       if (article3.image2) article3image2 = <ModalImg src={article3.image2.value.main.url} alt={article3.image2.value.alt} />;
       if (article3.image3) article3image3 = <ModalImg src={article3.image3.value.main.url} alt={article3.image3.value.alt} />;
       if (article3.image4) article3image4 = <ModalImg src={article3.image4.value.main.url} alt={article3.image4.value.alt} />;
@@ -345,7 +357,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article1.title.value[0].text}
               </ModalTitle>
               <ModalImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
-              <ModalText>{article1.body.value[0].text}</ModalText>
+              {article1.body.value.map((value, idx, values) => (
+                <ModalText>{value.text}</ModalText>
+              ))}
               {article1image2}
               {article1image3}
               {article1image4}
@@ -402,7 +416,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article2.title.value[0].text}
               </ModalTitle>
               <ModalImg src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
-              <ModalText>{article2.body.value[0].text}</ModalText>
+              {article2.body.value.map((value, idx, values) => (
+                              <ModalText>{value.text}</ModalText>
+                            ))}
               {article2image2}
               {article2image3}
               {article2image4}
@@ -460,7 +476,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article3.title.value[0].text}
               </ModalTitle>
               <ModalImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
-              <ModalText>{article3.body.value[0].text}</ModalText>
+              {article3.body.value.map((value, idx, values) => (
+                              <ModalText>{value.text}</ModalText>
+                            ))}
               {article3image2}
               {article3image3}
               {article3image4}
