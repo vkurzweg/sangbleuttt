@@ -74,7 +74,7 @@ const HeadingMobile = styled.h3`
   font-size: 23px;
   letter-spacing: .16px;
   margin-left: 4vw;
-  padding-top: 2.8vh;
+  padding-top: 2.7vh;
   color: black;
 `;
 
@@ -109,7 +109,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           <StickyContainer>
             <Nav />
             <InfoCopy />
-            <ArtistsGrid />
+            <Artists />
             <A href="#about_section"><Sticky style={{ position: 'absolute' }}>
               <Heading>about</Heading>
             </Sticky></A>

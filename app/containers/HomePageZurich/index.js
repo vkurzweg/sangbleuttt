@@ -252,7 +252,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     currentPost={this.state.currentPost}
                   />
                 </div>
-                <div className={contentWidth} onClick={this.handleNavClose}>
+                <div className={contentWidth}>
                   <ArtistsContainer
                     blogOpen={this.state.blogOpen}
                     aboutOpen={this.state.aboutOpen}

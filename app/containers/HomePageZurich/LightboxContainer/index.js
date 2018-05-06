@@ -8,21 +8,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import Modal from 'antd/lib/modal';
-import Dialog from 'material-ui/Dialog';
 import Icon from 'antd/lib/icon';
 import styled from 'styled-components';
-import Moment from 'react-moment';
 
-const customContentStyle = {
-  width: '100vw',
-  height: '100vh'
-};
+// const customContentStyle = {
+//   width: '100vw',
+//   height: '100vh'
+// };
 
-const NameContainer = styled.div`
-  min-width: 100vw;
-  min-height: 200px;
-`;
+// const NameContainer = styled.div`
+//   min-width: 100vw;
+//   min-height: 200px;
+// `;
 
 const ArtistName = styled.h3`
   font-family: BRRR;
@@ -43,17 +40,17 @@ const ArtistHandle = styled.h4`
   text-align: center;
 `;
 
-const Button = styled.button`
-  font-family: BRRR;
-  text-transform: uppercase;
-  backgroundColor: transparent;
-  border: none;
-  outline: 0;
-  position: fixed;
-  &:hover, &:active, &:focus {
-    outline: 0
-  }
-`;
+// const Button = styled.button`
+//   font-family: BRRR;
+//   text-transform: uppercase;
+//   backgroundColor: transparent;
+//   border: none;
+//   outline: 0;
+//   position: fixed;
+//   &:hover, &:active, &:focus {
+//     outline: 0
+//   }
+// `;
 
 const BackButton = styled.button`
   font-family: BRRR;
@@ -90,17 +87,6 @@ const NextButton = styled.button`
       outline: 0;
       cursor: url(http://res.cloudinary.com/kurzweg/image/upload/v1520661714/sangbleu/nextbtn_1.png), auto;
     }
-`;
-
-const PostDate = styled.p`
-  font-family: SuisseCond;
-  color: white;
-  font-size: 19px;
-  text-align: center;
-  letter-spacing: 2.36px;
-  position: absolute;
-  top: 45vh;
-  left: 35%;
 `;
 
 
