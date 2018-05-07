@@ -78,7 +78,7 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                   }
                     return ''
                 })}
-                <ArtistName style={{ marginTop: '27vh' }}>{this.props.artistName}</ArtistName>
+                <ArtistName style={{ marginTop: '24vh' }}>{this.props.artistName}</ArtistName>
                 <ArtistName style={{ marginTop: '-2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
                 <div type="close" onClick={this.props.handleClose} style={{ fontSize: '12px', width: '100vw' }}>
                   <h4 className='close-label-london-lightbox' style={{ textAlign: 'center', marginTop: '-1px' }}>close</h4>
