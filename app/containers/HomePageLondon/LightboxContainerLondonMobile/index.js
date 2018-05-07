@@ -80,8 +80,8 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                 })}
                 <ArtistName style={{ marginTop: '24vh' }}>{this.props.artistName}</ArtistName>
                 <ArtistName style={{ marginTop: '-2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
-                <div type="close" onClick={this.props.handleClose} style={{ fontSize: '12px', width: '100vw' }}>
-                  <h4 className='close-label-london-lightbox' style={{ textAlign: 'center', marginTop: '-1px' }}>close</h4>
+                <div type="close" onClick={this.props.handleClose} style={{ zIndex: '100', fontSize: '12px', width: '100%', height: '5vh'}}>
+                  <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px' }}>close</h4>
                 </div>
                 {nextButton}
               </div>
