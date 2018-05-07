@@ -156,16 +156,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                         options={options}
                       >
                         <ReactHover.Trigger type="trigger" className="trigger">
-                          <div style={{ position: 'relative', display: 'inline' }}>
                           <Article className="titles-container" style={{ marginTop: '7vh' }}>
                             <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
                               {article.data.blog_post.title.value[0].text}
-                            </Title>
+                            </Title><br />
                             <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
                               {article.data.blog_post.date.value}
                             </PostDate>
                           </Article>
-                          </div>
                         </ReactHover.Trigger>
                         <ReactHover.Hover type="hover">
                           <ImageContainer className="image-container-not">

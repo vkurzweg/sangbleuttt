@@ -162,7 +162,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
             <title>Sang Bleu Zurich</title>
             <meta name="description" content="Artist portfolios, news, and upcoming events at the Sang Bleu tattoo studio in Zurich, Switzerland." />
           </Helmet>
-          <MediaQuery maxWidth={767}>
+          <MediaQuery maxWidth={1024}>
             <div
               style={{
                 backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
@@ -215,7 +215,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 </div>
             </div>
           </MediaQuery>
-          <MediaQuery minWidth={768}>
+          <MediaQuery minWidth={1025}>
             <div style={{ height: '100vh', backgroundColor: '#FF001F', overflow: 'hidden' }}>
               <div className="initial-container">
                 <div className="about-tab" onClick={this.handleAboutToggle}>
@@ -278,7 +278,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
     let about = this.state.aboutSection[0].data.about_section.about.value[0].text;
     return (
       <div>
-        <MediaQuery maxWidth={767}>
+        <MediaQuery maxWidth={1024}>
           <div
             style={{
               backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
@@ -330,7 +330,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
               </div>
           </div>
         </MediaQuery>
-        <MediaQuery minWidth={768}>
+        <MediaQuery minWidth={1025}>
           <div style={{ height: '100vh' }}>
             <div
               style={{

@@ -16,28 +16,28 @@ import ReactHover from 'react-hover';
 import Footer from 'components/london/Footer';
 import BlogPostContainer from '../BlogPostContainer';
 
-const Title = styled.h3`
-  display: inline-block;
-  width: 100%;
+const Title = styled.span`
+  display: inline;
   margin: 0 auto;
   font-family: SangBleu;
   text-align: center;
   font-size: 45px;
   letter-spacing: 14px;
   text-transform: uppercase;
+  padding: 0;
 `;
 
-const Subtitle = styled.h4`
-  display: inline-block;
-  width: 100%;
+const Subtitle = styled.span`
+  display: inline;
   font-family: SuisseLight;
   font-size: 32px;
   margin-top: 1vh;
   text-align: center;
   letter-spacing: 5px;
+  padding: 0;
 `;
 
-const PostDate = styled.h5`
+const PostDate = styled.span`
   display: inline;
   padding-right: 39px;
   font-family: SuisseLight;
@@ -120,25 +120,25 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       let link;
       if (articlesNum > 3) link = <a href="#" style={{ fontStyle: 'underline', textAlign: 'center', textDecoration: 'none', cursor: 'pointer' }}>See all articles</a>;
       return (
-        <div id="blog" style={{ position: 'relative', height: '120vh', width: '100%' }}>
+        <div id="blog" style={{ color: 'black', position: 'relative', height: '120vh', width: '100%' }}>
           <Helmet>
             <title>Sang Bleu London Blog</title>
             <meta name="description" content="News and features published by the Sang Bleu tattoo studio in London." />
           </Helmet>
-          <div className="articles-container">
+          <div className="articles-container" >
             { articles.map((article, idx, articles) => (
                 <div key={idx} className={`london-article-container london-article-container${idx}`}>
                   <ReactHover
                     options={options}>
                     <ReactHover.Trigger type="trigger">
-                      <div onClick={this.openModal.bind(this, article.id)} className="article">
+                      <span onClick={this.openModal.bind(this, article.id)} className="article">
                         <Title name="text" className='article-title article-text'>
                           {article.data.blog_post.title.value[0].text}
-                        </Title>
+                        </Title><br />
                         <Subtitle name="text" className='article-title article-text'>
                           {article.data.blog_post.subhead.value}
                         </Subtitle>
-                      </div>
+                      </span>
                     </ReactHover.Trigger>
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">

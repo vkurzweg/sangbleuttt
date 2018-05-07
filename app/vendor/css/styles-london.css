@@ -622,13 +622,13 @@ img {
 .london-article-container1 {
   width: 100%;
   margin: 0 auto;
-  margin-top: 34vh;
+  margin-top: 44vh;
 }
 
 .london-article-container2 {
   width: 100%;
   margin: 0 auto;
-  margin-top: 64vh;
+  margin-top: 74vh;
 }
 
 .london-article-container div:nth-child(1) div:nth-child(2) {
@@ -678,18 +678,17 @@ img {
 
 .article {
   position: absolute;
-  display: inline-block;
+  display: inline;
   z-index: 5;
   margin: 0 auto;
   margin-top: 10vh;
   text-align: center;
-  isolation: isolate;
   margin-right: 15%;
 }
 
-.article:hover .articles-container {
+/*.article:hover .articles-container {
   opacity: 0;
-}
+}*/
 
 .article-hover {
   position: absolute;
