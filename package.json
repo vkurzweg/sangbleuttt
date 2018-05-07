@@ -250,6 +250,7 @@
     "react-cloudinary": "^0.4.1",
     "react-delay": "^0.1.0",
     "react-dom": "^15.6.1",
+    "react-easy-swipe": "0.0.14",
     "react-helmet": "5.1.3",
     "react-hover": "^1.3.2",
     "react-instafeed": "^0.4.0",

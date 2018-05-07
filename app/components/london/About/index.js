@@ -12,7 +12,7 @@ function IntroCopy(props) {
   const studio = 'http://res.cloudinary.com/kurzweg/image/upload/v1519322649/sangbleu/sblondon.png';
   return (
     <div style={{ paddingTop: '8vh', paddingBottom: '1vh' }}>
-      <div style={{ height: '700px', backgroundImage: `url(${studio})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+      <div style={{ marginTop: '2vh', height: '700px', backgroundImage: `url(${studio})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', backgroundPosition: 'center' }} />
       <ScrollAnimation animateIn="fadeIn">
         <a name="about_section" style={{ color: 'black', textDecoration: 'none' }}><p style={{ fontFamily: 'SuisseRegular', marginLeft: '10vw', letterSpacing: '.02em', fontSize: '1.04vw', lineHeight: '20px', color: 'black', width: '45%', paddingTop: '20vh', paddingBottom: '15vh' }}>
           {props.about}

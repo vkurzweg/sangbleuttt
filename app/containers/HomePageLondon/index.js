@@ -25,6 +25,7 @@ import AboutMobile from 'components/london/AboutMobile';
 import Insta from 'components/london/Insta';
 import ArtistsGrid from 'components/london/ArtistsGrid';
 import Artists from 'components/london/Artists';
+import ArtistsMobile from 'components/london/ArtistsMobile';
 import InstaMobile from 'components/london/InstaMobile';
 import ArtistsGridMobile from 'components/london/ArtistsGridMobile';
 import BlogContainer from './BlogContainer';
@@ -110,14 +111,18 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
             <Nav />
             <InfoCopy />
             <Artists />
-            <A href="#about_section"><Sticky style={{ position: 'absolute' }}>
+            <A href="#top"><Sticky style={{ position: 'absolute' }}>
+              <Heading>artists</Heading>
+            </Sticky></A>
+            <div style={{ height: '5vh' }}></div>
+            <A href="#about_section"><Sticky style={{ marginTop: '3vh', position: 'absolute' }}>
               <Heading>about</Heading>
             </Sticky></A>
             <About
               about={about}
             />
             <A href="#blog"><Sticky>
-              <div style={{ marginTop: '3vh', position: 'absolute' }}>
+              <div style={{ marginTop: '6vh', position: 'absolute' }}>
                 <Heading>Blog</Heading>
               </div>
             </Sticky></A>
@@ -125,11 +130,16 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           </StickyContainer>
         </MediaQuery>
         <MediaQuery maxWidth={1024}>
-          <div>
+          <div id="top">
             <StickyContainer>
               <NavMobile />
               <InfoCopyMobile />
-              <ArtistsGridMobile />
+              <AMobile href="#top"><Sticky>
+                <HeadingMobile>artists</HeadingMobile>
+              </Sticky></AMobile>
+              <ArtistsMobile />
+            </StickyContainer>
+            <StickyContainer>
               <AMobile href="#about_section"><Sticky>
                 <HeadingMobile>about</HeadingMobile>
               </Sticky></AMobile>

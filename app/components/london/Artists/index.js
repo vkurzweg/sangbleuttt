@@ -18,7 +18,6 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
     this.state = {
       isOpen: false,
       artistName: '',
-      artistHandle: '',
       artistUrl: '',
       photos: [],
       slideCount: 0,
@@ -100,9 +99,8 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       followCursor: false,
     };
     if (artists.length > 0) {
-    console.log('artists', artists);
     return (
-      <div style={{ display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '20vh', maxWidth: '100vw' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflowX: 'hidden' }}>
         <div className="artists-wrapper0">
           <ReactHover
             options={options}>
