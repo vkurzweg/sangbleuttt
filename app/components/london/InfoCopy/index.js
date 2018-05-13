@@ -21,6 +21,7 @@ const Button = styled.button`
   margin-left: 30%;
   letter-spacing: 1.5px;
   clear: both;
+  z-index: 2000;
   &:hover, &:active, &:focus {
     background-color: black;
     color: #FAFAFA;
@@ -33,7 +34,7 @@ const Button = styled.button`
 function Logo() {
   return (
     <div className="container-fluid" style={{ width: '100%', margin: '0 auto', color: 'black' }}>
-      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '12.6vw', letterSpacing: '.02em', fontFamily: 'SuisseRegular', color: 'black', fontSize: '1.04vw', lineHeight: '20px', width: '100%', margin: '0 auto', marginTop: '50px', marginBottom: '20px' }} >
+      <div className="row" style={{ paddingLeft: '11.6vw', paddingRight: '11.6vw', letterSpacing: '.02em', fontFamily: 'SuisseRegular', color: 'black', fontSize: '1.04vw', lineHeight: '20px', width: '100%', margin: '0 auto', marginTop: '50px', marginBottom: '20px' }} >
         <div className="col-sm-3">
           <p>Sang Bleu London <br /><a href="https://www.google.com/maps/place/Sang+Bleu+Tattoo/@51.5463764,-0.0726058,15z/data=!4m2!3m1!1s0x0:0x3e5c154937010676?sa=X&ved=0ahUKEwi50v-Nl4baAhVn8IMKHQCeBj4Q_BIIdzAK" target="_blank" style={{ color: 'black', textDecoration: 'none' }}>29B Dalston Ln,<br />London E8 3DF</a></p>
         </div>

@@ -628,7 +628,7 @@ img {
 .london-article-container2 {
   width: 100%;
   margin: 0 auto;
-  margin-top: 74vh;
+  margin-top: 84vh;
 }
 
 .london-article-container div:nth-child(1) div:nth-child(2) {
@@ -684,6 +684,10 @@ img {
   margin-top: 10vh;
   text-align: center;
   margin-right: 15%;
+}
+
+.article2 {
+  margin-left: 7vw;
 }
 
 /*.article:hover .articles-container {
@@ -748,6 +752,10 @@ img {
   box-shadow: none !important;
 }
 
+.ant-modal-body {
+  overflow-x: hidden;
+}
+
 @media only screen and (max-width: 767px) {
     .ant-modal {
       width: 100% !important;
@@ -787,6 +795,7 @@ img {
   font-size: 12px;
   text-transform: uppercase;
   z-index: 100;
+  letter-spacing: 1.1px;
 }
 
 .close-label-london-lightbox:hover {

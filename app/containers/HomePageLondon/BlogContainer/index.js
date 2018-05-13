@@ -131,7 +131,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   <ReactHover
                     options={options}>
                     <ReactHover.Trigger type="trigger">
-                      <span onClick={this.openModal.bind(this, article.id)} className="article">
+                      <span onClick={this.openModal.bind(this, article.id)} className={`article article${idx}`}>
                         <Title name="text" className='article-title article-text'>
                           {article.data.blog_post.title.value[0].text}
                         </Title><br />

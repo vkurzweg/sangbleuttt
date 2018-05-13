@@ -257,13 +257,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </a>);
       }
       return (
-        <div id="blog" style={{ width: '100%', paddingTop: '8vh' }}>
+        <div id="blog" style={{ width: '100%', paddingTop: '8vh', overflowX: 'hidden' }}>
           <Helmet>
             <title>Sang Bleu London</title>
             <meta name="description" content="" />
           </Helmet>
 
-          <div style={{ margin: '1em auto' }}>
+          <div style={{ margin: '1em auto', overflowX: 'hidden' }}>
 
             <div>
               <div onClick={this.openModal1} style={{ textDecoration: 'none' }}>

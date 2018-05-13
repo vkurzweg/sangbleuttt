@@ -20,6 +20,7 @@ const ArtistName = styled.h3`
   text-transform: uppercase;
   position: absolute;
   margin-left: 2vw;
+  z-index: 3001;
 `;
 
 const BackButton = styled.button`
@@ -65,8 +66,8 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
         let display = 'block';
         this.props.isOpen ? display : display = 'none';
         return (
-            <div style={{ display, width: '100vw', cursor: `url(${cursorImage}), auto`, backgroundColor: '#FFFFFF', height: '100vh', position: 'absolute', top: '0', bottom: '0', zIndex: '2000' }}>
-              <div type="close" onClick={this.props.handleClose} style={{ position: 'fixed', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%', zIndex: '2001', cursor: 'pointer' }}>
+            <div style={{ display, width: '100vw', cursor: `url(${cursorImage}), auto`, backgroundColor: '#FFFFFF', height: '100vh', position: 'fixed', top: '0', zIndex: '4000', overflowY: 'hidden' }}>
+              <div type="close" onClick={this.props.handleClose} style={{ position: 'fixed', padding: '5%', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%', zIndex: '2001', cursor: 'pointer', marginTop: '-2%' }}>
                 <h4 className='close-label-london-lightbox'>close</h4>
               </div>
               <ArtistName>{this.props.artistName}</ArtistName>
