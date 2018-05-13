@@ -30,7 +30,7 @@ const Button = styled.button`
 function Logo() {
   return (
     <div style={{ width: '100%', margin: '0 auto', color: 'black', paddingTop: '10vh', paddingBottom: '1vh' }}>
-      <div style={{ marginLeft: '30vw' }}>
+      <div style={{ marginLeft: '35vw' }}>
         <div style={{ fontSize: '15px', fontFamily: 'SuisseRegular', lineHeight: '20px', color: 'black', width: '100%' }}>
           <p><a href="https://www.google.com/maps/place/Sang+Bleu+Tattoo/@51.5463764,-0.0726058,15z/data=!4m2!3m1!1s0x0:0x3e5c154937010676?sa=X&ved=0ahUKEwi50v-Nl4baAhVn8IMKHQCeBj4Q_BIIdzAK" target="_blank" style={{ color: 'black', textDecoration: 'none' }}>Sang Bleu London,<br />29B Dalston Ln,<br /> London E8 3DF</a></p>
           <div style={{ fontSize: '15px', fontFamily: 'SuisseRegular', lineHeight: '20px', color: 'black', width: '100%' }}>

@@ -23,6 +23,7 @@ const Brand = styled.h1`
   padding-top: 2%;
   margin-top: 10px;
   z-index: 100;
+  right: 10px;
 `;
 
 class Nav extends React.Component { // eslint-disable-line react/prefer-stateless-function
