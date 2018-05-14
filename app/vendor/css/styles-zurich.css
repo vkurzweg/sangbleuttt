@@ -313,6 +313,12 @@
 }
 
 .zurich-title-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   font-family: BRRR;
   font-size: 20px;
@@ -452,11 +458,13 @@
   font-size: 19px;
   letter-spacing: 2.36px;
   font-family: SuisseCond;
-  margin-left: 5px;
+  margin-left: 10%;
+  margin-top: 5h;
 }
 
 .name-right {
-  margin-left: 35vw;
+  margin-left: 60%;
+  margin-top: 5vh;
 }
 
 .insta-hover:hover .marco {
@@ -759,12 +767,12 @@
 
 .slideshow-image-container {
   min-width: 35vw;
-  min-height: 40vh;
+  min-height: 60vh;
 }
 
 .slideshow-image {
-  max-width: 514px;
-  max-height: 514px;
+  max-width: 565px;
+  max-height: 565px;
   display: block;
   margin: 0 auto;
   margin-top: 5vh;
@@ -783,12 +791,12 @@
 
 .slideshow-image-container-mobile {
   min-width: 100vw;
-  min-height: 40vh !important;
+  min-height: 50vh !important;
 }
 
 .slideshow-image-mobile {
   width: 100vw;
-  height: 40vh !important;
+  height: 50vh !important;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;

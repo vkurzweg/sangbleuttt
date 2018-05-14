@@ -50,258 +50,6 @@
   }
 }
 
-/*masonry
-*/
-.wrapper {
-    -webkit-animation: fadeMe 2s;
-    animation: fadeMe 2s;
-    width: 95%;
-    margin: 3em auto;
-    padding-bottom: 12vh;
-}
-
-
-.masonry {
-    column-count: 9;
-    -webkit-column-count: 9;
-    -moz-column-count: 9;
-    -ms-column-count: 9;
-    column-gap: 1em;
-    -ms-column-gap: 1em;
-    -webkit-column-gap: 1em;
-    -moz-column-gap: 1em;
-    width: 100%;
-    margin: 0 auto;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-}
-
-
-@media only screen and (min-width: 700px) {
-    .masonry {
-        -ms-column-count: 5;
-        -webkit-column-count: 5;
-        column-count: 5;
-    }
-}
-
-@media only screen and (min-width: 900px) {
-    .masonry {
-        -ms-column-count: 7;
-        -webkit-column-count: 7;
-        column-count: 7;
-    }
-}
-
-@media only screen and (min-width: 1100px) {
-    .masonry {
-        -ms-column-count: 9;
-        -webkit-column-count: 9;
-        column-count: 9;
-    }
-}
-
-.item-container {
-  width: 100%;
-  display: block;
-  color: black;
-}
-
-
-.artist-container {
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid-column;
-}
-
-.item {
-  display: inline-block;
-  margin: 0 0 1.2em;
-  width: 100%;
-  color: black;
-  display: -webkit-box;
-  display: flex;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid-column;
-}
-
-
-.item:hover {
-  color: #3D8EE2;
-  cursor: pointer;
-}
-
-.masonry:hover > .item-container {
-  opacity: 0;
-  cursor: pointer;
-}
-
-.artist-name {
-  opacity: 0;
-  font-size: 15px;
-  font-family: SuisseRegular;
-  text-transform: uppercase;
-  color: black;
-  overflow: visible;
-  white-space: wrap;
-  position: relative;
-  left:60%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-60%);
-  max-width: 30vw;
-
-}
-
-/*isolate artist instagram on hover
-*/
-
-.masonry:hover > #instafeed-0:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-.masonry:hover > #instafeed-1:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-2:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-3:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-4:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-5:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-6:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-7:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-8:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-9:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-10:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-11:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-12:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.masonry:hover > #instafeed-13:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-/*only show artist name on instagram hover
-*/
-
-#instafeed-0:hover > #artist-0 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-1:hover > #artist-1 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-2:hover > #artist-2 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-3:hover > #artist-3 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-4:hover > #artist-4 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-5:hover > #artist-5 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-6:hover > #artist-6 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-7:hover > #artist-7 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-8:hover > #artist-8 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-9:hover > #artist-9 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-10:hover > #artist-10 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-11:hover > #artist-11 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-12:hover > #artist-12 {
-  opacity: 1;
-  overflow: visible;
-}
-
-#instafeed-13:hover > #artist-13 {
-  opacity: 1;
-  overflow: visible;
-}
 
 img {
   max-width: 100%;
@@ -523,6 +271,7 @@ img {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .london-artist-mobile {
@@ -800,4 +549,260 @@ img {
 
 .close-label-london-lightbox:hover {
   cursor: pointer !important;
+}
+
+/*old artist grid
+*/
+.wrapper {
+    -webkit-animation: fadeMe 2s;
+    animation: fadeMe 2s;
+    width: 95%;
+    margin: 3em auto;
+    padding-bottom: 12vh;
+}
+
+
+.masonry {
+    column-count: 9;
+    -webkit-column-count: 9;
+    -moz-column-count: 9;
+    -ms-column-count: 9;
+    column-gap: 1em;
+    -ms-column-gap: 1em;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    width: 100%;
+    margin: 0 auto;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+}
+
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -ms-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -ms-column-count: 7;
+        -webkit-column-count: 7;
+        column-count: 7;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -ms-column-count: 9;
+        -webkit-column-count: 9;
+        column-count: 9;
+    }
+}
+
+
+
+
+.item-container {
+  width: 100%;
+  display: block;
+  color: black;
+}
+
+
+.artist-container {
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+.item {
+  display: inline-block;
+  margin: 0 0 1.2em;
+  width: 100%;
+  color: black;
+  display: -webkit-box;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+
+.item:hover {
+  color: #3D8EE2;
+  cursor: pointer;
+}
+
+.masonry:hover > .item-container {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.artist-name {
+  opacity: 0;
+  font-size: 15px;
+  font-family: SuisseRegular;
+  text-transform: uppercase;
+  color: black;
+  overflow: visible;
+  white-space: wrap;
+  position: relative;
+  left:60%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-60%);
+  max-width: 30vw;
+
+}
+
+/*isolate artist instagram on hover
+*/
+
+.masonry:hover > #instafeed-0:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.masonry:hover > #instafeed-1:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-2:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-3:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-4:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-5:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-6:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-7:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-8:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-9:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-10:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-11:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-12:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.masonry:hover > #instafeed-13:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/*only show artist name on instagram hover
+*/
+
+#instafeed-0:hover > #artist-0 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-1:hover > #artist-1 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-2:hover > #artist-2 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-3:hover > #artist-3 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-4:hover > #artist-4 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-5:hover > #artist-5 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-6:hover > #artist-6 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-7:hover > #artist-7 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-8:hover > #artist-8 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-9:hover > #artist-9 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-10:hover > #artist-10 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-11:hover > #artist-11 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-12:hover > #artist-12 {
+  opacity: 1;
+  overflow: visible;
+}
+
+#instafeed-13:hover > #artist-13 {
+  opacity: 1;
+  overflow: visible;
 }

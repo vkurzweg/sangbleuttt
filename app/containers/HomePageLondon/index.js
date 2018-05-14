@@ -32,6 +32,12 @@ import BlogContainer from './BlogContainer';
 import BlogContainerRefactor from './BlogContainerRefactor';
 import BlogContainerMobile from './BlogContainerMobile';
 
+const MobileContainer = styled.div`
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+`;
+
 const Heading = styled.h3`
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
@@ -101,13 +107,13 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
     const about = this.state.aboutCopy[0].data.about_section.about.value[0].text
     console.log('about', about)
     return (
-      <div id="top" style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
         <Helmet>
           <title>Sang Bleu London</title>
           <meta name="description" content="Artist portfolios and news from the Sang Bleu tattoo studio in London." />
         </Helmet>
         <MediaQuery minWidth={1025}>
-          <StickyContainer>
+          <StickyContainer id="top">
             <Nav />
             <InfoCopy />
             <Artists />
@@ -130,7 +136,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
           </StickyContainer>
         </MediaQuery>
         <MediaQuery maxWidth={1024}>
-          <div id="top">
+          <MobileContainer id="top">
             <StickyContainer>
               <NavMobile />
               <InfoCopyMobile />
@@ -148,14 +154,12 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
               />
             </StickyContainer>
             <StickyContainer>
-              <div style={{ marginTop: '-5vh' }}>
               <AMobile href="#blog"><Sticky>
                 <HeadingMobile>blog</HeadingMobile>
               </Sticky></AMobile>
-              </div>
               <BlogContainerMobile />
             </StickyContainer>
-          </div>
+          </MobileContainer>
         </MediaQuery>
       </div>
     );
