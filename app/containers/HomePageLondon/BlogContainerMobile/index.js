@@ -38,6 +38,8 @@ const PostDate = styled.h5`
 `;
 
 const Title = styled.h3`
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 3vh;
   font-family: SangBleu;
   text-align: center;
@@ -47,6 +49,8 @@ const Title = styled.h3`
 `;
 
 const Subtitle = styled.h4`
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: SuisseLight;
   font-size: 20px;
   margin-top: 1vh;
