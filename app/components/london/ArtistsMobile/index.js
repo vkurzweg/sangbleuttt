@@ -21,6 +21,7 @@ class ArtistsMobile extends React.Component { // eslint-disable-line react/prefe
       photos: [],
       slideCount: 0,
       artists: [],
+      artistHandle: '',
     }
     this.openLightbox = this.openLightbox.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -65,6 +66,8 @@ class ArtistsMobile extends React.Component { // eslint-disable-line react/prefe
       images.push(image8)}
     return this.setState({
       artistName: artist.data.artist.name.value[0].text,
+      artistHandle: artist.data.artist.handle.value[0].text,
+      artistUrl: artist.data.artist.insta.value.url,
       photos: images,
       isOpen: true,
     })
@@ -111,6 +114,7 @@ class ArtistsMobile extends React.Component { // eslint-disable-line react/prefe
           isOpen={this.state.isOpen}
           artistName={this.state.artistName}
           artistHandle={this.state.artistHandle}
+          artistUrl={this.state.artistUrl}
           photos={this.state.photos}
           slideCount={this.state.slideCount}
           handleClose={this.handleClose}

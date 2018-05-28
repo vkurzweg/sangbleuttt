@@ -274,6 +274,7 @@
     "sanitize.css": "4.1.0",
     "styled-components": "2.0.0",
     "superagent": "^3.8.2",
+    "swipe-react": "^1.0.4",
     "warning": "3.0.0",
     "whatwg-fetch": "2.0.3"
   },

@@ -17,8 +17,9 @@ const Button = styled.button`
   padding: 3px;
   display: block;
   margin: 0 auto;
-  white-space: no-wrap;
+  white-space: nowrap;
   margin-left: 30%;
+  margin-top: 8%;
   letter-spacing: 1.5px;
   clear: both;
   z-index: 2000;

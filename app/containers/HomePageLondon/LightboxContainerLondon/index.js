@@ -23,6 +23,20 @@ const ArtistName = styled.h3`
   z-index: 3001;
 `;
 
+const ArtistHandle = styled.a`
+  font-family: SuisseRegular;
+  font-size: 15px;
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  margin-left: 2vw;
+  margin-bottom: 2%;
+  z-index: 25;
+  &:hover {cursor: pointer}
+`;
+
 const BackButton = styled.button`
   backgroundColor: transparent;
   border: none;
@@ -54,7 +68,7 @@ const NextButton = styled.button`
 
 export class LightboxContainerLondon extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-
+    console.log('url', this.props.artistUrl)
     const nextPhoto = this.props.slideCount + 1
     const prevPhoto = this.props.slideCount - 1
     const cursorImage = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[nextPhoto]}`
@@ -66,12 +80,13 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
         let display = 'block';
         this.props.isOpen ? display : display = 'none';
         return (
-            <div style={{ display, width: '100vw', cursor: `url(${cursorImage}), auto`, backgroundColor: '#FFFFFF', height: '100vh', position: 'fixed', top: '0', zIndex: '4000', overflowY: 'hidden' }}>
+            <div style={{ display, width: '100vw', cursor: `url(${cursorImage}), auto`, backgroundColor: '#FFFFFF', height: '100vh', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0', zIndex: '4000', overflowY: 'scroll' }}>
               <div type="close" onClick={this.props.handleClose} style={{ position: 'fixed', padding: '5%', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '100%', zIndex: '2001', cursor: 'pointer', marginTop: '-2%' }}>
                 <h4 className='close-label-london-lightbox'>close</h4>
               </div>
               <ArtistName>{this.props.artistName}</ArtistName>
               <ArtistName style={{ marginTop: '3vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
+              <ArtistHandle src={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
               <div style={{ position: 'relative', height: '100vh' }}>
                 {backButton}
                 {this.props.photos.map((photo, idx) => {

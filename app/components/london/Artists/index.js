@@ -22,6 +22,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       photos: [],
       slideCount: 0,
       artists: [],
+      artistHandle: '',
     }
     this.openLightbox = this.openLightbox.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -66,6 +67,8 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       images.push(image8)}
     return this.setState({
       artistName: artist.data.artist.name.value[0].text,
+      artistHandle: artist.data.artist.handle.value[0].text,
+      artistUrl: artist.data.artist.insta.value.url,
       photos: images,
       isOpen: true,
     })
@@ -73,7 +76,6 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
 
   nextImage() {
     let slideCountState = this.state.slideCount;
-    console.log(slideCountState)
     let photoLength = this.state.photos.length;
     if(slideCountState === photoLength - 1){ return this.setState({slideCount: 0})
     } else {
@@ -81,7 +83,6 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
   }
 
   previousImage() {
-    console.log(this.state.slideCount)
     let slideCountState = this.state.slideCount;
     let photoLength = this.state.photos.length;
     if(slideCountState === 0){ return this.setState({slideCount: photoLength})
@@ -100,7 +101,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
     };
     if (artists.length > 0) {
     return (
-      <div style={{ display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflowX: 'hidden' }}>
+      <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflow: 'hidden !important' }}>
         <div className="artists-wrapper0">
           <ReactHover
             options={options}>
@@ -258,6 +259,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
         <LightboxContainerLondon
           isOpen={this.state.isOpen}
           artistName={this.state.artistName}
+          artistUrl={this.state.artistUrl}
           artistHandle={this.state.artistHandle}
           photos={this.state.photos}
           slideCount={this.state.slideCount}

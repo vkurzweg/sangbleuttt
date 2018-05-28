@@ -107,7 +107,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
     const about = this.state.aboutCopy[0].data.about_section.about.value[0].text
     console.log('about', about)
     return (
-      <div style={{ width: '100%', backgroundColor: '#FFFFFF' }}>
+      <div style={{ width: '100%', backgroundColor: '#FFFFFF', position: 'relative' }}>
         <Helmet>
           <title>Sang Bleu London</title>
           <meta name="description" content="Artist portfolios and news from the Sang Bleu tattoo studio in London." />

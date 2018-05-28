@@ -51,7 +51,7 @@ const Button = styled.button`
 function Footer() {
   return (
     <div className="container-fluid" style={{ position: 'absolute', bottom: '0', height: '15vh', width: '100%', fontFamily: 'SuisseLight', textTransform: 'uppercase', color: 'black', fontSize: '12px', textAlign: 'center', marginRight: '0', marginLeft: '0', paddingRight: '0', paddingLeft: '0' }}>
-      <div className="row" style={{ paddingTop: '2vh', width: '96%', height: '30vh', margin: '0 auto' }}>
+      <div className="row" style={{ paddingTop: '2vh', width: '96%', height: '50vh', margin: '0 auto' }}>
         <div style={{ display: 'flex', position: 'relative', fontSize: '.83vw' }}>
           <A href="/zurich" style={{ position: 'absolute', bottom: '0' }}>
             <StyledImage cloudName="kurzweg" publicId="sangbleu/logozurich" alt="sang bleu london" quality="auto" crop="scale" responsive />

@@ -149,10 +149,6 @@ img {
   z-index: 100;
 }
 
-.artists-wrapper5 {
-
-}
-
 .artist-name-mix5 {
   font-family: SuisseIntlSemiBold;
   text-transform: uppercase;
@@ -282,73 +278,6 @@ img {
   padding-bottom: 15vh;
 }
 
-/*.wrapper-mobile {
-    -webkit-animation: fadeMe 2s;
-            animation: fadeMe 2s;
-    width: 90%;
-    margin: 1em auto;
-}
-
-.masonry-mobile {
-    -webkit-column-count: 2;
-            column-count: 2;
-    -webkit-column-gap: .5em;
-            column-gap: .5em;
-    width: 100%;
-    margin: 0 auto;
-    height: 100%;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    break-inside: avoid-column;
-    -webkit-column-break-inside: avoid;
-}
-
-.item-container-mobile {
-  display: block;
-  float: left;
-  color: black;
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid-column;
-}
-
-.item-mobile {
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid-column;
-}
-
-.item-image-mobile {
-  width: 100%;
-  height: 20vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: 7%;
-}
-
-.artist-name-mobile {
-  width: 100%;
-  text-align: center;
-  font-size: 10px;
-  font-family: SuisseRegular;
-  overflow: visible;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: black;
-  white-space: wrap;
-  position: relative;
-  left:60%;
-  margin-bottom: 0;
-  padding: 5%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-60%);
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid-column;
-}
-
-.artist-container:nth-child(6) hr {
-  display: none;
-}*/
 
 /*BLOG
 */
@@ -551,8 +480,16 @@ img {
   cursor: pointer !important;
 }
 
+
+
+
+
 /*old artist grid
 */
+
+
+
+
 .wrapper {
     -webkit-animation: fadeMe 2s;
     animation: fadeMe 2s;
@@ -806,3 +743,71 @@ img {
   opacity: 1;
   overflow: visible;
 }
+
+/*.wrapper-mobile {
+    -webkit-animation: fadeMe 2s;
+            animation: fadeMe 2s;
+    width: 90%;
+    margin: 1em auto;
+}
+
+.masonry-mobile {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: .5em;
+            column-gap: .5em;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    break-inside: avoid-column;
+    -webkit-column-break-inside: avoid;
+}
+
+.item-container-mobile {
+  display: block;
+  float: left;
+  color: black;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+.item-mobile {
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+.item-image-mobile {
+  width: 100%;
+  height: 20vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 7%;
+}
+
+.artist-name-mobile {
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  font-family: SuisseRegular;
+  overflow: visible;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  white-space: wrap;
+  position: relative;
+  left:60%;
+  margin-bottom: 0;
+  padding: 5%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-60%);
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+.artist-container:nth-child(6) hr {
+  display: none;
+}*/
