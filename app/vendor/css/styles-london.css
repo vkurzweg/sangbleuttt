@@ -265,9 +265,9 @@ img {
 
 .scrolling-wrapper {
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  width: 100%;
 }
 
 .london-artist-mobile {
@@ -276,6 +276,7 @@ img {
   padding: 13px;
   padding-top: 20vh;
   padding-bottom: 15vh;
+  overflow-y: hidden !important;
 }
 
 

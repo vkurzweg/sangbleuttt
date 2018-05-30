@@ -99,17 +99,19 @@ class ArtistsMobile extends React.Component { // eslint-disable-line react/prefe
     const artists = this.state.artists;
     if (artists.length > 0) {
     return (
-      <div className="scrolling-wrapper">
-        {artists.map((artist, idx) => {
-          return (
-            <div className="london-artist-mobile" onClick={this.openLightbox.bind(this, artist)}>
-            <div style={{ position: 'relative' }}>
-              <img src={artist.data.artist.image1.value.main.url} style={{ width: '220px', maxHeight: '275px', bottom: '0'}} />
+      <div style={{ position: 'relative' }}>
+        <div className="scrolling-wrapper">
+          {artists.map((artist, idx) => {
+            return (
+              <div className="london-artist-mobile" onClick={this.openLightbox.bind(this, artist)}>
+                <div style={{ position: 'relative' }}>
+                  <img src={artist.data.artist.image1.value.main.url} style={{ width: '220px', maxHeight: '275px', bottom: '0'}} />
+                </div>
+                <h2 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '19px', paddingTop: '3vh' }}>{artist.data.artist.name.value[0].text}</h2>
             </div>
-            <h2 style={{ fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '19px', paddingTop: '3vh' }}>{artist.data.artist.name.value[0].text}</h2>
-          </div>
-          )
-        })}
+            )
+          })}
+        </div>
         <LightboxContainerLondonMobile
           isOpen={this.state.isOpen}
           artistName={this.state.artistName}

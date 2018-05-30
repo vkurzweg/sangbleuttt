@@ -75,21 +75,21 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
     const prevPhoto = this.props.slideCount - 1
     const cursorImage = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[nextPhoto]}`
     const cursorImagePrev = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[prevPhoto]}`
-    const backButton = <BackButton {...SwipeReact.events} onClick={this.props.previousImage} style={{ cursor: `url(${cursorImagePrev}), auto` }}>
+    const backButton = <BackButton {...SwipeReact.events} onClick={this.props.previousImage} style={{  }}>
                         </BackButton>
-        const nextButton = <NextButton {...SwipeReact.events} onClick={this.props.nextImage} style={{ cursor: `url(${cursorImage}), auto` }}>
+        const nextButton = <NextButton {...SwipeReact.events} onClick={this.props.nextImage} style={{  }}>
                           </NextButton>
         let display = 'block';
         this.props.isOpen ? display : display = 'none';
         return (
-            <div style={{ display, width: '100vw', cursor: `url(${cursorImage}), auto`, backgroundColor: '#FFFFFF', height: '100vh', position: 'fixed', top: '0', left: '0', right: '0', bottom: '0', zIndex: '2000', overflowY: 'hidden' }}>
-              <div style={{ position: 'relative', height: '100vh' }}>
+            <div style={{ display, backgroundColor: '#FFFFFF', width: '100vw', height: '100vh', position: 'fixed', top: '0', zIndex: '2000', overflow: 'hidden' }}>
+              <div style={{ position: 'relative', overflow: 'hidden !important' }}>
                 {this.props.slideCount !== 0 ? backButton : '' }
                 {this.props.photos.map((photo, idx) => {
                   if (this.props.photos.indexOf(photo) === this.props.slideCount) {
                     return (
-                      <div key={idx} style={{ position: 'relative' }}>
-                        <div className="slideshow-image-container-london-mobile">
+                      <div key={idx} style={{ position: 'relative', overflow: 'hidden' }}>
+                        <div {...SwipeReact.events} className="slideshow-image-container-london-mobile">
                           <img className="slideshow-image-london-mobile" src={photo} alt="artist portfolio" />
                         </div>
                       </div>
@@ -102,8 +102,8 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
                   <ArtistName style={{ marginTop: '2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
                 </div>
-                <div type="close" onClick={this.props.handleClose} style={{ zIndex: '100', fontSize: '12px', width: '100%', height: '5vh'}}>
-                  <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px' }}>close</h4>
+                <div type="close" onClick={this.props.handleClose} style={{ zIndex: '2000', fontSize: '12px', width: '100%', height: '10vh'}}>
+                  <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px', marginBottom: '5vh' }}>close</h4>
                 </div>
                 {nextButton}
               </div>
