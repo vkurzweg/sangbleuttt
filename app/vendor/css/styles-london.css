@@ -279,6 +279,10 @@ img {
   overflow-y: hidden !important;
 }
 
+#top {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
 /*BLOG
 */

@@ -97,12 +97,12 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                   }
                     return ''
                 })}
-                <div style={{ marginTop: '20vh' }}>
+                <div style={{ marginTop: '15vh' }}>
                   <ArtistHandle src={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
                   <ArtistName style={{ marginTop: '2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
                 </div>
-                <div type="close" onClick={this.props.handleClose} style={{ zIndex: '2000', fontSize: '12px', width: '100%', height: '10vh'}}>
+                <div type="close" onClick={this.props.handleClose} style={{ zIndex: '2000', fontSize: '12px', width: '100%', height: '15vh'}}>
                   <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px', marginBottom: '5vh' }}>close</h4>
                 </div>
                 {nextButton}
