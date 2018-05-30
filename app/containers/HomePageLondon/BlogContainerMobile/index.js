@@ -60,11 +60,14 @@ const Subtitle = styled.h4`
 `;
 
 const StyledImg = styled.img`
-  width: 355px;
-  margin: 0 auto;
-  display: block;
-  height: 250px;
-  object-fit: cover;
+  &::before {
+    will-change: transform;
+    width: 355px;
+    margin: 0 auto;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+  }
 `;
 
 const ModalTitle = styled.h3`
