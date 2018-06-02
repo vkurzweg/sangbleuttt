@@ -62,6 +62,24 @@ const NextButton = styled.button`
 `;
 
 export class LightboxContainerLondon extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0
+    }
+    this.getIndex = this.getIndex.bind(this);
+  }
+
+  componentDidMount() {
+    let idx = document.getElementById('reactSwipe').getPos();
+    console.log('idx', idx)
+  }
+
+  getIndex() {
+    let idx = this.reactSwipe.getPos();
+    return this.setState({ index: idx });
+  }
+
   render() {
     const nextPhoto = this.props.slideCount + 1
     const prevPhoto = this.props.slideCount - 1
@@ -76,7 +94,7 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
         return (
             <div style={{ display, backgroundColor: '#FFFFFF', width: '100vw', height: '100vh', position: 'fixed', top: '0', zIndex: '2000', overflow: 'hidden' }}>
               <div style={{ position: 'relative', overflow: 'hidden !important' }}>
-                <ReactSwipe className="carousel" key={this.props.photos.length}>
+                <ReactSwipe id="reactSwipe" ref={reactSwipe => this.reactSwipe = reactSwipe} className="carousel" key={this.props.photos.length} swipeOptions={{ callback: this.getIndex }}>
                 {this.props.photos.map((photo, idx) => {
                     return (
                       <div key={idx} style={{ position: 'relative', overflow: 'hidden' }}>
@@ -90,7 +108,7 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                 <div style={{ marginTop: '15vh' }}>
                   <ArtistHandle href={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
-                  <ArtistName style={{ marginTop: '2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
+                  <ArtistName style={{ marginTop: '2vh' }}>{this.state.index + 1} / {this.props.photos.length}</ArtistName>
                 </div>
                 <div type="close" onClick={this.props.handleClose} style={{ zIndex: '2000', fontSize: '12px', width: '100%', height: '15vh'}}>
                   <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px', marginBottom: '5vh' }}>close</h4>

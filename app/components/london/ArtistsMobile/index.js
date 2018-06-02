@@ -103,7 +103,7 @@ class ArtistsMobile extends React.Component { // eslint-disable-line react/prefe
         <div className="scrolling-wrapper">
           {artists.map((artist, idx) => {
             return (
-              <div className="london-artist-mobile" onClick={this.openLightbox.bind(this, artist)}>
+              <div key={idx} className="london-artist-mobile" onClick={this.openLightbox.bind(this, artist)}>
                 <div style={{ position: 'relative' }}>
                   <img src={artist.data.artist.image1.value.main.url} style={{ width: '220px', maxHeight: '275px', bottom: '0'}} />
                 </div>
