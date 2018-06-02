@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import styled from 'styled-components';
-import SwipeReact from 'swipe-react'
+import ReactSwipe from 'react-swipe';
 
 const ArtistName = styled.h3`
   font-family: SuisseIntlSemiBold;
@@ -63,49 +63,38 @@ const NextButton = styled.button`
 
 export class LightboxContainerLondon extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    SwipeReact.config({
-          left: () => {
-            this.props.previousImage;
-          },
-          right: () => {
-            this.props.nextImage;
-          }
-        });
     const nextPhoto = this.props.slideCount + 1
     const prevPhoto = this.props.slideCount - 1
     const cursorImage = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[nextPhoto]}`
     const cursorImagePrev = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[prevPhoto]}`
-    const backButton = <BackButton {...SwipeReact.events} onClick={this.props.previousImage} style={{  }}>
+    const backButton = <BackButton onClick={this.props.previousImage} style={{  }}>
                         </BackButton>
-        const nextButton = <NextButton {...SwipeReact.events} onClick={this.props.nextImage} style={{  }}>
+        const nextButton = <NextButton onClick={this.props.nextImage} style={{  }}>
                           </NextButton>
         let display = 'block';
         this.props.isOpen ? display : display = 'none';
         return (
             <div style={{ display, backgroundColor: '#FFFFFF', width: '100vw', height: '100vh', position: 'fixed', top: '0', zIndex: '2000', overflow: 'hidden' }}>
               <div style={{ position: 'relative', overflow: 'hidden !important' }}>
-                {this.props.slideCount !== 0 ? backButton : '' }
+                <ReactSwipe className="carousel" key={this.props.photos.length}>
                 {this.props.photos.map((photo, idx) => {
-                  if (this.props.photos.indexOf(photo) === this.props.slideCount) {
                     return (
                       <div key={idx} style={{ position: 'relative', overflow: 'hidden' }}>
-                        <div {...SwipeReact.events} className="slideshow-image-container-london-mobile">
+                        <div className="slideshow-image-container-london-mobile">
                           <img className="slideshow-image-london-mobile" src={photo} alt="artist portfolio" />
                         </div>
                       </div>
                     )
-                  }
-                    return ''
                 })}
+                </ReactSwipe>
                 <div style={{ marginTop: '15vh' }}>
-                  <ArtistHandle src={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
+                  <ArtistHandle href={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
                   <ArtistName style={{ marginTop: '2vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
                 </div>
                 <div type="close" onClick={this.props.handleClose} style={{ zIndex: '2000', fontSize: '12px', width: '100%', height: '15vh'}}>
                   <h4 onClick={this.props.handleClose} className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px', marginBottom: '5vh' }}>close</h4>
                 </div>
-                {nextButton}
               </div>
             </div>
         );

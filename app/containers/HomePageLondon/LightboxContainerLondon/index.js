@@ -34,6 +34,7 @@ const ArtistHandle = styled.a`
   margin-left: 2vw;
   margin-bottom: 2%;
   z-index: 25;
+  padding: 1em;
   &:hover {cursor: pointer}
 `;
 
@@ -43,10 +44,11 @@ const BackButton = styled.button`
   outline: 0;
   left: 0;
   top: 0;
-  height: 100vh;
+  height: 90vh;
   width: 50vw;
   z-index: 20;
   position: fixed;
+  margin-bottom: 10vh;
   &:hover, &:active, &:focus {
     outline: 0;
   }
@@ -86,7 +88,7 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
               </div>
               <ArtistName>{this.props.artistName}</ArtistName>
               <ArtistName style={{ marginTop: '3vh' }}>{this.props.slideCount + 1} / {this.props.photos.length}</ArtistName>
-              <ArtistHandle src={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
+              <a href={this.props.artistUrl} target="_blank" style={{ fontFamily: 'SuisseRegular', fontSize: '15px', color: 'black', textDecoration: 'none', position: 'absolute', bottom: '0', textTransform: 'uppercase', marginLeft: '2vw', marginBottom: '2%', zIndex: '25', padding: '1em', cursor: 'pointer' }} >@{this.props.artistHandle}</a>
               <div style={{ position: 'relative', height: '100vh' }}>
                 {backButton}
                 {this.props.photos.map((photo, idx) => {
