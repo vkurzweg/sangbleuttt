@@ -60,13 +60,13 @@ const Subtitle = styled.h4`
 `;
 
 const StyledImg = styled.img`
-  &::before {
-    will-change: transform;
     width: 355px;
     margin: 0 auto;
     display: block;
     height: 250px;
     object-fit: cover;
+  &::before {
+    will-change: transform;
   }
 `;
 
@@ -264,7 +264,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </a>);
       }
       return (
-        <div id="blog" style={{ width: '100%', paddingTop: '8vh', overflowX: 'hidden' }}>
+        <div id="blog" style={{ width: '100%', paddingTop: '8vh' }}>
           <Helmet>
             <title>Sang Bleu London</title>
             <meta name="description" content="" />
@@ -365,7 +365,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               </ModalTitle>
               <ModalImg src={article1.main_image.value.main.url} alt={article1.main_image.value.alt} />
               {article1.body.value.map((value, idx, values) => (
-                <ModalText>{value.text}</ModalText>
+                <ModalText key={idx}>{value.text}</ModalText>
               ))}
               {article1image2}
               {article1image3}
@@ -424,7 +424,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               </ModalTitle>
               <ModalImg src={article2.main_image.value.main.url} alt={article2.main_image.value.alt} />
               {article2.body.value.map((value, idx, values) => (
-                              <ModalText>{value.text}</ModalText>
+                              <ModalText key={idx}>{value.text}</ModalText>
                             ))}
               {article2image2}
               {article2image3}
@@ -484,7 +484,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               </ModalTitle>
               <ModalImg src={article3.main_image.value.main.url} alt={article3.main_image.value.alt} />
               {article3.body.value.map((value, idx, values) => (
-                              <ModalText>{value.text}</ModalText>
+                              <ModalText key={idx}>{value.text}</ModalText>
                             ))}
               {article3image2}
               {article3image3}

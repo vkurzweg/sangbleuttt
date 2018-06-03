@@ -70,11 +70,6 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
     this.getIndex = this.getIndex.bind(this);
   }
 
-  componentDidMount() {
-    let idx = document.getElementById('reactSwipe').getPos();
-    console.log('idx', idx)
-  }
-
   getIndex() {
     let idx = this.reactSwipe.getPos();
     return this.setState({ index: idx });
