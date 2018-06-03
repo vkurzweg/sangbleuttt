@@ -84,12 +84,12 @@ const ModalTitle = styled.h3`
 `;
 
 const ModalImg = styled.img`
-  width: 353px;
+  width: 355px;
   display: block;
   margin: 0 auto;
   margin-top: 25px;
   margin-bottom: 25px;
-  height: 250px;
+  height: 350px;
   object-fit: cover;
 `;
 
@@ -132,19 +132,16 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
   componentDidMount() {
     const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'blog_post'),).then((response) => {
-      console.log('Documents: ', response.results);
       const documents = response.results;
       return this.setState({ docs: documents });
     }));
   }
 
   openModal1() {
-    console.log('clicked');
     this.setState({ modal1IsOpen: true });
   }
 
   closeModal1() {
-    console.log('clicked');
     this.setState({ modal1IsOpen: false });
   }
 
@@ -263,8 +260,15 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
         >See all articles
                 </a>);
       }
+      let display1;
+      this.state.modal1IsOpen ? display1 = 'block' : display1 = 'none';
+      let display2;
+      this.state.modal2IsOpen ? display2 = 'block' : display2 = 'none';
+      let display3;
+      this.state.modal3IsOpen ? display3 = 'block' : display3 = 'none';
+
       return (
-        <div id="blog" style={{ paddingTop: '8vh', overflow: 'hidden', willChange: 'transform' }}>
+        <div id="blog" style={{ paddingTop: '8vh', overflow: 'hidden' }}>
           <Helmet>
             <title>Sang Bleu London</title>
             <meta name="description" content="" />
@@ -322,27 +326,22 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
           {link}
 
-          <Modal
-            visible={this.state.modal1IsOpen}
-            onCancel={this.closeModal1}
-            title={null}
-            footer={null}
-            style={{ width: '100%', margin: '0 auto' }}
+          <div
+            style={{ display: display1, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
-            <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
-              <div
+            <div
+              style={{
+                backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
+              }}
+            >
+              <h3
                 style={{
-                  backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
+                  fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                 }}
-              >
-                <h3
-                  style={{
-                    fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
-                  }}
-                >blog
-                </h3>
-                <Brand>Sang Bleu London</Brand>
-              </div>
+              >blog
+              </h3>
+              <Brand>Sang Bleu London</Brand>
+            </div>
               <div
                 onClick={this.closeModal1}
                 role="button"
@@ -378,17 +377,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article1image8}
               {article1image9}
               {article1image10}
-            </div>
-          </Modal>
+          </div>
 
-          <Modal
-            visible={this.state.modal2IsOpen}
-            onCancel={this.closeModal2}
-            title={null}
-            footer={null}
-            style={{ width: '75%', margin: '0 auto' }}
+          <div
+            style={{ display: display2, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
-            <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
               <div
                 style={{
                   backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
@@ -437,18 +430,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article2image8}
               {article2image9}
               {article2image10}
+          </div>
 
-            </div>
-          </Modal>
-
-          <Modal
-            visible={this.state.modal3IsOpen}
-            onCancel={this.closeModal3}
-            title={null}
-            footer={null}
-            style={{ width: '75%', margin: '0 auto' }}
+          <div
+            style={{ display: display3, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
-            <div style={{ width: '100%', position: 'relative', paddingBottom: '10vh' }}>
               <div
                 style={{
                   backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', top: '0', left: '0', borderBottom: '2px solid black', width: '100%', zIndex: '4000'
@@ -497,9 +483,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               {article3image8}
               {article3image9}
               {article3image10}
-
-            </div>
-          </Modal>
+          </div>
           <div
             style={{
               position: 'relative', height: '15vh', width: '100%', bottom: '0'
