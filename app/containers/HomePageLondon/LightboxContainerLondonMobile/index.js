@@ -100,7 +100,7 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                     )
                 })}
                 </ReactSwipe>
-                <div style={{ marginTop: '15vh' }}>
+                <div style={{ marginTop: '8vh' }}>
                   <ArtistHandle href={this.props.artistUrl} target="_blank">@{this.props.artistHandle}</ArtistHandle>
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
                   <ArtistName style={{ marginTop: '2vh' }}>{this.state.index + 1} / {this.props.photos.length}</ArtistName>
