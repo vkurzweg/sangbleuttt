@@ -33,9 +33,9 @@ import BlogContainerRefactor from './BlogContainerRefactor';
 import BlogContainerMobile from './BlogContainerMobile';
 
 const MobileContainer = styled.div`
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-
+  &::before {
+    will-change: transform;
+  }
 `;
 
 const Heading = styled.h3`

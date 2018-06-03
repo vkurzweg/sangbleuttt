@@ -63,7 +63,7 @@ const StyledImg = styled.img`
     width: 355px;
     margin: 0 auto;
     display: block;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
   &::before {
     will-change: transform;
@@ -264,13 +264,13 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </a>);
       }
       return (
-        <div id="blog" style={{ width: '100%', paddingTop: '8vh' }}>
+        <div id="blog" style={{ paddingTop: '8vh', overflow: 'hidden', willChange: 'transform' }}>
           <Helmet>
             <title>Sang Bleu London</title>
             <meta name="description" content="" />
           </Helmet>
 
-          <div style={{ margin: '1em auto', overflowX: 'hidden' }}>
+          <div>
 
             <div>
               <div onClick={this.openModal1} style={{ textDecoration: 'none' }}>

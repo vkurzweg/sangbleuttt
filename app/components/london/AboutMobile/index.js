@@ -14,8 +14,8 @@ const StyledImage = styled(Image)`
   width: 100%;
   object-fit: cover;
   padding-top: 10vh;
+  will-change: transform;
   &::before {
-    will-change: transform;
   }
 `;
 

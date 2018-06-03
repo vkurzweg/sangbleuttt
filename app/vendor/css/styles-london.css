@@ -265,7 +265,6 @@ img {
 
 .scrolling-wrapper {
   overflow-x: scroll;
-  overflow-y: hidden !important;
   white-space: nowrap;
   width: 100%;
 }
