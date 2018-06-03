@@ -105,8 +105,20 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
                   <ArtistName style={{ }}>{this.props.artistName}</ArtistName>
                   <ArtistName style={{ marginTop: '2vh' }}>{this.state.index + 1} / {this.props.photos.length}</ArtistName>
                 </div>
-                <div onClick={this.props.handleClose} style={{ zIndex: '2100', fontSize: '12px', width: '100%', height: '25vh'}}>
-                  <h4 className='close-label-london-lightbox' style={{ textAlign: 'center', padding: '10px', marginBottom: '5vh' }}>close</h4>
+                <div
+                  onClick={this.props.handleClose}
+                  role="button"
+                  style={{
+                    backgroundColor: '#FFFFFF', height: '8vh', position: 'fixed', bottom: '0', left: '0', width: '100%', zIndex: '2000'
+                  }}
+                >
+                  <p
+                    className='close-label-london-lightbox'
+                    style={{
+                      textAlign: 'center', padding: '4%'
+                    }}
+                  >close
+                  </p>
                 </div>
               </div>
             </div>
