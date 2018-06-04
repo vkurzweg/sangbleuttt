@@ -122,7 +122,7 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
               if (this.props.photos.indexOf(photo) === this.props.slideCount) {
                 return (
                   <div style={{ position: 'relative', minHeight: '55vh' }}>
-                    <div style={{ height: '55vh' }}>
+                    <div style={{ height: '70vh' }}>
                       <div className="slideshow-image-container-mobile">
                         <a href={this.props.artistUrl} target="_blank">
                           <img className="slideshow-image-mobile" src={photo} alt="artist portfolio" />

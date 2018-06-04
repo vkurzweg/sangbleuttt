@@ -140,7 +140,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               overlayStyle={{ backgroundColor: 'transparent', zIndex: '1' }}
             >
             <div onClick={this.props.handleBlogClose} style={{ height: '100%', overflowY: 'scroll' }}>
-              <h4 className='blog-open-label-mobile' onClick={this.props.handleBlogClose}>blog</h4>
               { articles.map((article, idx, articles) => (
                 <div key={idx}>
                   <Article>
@@ -183,3 +182,6 @@ function mapDispatchToProps(dispatch) {
 const withConnect = connect(null, mapDispatchToProps);
 
 export default compose(withConnect, )(ArticlesContainer);
+
+// <h4 className='blog-open-label-mobile' onClick={this.props.handleBlogClose}>blog</h4>
+
