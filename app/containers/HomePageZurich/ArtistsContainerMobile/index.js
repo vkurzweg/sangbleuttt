@@ -113,6 +113,7 @@ export class Center extends React.PureComponent { // eslint-disable-line react/p
            isOpen={this.state.isOpen}
            artistName={this.state.artistName}
            artistHandle={this.state.artistHandle}
+           artistUrl={this.state.artistUrl}
            photos={this.state.photos}
            slideCount={this.state.slideCount}
            handleClose={this.handleClose}

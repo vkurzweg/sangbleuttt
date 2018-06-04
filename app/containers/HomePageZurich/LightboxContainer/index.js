@@ -38,6 +38,11 @@ const ArtistHandle = styled.h4`
   font-size: 19px;
   letter-spacing: 2.36px;
   text-align: center;
+  z-index: 30;
+  cursor: pointer;
+  &:hover {
+    cursor: pointer
+  }
 `;
 
 // const Button = styled.button`
@@ -61,6 +66,7 @@ const BackButton = styled.button`
   left: 0;
   top: 0;
   height: 130vh;
+  margin-top: 20vh;
   width: 50%;
   z-index: 20;
   position: fixed;
@@ -79,6 +85,7 @@ const NextButton = styled.button`
   right: 0;
   margin-right: 150px;
   top: 0;
+  margin-top: 20vh;
   height: 100vh;
   width: 50%;
   z-index: 20;
@@ -106,7 +113,7 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
             <h4 className='close-label'>close</h4>
           </div>
           <ArtistName>{this.props.artistName}</ArtistName>
-          <ArtistHandle>{this.props.artistHandle}</ArtistHandle>
+          <a href={this.props.artistUrl} target="_blank"><ArtistHandle>{this.props.artistHandle}</ArtistHandle></a>
           <div style={{ position: 'relative' }}>
             {backButton}
             {this.props.photos.map((photo, key) => {

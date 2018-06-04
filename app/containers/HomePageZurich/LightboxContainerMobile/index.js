@@ -114,7 +114,7 @@ export class LightboxContainer extends React.Component { // eslint-disable-line 
           </div>
           <div style={{ marginRight: '30px' }}>
             <ArtistName>{this.props.artistName}</ArtistName>
-            <ArtistHandle>{this.props.artistHandle}</ArtistHandle>
+            <a href={this.props.artistUrl} target="_blank"><ArtistHandle>{this.props.artistHandle}</ArtistHandle></a>
           </div>
           <div style={{ position: 'relative' }}>
             {backButton}
