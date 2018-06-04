@@ -156,7 +156,10 @@
   text-transform: uppercase;
   text-align: center;
   font-family: SuisseCond;
-  z-index: 1499;
+}
+
+.blog-open-label-mobile:before {
+  will-change: transform;
 }
 
 /*drawers scroll

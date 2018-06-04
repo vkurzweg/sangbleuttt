@@ -11,7 +11,7 @@ import Icon from 'antd/lib/icon';
 
 function About(props) {
   return (
-    <div style={{ height: '100%' }} onTouchTap={props.handleAboutClose}>
+    <div style={{ height: '100%', overflowY: 'scroll' }} onTouchTap={props.handleAboutClose}>
       <h3 className='zurich-about-header-mobile'>about sbzh</h3>
       <Image className='zurich-about-image-mobile' cloudName="kurzweg" publicId="sangbleu/table" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <p className='zurich-about-copy-mobile'>

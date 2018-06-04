@@ -71,14 +71,17 @@ const StyledImage = styled.div`
   display:block;
   margin: 0 auto;
   margin-right: -15px;
-  width: 300px;
-  height: 250px;
+  width: 80vw;
+  height: 40vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  &:before {
+    will-change: transform
+  }
 `;
 
 
