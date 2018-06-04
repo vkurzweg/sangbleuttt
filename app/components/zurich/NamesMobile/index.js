@@ -14,7 +14,7 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
     let artists = this.props.artists;
     if(artists.length > 0){
     return (
-      <div style={{ width: '80%', margin: '0 auto', paddingTop: '30vh', overflowY: 'scroll', height: '100%', paddingBottom: '10vh' }}>
+      <div style={{ width: '80%', margin: '0 auto', paddingTop: '30vh', overflowY: 'scroll', overflowX: 'hidden', height: '100%', paddingBottom: '10vh' }}>
         <h2 onClick={this.props.openLightbox.bind(this, artists[0])} className='name-mobile'>
             {artists[0].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[0].data.handle[0].text}</span>
         </h2>

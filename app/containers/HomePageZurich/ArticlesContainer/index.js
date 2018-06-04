@@ -83,7 +83,7 @@ const ImageContainer = styled.div`
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 99.5%;
   height: 100vh;
   border: none;
   top: 0;
@@ -166,7 +166,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                           </Article>
                         </ReactHover.Trigger>
                         <ReactHover.Hover type="hover">
-                          <ImageContainer className="image-container-not">
+                          <ImageContainer>
                             <StyledImage style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
                               <Image className="zurich-logo" cloudName="kurzweg" publicId="sangbleu/zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                             </StyledImage>

@@ -64,7 +64,7 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
         </div>
 
 
-        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '3vh' }}>
+        <div className="row insta-hover" style={{ display: 'flex', justifyContent: 'space-between', maxWidth: widthValue, margin: '0 auto', marginTop: '3vh', paddingLeft: '10vw' }}>
           <div className={`${imageClass} + col-sm-5`}>
             <Artist6
               artist6={artists[6]}

@@ -458,13 +458,17 @@
   font-size: 19px;
   letter-spacing: 2.36px;
   font-family: SuisseCond;
-  margin-left: 10%;
+  margin-left: 5px;
   margin-top: 5h;
+  margin-bottom: 5h;
+  white-space: nowrap;
 }
 
 .name-right {
-  margin-left: 60%;
   margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: right;
+  margin-right: 5px;
 }
 
 .insta-hover:hover .marco {
