@@ -278,10 +278,10 @@ img {
   overflow-y: hidden !important;
 }
 
-#top {
+/*#top {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-}
+}*/
 
 /*BLOG
 */
