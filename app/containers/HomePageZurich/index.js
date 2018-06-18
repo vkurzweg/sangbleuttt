@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { compose } from 'redux';
 import ArticlesContainer from './ArticlesContainer';
+import ArticlesContainerDynamic from './ArticlesContainerDynamic';
 import ArticlesContainerMobile from './ArticlesContainerMobile';
 import ArticlesContainerInitial from './ArticlesContainerInitial';
 import InfoCopy from 'components/zurich/InfoCopy';
@@ -243,7 +244,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                       <ArticlesContainerInitial />
                     </div>
                   </div>
-                  <ArticlesContainer
+                  <ArticlesContainerDynamic
                     handleViewPost={this.handleViewPost}
                     handleDismissPost={this.handleDismissPost}
                     viewPost={this.state.viewPost}
@@ -359,7 +360,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                 <div className="blog-label-container">
                   <h4 className="blog-label">blog</h4>
                 </div>
-                <ArticlesContainer
+                <ArticlesContainerDynamic
                   handleViewPost={this.handleViewPost}
                   handleDismissPost={this.handleDismissPost}
                   viewPost={this.state.viewPost}
