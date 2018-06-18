@@ -29,8 +29,9 @@ import ArtistsMobile from 'components/london/ArtistsMobile';
 import InstaMobile from 'components/london/InstaMobile';
 import ArtistsGridMobile from 'components/london/ArtistsGridMobile';
 import BlogContainer from './BlogContainer';
-import BlogContainerRefactor from './BlogContainerRefactor';
+import BlogContainerDynamic from './BlogContainerDynamic';
 import BlogContainerMobile from './BlogContainerMobile';
+import BlogContainerMobileDynamic from './BlogContainerMobileDynamic';
 
 const MobileContainer = styled.div`
   &::before {
@@ -132,7 +133,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
                 <Heading>Blog</Heading>
               </div>
             </Sticky></A>
-            <BlogContainer />
+            <BlogContainerDynamic />
           </StickyContainer>
         </MediaQuery>
         <MediaQuery maxWidth={1024}>
@@ -157,7 +158,7 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
               <AMobile href="#blog"><Sticky>
                 <HeadingMobile>blog</HeadingMobile>
               </Sticky></AMobile>
-              <BlogContainerMobile />
+              <BlogContainerMobileDynamic />
             </StickyContainer>
           </MobileContainer>
         </MediaQuery>
