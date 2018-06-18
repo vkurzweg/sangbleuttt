@@ -14,6 +14,7 @@ import { compose } from 'redux';
 import ArticlesContainer from './ArticlesContainer';
 import ArticlesContainerDynamic from './ArticlesContainerDynamic';
 import ArticlesContainerMobile from './ArticlesContainerMobile';
+import ArticlesContainerMobileDynamic from './ArticlesContainerMobileDynamic';
 import ArticlesContainerInitial from './ArticlesContainerInitial';
 import InfoCopy from 'components/zurich/InfoCopy';
 import InfoCopyMobile from 'components/zurich/InfoCopyMobile';
@@ -192,7 +193,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     <h4 className="blog-label-mobile">blog</h4>
                   </div>
                 </div>
-                <ArticlesContainerMobile
+                <ArticlesContainerMobileDynamic
                   handleViewPost={this.handleViewPost}
                   handleDismissPost={this.handleDismissPost}
                   viewPost={this.state.viewPost}
@@ -307,7 +308,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   <h4 className="blog-label-mobile">blog</h4>
                 </div>
               </div>
-              <ArticlesContainerMobile
+              <ArticlesContainerMobileDynamic
                 handleViewPost={this.handleViewPost}
                 handleDismissPost={this.handleDismissPost}
                 viewPost={this.state.viewPost}

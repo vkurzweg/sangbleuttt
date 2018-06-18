@@ -95,7 +95,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
   componentDidMount() {
     const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
-    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'blog_post'),).then((response) => {
+    Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamic_post'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
       return this.setState({ docs: documents });
@@ -126,7 +126,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               docked={false}
               onRequestChange={this.props.handleDismissPost}
             >
-              <BlogPostContainerMobile
+              <BlogPostContainerMobileDynamic
                 handleDismissPost={this.props.handleDismissPost}
                 postId={this.props.postId}
                 currentPost={this.props.currentPost}
@@ -145,12 +145,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <div key={idx}>
                   <Article>
                     <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
-                      {article.data.blog_post.title.value[0].text}
+                      {article.data.dynamic_post.title.value[0].text}
                     </Title>
                     <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
-                      {article.data.blog_post.date.value}
+                      {article.data.dynamic_post.date.value}
                     </PostDate>
-                    <StyledImage onClick={this.props.handleViewPost.bind(this, article.id)} style={{ background: `url(${article.data.blog_post.main_image.value.main.url}) no-repeat center` }} alt={article.data.blog_post.main_image.value.main.alt}>
+                    <StyledImage onClick={this.props.handleViewPost.bind(this, article.id)} style={{ background: `url(${article.data.dynamic_post.image.value.main.url}) no-repeat center` }} alt={article.data.dynamic_post.image.value.main.alt}>
                     </StyledImage>
                   </Article>
                 </div>
