@@ -70,13 +70,12 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
 
   getComponent(slice) {
     let type = slice.slice_type
-    console.log('type', slice)
 
     switch(type){
       case 'image':
         return <div>
                 {slice.repeat.map((image, idx, images) => (
-                  <div>
+                  <div key={idx}>
                     <ModalImg src={image.image ? image.image.value.main.url : ''} key={idx} />
                     <ImageCaption>{image.caption ? image.caption.value[0].text : ''}</ImageCaption>
                   </div>
@@ -104,7 +103,6 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
   render() {
     if (this.props.currentPost !== null) {
       const article = this.props.currentPost[0].data.dynamicpost;
-      console.log('article', article)
       const slices = article.body.value
       return (
         <div style={{ width: '75%', margin: '0 auto' }}>
@@ -118,7 +116,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             {article.title1.value[0].text}
           </ModalTitle>
           {slices.map(slice => this.getComponent(slice))}
-          <div style={{ height: '15vh' }}></div>
+          <div style={{ height: '25vh' }}></div>
         </div>
       );
     } return (<p>Loading...</p>);

@@ -175,7 +175,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
   getComponent(slice) {
     let type = slice.slice_type
-    console.log('type', slice)
 
     switch(type){
       case 'image':
@@ -218,7 +217,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       const slices1 = article1.body.value;
       const slices2 = article2.body.value;
       const slices3 = article3.body.value;
-      console.log(articles)
       // TODO: make page for all posts, accessible via link that appears when there are more than 3 posts
       const articlesNum = this.state.docs.length;
       let link;

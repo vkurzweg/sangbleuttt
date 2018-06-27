@@ -84,7 +84,7 @@ const ImageContainer = styled.div`
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 99.5%;
+  width: 100%;
   height: 100vh;
   border: none;
   top: 0;
