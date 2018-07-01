@@ -366,11 +366,7 @@ img {
   margin: 0 auto;
   margin-top: 10vh;
   text-align: center;
-  margin-right: 15%;
-}
-
-.article0 {
-  right: 2%;
+  width: 70%;
 }
 
 /*.article2 {
