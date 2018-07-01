@@ -358,6 +358,7 @@ img {
   z-index: 1;
 }
 
+
 .article {
   position: absolute;
   display: inline;
@@ -368,9 +369,13 @@ img {
   margin-right: 15%;
 }
 
-.article2 {
-  margin-left: 7vw;
+.article0 {
+  right: 2%;
 }
+
+/*.article2 {
+  margin-left: 7vw;
+}*/
 
 /*.article:hover .articles-container {
   opacity: 0;

@@ -32,6 +32,7 @@ import BlogContainer from './BlogContainer';
 import BlogContainerDynamic from './BlogContainerDynamic';
 import BlogContainerMobile from './BlogContainerMobile';
 import BlogContainerMobileDynamic from './BlogContainerMobileDynamic';
+import FooterMobile from 'components/london/FooterMobile'
 
 const MobileContainer = styled.div`
   &::before {
@@ -82,7 +83,7 @@ const HeadingMobile = styled.h3`
   font-size: 23px;
   letter-spacing: .16px;
   margin-left: 10px;
-  padding-top: 2.7vh;
+  padding-top: 2.3vh;
   color: black;
 `;
 
@@ -159,6 +160,13 @@ export class HomePage extends React.Component { // eslint-disable-line react/pre
                 <HeadingMobile>blog</HeadingMobile>
               </Sticky></AMobile>
               <BlogContainerMobileDynamic />
+              <div
+                style={{
+                  position: 'relative', height: '15vh', width: '100%', bottom: '0'
+                }}
+              >
+                <FooterMobile />
+              </div>
             </StickyContainer>
           </MobileContainer>
         </MediaQuery>

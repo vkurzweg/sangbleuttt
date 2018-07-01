@@ -84,13 +84,12 @@ const ModalTitle = styled.h3`
 `;
 
 const ModalImg = styled.img`
-  width: 355px;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
   margin-top: 25px;
   margin-bottom: 25px;
-  height: 350px;
-  object-fit: cover;
+  max-height: 100%;
 `;
 
 const ModalText = styled.p`
@@ -366,7 +365,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </p>
               </div>
               <ModalDate>
-                {arrticle2.date ? article2.date.value : ''}
+                {article2.date ? article2.date.value : ''}
               </ModalDate>
               <ModalTitle>
                 {article2.title1.value[0].text}
@@ -413,13 +412,6 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
               </ModalTitle>
               {slices3.map(slice => this.getComponent(slice))}
               <div style={{ height: '10vh' }}></div>
-          </div>
-          <div
-            style={{
-              position: 'relative', height: '15vh', width: '100%', bottom: '0'
-            }}
-          >
-            <FooterMobile />
           </div>
         </div>
       );
