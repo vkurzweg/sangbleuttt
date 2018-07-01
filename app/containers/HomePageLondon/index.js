@@ -83,7 +83,7 @@ const HeadingMobile = styled.h3`
   font-size: 23px;
   letter-spacing: .16px;
   margin-left: 10px;
-  padding-top: 2.6vh;
+  padding-top: 2.8vh;
   color: black;
 `;
 
