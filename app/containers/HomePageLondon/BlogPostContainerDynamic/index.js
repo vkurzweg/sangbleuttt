@@ -110,7 +110,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             <p style={{ fontFamily: 'SuisseLight', fontSize: '12px', letterSpacing: '1.1px', lineHeight: '20px', textTransform: 'uppercase', marginTop: '40px' }}>close</p>
           </div>
           <ModalDate>
-            {article.date.value}
+            {article.date ? article.date.value : ''}
           </ModalDate>
           <ModalTitle>
             {article.title1.value[0].text}

@@ -326,7 +326,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </p>
               </div>
               <ModalDate>
-                {article1.date.value}
+                {article1.date ? article1.date.value : ''}
               </ModalDate>
               <ModalTitle>
                 {article1.title1.value[0].text}
@@ -366,7 +366,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </p>
               </div>
               <ModalDate>
-                {article2.date.value}
+                {arrticle2.date ? article2.date.value : ''}
               </ModalDate>
               <ModalTitle>
                 {article2.title1.value[0].text}
@@ -406,7 +406,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 </p>
               </div>
               <ModalDate>
-                {article3.date.value}
+                {article3.date ? article3.date.value : ''}
               </ModalDate>
               <ModalTitle>
                 {article3.title1.value[0].text}

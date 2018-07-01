@@ -100,162 +100,186 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       followCursor: false,
     };
     if (artists.length > 0) {
-    return (
-      <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflow: 'hidden !important' }}>
+    let widthCalc = 100 / artists.length;
+    let width = `${widthCalc}vw`;
+    let artist0Content =
         <div className="artists-wrapper0">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[0])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[0])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london" src={artists[0].data.artist.image1.value.main.url} />
-                <h3 className="artist-name-mix">{artists[0].data.artist.name.value[0].text}</h3>
+                <img className="bg-london" src={artists[0] ? artists[0].data.artist.image1.value.main.url : ''} />
+                <h3 className="artist-name-mix">{artists[0] ? artists[0].data.artist.name.value[0].text : ''}</h3>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist1Content =
         <div className="artists-wrapper1">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[1])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[1])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london" src={artists[1].data.artist.image1.value.main.url} />
-                <h3 className="artist-name-mix1">{artists[1].data.artist.name.value[0].text}</h3>
+                <img className="bg-london" src={artists[1] ? artists[1].data.artist.image1.value.main.url : ''} />
+                <h3 className="artist-name-mix1">{artists[1] ? artists[1].data.artist.name.value[0].text : ''}</h3>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist2Content =
         <div className="artists-wrapper2">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[2])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[2])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london" style={{ paddingLeft: '20%' }}>
-                <img className="bg-london" style={{ marginLeft: '-20%'}} src={artists[2].data.artist.image1.value.main.url} />
-                <h3 className="artist-name-mix2">{artists[2].data.artist.name.value[0].text}</h3>
+                <img className="bg-london" style={{ marginLeft: '-20%'}} src={artists[2] ? artists[2].data.artist.image1.value.main.url : ''} />
+                <h3 className="artist-name-mix2">{artists[2] ? artists[2].data.artist.name.value[0].text : ''}</h3>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist3Content =
         <div className="artists-wrapper3">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[3])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[3])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london" style={{ paddingLeft: '20vw' }}>
-                <img className="bg-london" style={{ marginLeft: '-15vw'}} src={artists[3].data.artist.image1.value.main.url} />
-                <h3 className="artist-name-mix3">{artists[3].data.artist.name.value[0].text}</h3>
+                <img className="bg-london" style={{ marginLeft: '-15vw'}} src={artists[3] ? artists[3].data.artist.image1.value.main.url : ''} />
+                <h3 className="artist-name-mix3">{artists[3] ? artists[3].data.artist.name.value[0].text : ''}</h3>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist4Content =
         <div className="artists-wrapper4">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[4])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[4])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london" style={{ paddingLeft: '20vw' }}>
-                <img className="bg-london" style={{ marginLeft: '-10vw' }} src={artists[4].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix4">{artists[4].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london" style={{ marginLeft: '-10vw' }} src={artists[4] ? artists[4].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix4">{artists[4] ? artists[4].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist5Content =
         <div className="artists-wrapper5">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[5])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[5])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[5].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[5].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[5] ? artists[5].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[5] ? artists[5].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist6Content =
         <div className="artists-wrapper6">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[6])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh', isolation: 'isolate'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[6])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh', isolation: 'isolate'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[6].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[6].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[6] ? artists[6].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix5">{artists[6] ? artists[6].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist7Content =
         <div className="artists-wrapper7">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[7])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh', isolation: 'isolate'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[7])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh', isolation: 'isolate'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[7].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[7].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[7] ? artists[7].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[7] ? artists[7].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist8Content =
         <div className="artists-wrapper8">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[8])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[8])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[8].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[8].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[8] ? artists[8].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[8] ? artists[8].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist9Content =
         <div className="artists-wrapper9">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[9])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[9])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[9].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[9].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[9] ? artists[9].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[9] ? artists[9].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    let artist10Content =
         <div className="artists-wrapper10">
           <ReactHover
             options={options}>
             <ReactHover.Trigger type="trigger">
-              <div onClick={this.openLightbox.bind(this, artists[10])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width: '9vw', height: '60vh'}}></div>
+              <div onClick={this.openLightbox.bind(this, artists[10])} style={{ display: 'inline', position: 'absolute', cursor: 'pointer', width, height: '60vh'}}></div>
             </ReactHover.Trigger>
             <ReactHover.Hover type="hover">
               <div className="image-container-london">
-                <img className="bg-london-right" src={artists[10].data.artist.image1.value.main.url} />
-                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[10].data.artist.name.value[0].text}</h3></div>
+                <img className="bg-london-right" src={artists[10] ? artists[10].data.artist.image1.value.main.url : ''} />
+                <div style={{ display: 'block', width: '100vw', margin: '0 auto' }}><h3 className="artist-name-mix10">{artists[10] ? artists[10].data.artist.name.value[0].text : ''}</h3></div>
               </div>
             </ReactHover.Hover>
           </ReactHover>
         </div>
+    return (
+      <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflow: 'hidden !important' }}>
+        {artists[0] ? artist0Content : ''}
+        {artists[1] ? artist1Content : ''}
+        {artists[2] ? artist2Content : ''}
+        {artists[3] ? artist3Content : ''}
+        {artists[4] ? artist4Content : ''}
+        {artists[5] ? artist5Content : ''}
+        {artists[6] ? artist6Content : ''}
+        {artists[7] ? artist7Content : ''}
+        {artists[8] ? artist8Content : ''}
+        {artists[9] ? artist9Content : ''}
+        {artists[10] ? artist10Content : ''}
         <LightboxContainerLondon
           isOpen={this.state.isOpen}
           artistName={this.state.artistName}
