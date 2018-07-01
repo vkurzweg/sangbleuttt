@@ -180,7 +180,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   onTouchTap={this.handleAboutClose}
                   className="drawer-about"
                 >
-                  <div style={{ height: '100%', overflowY: 'scroll' }}>
+                  <div style={{ overflowY: 'scroll' }}>
                     <h4 className="about-label">information</h4>
                     <AboutMobile
                       handleAboutClose={this.handleAboutClose}

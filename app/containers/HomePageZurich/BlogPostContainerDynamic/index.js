@@ -67,7 +67,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
   constructor(props) {
     super(props);
     this.state = {
-      button: false,
+      button: true,
     }
     this.handleScroll = this.handleScroll.bind(this);
     this.getComponent = this.getComponent.bind(this);
@@ -121,11 +121,9 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
     var st = document.documentElement.scrollTop;
        if (st > lastScrollTop){
          this.setState({
-           button: false
          });
        } else {
          this.setState({
-           button: true
          })
        }
        st = lastScrollTop;
@@ -139,7 +137,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
       let displayButton = 'block';
       this.state.button ? displayButton : displayButton = 'none';
       return (
-        <div onScroll={this.handleScroll} style={{ position: 'relative', overflow: 'scroll', height: '100%' }}>
+        <div onScroll={this.handleScroll} style={{ position: 'relative', overflowY: 'scroll', overflowX: 'hidden', height: '100%' }}>
           <div
             type="close"
             onClick={this.props.handleDismissPost}
