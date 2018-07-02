@@ -165,7 +165,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
           </Helmet>
           <MediaQuery maxWidth={1024}>
             <div
-              style={{
+              className="mobile-scroll" style={{
                 backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
               }}
             >
@@ -281,7 +281,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
       <div>
         <MediaQuery maxWidth={1024}>
           <div
-            style={{
+            className="mobile-scroll" style={{
               backgroundColor: '#FF001F', position: 'relative', width: '100vw', overflowX: 'hidden', overflowY: 'scroll', height: '100vh'
             }}
           >
