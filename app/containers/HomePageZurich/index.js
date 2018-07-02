@@ -132,7 +132,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
 
   handleViewPost(postId) {
     console.log('clicked')
-    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.id', postId),).then((response) => {
       console.log('Post: ', response.results[0]);
       const document = response.results;
@@ -180,7 +180,7 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                   onTouchTap={this.handleAboutClose}
                   className="drawer-about"
                 >
-                  <div style={{ overflowY: 'scroll' }}>
+                  <div>
                     <h4 className="about-label">information</h4>
                     <AboutMobile
                       handleAboutClose={this.handleAboutClose}

@@ -1,6 +1,11 @@
 /*ZURICH LANDING WITH BLOG PREVIEW TAB
 */
 
+.dynamic-link-zurich a {
+  text-decoration: none;
+  color: white;
+}
+
 .initial-container {
   position: relative;
   height: calc(100vh - 40px);

@@ -99,7 +99,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
 
   componentDidMount() {
-    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamic_post'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
@@ -113,6 +113,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     };
     if (this.state.docs.length > 0) {
       const documents = this.state.docs;
+      console.log(documents)
       const article0 = documents[0];
       const article1 = documents[1];
       const article2 = documents[2];
@@ -159,16 +160,16 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                         <ReactHover.Trigger type="trigger" className="trigger">
                           <Article className="titles-container" style={{ marginTop: '7vh' }}>
                             <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
-                              {article.data.dynamic_post.title ? article.data.dynamic_post.title.value[0].text : ''}
+                              {article.data.title ? article.data.title[0].text : ''}
                             </Title><br />
                             <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
-                              {article.data.dynamic_post.date ? article.data.dynamic_post.date.value : ''}
+                              {article.data.date ? article.data.date : ''}
                             </PostDate>
                           </Article>
                         </ReactHover.Trigger>
                         <ReactHover.Hover type="hover">
                           <ImageContainer>
-                            <StyledImage style={{ background: `url(${article.data.dynamic_post.image ? article.data.dynamic_post.image.value.main.url : ''}) no-repeat center` }} alt={article.data.dynamic_post.image.value.main.alt}>
+                            <StyledImage style={{ background: `url(${article.data.image ? article.data.image.url : ''}) no-repeat center` }} alt={article.data.image.alt}>
                               <Image className="zurich-logo" cloudName="kurzweg" publicId="sangbleu/zurich_white" alt="sang bleu zurich" quality="auto" crop="scale" responsive />
                             </StyledImage>
                           </ImageContainer>

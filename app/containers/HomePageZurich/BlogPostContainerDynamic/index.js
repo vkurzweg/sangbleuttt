@@ -9,7 +9,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+import {Link, RichText} from 'prismic-reactjs';
+import PrismicDOM from 'prismic-dom';
+import linkResolver from '../../../constants';
+
 
 const Title = styled.h3`
   text-align: center;
@@ -69,45 +73,34 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
     this.state = {
       button: true,
     }
-    this.handleScroll = this.handleScroll.bind(this);
     this.getComponent = this.getComponent.bind(this);
-  }
-
-  componentDidMount() {
-     window.addEventListener('scroll', this.handleScroll);
-     }
-
-  componentWillUnmount() {
-      window.removeEventListener('scroll', this.handleScroll);
   }
 
   getComponent(slice) {
     let type = slice.slice_type
-    console.log('type', slice)
 
     switch(type){
       case 'image':
         return <div>
-                {slice.repeat.map((image, idx, images) => (
+                {slice.items.map((image, idx, images) => (
                   <div>
-                    <PostImage src={image.image1 ? image.image1.value.main.url : ''} key={idx} />
-                    <ImageCaption>{image.caption ? image.caption.value[0].text : ''}</ImageCaption>
+                    <PostImage src={image.image1 ? image.image1.url : ''} key={idx} />
+                    <ImageCaption className="dynamic-link-zurich">{image.caption ? RichText.render(image.caption, linkResolver) : ''}</ImageCaption>
                   </div>
                   ))}
                 </div>;
                 break;
       case 'text' :
         return <div>
-                  {slice.repeat.map((item, idx, items) => (
-                    item.text.value.map((text, idx, texts) =>(
-                        <PostContent key={idx + 1}>{text.text}</PostContent>))
-                      ))}
+                  {slice.items.map((item, idx, items) => (
+                        <PostContent className="dynamic-link-zurich" key={idx + 1}>{RichText.render(item.text, linkResolver)}</PostContent>)
+                      )}
                 </div>;
                 break;
       case 'media' :
         return <div>
-                  {slice.repeat.map((item, idx, items) => (
-                    <ReactPlayer url={item.embed.value.oembed.embed_url} style={{ display: 'block', margin: '0 auto', width: '100%'}} />
+                  {slice.items.map((item, idx, items) => (
+                    <ReactPlayer url={item.embed.embed_url} style={{ display: 'block', margin: '0 auto', width: '100%'}} />
                       ))}
                 </div>;
           break;
@@ -115,29 +108,15 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
         return ''; }
   }
 
-   handleScroll(event) {
-    console.log('scrolling')
-    let lastScrollTop = 0;
-    var st = document.documentElement.scrollTop;
-       if (st > lastScrollTop){
-         this.setState({
-         });
-       } else {
-         this.setState({
-         })
-       }
-       st = lastScrollTop;
-     }
-
   render() {
     if (this.props.currentPost !== null) {
-      const article = this.props.currentPost[0].data.dynamic_post;
-      console.log(this.props.currentPost[0].data.dynamic_post);
-      const slices = article.body.value
+      const article = this.props.currentPost[0].data;
+      console.log(this.props.currentPost[0].data);
+      const slices = article.body
       let displayButton = 'block';
       this.state.button ? displayButton : displayButton = 'none';
       return (
-        <div onScroll={this.handleScroll} style={{ position: 'relative', overflowY: 'scroll', overflowX: 'hidden', height: '100%' }}>
+        <div style={{ position: 'relative', overflowY: 'scroll', overflowX: 'hidden', height: '100%' }}>
           <div
             type="close"
             onClick={this.props.handleDismissPost}
@@ -148,8 +127,8 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             <h4 className="close-label">close</h4>
           </div>
           <div style={{ width: '85%', margin: '0 auto' }}>
-            <Title>{article.title.value[0].text}</Title>
-            <PostDate>{article.date.value}</PostDate>
+            <Title>{article.title[0].text}</Title>
+            <PostDate>{article.date}</PostDate>
             {slices.map(slice => this.getComponent(slice))}
             <div style={{ height: '15vh' }}></div>
           </div>

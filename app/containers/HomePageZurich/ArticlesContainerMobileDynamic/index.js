@@ -94,7 +94,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
 
   componentDidMount() {
-    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamic_post'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
@@ -145,12 +145,12 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 <div key={idx}>
                   <Article>
                     <Title onClick={this.props.handleViewPost.bind(this, article.id)}>
-                      {article.data.dynamic_post.title.value[0].text}
+                      {article.data.title[0].text}
                     </Title>
                     <PostDate onClick={this.props.handleViewPost.bind(this, article.id)}>
-                      {article.data.dynamic_post.date.value}
+                      {article.data.date}
                     </PostDate>
-                    <StyledImage onClick={this.props.handleViewPost.bind(this, article.id)} style={{ background: `url(${article.data.dynamic_post.image.value.main.url}) no-repeat center` }} alt={article.data.dynamic_post.image.value.main.alt}>
+                    <StyledImage onClick={this.props.handleViewPost.bind(this, article.id)} style={{ background: `url(${article.data.image.url}) no-repeat center` }} alt={article.data.image.alt}>
                     </StyledImage>
                   </Article>
                 </div>
