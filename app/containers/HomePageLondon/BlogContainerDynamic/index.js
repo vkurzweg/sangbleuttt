@@ -76,7 +76,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
   }
 
   componentDidMount() {
-    const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-london-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamicpost'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
@@ -85,7 +85,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
   }
 
   openModal(postId) {
-    const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-london-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.id', postId),).then((response) => {
       console.log('Post: ', response.results[0]);
       const document = response.results;
@@ -134,16 +134,16 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                     <ReactHover.Trigger type="trigger">
                       <span onClick={this.openModal.bind(this, article.id)} className={`article article${idx}`}>
                         <Title name="text" className='article-title article-text'>
-                          {article.data.dynamicpost.title1.value[0].text}
+                          {article.data.title1[0].text}
                         </Title><br />
                         <Subtitle name="text" className='article-title article-text'>
-                          {article.data.dynamicpost.strapline.value[0].text}
+                          {article.data.strapline[0].text}
                         </Subtitle>
                       </span>
                     </ReactHover.Trigger>
                     <ReactHover.Hover type="hover" style={{ width: '100%', margin: '0 auto' }}>
                       <div className="hover-container">
-                        <div className="article-image" style={{ backgroundImage: `url(${article.data.dynamicpost.image1.value.main.url})` }} alt={article.data.dynamicpost.image1.value.alt}>
+                        <div className="article-image" style={{ backgroundImage: `url(${article.data.image1.url})` }} alt={article.data.image1.alt}>
                         </div>
                       </div>
                     </ReactHover.Hover>

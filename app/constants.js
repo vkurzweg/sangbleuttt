@@ -9,3 +9,7 @@ export const FETCH_ARTICLE = 'app/articles/FETCH_ARTICLE';
 export const FETCH_ARTICLE_SUCCESS = 'app/articles/FETCH_ARTICLE_SUCCESS';
 export const FETCH_ARTICLE_FAILURE = 'app/articles/FETCH_ARTICLE_FAILURE';
 export const SET_ARTICLE = 'app/articles/SET_ARTICLE';
+
+export const linkResolver = (doc, ctx) => {
+    return '/';
+};

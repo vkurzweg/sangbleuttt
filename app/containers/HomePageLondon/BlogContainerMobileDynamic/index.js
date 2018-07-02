@@ -13,6 +13,10 @@ import Prismic from 'prismic-javascript';
 import styled from 'styled-components';
 import Modal from 'antd/lib/modal';
 import FooterMobile from 'components/london/FooterMobile';
+import {Link, RichText} from 'prismic-reactjs';
+import PrismicDOM from 'prismic-dom';
+import linkResolver from '../../../constants';
+
 
 const Brand = styled.h1`
   margin-left: 31vw;
@@ -141,7 +145,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
   }
 
   componentDidMount() {
-    const apiEndpoint = 'https://sb-london-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-london-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamicpost'),).then((response) => {
       const documents = response.results;
       return this.setState({ docs: documents });
@@ -178,26 +182,26 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     switch(type){
       case 'image':
         return <div>
-                {slice.repeat.map((image, idx, images) => (
+                {slice.items.map((image, idx, images) => (
                   <div>
-                    <ModalImg src={image.image ? image.image.value.main.url : ''} key={idx} />
-                    <ImageCaption>{image.caption ? image.caption.value[0].text : ''}</ImageCaption>
+                    <ModalImg src={image.image ? image.image.url : ''} key={idx} />
+                    <ImageCaption className="dynamic-link">{image.caption ? RichText.render(image.caption, linkResolver) : ''}</ImageCaption>
                   </div>
                   ))}
                 </div>;
                 break;
       case 'text' :
         return <div>
-                  {slice.repeat.map((item, idx, items) => (
-                    item.text.value.map((text, idx, texts) =>(
-                        <ModalText key={idx + 1}>{text.text}</ModalText>))
+                  {slice.items.map((item, idx, items) => (
+                    item.text.map((text, idx, texts) =>(
+                        <ModalText className="dynamic-link" key={idx + 1}>{RichText.render(item.text, linkResolver)}</ModalText>))
                       ))}
                 </div>;
                 break;
       case 'media' :
         return <div>
-                  {slice.repeat.map((item, idx, items) => (
-                    <ReactPlayer url={item.embed.value.oembed.embed_url} style={{ display: 'block', margin: '0 auto', width: '100%'}} />
+                  {slice.items.map((item, idx, items) => (
+                    <ReactPlayer url={item.embed.oembed.embed_url} style={{ display: 'block', margin: '0 auto', width: '100%'}} />
                       ))}
                 </div>;
           break;
@@ -209,13 +213,14 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     if (this.state.docs.length > 0) {
     // shortcuts for cms data
       const documents = this.state.docs;
-      const article1 = documents[0].data.dynamicpost;
-      const article2 = documents[1].data.dynamicpost;
-      const article3 = documents[2].data.dynamicpost;
+      const article1 = documents[0].data;
+      const article2 = documents[1].data;
+      const article3 = documents[2].data;
+      console.log(documents);
       const articles = [article1, article2, article3];
-      const slices1 = article1.body.value;
-      const slices2 = article2.body.value;
-      const slices3 = article3.body.value;
+      const slices1 = article1.body;
+      const slices2 = article2.body;
+      const slices3 = article3.body;
       // TODO: make page for all posts, accessible via link that appears when there are more than 3 posts
       const articlesNum = this.state.docs.length;
       let link;
@@ -246,15 +251,15 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
             <div>
               <div onClick={this.openModal1} style={{ textDecoration: 'none' }}>
-                <StyledImg src={article1.image1.value.main.url} alt={article1.image1.value.alt} />
+                <StyledImg src={article1.image1.url} alt={article1.image1.alt} />
                 <PostDate>
-                  {article1.date ? article1.date.value : ''}
+                  {article1.date ? article1.date : ''}
                 </PostDate>
                 <Title>
-                  {article1.title1.value[0].text}
+                  {article1.title1[0].text}
                 </Title>
                 <Subtitle>
-                  {article1.strapline.value[0].text}
+                  {article1.strapline[0].text}
                 </Subtitle>
               </div>
             </div>
@@ -262,30 +267,30 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
             <div>
               <div onClick={this.openModal2} style={{ textDecoration: 'none' }}>
-                <StyledImg src={article2.image1.value.main.url} alt={article2.image1.value.alt} />
+                <StyledImg src={article2.image1.url} alt={article2.image1.alt} />
                 <PostDate>
-                  {article2.date ? article2.date.value : ''}
+                  {article2.date ? article2.date : ''}
                 </PostDate>
                 <Title>
-                  {article2.title1.value[0].text}
+                  {article2.title1[0].text}
                 </Title>
                 <Subtitle>
-                  {article2.strapline.value[0].text}
+                  {article2.strapline[0].text}
                 </Subtitle>
               </div>
             </div>
 
             <div>
               <div onClick={this.openModal3} style={{ textDecoration: 'none' }}>
-                <StyledImg src={article3.image1.value.main.url} alt={article3.image1.value.alt} />
+                <StyledImg src={article3.image1.url} alt={article3.image1.alt} />
                 <PostDate>
-                  {article3.date ? article3.date.value : ''}
+                  {article3.date ? article3.date : ''}
                 </PostDate>
                 <Title>
-                  {article3.title1.value[0].text}
+                  {article3.title1[0].text}
                 </Title>
                 <Subtitle>
-                  {article3.strapline.value[0].text}
+                  {article3.strapline[0].text}
                 </Subtitle>
               </div>
             </div>
@@ -328,7 +333,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article1.date ? article1.date.value : ''}
               </ModalDate>
               <ModalTitle>
-                {article1.title1.value[0].text}
+                {article1.title1[0].text}
               </ModalTitle>
               {slices1.map(slice => this.getComponent(slice))}
               <div style={{ height: '10vh' }}></div>
@@ -368,7 +373,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article2.date ? article2.date.value : ''}
               </ModalDate>
               <ModalTitle>
-                {article2.title1.value[0].text}
+                {article2.title1[0].text}
               </ModalTitle>
               {slices2.map(slice => this.getComponent(slice))}
               <div style={{ height: '10vh' }}></div>
@@ -408,7 +413,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 {article3.date ? article3.date.value : ''}
               </ModalDate>
               <ModalTitle>
-                {article3.title1.value[0].text}
+                {article3.title1[0].text}
               </ModalTitle>
               {slices3.map(slice => this.getComponent(slice))}
               <div style={{ height: '10vh' }}></div>
