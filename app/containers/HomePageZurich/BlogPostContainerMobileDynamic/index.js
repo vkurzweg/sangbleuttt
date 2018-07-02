@@ -116,7 +116,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
       let displayButton = 'block';
       this.state.button ? displayButton : displayButton = 'none';
       return (
-        <div style={{ position: 'relative', overflow: 'scroll', height: '100%' }}>
+        <div style={{ position: 'relative', overflowY: 'scroll', overflowX: 'hidden', height: '100%' }}>
           <div
             type="close"
             onClick={this.props.handleDismissPost}

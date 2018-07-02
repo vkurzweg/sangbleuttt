@@ -11,7 +11,7 @@ import Icon from 'antd/lib/icon';
 
 function About(props) {
   return (
-    <div style={{ height: '100%', overflowY: 'scroll' }} onTouchTap={props.handleAboutClose}>
+    <div style={{ height: '100%', overflowY: 'scroll', overflowX: 'hidden' }} onTouchTap={props.handleAboutClose}>
       <h3 className='zurich-about-header-mobile'>about sbzh</h3>
       <Image className='zurich-about-image-mobile' cloudName="kurzweg" publicId="sangbleu/table" alt="sang bleu london" quality="auto" crop="scale" responsive />
       <p className='zurich-about-copy-mobile'>
@@ -35,7 +35,7 @@ function About(props) {
               <p>Suisse Int'l + BRRR<br /><a href="swisstypefaces.com" target="_blank" style={{ color: 'white', textDecoration: 'none' }}>by swisstypefaces</a></p>
             </div>
           </div>
-          <div className='col-xs-6 zurich-typefaces' style={{ paddingLeft: '10vw' }}>
+          <div className='col-xs-6 zurich-typefaces' style={{ paddingLeft: '10vw', paddingBottom: '10vh' }}>
             <p>Design:</p>
             <p style={{ marginLeft: '3vw', marginTop: '-1vh' }}>Redwan El-Harrak <br /> (Sang Bleu)</p>
             <p style={{ marginTop: '2vh' }}>Development:</p>
