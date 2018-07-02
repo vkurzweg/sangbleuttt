@@ -72,26 +72,26 @@ class NamesFull extends React.Component { // eslint-disable-line react/prefer-st
               openLightbox={this.props.openLightbox} />
           </div>
           <div className={`${imageClass} + col-sm-4`} style={{ marginLeft: '10vw' }}>
-            <Artist6
+            {artists[6] ? <Artist6
               artist6={artists[6]}
-              openLightbox={this.props.openLightbox} />
+              openLightbox={this.props.openLightbox} /> : ''}
           </div>
         </div>
         <div className="insta-hover row" style={{ marginLeft: '-10vw', display: 'flex', justifyContent: 'space-between', maxWidth: 'widthValue', margin: '0 auto', marginTop: '10vh' }}>
           <div className={`${imageClass} + col-sm-4`} style={{ marginTop: '10h' }}>
-            <Artist7
+            {artists[7] ? <Artist7
               artist7={artists[7]}
-              openLightbox={this.props.openLightbox} />
+              openLightbox={this.props.openLightbox} /> : ''}
           </div>
           <div className={`${imageClass} + col-sm-4`}>
-            <Artist8
+            {artists[8] ? <Artist8
               artist8={artists[8]}
-              openLightbox={this.props.openLightbox} />
+              openLightbox={this.props.openLightbox} /> : ''}
           </div>
           <div className={`${imageClass} + col-sm-4`}>
-            <Artist9
+            {artists[9] ? <Artist9
               artist9={artists[9]}
-              openLightbox={this.props.openLightbox} />
+              openLightbox={this.props.openLightbox} /> : ''}
           </div>
         </div>
       </SlideLeftDiv>
