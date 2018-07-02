@@ -185,7 +185,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                       handleAboutClose={this.handleAboutClose}
                       about={about}
                     />
-                    <div style={{ height: '40vh' }}></div>
                   </div>
                 </Drawer>
                 <div className="blog-tab-mobile" onClick={this.handleBlogToggle}>
@@ -302,7 +301,6 @@ export class HomePageZurich extends React.Component { // eslint-disable-line rea
                     handleAboutClose={this.handleAboutClose}
                   />
                 </div>
-                <div style={{ height: '40vh' }}></div>
               </Drawer>
               <div className="blog-tab-mobile" onClick={this.handleBlogToggle}>
                 <div className="blog-label-container">
