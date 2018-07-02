@@ -121,7 +121,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
             type="close"
             onClick={this.props.handleDismissPost}
             style={{
-              backgroundColor: '#FF001F', fontSize: '19px', right: '0', top: '0', bottom: '0', width: '30px', height: '100% !important', position: 'absolute'
+              backgroundColor: '#FF001F', fontSize: '19px', right: '0', top: '0', bottom: '0', width: '30px', height: '200%', position: 'absolute'
             }}
           >
             <h4 className="close-label">close</h4>
@@ -143,7 +143,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
           type="close"
           onClick={this.props.handleDismissPost}
           style={{
-            position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', width: '40px', height: '120vh'
+            position: 'absolute', backgroundColor: '#FF001F', fontSize: '3vw', right: '0', top: '0', bottom: '0', width: '40px', height: '100%'
           }}
         >
           <h4 className="close-label">close</h4>

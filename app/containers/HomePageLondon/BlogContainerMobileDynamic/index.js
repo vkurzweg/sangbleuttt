@@ -300,7 +300,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           {link}
 
           <div
-            style={{ display: display1, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
+            className="mobile-scroll" style={{ display: display1, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
             <div
               style={{
@@ -340,7 +340,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           </div>
 
           <div
-            style={{ display: display2, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
+            className="mobile-scroll" style={{ display: display2, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
               <div
                 style={{
@@ -380,7 +380,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
           </div>
 
           <div
-            style={{ display: display3, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
+            className="mobile-scroll" style={{ display: display3, position: 'fixed', top: '0', height: '100vh', width: '100vw', overflowY: 'scroll', margin: '0 auto', zIndex: '2000', backgroundColor: '#FFFFFF', paddingBottom: '15vh' }}
           >
               <div
                 style={{

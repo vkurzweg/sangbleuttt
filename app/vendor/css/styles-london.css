@@ -272,6 +272,11 @@ img {
   overflow-x: scroll;
   white-space: nowrap;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-mobile {
+  -webkit-overflow-scrolling: touch;
 }
 
 .london-artist-mobile {
