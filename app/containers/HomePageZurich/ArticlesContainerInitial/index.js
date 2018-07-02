@@ -50,7 +50,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
 
 
   componentDidMount() {
-    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api';
+    const apiEndpoint = 'https://sb-zurich-blog.prismic.io/api/v2';
     Prismic.api(apiEndpoint).then((api) => api.query(Prismic.Predicates.at('document.type', 'dynamic_post'),).then((response) => {
       console.log('Documents: ', response.results);
       const documents = response.results;
@@ -64,11 +64,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     }
     if (this.state.docs.length > 0) {
     let documents = this.state.docs
-    let article1 = documents[0].data.dynamic_post;
-    let article2 = documents[1].data.dynamic_post;
-    let article3 = documents[2].data.dynamic_post;
-    let article4 = documents[3].data.dynamic_post;
-    let articles = [article1, article2, article3, article4]
+    let articles = documents;
     return (
       <div style={{ backgroundColor: 'black', height: '100vh' }}>
         <Helmet>
@@ -80,10 +76,10 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
             <div>
               <Article style={{ marginTop: '7vh' }}>
                 <Title>
-                  {article.title.value[0].text}
+                  {article.data.title[0] ? article.data.title[0].text : ''}
                 </Title>
                 <PostDate>
-                  {article.date.value}
+                  {article.data.date ? article.data.date : ''}
                 </PostDate>
               </Article>
             </div>
