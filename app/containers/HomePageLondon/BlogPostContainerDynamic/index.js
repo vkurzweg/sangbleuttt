@@ -82,7 +82,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
                 {slice.items.map((image, idx, images) => (
                   <div key={idx}>
                     <ModalImg src={image.image ? image.image.url : ''} key={idx} />
-                    <ImageCaption className="dynamic-link-zurich">{image.caption ? RichText.render(image.caption, linkResolver) : ''}</ImageCaption>
+                    <ImageCaption className="dynamic-link">{image.caption ? RichText.render(image.caption, linkResolver) : ''}</ImageCaption>
                   </div>
                   ))}
                 </div>;
@@ -90,7 +90,7 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
       case 'text' :
         return <div>
                   {slice.items.map((item, idx, items) => (
-                        <ModalText key={idx + 1} className="dynamic-link-zurich">{RichText.render(item.text, linkResolver)}</ModalText>)
+                        <ModalText key={idx + 1} className="dynamic-link">{RichText.render(item.text, linkResolver)}</ModalText>)
                       )}
                 </div>;
                 break;
