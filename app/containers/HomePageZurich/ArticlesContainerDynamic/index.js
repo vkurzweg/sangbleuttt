@@ -113,12 +113,11 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
     };
     if (this.state.docs.length > 0) {
       const documents = this.state.docs;
-      console.log(documents)
       const article0 = documents[0];
       const article1 = documents[1];
       const article2 = documents[2];
       const article3 = documents[3];
-      const articles = [article0, article1, article2, article3];
+      const articles = documents;
       return (
         <div className="blog-container">
           <Helmet>
