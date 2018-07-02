@@ -30,7 +30,7 @@ const Brand = styled.h1`
   letter-spacing: 0.16px;
   z-index: 4001;
   padding-right: 3vw;
-  margin-top: -5.8vh;
+  margin-top: -4.8vh;
 `;
 
 const PostDate = styled.h5`
@@ -109,7 +109,7 @@ const ModalText = styled.p`
 const ModalDate = styled.h5`
   font-family: SuisseLight;
   font-size: 12px;
-  margin-top: 25px;
+  margin-top: 100px;
   margin-bottom: 25px;
   text-align: center;
   letter-spacing: 2px;
