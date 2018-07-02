@@ -28,14 +28,14 @@ function About(props) {
             <a href='http://www.sangbleu.com'>sangbleu.com</a>
           </div>
         </div>
-        <div className='row' style={{ padding: '0', width: '95%', margin: '0 auto', marginTop: '1vh' }}>
+        <div className='row' style={{ padding: '0', width: '95%', margin: '0 auto', marginTop: '1vh', paddingBottom: '10vh' }}>
           <div className='col-xs-6 zurich-typefaces'>
             <p>typefaces:</p>
             <div style={{ marginLeft: '3vw', marginTop: '-1vh' }}>
               <p>Suisse Int'l + BRRR<br /><a href="swisstypefaces.com" target="_blank" style={{ color: 'white', textDecoration: 'none' }}>by swisstypefaces</a></p>
             </div>
           </div>
-          <div className='col-xs-6 zurich-typefaces' style={{ paddingLeft: '10vw', paddingBottom: '10vh' }}>
+          <div className='col-xs-6 zurich-typefaces' style={{ paddingLeft: '10vw' }}>
             <p>Design:</p>
             <p style={{ marginLeft: '3vw', marginTop: '-1vh' }}>Redwan El-Harrak <br /> (Sang Bleu)</p>
             <p style={{ marginTop: '2vh' }}>Development:</p>
