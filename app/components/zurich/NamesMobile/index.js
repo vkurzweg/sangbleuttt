@@ -33,18 +33,18 @@ class InstaHover extends React.Component { // eslint-disable-line react/prefer-s
         <h2 onClick={this.props.openLightbox.bind(this, artists[5])} className='name-mobile name-right'>
           {artists[5].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[5].data.handle[0].text}</span>
         </h2>
-        <h2 onClick={this.props.openLightbox.bind(this, artists[6])} className='name-mobile'>
+        {artists[6] ? <h2 onClick={this.props.openLightbox.bind(this, artists[6])} className='name-mobile'>
           {artists[6].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[6].data.handle[0].text}</span>
-        </h2>
-        <h2 onClick={this.props.openLightbox.bind(this, artists[7])} className='name-mobile name-right'>
+        </h2> : ''}
+        {artists[7] ? <h2 onClick={this.props.openLightbox.bind(this, artists[7])} className='name-mobile name-right'>
          {artists[7].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[7].data.handle[0].text}</span>
-        </h2>
-        <h2 onClick={this.props.openLightbox.bind(this, artists[8])} className='name-mobile'>
+        </h2> : ''}
+        {artists[8] ? <h2 onClick={this.props.openLightbox.bind(this, artists[8])} className='name-mobile'>
           {artists[8].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[8].data.handle[0].text}</span>
-        </h2>
-        <h2 onClick={this.props.openLightbox.bind(this, artists[9])} className='name-mobile name-right'>
+        </h2> : ''}
+        {artists[9] ? <h2 onClick={this.props.openLightbox.bind(this, artists[9])} className='name-mobile name-right'>
           {artists[9].data.name[0].text}<br /><span style={{ fontSize: '10px', letterSpacing: '1.24px', textTransform: 'uppercase', marginLeft: '10vw' }}>{artists[9].data.handle[0].text}</span>
-        </h2>
+        </h2> : ''}
     </div>
     )}
     return ( <div></div>);
