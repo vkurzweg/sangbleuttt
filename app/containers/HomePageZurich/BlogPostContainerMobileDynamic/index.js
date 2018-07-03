@@ -98,9 +98,9 @@ export class BlogPostContainer extends React.Component { // eslint-disable-line 
                   </div>;
                   break;
         case 'media' :
-          return <div>
+          return <div style={{marginLeft: '-30px' }}>
                     {slice.items.map((item, idx, items) => (
-                      <ReactPlayer url={item.embed.embed_url} style={{ display: 'block', margin: '0 auto', width: '100%'}} />
+                      <ReactPlayer width="85%" url={item.embed.embed_url} style={{ display: 'block', margin: '0 auto' }} />
                         ))}
                   </div>;
             break;
