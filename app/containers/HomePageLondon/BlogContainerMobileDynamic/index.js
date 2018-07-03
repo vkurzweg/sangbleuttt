@@ -193,9 +193,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
       case 'text' :
         return <div>
                   {slice.items.map((item, idx, items) => (
-                    item.text.map((text, idx, texts) =>(
-                        <ModalText className="dynamic-link" key={idx + 1}>{RichText.render(item.text, linkResolver)}</ModalText>))
-                      ))}
+                        <ModalText className="dynamic-link" key={idx + 1}>{RichText.render(item.text, linkResolver)}</ModalText>)
+                      )}
                 </div>;
                 break;
       case 'media' :
@@ -311,9 +310,9 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 style={{
                   fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                 }}
-              >blog
+              >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
               </h3>
-              <Brand>Sang Bleu London</Brand>
+
             </div>
               <div
                 onClick={this.closeModal1}
@@ -351,9 +350,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   style={{
                     fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
-                >blog
+                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
                 </h3>
-                <Brand>Sang Bleu London</Brand>
               </div>
               <div
                 onClick={this.closeModal2}
@@ -391,9 +389,8 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   style={{
                     fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
-                >blog
+                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
                 </h3>
-                <Brand>Sang Bleu London</Brand>
               </div>
               <div
                 onClick={this.closeModal3}
