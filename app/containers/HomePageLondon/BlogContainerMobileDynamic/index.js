@@ -310,7 +310,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                 style={{
                   fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                 }}
-              >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
+              >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
               </h3>
 
             </div>
@@ -350,7 +350,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   style={{
                     fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
-                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
+                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
                 </h3>
               </div>
               <div
@@ -389,7 +389,7 @@ export class ArticlesContainer extends React.Component { // eslint-disable-line 
                   style={{
                     fontFamily: 'SuisseIntlSemiBold', textTransform: 'uppercase', fontSize: '23px', letterSpacing: '.16px', paddingLeft: '4vw', paddingTop: '2vh'
                   }}
-                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
+                  >blog <span style={{ width: '20vw'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Sang Bleu London
                 </h3>
               </div>
               <div
