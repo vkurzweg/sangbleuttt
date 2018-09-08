@@ -73,8 +73,8 @@ export class LightboxContainerLondon extends React.Component { // eslint-disable
     console.log('url', this.props.artistUrl)
     const nextPhoto = this.props.slideCount + 1
     const prevPhoto = this.props.slideCount - 1
-    const cursorImage = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[nextPhoto]}`
-    const cursorImagePrev = `https://process.filestackapi.com/AhTgLagciQByzXpFGRI0Az/resize=width:128,height:128/${this.props.photos[prevPhoto]}`
+    const cursorImage = `https://process.filestackapi.com/A1zigIk7qS7GZogv9QlQGz/resize=width:128,height:128/${this.props.photos[nextPhoto]}`
+    const cursorImagePrev = `https://process.filestackapi.com/A1zigIk7qS7GZogv9QlQGz/resize=width:128,height:128/${this.props.photos[prevPhoto]}`
     const backButton = <BackButton onClick={this.props.previousImage} style={{ cursor: `url(${cursorImagePrev}), auto` }}>
                         </BackButton>
         const nextButton = <NextButton onClick={this.props.nextImage} style={{ cursor: `url(${cursorImage}), auto` }}>
