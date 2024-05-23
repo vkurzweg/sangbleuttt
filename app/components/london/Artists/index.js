@@ -23,7 +23,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       slideCount: 0,
       artists: [],
       artistHandle: '',
-    }
+    };
     this.openLightbox = this.openLightbox.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.previousImage = this.previousImage.bind(this);
@@ -100,7 +100,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
       followCursor: false,
     };
     if (artists.length > 0) {
-    let widthCalc = 100 / artists.length;
+    let widthCalc = 100 / 11;
     let width = `${widthCalc}vw`;
     let artist0Content =
         <div className="artists-wrapper0">
@@ -268,7 +268,7 @@ class Artists extends React.Component { // eslint-disable-line react/prefer-stat
           </ReactHover>
         </div>
     return (
-      <div style={{ position: 'relative', display: 'flex', flexWrap: 'wrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflow: 'hidden !important' }}>
+      <div style={{ position: 'relative', display: 'flex', flexWrap: 'nowrap', backgroundColor: '#FFFFFF', marginBottom: '15vh', maxWidth: '100vw', overflow: 'hidden !important' }}>
         {artists[0] ? artist0Content : ''}
         {artists[1] ? artist1Content : ''}
         {artists[2] ? artist2Content : ''}
