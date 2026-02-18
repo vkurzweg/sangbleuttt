@@ -9,14 +9,14 @@
     "prismic-javascript": "^1.4.1",
     "prismic-reactjs": "^0.2.0",
     "prismic-toolbar": "0.0.8",
-    "qs": "^6.4.0",
+    "qs": "^6.14.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "~4.2.2",
     "whatwg-fetch": "~2.0.3"
   },
   "devDependencies": {
-    "react-scripts": "~1.0.14"
+    "react-scripts": "~5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
